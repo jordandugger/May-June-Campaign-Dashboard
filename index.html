@@ -304,110 +304,6 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 .lp-ta-c{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(99,179,237,.48);text-transform:uppercase;}
 .lp-c-footer{background:#040507;padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.12);text-transform:uppercase;}
 
-/* ─ Option D — Built, Scaled & Sold ─ */
-.lp-page-d{background:#0D0F14;}
-.lp-d-ticker{background:#C44B2B;overflow:hidden;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.12);}
-.lp-d-ticker-track{display:flex;width:max-content;animation:lp-ticker 28s linear infinite;}
-.lp-d-ticker-track span{white-space:nowrap;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;padding:0 36px;}
-.lp-d-ticker-track span::before{content:"★  ";opacity:.6;}
-@keyframes lp-ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.lp-d-breaking{background:#F5F0E8;padding:9px 24px;display:flex;align-items:center;gap:12px;border-bottom:3px solid #C44B2B;}
-.lp-d-btag{background:#C44B2B;color:#fff;font-family:'DM Mono',monospace;font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;flex-shrink:0;}
-.lp-d-btext{font-family:'DM Sans',sans-serif;font-weight:500;font-size:12px;color:#0D0F14;}
-.lp-d-btext strong{font-weight:700;}
-.lp-d-hero{background:#0D0F14;min-height:96vh;display:flex;flex-direction:column;justify-content:center;padding:80px 24px 96px;position:relative;overflow:hidden;}
-.lp-d-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 65% 50%,rgba(201,168,76,0.07) 0%,transparent 65%),radial-gradient(ellipse 35% 70% at 5% 50%,rgba(196,75,43,0.05) 0%,transparent 60%);pointer-events:none;}
-.lp-d-hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-.lp-d-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
-.lp-d-eyebrow-line{width:32px;height:2px;background:#C9A84C;}
-.lp-d-eyebrow-txt{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;}
-.lp-d-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,6.5vw,84px);line-height:.93;letter-spacing:.02em;color:#F5F0E8;margin-bottom:12px;}
-.lp-d-h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;letter-spacing:0;font-size:.9em;}
-.lp-d-sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;color:rgba(245,240,232,0.6);margin:14px 0 28px;line-height:1.55;}
-.lp-d-meta{display:flex;flex-direction:column;gap:9px;margin-bottom:32px;}
-.lp-d-meta-row{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.75);}
-.lp-d-meta-icon{color:#C9A84C;flex-shrink:0;font-size:13px;}
-.lp-d-meta-row strong{color:#F5F0E8;}
-.lp-d-reg{background:rgba(245,240,232,0.04);border:1px solid rgba(201,168,76,0.25);padding:32px 28px 28px;position:relative;overflow:hidden;}
-.lp-d-reg::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C44B2B,#C9A84C,#C44B2B);}
-.lp-d-reg-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
-.lp-d-reg h3{font-family:'Instrument Serif',serif;font-size:22px;color:#F5F0E8;margin-bottom:4px;line-height:1.2;}
-.lp-d-reg-date{font-family:'DM Mono',monospace;font-size:10px;color:rgba(245,240,232,0.4);margin-bottom:24px;font-style:italic;}
-.lp-d-seats{background:rgba(196,75,43,0.12);border:1px solid rgba(196,75,43,0.35);color:#e88070;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
-.lp-d-seats::before{content:'●';animation:lp-blink 1.4s ease-in-out infinite;}
-@keyframes lp-blink{0%,100%{opacity:1;}50%{opacity:.3;}}
-.lp-d-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);color:#F5F0E8;font-family:'DM Sans',sans-serif;font-size:13px;padding:12px 14px;margin-bottom:10px;outline:none;transition:border-color .2s;}
-.lp-d-input::placeholder{color:rgba(245,240,232,0.3);}
-.lp-d-input:focus{border-color:#C9A84C;}
-.btn-lp-d{display:block;width:100%;background:#C9A84C;color:#0D0F14;font-family:'DM Sans',sans-serif;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:15px;border:none;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s,transform .15s;}
-.btn-lp-d:hover{background:#E8C96A;transform:translateY(-2px);}
-.lp-d-privacy{font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.28);text-align:center;margin-top:10px;font-style:italic;}
-.lp-d-statbar{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,#2B3A4A 0%,rgba(43,58,74,0.7) 100%);border:1px solid rgba(201,168,76,0.2);display:grid;grid-template-columns:repeat(4,1fr);position:relative;overflow:hidden;}
-.lp-d-statbar::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C44B2B,#C9A84C,#C44B2B);}
-.lp-d-stat{padding:20px;text-align:center;border-right:1px solid rgba(201,168,76,0.12);}
-.lp-d-stat:last-child{border-right:none;}
-.lp-d-stat-n{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:#C9A84C;letter-spacing:.02em;display:block;}
-.lp-d-stat-l{font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,0.45);margin-top:4px;display:block;}
-.lp-d-story{background:#0D0F14;padding:88px 24px;}
-.lp-d-story-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
-.lp-d-chapter{font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;}
-.lp-d-sh{font-family:'Instrument Serif',serif;font-size:clamp(24px,3.5vw,38px);line-height:1.15;color:#F5F0E8;margin-bottom:18px;}
-.lp-d-body{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;line-height:1.8;color:rgba(245,240,232,0.68);margin-bottom:14px;}
-.lp-d-body strong{color:#F5F0E8;font-weight:600;}
-.lp-d-pullquote{border-left:3px solid #C9A84C;padding:14px 0 14px 22px;margin:24px 0;font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;line-height:1.55;color:#F5F0E8;}
-.lp-d-accentnum{font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:.8;color:rgba(201,168,76,0.05);position:absolute;top:-16px;left:-8px;pointer-events:none;user-select:none;}
-.lp-d-img-wrap{position:relative;}
-.lp-d-img-wrap img{width:100%;display:block;border:1px solid rgba(201,168,76,0.15);}
-.lp-d-img-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,15,20,0.94),transparent);padding:36px 16px 14px;font-family:'DM Mono',monospace;font-size:9px;font-style:italic;color:rgba(245,240,232,0.5);text-align:center;}
-.lp-d-glow{position:absolute;inset:-2px;background:linear-gradient(135deg,rgba(201,168,76,0.14),transparent 55%);pointer-events:none;}
-.lp-d-placeholder{background:linear-gradient(135deg,rgba(43,58,74,0.8),rgba(13,15,20,0.9));aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,168,76,0.15);}
-.lp-d-divider{max-width:1100px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.25),transparent);}
-.lp-d-learn{padding:88px 24px;background:#0D0F14;}
-.lp-d-learn-grid{max-width:1100px;margin:48px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.lp-d-learn-card{background:rgba(245,240,232,0.025);border:1px solid rgba(201,168,76,0.1);padding:28px 24px;position:relative;transition:background .2s,border-color .2s;}
-.lp-d-learn-card:hover{background:rgba(201,168,76,0.04);border-color:rgba(201,168,76,0.28);}
-.lp-d-card-num{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:rgba(201,168,76,0.1);position:absolute;top:12px;right:16px;}
-.lp-d-learn-card h4{font-family:'Instrument Serif',serif;font-size:18px;color:#F5F0E8;margin-bottom:8px;line-height:1.25;margin-top:32px;}
-.lp-d-learn-card p{font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.65;color:rgba(245,240,232,0.55);}
-.lp-d-learn-icon{font-size:22px;position:absolute;top:14px;left:20px;}
-.lp-d-hosts{background:rgba(43,58,74,0.2);padding:88px 24px;}
-.lp-d-hosts-grid{max-width:1100px;margin:48px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:36px;}
-.lp-d-host-card{background:rgba(13,15,20,0.6);border:1px solid rgba(201,168,76,0.14);padding:32px 28px;}
-.lp-d-host-name{font-family:'Bebas Neue',sans-serif;font-size:32px;color:#C9A84C;letter-spacing:.05em;margin-bottom:3px;}
-.lp-d-host-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,0.38);margin-bottom:16px;}
-.lp-d-host-story{font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.7;color:rgba(245,240,232,0.65);}
-.lp-d-host-story strong{color:#F5F0E8;}
-.lp-d-host-stats{display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(201,168,76,0.1);}
-.lp-d-hs-n{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#C9A84C;display:block;}
-.lp-d-hs-l{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,0.35);}
-.lp-d-testi{padding:88px 24px;background:#0D0F14;}
-.lp-d-testi-grid{max-width:1100px;margin:48px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.lp-d-tcard{background:rgba(245,240,232,0.025);border:1px solid rgba(201,168,76,0.09);padding:24px 20px;}
-.lp-d-tstars{color:#C9A84C;font-size:12px;letter-spacing:2px;margin-bottom:10px;}
-.lp-d-tq{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;line-height:1.62;color:rgba(245,240,232,0.82);margin-bottom:14px;}
-.lp-d-tname{font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#C9A84C;}
-.lp-d-ttitle{font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.35);margin-top:2px;}
-.lp-d-faq{padding:88px 24px;background:rgba(245,240,232,0.015);}
-.lp-d-faq-list{max-width:740px;margin:48px auto 0;}
-.lp-d-faq-item{border-bottom:1px solid rgba(201,168,76,0.1);padding:20px 0;}
-.lp-d-faq-q{font-family:'Instrument Serif',serif;font-size:17px;color:#F5F0E8;display:flex;justify-content:space-between;align-items:center;gap:14px;}
-.lp-d-faq-q::after{content:'+';font-family:'DM Sans',sans-serif;font-size:20px;color:#C9A84C;flex-shrink:0;}
-.lp-d-faq-a{font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.72;color:rgba(245,240,232,0.55);margin-top:12px;}
-.lp-d-final{background:linear-gradient(135deg,#2B3A4A 0%,#0D0F14 100%);border-top:1px solid rgba(201,168,76,0.18);padding:96px 24px;text-align:center;position:relative;overflow:hidden;}
-.lp-d-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,0.055),transparent 70%);pointer-events:none;}
-.lp-d-final-inner{position:relative;z-index:1;max-width:660px;margin:0 auto;}
-.lp-d-final h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,6vw,76px);line-height:.93;color:#F5F0E8;margin-bottom:14px;}
-.lp-d-final h2 em{font-family:'Instrument Serif',serif;color:#C9A84C;}
-.lp-d-final p{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.68;color:rgba(245,240,232,0.6);margin-bottom:36px;}
-.lp-d-final-btn{display:inline-block;background:#C9A84C;color:#0D0F14;font-family:'DM Sans',sans-serif;font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;padding:18px 48px;text-decoration:none;transition:background .2s,transform .15s;}
-.lp-d-final-btn:hover{background:#E8C96A;transform:translateY(-2px);}
-.lp-d-footer{background:rgba(0,0,0,0.55);border-top:1px solid rgba(245,240,232,0.05);padding:24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,0.16);text-transform:uppercase;}
-@media(max-width:900px){
-  .lp-d-hero-inner,.lp-d-story-grid,.lp-d-hosts-grid{grid-template-columns:1fr;}
-  .lp-d-learn-grid,.lp-d-testi-grid{grid-template-columns:1fr;}
-  .lp-d-statbar{grid-template-columns:repeat(2,1fr);}
-}
-
 /* ─ Landing page ul overrides ─ */
 .lp-wrap ul{list-style:none;display:grid;gap:11px;margin-bottom:28px;}
 .lp-wrap ul li{display:flex;align-items:flex-start;gap:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.72);line-height:1.6;}
@@ -438,7 +334,8 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
   <button class="sub-btn active" onclick="showLP('a',this)">A · Biz Op / First Clients</button>
   <button class="sub-btn" onclick="showLP('b',this)">B · LTV Retention</button>
   <button class="sub-btn" onclick="showLP('c',this)">C · AI Claude Masterclass</button>
-  <button class="sub-btn" onclick="showLP('d',this)" style="border-color:rgba(201,168,76,0.35);color:rgba(201,168,76,0.8);">D · Built, Scaled &amp; Sold ✦</button>
+  <button class="sub-btn" onclick="showLP('d',this)">D · Content → Clients (AI)</button>
+  <button class="sub-btn" onclick="showLP('notes',this)" style="margin-left:8px;border-color:rgba(245,158,11,.35);color:var(--yellow)">📋 Angles & Delivery Notes</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -454,7 +351,7 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
   <div class="grid-auto mb16" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
     <div class="kpi-card"><div class="kpi-label">Hyros Revenue</div><div class="kpi-val orange">$8.85M</div><div class="kpi-sub">Lifetime attributed</div></div>
     <div class="kpi-card"><div class="kpi-label">Blended ROAS</div><div class="kpi-val" style="color:var(--yellow)">2.58x</div><div class="kpi-sub">Last-click, all campaigns</div></div>
-    <div class="kpi-card"><div class="kpi-label">Best Event ROAS</div><div class="kpi-val green">10.77x</div><div class="kpi-sub">Jan Rush 2024</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best Campaign ROAS</div><div class="kpi-val green">13.41x</div><div class="kpi-sub">Phase 3 A+ Broad · Apr 2024</div></div>
     <div class="kpi-card"><div class="kpi-label">Meta Acct Spend</div><div class="kpi-val red">$2.99M</div><div class="kpi-sub">Mar 2023–Mar 2026</div></div>
     <div class="kpi-card"><div class="kpi-label">Event Spend</div><div class="kpi-val" style="color:var(--electric)">$108K</div><div class="kpi-sub">53 webinar+challenge campaigns</div></div>
     <div class="kpi-card"><div class="kpi-label">Max Registrants</div><div class="kpi-val" style="color:#a78bfa">781</div><div class="kpi-sub">Jul 2024 AI Webinar</div></div>
@@ -510,6 +407,88 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
     </div>
     <div class="mt8" style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">
       🔶 = Hyros per-event revenue pull needed (10-15 min each, UTM filter: ltv_webinar / bf_webinar / viral_ai_webinar)
+    </div>
+  </div>
+
+  <!-- Campaign-Level ROAS Rankings — NEW Apr 2026 -->
+  <div class="card mt16">
+    <div class="tag">Campaign-Level ROAS Rankings — Best to Worst · Updated Apr 2026</div>
+    <div style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:12px;line-height:1.6">
+      Individual ad campaign splits — different from event-level totals. One event can contain multiple campaigns with different ROAS. <strong style="color:var(--yellow)">The Phase 3 A+ Broad at 13.41x was previously showing as no-revenue in the April 2024 event row — now confirmed. This beats Jan Rush as the best single-campaign ROAS ever.</strong>
+    </div>
+    <div style="overflow-x:auto">
+    <table class="tbl">
+      <thead><tr>
+        <th style="text-align:left;width:80px">Rank</th>
+        <th style="text-align:left">Campaign / Ad Set</th>
+        <th style="text-align:left">Event</th>
+        <th>Spend</th><th>Revenue</th><th>ROAS</th>
+        <th style="text-align:left">Notes</th>
+      </tr></thead>
+      <tbody>
+        <tr style="background:rgba(34,197,94,.04)">
+          <td><span style="font-size:15px">🥇</span> <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green);font-size:9px">ALL TIME</span></td>
+          <td style="min-width:200px"><div style="font-weight:700;font-size:12px;color:var(--text)">A+ Broad — Complete Registration Gate</div><div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">BSA/JI Phase 3</div></td>
+          <td style="font-size:11px;color:var(--muted);white-space:nowrap">Apr 2024 Workshop</td>
+          <td class="num">$5,095</td>
+          <td class="num green bold">$68,341</td>
+          <td class="num" style="color:var(--green);font-weight:800;font-size:15px">13.41x</td>
+          <td style="font-size:10px;color:var(--muted);max-width:180px">Was showing no-revenue. Now confirmed. Beats Jan Rush. A+ Broad cold traffic.</td>
+        </tr>
+        <tr>
+          <td><span style="font-size:15px">🥈</span></td>
+          <td><div style="font-weight:700;font-size:12px;color:var(--text)">December Webinar — Cold Interest CBO</div><div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">Part of Jan Rush blended 10.77x</div></td>
+          <td style="font-size:11px;color:var(--muted);white-space:nowrap">Jan Rush Dec 2023</td>
+          <td class="num">$3,345</td>
+          <td class="num green">$36,859</td>
+          <td class="num" style="color:var(--green);font-weight:700">11.02x</td>
+          <td style="font-size:10px;color:var(--muted)">Higher ROAS of the two Jan Rush splits.</td>
+        </tr>
+        <tr style="background:rgba(74,127,165,.03)">
+          <td><span style="font-size:15px">🥉</span></td>
+          <td><div style="font-weight:700;font-size:12px;color:var(--text)">December Webinar — Cold Interest ABO</div><div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">Part of Jan Rush blended 10.77x</div></td>
+          <td style="font-size:11px;color:var(--muted);white-space:nowrap">Jan Rush Dec 2023</td>
+          <td class="num">$3,611</td>
+          <td class="num green">$38,050</td>
+          <td class="num" style="color:var(--green);font-weight:700">10.54x</td>
+          <td style="font-size:10px;color:var(--muted)">ABO slightly lower ROAS, higher absolute revenue.</td>
+        </tr>
+        <tr>
+          <td style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)">#4</td>
+          <td><div style="font-weight:700;font-size:12px;color:var(--text)">June 2024 Webinar — Cold Interest CBO</div><div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">1 of 8 variants — only confirmed</div></td>
+          <td style="font-size:11px;color:var(--muted);white-space:nowrap">Jun 2024 Workshop</td>
+          <td class="num">$3,319</td>
+          <td class="num yellow">$15,774</td>
+          <td class="num yellow">4.75x</td>
+          <td style="font-size:10px;color:var(--muted)">Total event spend $12K across 8 variants — 7 variants still unattributed.</td>
+        </tr>
+        <tr style="background:rgba(239,68,68,.04)">
+          <td style="font-family:'DM Mono',monospace;font-size:10px;color:var(--red)">#5 worst</td>
+          <td><div style="font-weight:700;font-size:12px;color:var(--text)">March 19, 2025 Webinar — BSA MOF</div><div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">477 leads @ $27.41 CPL</div></td>
+          <td style="font-size:11px;color:var(--muted);white-space:nowrap">Mar 2025 Webinar</td>
+          <td class="num red">$13,073</td>
+          <td class="num">$29,263</td>
+          <td class="num red bold">2.24x</td>
+          <td style="font-size:10px;color:var(--muted)">Highest spend ever → worst efficiency. Angle/timing mismatch. MOF targeting.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:12px">
+      <div style="background:var(--surface2);border-radius:8px;padding:11px 13px;border-left:3px solid var(--green)">
+        <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px">Jan Rush blended (CBO+ABO)</div>
+        <div style="font-size:13px;font-weight:700;color:var(--text)">$6,956 → $74,909</div>
+        <div style="font-size:11px;color:var(--green);font-weight:700">10.77x · ✅ confirmed match</div>
+      </div>
+      <div style="background:var(--surface2);border-radius:8px;padding:11px 13px;border-left:3px solid var(--green)">
+        <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px">Top 3 campaigns combined</div>
+        <div style="font-size:13px;font-weight:700;color:var(--text)">$12,051 → $143,250</div>
+        <div style="font-size:11px;color:var(--green);font-weight:700">11.89x blended</div>
+      </div>
+      <div style="background:rgba(232,119,34,.07);border-radius:8px;padding:11px 13px;border-left:3px solid var(--orange)">
+        <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:3px">⚡ Pattern insight</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.7);line-height:1.6">All 3 top campaigns = <strong style="color:var(--text)">Cold Interest</strong> (CBO/ABO) or <strong style="color:var(--text)">A+ Broad</strong>. Worst = MOF. <strong style="color:var(--orange)">Cold targeting wins at this price point.</strong></div>
+      </div>
     </div>
   </div>
 
@@ -655,11 +634,11 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
         </div>
         <div class="roas-track">
           <div id="roas-fill" class="roas-fill" style="width:0%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e)"></div>
-          <div class="roas-marker" style="left:58.3%" title="Target: 7x"></div>
-          <div class="roas-marker" style="left:89.8%;background:var(--green)" title="Best: 10.77x"></div>
+          <div class="roas-marker" style="left:46.7%" title="Target: 7x"></div>
+          <div class="roas-marker" style="left:89.4%;background:var(--green)" title="Best campaign: 13.41x"></div>
         </div>
         <div class="flex-between mono" style="font-size:9px;color:var(--muted);margin-top:4px">
-          <span>0x</span><span style="color:var(--orange)">Target: 7x ↑</span><span style="color:var(--green)">Best: 10.77x ↑</span><span>12x</span>
+          <span>0x</span><span style="color:var(--orange)">Target: 7x ↑</span><span style="color:var(--green)">Best campaign: 13.41x ↑</span><span>15x</span>
         </div>
       </div>
 
@@ -690,12 +669,13 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
         <div class="divider"></div>
         <div class="tag">Historical Reference Points</div>
         <table class="tbl">
-          <thead><tr><th style="text-align:left">Event</th><th>Spend</th><th>Regs</th><th>CPL</th><th>ROAS</th></tr></thead>
+          <thead><tr><th style="text-align:left">Campaign / Event</th><th>Spend</th><th>Regs</th><th>CPL</th><th>ROAS</th></tr></thead>
           <tbody>
-            <tr><td><span style="font-weight:600">Jan Rush 2024</span> <span class="badge type-mc">Best</span></td><td class="num">$6,956</td><td class="num">726</td><td class="num green">$9.58</td><td class="num green bold">10.77x</td></tr>
+            <tr style="background:rgba(34,197,94,.04)"><td><span style="font-weight:600">Phase 3 A+ Broad</span> <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">🏆 Best Campaign</span><div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted)">Apr 2024 Workshop</div></td><td class="num">$5,095</td><td class="num muted">—</td><td class="num muted">—</td><td class="num" style="color:var(--green);font-weight:800">13.41x</td></tr>
+            <tr><td><span style="font-weight:600">Jan Rush 2024</span> <span class="badge type-mc">Best Event</span><div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted)">CBO 11.02x + ABO 10.54x blended</div></td><td class="num">$6,956</td><td class="num">726</td><td class="num green">$9.58</td><td class="num green bold">10.77x</td></tr>
             <tr><td>LTV Webinar Jan 2026</td><td class="num">$13,137</td><td class="num">421+</td><td class="num yellow">$31.20</td><td class="num muted">🔶</td></tr>
             <tr><td>May 2025 Challenge</td><td class="num">$21,626</td><td class="num">714</td><td class="num yellow">$53</td><td class="num" style="color:#a78bfa">5.25x</td></tr>
-            <tr><td><span style="color:var(--red)">Mar 2025 Webinar</span> <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">Worst</span></td><td class="num">$13,073</td><td class="num">477</td><td class="num red">$27.41</td><td class="num red">2.24x</td></tr>
+            <tr style="background:rgba(239,68,68,.03)"><td><span style="color:var(--red)">Mar 2025 Webinar — BSA MOF</span> <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">Worst</span></td><td class="num red">$13,073</td><td class="num">477</td><td class="num red">$27.41</td><td class="num red">2.24x</td></tr>
             <tr><td>Sept 2025 Webinar</td><td class="num">$2,402</td><td class="num">606 LP</td><td class="num red">$45.32</td><td class="num muted">🔶</td></tr>
           </tbody>
         </table>
@@ -705,8 +685,8 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 
   <!-- Warn box -->
   <div class="warn-box mt16">
-    <div style="font-weight:700;font-size:12px;color:var(--red);margin-bottom:5px">⚠️ Scale Warning: More Spend ≠ More ROAS</div>
-    <div style="font-size:11px;color:var(--muted);line-height:1.65">March 2025 spent <strong style="color:var(--text)">$13,073</strong> (highest event spend) and returned only <strong style="color:var(--red)">2.24x</strong> — worst on record. Jan Rush spent <strong style="color:var(--text)">$6,956</strong> and returned <strong style="color:var(--green)">10.77x</strong>. Angle, timing, and audience quality drive results. Budget last.</div>
+    <div style="font-weight:700;font-size:12px;color:var(--red);margin-bottom:5px">⚠️ Scale Warning: More Spend ≠ More ROAS · And MOF ≠ Cold</div>
+    <div style="font-size:11px;color:var(--muted);line-height:1.65">March 2025 spent <strong style="color:var(--text)">$13,073</strong> (highest event spend) and returned only <strong style="color:var(--red)">2.24x</strong> — worst on record. The Phase 3 A+ Broad spent <strong style="color:var(--text)">$5,095</strong> and returned <strong style="color:var(--green)">13.41x</strong>. All 3 top ROAS campaigns used <strong style="color:var(--text)">Cold Interest or A+ Broad targeting</strong> — the worst used MOF. Angle, targeting type, and timing drive results. Budget is last.</div>
   </div>
 
 </div>
@@ -724,7 +704,14 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
     <section class="lp-hero-a">
       <p class="lp-eyebrow-a">Free Live Masterclass · Online Fitness, Nutrition & Health Coaches</p>
       <div class="lp-badge-a">📅 Join Us Live · [Date] at [Time] EST</div>
-      <h1 class="lp-h1-a">How To Sign Your<br><span class="ital">First (Or Next) 3–5</span><br><span class="acc">High-Ticket Clients</span><br>In 30 Days</h1>
+
+      <!-- ── HEADLINE PICKER ── -->
+      <div id="hl-picker-a" style="max-width:700px;margin:0 auto 28px;background:rgba(232,119,34,.08);border:1px solid rgba(232,119,34,.25);border-radius:10px;padding:16px 20px;text-align:left">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(232,119,34,.7);text-transform:uppercase;margin-bottom:10px">✏️ Option A — Biz Op · Choose Your Headline</div>
+        <div style="display:flex;flex-direction:column;gap:6px" id="hl-options-a"></div>
+      </div>
+
+      <h1 class="lp-h1-a" id="hl-display-a">How To Sign Your<br><span class="ital">First (Or Next) 3–5</span><br><span class="acc">High-Ticket Clients</span><br>In 30 Days</h1>
       <p class="lp-sub-a">The <strong>One-Day Masterclass Funnel™</strong> — the exact system 4,600+ coaches have used to go from grinding DMs and posting daily to <strong>consistent $10K–$50K months</strong> without a big audience or complicated tech.</p>
       <div class="lp-meta-a">
         <span class="lp-meta-txt"><span class="lp-meta-dot"></span>Live on Zoom · [Date]</span>
@@ -924,299 +911,377 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
   </div><!-- /lp-c -->
 
 
-  <!-- ══ OPTION D: Built, Scaled & Sold ══ -->
-  <div id="lp-d" class="sub-panel lp-page-d">
-
-    <!-- Ticker -->
-    <div class="lp-d-ticker">
-      <div class="lp-d-ticker-track">
-        <span>FREE LIVE MASTERCLASS — LIMITED SEATS</span>
-        <span>HOW WE BUILT, SCALED &amp; SOLD A FITNESS COACHING COMPANY</span>
-        <span>JORDAN DUGGER &amp; ERIN DIMOND</span>
-        <span>IMPACT FITNESS COACHING ACADEMY</span>
-        <span>$35M+ IN COMBINED REVENUE</span>
-        <span>4,600+ COACHES TRAINED</span>
-        <span>FREE LIVE MASTERCLASS — LIMITED SEATS</span>
-        <span>HOW WE BUILT, SCALED &amp; SOLD A FITNESS COACHING COMPANY</span>
-        <span>JORDAN DUGGER &amp; ERIN DIMOND</span>
-        <span>IMPACT FITNESS COACHING ACADEMY</span>
-        <span>$35M+ IN COMBINED REVENUE</span>
-        <span>4,600+ COACHES TRAINED</span>
-      </div>
-    </div>
-
-    <!-- Breaking news bar -->
-    <div class="lp-d-breaking">
-      <div class="lp-d-btag">🔴 Breaking</div>
-      <div class="lp-d-btext"><strong>Nutrition Dynamics acquires T4E Systems</strong> — Co-founders Erin Dimond &amp; Jordan Dugger reveal the full story: how they built, scaled, and sold for 7 figures &nbsp;→&nbsp; <strong>Free live masterclass, one time only</strong></div>
-    </div>
+  <!-- ══════════════════════════════════════════════════
+    OPTION D — CONTENT → CLIENTS (AI)
+    Angle: AI agentic systems that turn content into clients
+    Dark bg + electric green accents · Forward-tech feel
+  ══════════════════════════════════════════════════ -->
+  <div id="lp-d" class="sub-panel" style="background:#060d0a;">
 
     <!-- Hero -->
-    <section class="lp-d-hero">
-      <div class="lp-d-hero-inner">
-        <div>
-          <div class="lp-d-eyebrow">
-            <div class="lp-d-eyebrow-line"></div>
-            <div class="lp-d-eyebrow-txt">Free Live Masterclass</div>
-          </div>
-          <h1 class="lp-d-h1">HOW WE<br><em>Built, Scaled</em><br>&amp; SOLD<br>A FITNESS<br>COMPANY</h1>
-          <p class="lp-d-sub">The unfiltered story behind $35M in revenue, a 7-figure exit, and exactly what we'd do if we were starting over today.</p>
-          <div class="lp-d-meta">
-            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">📅</span><span><strong>[DATE] — [TIME] [TIMEZONE]</strong></span></div>
-            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">⏱</span><span><strong>90 Minutes</strong> — Live &amp; Interactive</span></div>
-            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">👥</span><span><strong>Hosted by</strong> Erin Dimond &amp; Jordan Dugger</span></div>
-            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">▶</span><span>Free — <strong>No replay. Live only.</strong></span></div>
-          </div>
-        </div>
-        <!-- Reg card -->
-        <div class="lp-d-reg">
-          <div class="lp-d-seats">Seats filling fast</div>
-          <div class="lp-d-reg-lbl">Register Free Below</div>
-          <h3>Save Your Spot for the Live Masterclass</h3>
-          <div class="lp-d-reg-date">[DATE] at [TIME] [TZ] — 90 min, live only</div>
-          <input class="lp-d-input" type="text" placeholder="First Name" />
-          <input class="lp-d-input" type="email" placeholder="Email Address" />
-          <input class="lp-d-input" type="tel" placeholder="Mobile (for reminders)" />
-          <a href="#" class="btn-lp-d">SAVE MY FREE SEAT →</a>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.25);text-align:center;margin-top:8px;font-style:italic;">No replay. Show up or miss it.</div>
-          <div class="lp-d-privacy">100% free. We respect your privacy.</div>
-        </div>
+    <section style="background:#060d0a;padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 70% 45% at 50% -5%,rgba(34,197,94,.12) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 80% 85%,rgba(232,119,34,.06) 0%,transparent 50%);pointer-events:none"></div>
+
+      <p style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:#22C55E;margin-bottom:18px;opacity:.9">Free Live Masterclass · Online Fitness, Nutrition & Health Coaches</p>
+
+      <!-- HEADLINE PICKER D -->
+      <div id="hl-picker-d" style="max-width:700px;margin:0 auto 28px;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.22);border-radius:10px;padding:16px 20px;text-align:left">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:rgba(34,197,94,.7);text-transform:uppercase;margin-bottom:10px">✏️ Option D — Content → Clients · Choose Your Headline</div>
+        <div style="display:flex;flex-direction:column;gap:6px" id="hl-options-d"></div>
       </div>
+
+      <div style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(34,197,94,.3);background:rgba(34,197,94,.07);color:#86EFAC;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:24px;margin-bottom:28px">
+        <span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block;animation:pulse 2s infinite"></span>Live Event · [Date] at [Time] EST
+      </div>
+
+      <h1 id="hl-display-d" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,7vw,80px);line-height:.92;letter-spacing:1px;color:#fff;margin-bottom:12px">
+        From <span style="color:#22C55E">Content</span> to <span style="color:#E87722">Clients:</span><br>
+        How AI Agentic Systems<br>
+        Turn Your Posts Into<br>
+        <span style="color:#22C55E">High-Ticket Revenue</span>
+      </h1>
+
+      <p style="font-family:'DM Sans',sans-serif;font-size:clamp(15px,2.2vw,18px);font-weight:300;color:rgba(240,255,246,.55);max-width:660px;margin:18px auto 34px;line-height:1.6">
+        The <strong style="color:#e8fff2">Content-to-Clients Engine™</strong> — how our coaches are using AI agentic workflows to create high-converting content, automate their lead nurture, and close <strong style="color:#e8fff2">5–10 high-paying clients per month</strong> without the content hamster wheel.
+      </p>
+
+      <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:34px">
+        <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(240,255,246,.38);text-transform:uppercase;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block"></span>Live on Zoom · [Date]</span>
+        <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(240,255,246,.38);text-transform:uppercase;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block"></span>90 Minutes · No Replay</span>
+        <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(240,255,246,.38);text-transform:uppercase;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:#22C55E;display:inline-block"></span>Free · Limited Seats</span>
+      </div>
+
+      <a href="#" style="display:inline-block;background:linear-gradient(135deg,#16A34A,#22C55E);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;padding:18px 52px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 0 32px rgba(34,197,94,.22);transition:all .2s">Claim My Free Seat →</a>
+      <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(240,255,246,.22);text-transform:uppercase;margin-top:12px">Content-first coaches only · Seats are limited</p>
     </section>
 
-    <!-- Stat bar -->
-    <div style="padding:0 24px;background:#0D0F14;">
-      <div class="lp-d-statbar">
-        <div class="lp-d-stat"><span class="lp-d-stat-n">$35M+</span><span class="lp-d-stat-l">Combined Revenue Built</span></div>
-        <div class="lp-d-stat"><span class="lp-d-stat-n">4,600+</span><span class="lp-d-stat-l">Coaches Trained</span></div>
-        <div class="lp-d-stat"><span class="lp-d-stat-n">$330M+</span><span class="lp-d-stat-l">Student Revenue Generated</span></div>
-        <div class="lp-d-stat"><span class="lp-d-stat-n">2</span><span class="lp-d-stat-l">Successful 7-Figure Exits</span></div>
-      </div>
+    <!-- Proof bar -->
+    <div style="background:rgba(255,255,255,.03);border-top:1px solid rgba(34,197,94,.1);border-bottom:1px solid rgba(34,197,94,.1);padding:14px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap">
+      <div style="text-align:center"><span style="display:block;font-family:'Bebas Neue',sans-serif;font-size:24px;color:#22C55E;line-height:1">781</span><span style="display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(240,255,246,.28);margin-top:3px">Regs from AI content push</span></div>
+      <div style="text-align:center"><span style="display:block;font-family:'Bebas Neue',sans-serif;font-size:24px;color:#22C55E;line-height:1">Millions</span><span style="display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(240,255,246,.28);margin-top:3px">Views generated</span></div>
+      <div style="text-align:center"><span style="display:block;font-family:'Bebas Neue',sans-serif;font-size:24px;color:#E87722;line-height:1">5–10</span><span style="display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(240,255,246,.28);margin-top:3px">New clients/month avg</span></div>
+      <div style="text-align:center"><span style="display:block;font-family:'Bebas Neue',sans-serif;font-size:24px;color:#22C55E;line-height:1">4,600+</span><span style="display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(240,255,246,.28);margin-top:3px">Coaches in the system</span></div>
     </div>
 
-    <!-- Chapter 1 -->
-    <section class="lp-d-story">
-      <div class="lp-d-story-grid">
-        <div style="position:relative;">
-          <div class="lp-d-accentnum">01</div>
-          <div class="lp-d-chapter">Chapter 1 — The Origin</div>
-          <h2 class="lp-d-sh">She left a stable job with $50K saved and built a $500K business. Alone. Working 16-hour days.</h2>
-          <p class="lp-d-body">In 2012, <strong>Erin Dimond</strong> was one of the first coaches in the country to take fitness coaching fully online. By 2013, she was generating $500K/year — but working every day including holidays. Including her first wedding day.</p>
-          <p class="lp-d-body">She had the revenue. She didn't have the life.</p>
-          <div class="lp-d-pullquote">"I was making half a million dollars a year and I wasn't happy. Money without systems isn't freedom — it's just a fancier prison."</div>
-          <p class="lp-d-body">Then in 2017 she met <strong>Jordan Dugger</strong> — a farm town Ohio kid, five arrests before 21, opiate addiction after a college injury, who'd just moved to Chicago to start over. She convinced him to quit his job and go all-in online. One Tuesday, she woke him up from a nap: <em>"You're wasting your potential."</em> That was the switch.</p>
-        </div>
-        <div class="lp-d-img-wrap">
-          <div class="lp-d-placeholder">
-            <div style="text-align:center;padding:40px;">
-              <div style="font-size:36px;margin-bottom:14px;">📸</div>
-              <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,0.55);font-weight:600;">Jordan + Erin Photo</div>
-              <div style="font-size:10px;color:rgba(245,240,232,0.25);margin-top:6px;font-style:italic;">Replace with couple asset</div>
-            </div>
-          </div>
-          <div class="lp-d-img-cap">Erin &amp; Jordan — founders, partners, parents.</div>
-        </div>
+    <!-- Problem section -->
+    <section style="background:#060d0a;padding:60px 24px">
+      <div class="lp-wrap">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#22C55E;margin-bottom:8px;opacity:.8">The Content Trap</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4.5vw,48px);color:#fff;letter-spacing:.5px;line-height:1;margin-bottom:18px">You're Creating <span style="color:#22C55E">Great Content.</span><br>It's Just Not <span style="color:#E87722">Creating Clients.</span></h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:rgba(240,255,246,.53);line-height:1.8;margin-bottom:20px">Hours filming reels. Crafting captions. Researching hooks. Posting consistently. And yet — the DMs are quiet, the leads are cold, and every algorithm change wipes out whatever momentum you built. <strong style="color:#e8fff2">Your content is working for the platform. Not for your business.</strong></p>
+        <p style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:rgba(240,255,246,.53);line-height:1.8;margin-bottom:28px">The problem isn't the content. It's the missing <em>system</em> between your content and your calendar. <strong style="color:#e8fff2">AI agentic workflows close that gap.</strong></p>
+        <ul style="list-style:none;display:grid;gap:12px;margin-bottom:28px">
+          <li style="display:flex;align-items:flex-start;gap:12px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(240,255,246,.7);line-height:1.6"><span style="width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);display:flex;align-items:center;justify-content:center;font-size:10px;color:#22C55E;flex-shrink:0;margin-top:2px">✓</span><strong style="color:#e8fff2">Creating → Distribution:</strong> AI repurposes one piece of content into 15 formats across every channel in minutes — not hours.</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(240,255,246,.7);line-height:1.6"><span style="width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);display:flex;align-items:center;justify-content:center;font-size:10px;color:#22C55E;flex-shrink:0;margin-top:2px">✓</span><strong style="color:#e8fff2">Views → Conversations:</strong> Automated DM triggers turn viral views into booked strategy calls — while you sleep.</li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(240,255,246,.7);line-height:1.6"><span style="width:18px;height:18px;border-radius:50%;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);display:flex;align-items:center;justify-content:center;font-size:10px;color:#22C55E;flex-shrink:0;margin-top:2px">✓</span><strong style="color:#e8fff2">Conversations → Clients:</strong> AI pre-qualifies leads, personalizes follow-up, and warms them before the call — so you close, not educate.</li>
+        </ul>
       </div>
     </section>
 
-    <div style="padding:0 24px;"><div class="lp-d-divider"></div></div>
-
-    <!-- Chapter 2 -->
-    <section class="lp-d-story" style="padding-top:72px;">
-      <div class="lp-d-story-grid">
-        <div class="lp-d-img-wrap">
-          <div style="position:relative;">
-            <img src="/mnt/user-data/uploads/image__2_.png" alt="Nutrition Dynamics Acquires T4E Systems" />
-            <div class="lp-d-glow"></div>
+    <!-- What you'll learn -->
+    <section style="background:#0a1409;padding:60px 24px">
+      <div class="lp-wrap">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#22C55E;margin-bottom:8px;opacity:.8">Inside the Masterclass</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4vw,46px);color:#fff;letter-spacing:.5px;line-height:1;margin-bottom:20px">The 3-Part <span style="color:#22C55E">Content-to-Clients Engine™</span><br>You'll Build Live</h2>
+        <div style="display:grid;gap:12px;margin-bottom:32px">
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(34,197,94,.12);border-left:3px solid #16A34A;border-radius:8px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#22C55E;text-transform:uppercase;background:rgba(34,197,94,.1);padding:4px 8px;border-radius:3px;flex-shrink:0;margin-top:2px">Part 01</div>
+            <div><div style="font-size:14px;font-weight:700;color:#e8fff2;margin-bottom:4px">The AI Content Factory — Produce a Month of High-Converting Content in 2 Hours</div><div style="font-size:12px;color:rgba(240,255,246,.42);line-height:1.6">The exact Claude prompts and agentic workflow that turn a 5-minute voice note into 30+ pieces of content — reels, carousels, email sequences, and DM scripts — all in your voice, all proven to convert.</div></div>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(34,197,94,.12);border-left:3px solid #16A34A;border-radius:8px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#22C55E;text-transform:uppercase;background:rgba(34,197,94,.1);padding:4px 8px;border-radius:3px;flex-shrink:0;margin-top:2px">Part 02</div>
+            <div><div style="font-size:14px;font-weight:700;color:#e8fff2;margin-bottom:4px">The Agentic Amplification Loop — Turn Views into Booked Calls Automatically</div><div style="font-size:12px;color:rgba(240,255,246,.42);line-height:1.6">The paid amplification method ($10–$50/day) that turns your best organic content into a lead machine. Plus: the DM automation sequence that converts every comment and reply into a qualified conversation — no manual follow-up required.</div></div>
+          </div>
+          <div style="background:rgba(255,255,255,.03);border:1px solid rgba(34,197,94,.12);border-left:3px solid #16A34A;border-radius:8px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start">
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#22C55E;text-transform:uppercase;background:rgba(34,197,94,.1);padding:4px 8px;border-radius:3px;flex-shrink:0;margin-top:2px">Part 03</div>
+            <div><div style="font-size:14px;font-weight:700;color:#e8fff2;margin-bottom:4px">The Conversion Stack — AI-Powered Follow-Up That Closes Before the Call</div><div style="font-size:12px;color:rgba(240,255,246,.42);line-height:1.6">How to use AI to personalize every touchpoint — from first comment to call-booked confirmation — so leads arrive on your calendar pre-sold, pre-qualified, and ready to say yes.</div></div>
           </div>
         </div>
-        <div style="position:relative;">
-          <div class="lp-d-accentnum">02</div>
-          <div class="lp-d-chapter">Chapter 2 — The Exit</div>
-          <h2 class="lp-d-sh">Together they built to $3M, then sold. One of only two online coaching companies to ever exit successfully.</h2>
-          <p class="lp-d-body">Year one together: <strong>$1M in revenue.</strong> Year three: <strong>$2.1M at 58% profit margins, working 3–4 hours per week.</strong> 3,000+ client transformations. Then their mentors Alex and Leila Hormozi said: <em>"Sell the fitness business. Focus on IFCA."</em></p>
-          <div class="lp-d-pullquote">"We sold to Nutrition Dynamics — the largest online health coaching company in the world. One of only two online coaching businesses to ever exit for 7 figures."</div>
-          <p class="lp-d-body">The business ran on <strong>3–4 hours per week</strong> because they'd built real systems — not just a hard-working team. That's what made it acquirable. And it's what made the exit possible on their terms.</p>
-        </div>
+        <div style="text-align:center"><a href="#" style="display:inline-block;background:linear-gradient(135deg,#16A34A,#22C55E);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;padding:18px 52px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 0 28px rgba(34,197,94,.18);transition:all .2s">Save My Seat →</a><p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(240,255,246,.22);text-transform:uppercase;margin-top:10px">Live [Date] · No Replay · Limited Spots</p></div>
       </div>
     </section>
 
-    <!-- T4E stats image -->
-    <div style="padding:32px 24px 0;max-width:1100px;margin:0 auto;">
-      <img src="/mnt/user-data/uploads/Screenshot_2026-04-23_at_10_30_36_AM.png" alt="Transform 4Ever Systems — $5M Revenue, 58% Margins, 3-4 hrs/week" style="width:100%;display:block;border:1px solid rgba(201,168,76,0.14);" />
-    </div>
-
-    <div style="height:72px;"></div>
-    <div style="padding:0 24px;"><div class="lp-d-divider"></div></div>
-
-    <!-- Chapter 3 -->
-    <section class="lp-d-story" style="padding-top:72px;">
-      <div class="lp-d-story-grid">
-        <div style="position:relative;">
-          <div class="lp-d-accentnum">03</div>
-          <div class="lp-d-chapter">Chapter 3 — Building IFCA</div>
-          <h2 class="lp-d-sh">Then they built it again. This time teaching 4,600 coaches to do the same thing.</h2>
-          <p class="lp-d-body">Jordan didn't want to do it. His exact words: <em>"I don't want to coach coaches to coach."</em> Erin's response: <strong>"Well, we're doing it anyway."</strong></p>
-          <p class="lp-d-body">They launched <strong>IFCA — Impact Fitness Coaching Academy</strong> in 2018. Only enrolled students two months per year. Obsessed over delivery. Built a waitlist industry coaches knew by name.</p>
-          <p class="lp-d-body">Eight years later: <strong>4,600+ coaches. $330M+ in student-generated revenue. $8M annual run-rate. 87% student retention.</strong> NASM, ISSA, and AFAA preferred partner.</p>
-          <div class="lp-d-pullquote">"We sold while the business was thriving — not in distress. At peak value. Because we were strong enough to walk away and put something more important first."</div>
-          <p class="lp-d-body">For the first time, they're sharing every chapter live — what worked, what broke them, what they'd do differently, and exactly what they'd do if starting from scratch today.</p>
-        </div>
-        <div>
-          <!-- IFCA flashing results video -->
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;">📊 IFCA Results — Live Metrics</div>
-          <div style="padding:75% 0 0 0;position:relative;">
-            <iframe src="https://player.vimeo.com/video/1185909315?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IFCA Results Metrics"></iframe>
+    <!-- Proof -->
+    <section style="background:#060d0a;padding:60px 24px">
+      <div class="lp-wrap">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#22C55E;margin-bottom:8px;opacity:.8">Coaches Using the System</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4vw,46px);color:#fff;letter-spacing:.5px;line-height:1;margin-bottom:20px">Content That Actually <span style="color:#22C55E">Pays You</span></h2>
+        <div style="display:grid;gap:12px">
+          <div style="background:rgba(255,255,255,.02);border:1px solid rgba(34,197,94,.1);border-radius:10px;padding:20px">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#22C55E;margin-bottom:8px;letter-spacing:.3px">781 Registrants. One AI-Backed Campaign.</div>
+            <div style="font-size:13px;font-style:italic;color:rgba(240,255,246,.47);line-height:1.65;margin-bottom:8px">"We used the AI content system to promote our July masterclass — organic content did half the work, paid ads did the rest. 781 registrants. $14,717 spend. The content-to-clients loop is real."</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(34,197,94,.5);text-transform:uppercase">— IFCA Team, July 2024 AI Viral Webinar</div>
           </div>
-          <script src="https://player.vimeo.com/api/player.js"></script>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.4);margin-top:8px;font-style:italic;">Real-time metrics from active IFCA students.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- What You'll Learn -->
-    <section class="lp-d-learn">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>What You'll Learn</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">90 MINUTES THAT COULD CHANGE <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">EVERYTHING</span></div>
-      </div>
-      <div class="lp-d-learn-grid" style="max-width:1100px;margin:40px auto 0;">
-        <div class="lp-d-learn-card">
-          <div class="lp-d-learn-icon">🏗️</div>
-          <div class="lp-d-card-num">01</div>
-          <h4>The System That Made 3–4 Hour Weeks Possible</h4>
-          <p>The exact infrastructure inside T4E that hit $2.1M while working barely part-time — and how to replicate it in your coaching business now.</p>
-        </div>
-        <div class="lp-d-learn-card">
-          <div class="lp-d-learn-icon">📈</div>
-          <div class="lp-d-card-num">02</div>
-          <h4>How to Build a Coaching Company That's Worth Selling</h4>
-          <p>Most coaches build a job, not a business. What Jordan and Erin did differently that made T4E acquirable — and how IFCA was built the same way.</p>
-        </div>
-        <div class="lp-d-learn-card">
-          <div class="lp-d-learn-icon">💰</div>
-          <div class="lp-d-card-num">03</div>
-          <h4>The $35M Revenue Model — Broken Down</h4>
-          <p>What their offers looked like, how they priced them, the funnel that actually worked, and the biggest mistakes that cost them 6 figures.</p>
-        </div>
-        <div class="lp-d-learn-card">
-          <div class="lp-d-learn-icon">🤝</div>
-          <div class="lp-d-card-num">04</div>
-          <h4>Why They Sold — And What It Felt Like</h4>
-          <p>The 3AM moment Jordan realized the business was winning but he was losing. Selling at the peak — a choice most coaches never get to make.</p>
-        </div>
-        <div class="lp-d-learn-card">
-          <div class="lp-d-learn-icon">🚀</div>
-          <div class="lp-d-card-num">05</div>
-          <h4>If You Were Starting Today — Here's Exactly What We'd Do</h4>
-          <p>No sugarcoating. The exact 90-day blueprint to build a fitness coaching business that generates $10K–$50K/month reliably.</p>
-        </div>
-        <div class="lp-d-learn-card">
-          <div class="lp-d-learn-icon">🔑</div>
-          <div class="lp-d-card-num">06</div>
-          <h4>The Client Engine Behind $330M in Student Revenue</h4>
-          <p>The done-for-you system IFCA installs into coaching businesses — and why no other program in the industry has matched its results at scale.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Student results + testimonial wall video -->
-    <div style="padding:0 24px 72px;background:#0D0F14;">
-      <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:16px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>Student Results</div>
-          <h3 style="font-family:'Instrument Serif',serif;font-size:28px;color:#F5F0E8;margin-bottom:14px;line-height:1.2;">What Happens When Coaches Use the System.</h3>
-          <p style="font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.72;color:rgba(245,240,232,0.6);margin-bottom:18px;">4,600+ coaches. $330M+ in combined student revenue. These aren't outliers — this is what the system consistently produces.</p>
-          <div style="display:flex;flex-direction:column;gap:9px;">
-            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>Brand-new coaches land their first client in 3–4 weeks</div>
-            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>Coaches with 5+ clients hit full ROI by week 8</div>
-            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>Average IFCA graduate adds 12 new clients in 90 days</div>
-            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>87% student retention rate — unmatched in the industry</div>
+          <div style="background:rgba(255,255,255,.02);border:1px solid rgba(34,197,94,.1);border-radius:10px;padding:20px">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#22C55E;margin-bottom:8px;letter-spacing:.3px">Fully Booked in 8 Weeks. No Manual DMs.</div>
+            <div style="font-size:13px;font-style:italic;color:rgba(240,255,246,.47);line-height:1.65;margin-bottom:8px">"I batch content in 2 hours using Claude, run $20/day on the best reel, and the DM automation handles the rest. I went from 2 clients to a full calendar in 8 weeks — without sending a single cold DM."</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(34,197,94,.5);text-transform:uppercase">— IFCA Student, Online Nutrition Coach</div>
           </div>
-        </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;">🎥 Client Results Wall</div>
-          <div style="padding:75% 0 0 0;position:relative;">
-            <iframe src="https://player.vimeo.com/video/1185910541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IFCA Client Results Wall"></iframe>
-          </div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.38);margin-top:8px;font-style:italic;">Running testimonial wall from IFCA students across all niches.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Hosts -->
-    <section class="lp-d-hosts">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>Your Hosts</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">THE PEOPLE WHO <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">Actually Did It</span></div>
-      </div>
-      <div class="lp-d-hosts-grid">
-        <div class="lp-d-host-card">
-          <div class="lp-d-host-name">ERIN DIMOND</div>
-          <div class="lp-d-host-role">Co-Founder, IFCA — @erindimondfitness (136K)</div>
-          <p class="lp-d-host-story">Started online coaching in <strong>2012</strong> — one of the first. Built to <strong>$500K/year solo</strong> working 16-hour days. Realized she had money but no life. Met Jordan, built <strong>Transform 4Ever Systems to $3M</strong>, sold it for 7 figures. Built IFCA and helped 4,600+ coaches do what she did — but faster and with far less suffering.</p>
-          <div class="lp-d-host-stats">
-            <div><span class="lp-d-hs-n">$500K</span><span class="lp-d-hs-l">Solo Year 1</span></div>
-            <div><span class="lp-d-hs-n">2012</span><span class="lp-d-hs-l">Online Pioneer</span></div>
-            <div><span class="lp-d-hs-n">2</span><span class="lp-d-hs-l">Exits Built</span></div>
-          </div>
-        </div>
-        <div class="lp-d-host-card">
-          <div class="lp-d-host-name">JORDAN DUGGER</div>
-          <div class="lp-d-host-role">Co-Founder, IFCA — @jordandugger_ (39K)</div>
-          <p class="lp-d-host-story">Farm town Ohio. Five arrests before 21. Opiate addiction after a college injury. Moved to Chicago to get clean. Met Erin in <strong>2017</strong> — she told him he was wasting his potential, he quit his job that week. <strong>Built T4E to $2.1M</strong> at 58% margins working 3–4 hrs/week. Co-built IFCA to <strong>$8M/year</strong>. Sold at peak.</p>
-          <div class="lp-d-host-stats">
-            <div><span class="lp-d-hs-n">$8M</span><span class="lp-d-hs-l">IFCA Revenue/yr</span></div>
-            <div><span class="lp-d-hs-n">3–4hrs</span><span class="lp-d-hs-l">T4E Per Week</span></div>
-            <div><span class="lp-d-hs-n">700+</span><span class="lp-d-hs-l">Podcast Episodes</span></div>
+          <div style="background:rgba(255,255,255,.02);border:1px solid rgba(34,197,94,.1);border-radius:10px;padding:20px">
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#22C55E;margin-bottom:8px;letter-spacing:.3px">$3K → $61K/Month. Content Was the Catalyst.</div>
+            <div style="font-size:13px;font-style:italic;color:rgba(240,255,246,.47);line-height:1.65;margin-bottom:8px">"The AI content engine combined with the masterclass funnel is what made everything click. Content brought them in, the system converted them. IFCA gave me both."</div>
+            <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(34,197,94,.5);text-transform:uppercase">— Kacey, IFCA Student</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="lp-d-testi">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>What Coaches Are Saying</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">Results Speak <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">Louder</span></div>
-      </div>
-      <div class="lp-d-testi-grid">
-        <div class="lp-d-tcard"><div class="lp-d-tstars">★★★★★</div><div class="lp-d-tq">"IFCA gave me the systems I didn't know I was missing. My business isn't just bigger — it runs better."</div><div class="lp-d-tname">Jeremy Park</div><div class="lp-d-ttitle">Online Fitness Coach</div></div>
-        <div class="lp-d-tcard"><div class="lp-d-tstars">★★★★★</div><div class="lp-d-tq">"Finally feel like a CEO instead of a one-person chaos machine. Best investment I've made in my business. Period."</div><div class="lp-d-tname">Alyson Taylor</div><div class="lp-d-ttitle">Scaling Coach</div></div>
-        <div class="lp-d-tcard"><div class="lp-d-tstars">★★★★★</div><div class="lp-d-tq">"I was skeptical because I already had a working business. The Scale Phase work was exactly what I needed. Backend offer changed everything."</div><div class="lp-d-tname">Gustave Christensen</div><div class="lp-d-ttitle">Established Coach — 7-Figure Track</div></div>
+    <!-- CTA -->
+    <section style="background:#0a1409;padding:70px 24px;text-align:center;border-top:1px solid rgba(34,197,94,.08)">
+      <div class="lp-wrap">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#22C55E;margin-bottom:8px;opacity:.8">One System Changes Everything</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4.5vw,52px);color:#fff;letter-spacing:.5px;line-height:1;margin-bottom:14px">Your Content Is Already<br><span style="color:#22C55E">Working. Now Make It</span><br><span style="color:#E87722">Work for You.</span></h2>
+        <p style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:rgba(240,255,246,.53);max-width:520px;margin:0 auto 28px;line-height:1.8">You're one workflow away from turning every piece of content into a qualified lead. Every reel into a booked call. Every view into revenue. <strong style="color:#e8fff2">90 minutes. This changes everything.</strong></p>
+        <a href="#" style="display:inline-block;background:linear-gradient(135deg,#16A34A,#22C55E);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;padding:18px 52px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;transition:all .2s">Reserve My Free Seat →</a>
+        <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(240,255,246,.22);text-transform:uppercase;margin-top:12px">[Date] · [Time] EST · Live on Zoom · Limited</p>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="lp-d-faq">
-      <div style="max-width:1100px;margin:0 auto;">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>FAQ</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">Questions <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">Answered</span></div>
-      </div>
-      <div class="lp-d-faq-list">
-        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Is this really free?</div><div class="lp-d-faq-a">Yes — completely free. We host these to serve the fitness coaching community and introduce coaches to IFCA. No catch, no hidden fees. You'll learn real strategy that's generated $400M+ for us and our students combined.</div></div>
-        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Will there be a replay?</div><div class="lp-d-faq-a">No. Live only. We do this intentionally — coaches who show up live get the most out of it. A Sunday re-run will be announced after the live event for those who can't make the original time.</div></div>
-        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Is this for coaches at any stage?</div><div class="lp-d-faq-a">Yes. Whether you're brand new trying to land your first client, or already making $10K–$30K/month — there's a chapter of this story that's directly relevant to where you are right now.</div></div>
-        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Will you pitch something?</div><div class="lp-d-faq-a">At the end we'll briefly mention how IFCA works for coaches who want hands-on help implementing what we teach. No pressure. The vast majority of the 90 minutes is pure content and story.</div></div>
-        <div class="lp-d-faq-item"><div class="lp-d-faq-q">I'm a nutrition coach / PT / health coach — does this apply?</div><div class="lp-d-faq-a">IFCA has trained 4,600+ coaches across fitness, nutrition, health, PT, and more. The systems we teach work regardless of niche. All of it applies.</div></div>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="lp-d-final">
-      <div class="lp-d-final-inner">
-        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>One More Time<span style="display:block;width:24px;height:1px;background:#C9A84C;"></span></div>
-        <h2>Don't Miss<br>This <em>Story</em></h2>
-        <p>Two people. One farm town kid who hit rock bottom. One determined woman who built half a million dollars alone. Together they built $35M in revenue, trained 4,600 coaches, sold two companies — and are sharing every chapter of it, live, for free, one time only.</p>
-        <a href="#" class="lp-d-final-btn">SAVE MY FREE SEAT →</a>
-        <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.28);margin-top:20px;font-style:italic;">[DATE] at [TIME] — No replay. No recording. Show up or miss it.</div>
-      </div>
-    </section>
-
-    <div class="lp-d-footer">© 2026 Impact Fitness Coaching Academy · Jordan Dugger &amp; Erin Dimond<br><span style="opacity:.5">Disclaimer · Privacy Policy · Terms</span></div>
+    <div style="background:#030705;padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.12);text-transform:uppercase">© 2026 Impact Fitness Coaching Academy · NASM · AFAA · ISSA Approved CEP<br><span style="opacity:.5">Disclaimer · Privacy Policy · Terms</span></div>
   </div><!-- /lp-d -->
 
-</div><!-- /panel-landing -->
+
+  <!-- ══════════════════════════════════════════════════
+    NOTES PANEL — Angles, Delivery Framework, Jeremy's Notes
+  ══════════════════════════════════════════════════ -->
+  <div id="lp-notes" class="sub-panel" style="background:var(--bg)">
+  <div class="wrap">
+
+    <div class="section-title">Masterclass Angles, Delivery Notes & Framework</div>
+    <div class="section-sub">From November 2025 Webinar Doc + Jeremy Haynes SOP + IFCA Project Files · Updated Apr 2026</div>
+
+    <!-- ANGLES GRID -->
+    <div class="card mb16">
+      <div class="tag">May 2026 Angles Under Consideration</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:10px">
+
+        <div style="background:var(--surface2);border:1px solid rgba(232,119,34,.25);border-radius:8px;padding:16px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <span class="badge type-mc">Active · Option A</span>
+            <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted)">BIZ OP</span>
+          </div>
+          <div style="font-weight:700;font-size:13px;color:var(--text);margin-bottom:8px">Launch Your Business / First Clients</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.65;margin-bottom:10px">TAM: Widest. New coaches + career-changers. Cold traffic friendly. Pitch: FCA/IFCA Accelerator FE offer. Problem: feast-or-famine, no system, no clients.</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--orange)">Pitch → FCA Front-End Offer</div>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid rgba(74,127,165,.2);border-radius:8px;padding:16px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <span class="badge type-webinar">Active · Option B</span>
+            <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted)">LTV / RETENTION</span>
+          </div>
+          <div style="font-weight:700;font-size:13px;color:var(--text);margin-bottom:8px">LTV Retention Method Remake</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.65;margin-bottom:10px">TAM: Established coaches ($5K–$30K/month). Proven angle — 5,679 LP views, 715 opt-ins, 13.93% CVR on prior run. Problem: churn, new-client treadmill, hidden back-end revenue.</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--electric)">Pitch → IFCA Accelerator / Community Funnel</div>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid rgba(99,179,237,.2);border-radius:8px;padding:16px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <span class="badge type-challenge">Active · Option C</span>
+            <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted)">AI / VIRAL</span>
+          </div>
+          <div style="font-weight:700;font-size:13px;color:var(--text);margin-bottom:8px">AI Claude Masterclass / Viral Content Engine</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.65;margin-bottom:10px">TAM: Tech-curious coaches. Proven — 781 regs Jul 2024, 606 regs + 14.61% CVR Sept 2025. Strong cold traffic angle. Problem: content burnout, no system, posting with no ROI.</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:#63B3ED">Pitch → IFCA Accelerator / AI Content Engine</div>
+        </div>
+
+        <div style="background:var(--surface2);border:1px solid rgba(34,197,94,.22);border-radius:8px;padding:16px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+            <span class="badge" style="background:rgba(34,197,94,.15);color:#22C55E">New · Option D</span>
+            <span style="font-family:'DM Mono',monospace;font-size:9px;color:var(--muted)">CONTENT → CLIENTS</span>
+          </div>
+          <div style="font-weight:700;font-size:13px;color:var(--text);margin-bottom:8px">Content → Clients AI Engine</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.65;margin-bottom:10px">TAM: Content creators who aren't converting. Bridges Options A+C. Problem: content is working for the algorithm, not the business. Mechanism: AI agentic workflows close the gap from view → booked call → closed client.</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:#22C55E">Pitch → IFCA Accelerator + AI Content Engine</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HEADLINE BANKS -->
+    <div class="card mb16">
+      <div class="tag">Option A — Biz Op Headline Bank · 8 Variations (Nov 2025 Webinar Doc + Handover Formula)</div>
+      <div style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:12px;line-height:1.6">Formula (from Handover Doc Section 6): <span style="color:var(--orange)">[AVATAR WHO WANTS X] + [COUNTERINTUITIVE METHOD] + [OUTCOME] — (Without ___)</span><br>Source variations pulled from November_2025_Webinar_.md Section 1 + expanded in-doc.</div>
+      <div style="display:grid;gap:8px;margin-top:4px">
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid var(--orange)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--orange);margin-bottom:4px">HEADLINE 1 · Original — November 2025 MD (Section 1, verbatim)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"How to Land Your First 5 High-Paying Clients in 30 Days Without Spending Hours Posting on Social Media"</div>
+        </div>
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(74,127,165,.5)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">HEADLINE 2 · November 2025 MD (Section 1, Variation 1, verbatim)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"How to Sign Your First 5 High-Paying Clients in 30 Days Without Posting Non-Stop or Begging for Leads"</div>
+        </div>
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(74,127,165,.5)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">HEADLINE 3 · November 2025 MD (Section 1, Variation 2, verbatim)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"The Simple 3-Step System to Launch Your Coaching Business and Land 5 Clients Fast — No Ads, No Complex Tech"</div>
+        </div>
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(74,127,165,.5)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">HEADLINE 4 · November 2025 MD (Section 1, Variation 3, verbatim)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"Why Most New Coaches Struggle to Get Clients — And the 30-Day Plan That Changes Everything"</div>
+        </div>
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(74,127,165,.5)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">HEADLINE 5 · November 2025 MD (Section 1, Variation 4, verbatim)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"Launch Your Online Coaching Business and Land Your First Clients in Record Time — Even If You Have No Following"</div>
+        </div>
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(74,127,165,.5)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">HEADLINE 6 · November 2025 MD (Section 1, Variation 5, verbatim)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"The Exact Framework That's Helped 3,500+ New Coaches Land Clients Fast (And How You Can Too in 30 Days)"</div>
+        </div>
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(232,119,34,.35)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">HEADLINE 7 · Extended (Contrarian / identity — Erin's voice, Handover angle map)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"You Became a Coach to Change Lives. Here's How to Actually Get Paid for It — 5 Clients in 30 Days"</div>
+        </div>
+
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(232,119,34,.35)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">HEADLINE 8 · Extended (Proof stack — Jan Rush data, Handover Section 6 formula)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);line-height:1.45">"From Zero to First 5 Clients: The 30-Day Roadmap We've Used With 4,600+ Coaches — Copy It Live"</div>
+        </div>
+
+      </div>
+      <div style="margin-top:12px;padding:10px 14px;background:rgba(232,119,34,.06);border-radius:6px;font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;line-height:1.65">
+        💡 <strong style="color:var(--orange)">Picker in Option A tab:</strong> Click any headline in the Option A landing page — the hero headline + subheadline update live. Headlines 1–6 are verbatim from November 2025 Webinar MD. Headlines 7–8 are extended from Handover Doc copy angles.
+      </div>
+    </div>
+
+    <div class="card mb16">
+      <div class="tag">Option D — Content → Clients Headline Bank (8 Variations)</div>
+      <div style="display:grid;gap:8px;margin-top:10px">
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid #22C55E">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:#22C55E;margin-bottom:4px">FLAGSHIP (shown in Option D)</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"From Content to Clients: How AI Agentic Systems Turn Your Posts Into High-Ticket Revenue"</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(34,197,94,.4)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">VARIATION 2 · Mechanism-first</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"The AI Content-to-Clients Engine™: How to Create Once, Amplify Everywhere, and Sign 5–10 High-Paying Clients on Autopilot"</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(34,197,94,.4)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">VARIATION 3 · Problem-aware hook</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"You're Posting. You're Getting Views. You're Not Getting Clients. Here's the AI System That Fixes That."</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(34,197,94,.4)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">VARIATION 4 · Agentic AI angle</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"How to Deploy Agentic AI to Turn Your Content Into a 24/7 Client-Acquisition System — Live Masterclass"</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(34,197,94,.4)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">VARIATION 5 · Contrarian / direct</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"Stop Creating Content for the Algorithm. Start Creating It for Your Bank Account. (Here's the System.)"</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(34,197,94,.4)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">VARIATION 6 · Outcome-lead</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"How Fitness Coaches Are Using AI to Sign 5–10 High-Ticket Clients per Month — Starting With Content They Already Have"</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(34,197,94,.4)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">VARIATION 7 · ROI frame</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"The 90-Minute System That Turns One Piece of Content Into $10K+ in Monthly Recurring Revenue — Using AI"</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:6px;padding:12px 14px;border-left:3px solid rgba(34,197,94,.4)">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);margin-bottom:4px">VARIATION 8 · Simple / direct</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text)">"Create Content. Let AI Convert It. Get Clients. The Step-by-Step Live Masterclass for Fitness Coaches"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELIVERY FRAMEWORK -->
+    <div class="card mb16">
+      <div class="tag">Delivery Framework — November 2025 Webinar MD (Section 3) + Jeremy Haynes SOP</div>
+      <div style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:12px;line-height:1.6">
+        Steps 1–7 are verbatim from <strong style="color:var(--text)">November_2025_Webinar_.md Section 3</strong> "Delivery [Mistakes & Steps]".<br>
+        Timings are from <strong style="color:var(--text)">Jeremy Haynes Mastering Webinars SOP</strong> 90-minute breakdown.
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:0;font-size:11px;font-family:'DM Mono',monospace">
+        <div style="padding:7px 12px;background:var(--surface2);border-radius:6px 0 0 0;font-weight:700;color:var(--muted)">#</div>
+        <div style="padding:7px 12px;background:var(--surface2);font-weight:700;color:var(--muted)">Section (from MD, verbatim)</div>
+        <div style="padding:7px 12px;background:var(--surface2);border-radius:0 6px 0 0;font-weight:700;color:var(--muted)">Timing + Notes (Jeremy SOP)</div>
+      </div>
+      <div style="display:grid;grid-template-columns:auto 1fr 1fr;gap:0">
+        <div style="padding:8px 12px;font-weight:700;color:var(--orange);font-size:10px;white-space:nowrap">1</div>
+        <div style="padding:8px 12px;font-weight:600;color:var(--text);font-size:12px">Authority Opening — Jordan/Erin's credibility + IFCA track record</div>
+        <div style="padding:8px 12px;color:var(--muted);font-size:11px;line-height:1.5"><span style="color:var(--orange);font-weight:700">0:00–0:05 (5 min)</span> · Form opinion in first 2–3 min. Wealthy buyers decide fast.</div>
+
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);font-weight:700;color:var(--orange);font-size:10px;white-space:nowrap">2</div>
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);font-weight:600;color:var(--text);font-size:12px">"Big Opportunity" — The shift from DM-grinding to systematic client acquisition</div>
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);color:var(--muted);font-size:11px;line-height:1.5"><span style="color:var(--orange);font-weight:700">0:05–0:12 (7 min)</span> · Create macro urgency. Paint the size of the prize.</div>
+
+        <div style="padding:8px 12px;font-weight:700;color:var(--orange);font-size:10px;white-space:nowrap">3</div>
+        <div style="padding:8px 12px;font-weight:600;color:var(--text);font-size:12px">Personal Story — How IFCA cracked the code on predictable growth</div>
+        <div style="padding:8px 12px;color:var(--muted);font-size:11px;line-height:1.5"><span style="color:var(--orange);font-weight:700">0:12–0:17 (5 min)</span> · Follow grind → false solution → pivot → result → thesis arc.</div>
+
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);font-weight:700;color:var(--orange);font-size:10px;white-space:nowrap">4</div>
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);font-weight:600;color:var(--text);font-size:12px">Core Teaching — 3 pillars of the One-Day Masterclass system</div>
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);color:var(--muted);font-size:11px;line-height:1.5"><span style="color:var(--orange);font-weight:700">0:17–0:42 (25 min)</span> · Secret #1: Mindset/false belief. Secret #2: Strategy/method + case study. Secret #3: Implementation. Give "what" and "why" — NOT the "how."</div>
+
+        <div style="padding:8px 12px;font-weight:700;color:var(--orange);font-size:10px;white-space:nowrap">5</div>
+        <div style="padding:8px 12px;font-weight:600;color:var(--text);font-size:12px">Offer Presentation — IFCA program with bonuses</div>
+        <div style="padding:8px 12px;color:var(--muted);font-size:11px;line-height:1.5"><span style="color:var(--orange);font-weight:700">0:42–0:50 (8 min)</span> · Name + clear outcome. What's included. Value stack. Price anchor. Use the Jeremy Haynes 3-Pillar Pre-Sell before revealing price.</div>
+
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);font-weight:700;color:var(--orange);font-size:10px;white-space:nowrap">6</div>
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);font-weight:600;color:var(--text);font-size:12px">Q&A / Objections — Handle "I need a bigger audience" belief</div>
+        <div style="padding:8px 12px;background:rgba(74,127,165,.04);color:var(--muted);font-size:11px;line-height:1.5"><span style="color:var(--orange);font-weight:700">0:50–1:05 (15 min)</span> · Pre-handle: audience size, no money for ads, not tech-savvy, tried before. Feel-Felt-Found on each. Re-pitch after objections.</div>
+
+        <div style="padding:8px 12px;font-weight:700;color:var(--orange);font-size:10px;white-space:nowrap">7</div>
+        <div style="padding:8px 12px;font-weight:600;color:var(--text);font-size:12px">Final Close — Clear next steps</div>
+        <div style="padding:8px 12px;color:var(--muted);font-size:11px;line-height:1.5"><span style="color:var(--orange);font-weight:700">1:05–1:10 (5 min)</span> · One clean CTA. Hard deadline. Re-state transformation. "Most people talk about breakthroughs — a select few make them happen."</div>
+      </div>
+      <div style="margin-top:10px;padding:10px 14px;background:rgba(232,119,34,.06);border-radius:6px;font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;line-height:1.65">
+        📌 <strong style="color:var(--orange)">Steps 1–7 are verbatim from November_2025_Webinar_.md Section 3.</strong> Timings from Jeremy Haynes SOP 90-min breakdown. Secret structure (Hook/Story/Proof → Secret #1 → Secret #2 → Secret #3) from Step 5_ Building the Presentation.pdf.
+      </div>
+    </div>
+
+    <!-- POP-UP EVENT -->
+    <div class="card mb16">
+      <div class="tag">🎪 The "Pop-Up Event" Strategy — November 2025 Webinar MD (Section 3, verbatim)</div>
+      <div style="background:var(--surface2);border-radius:8px;padding:16px 18px;margin-top:10px;border-left:3px solid var(--orange)">
+        <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:8px">From MD Section 3 — direct quote:</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.75;font-style:italic">
+          "Jeremy's post-webinar 'pop-up' is PERFECT for IFCA. 48 hours after main webinar:<br><br>
+          • Smaller, intimate follow-up session<br>
+          • Address specific objections that came up<br>
+          • Offer 'pop-up only' bonuses<br>
+          • Final chance to join before cart closes"
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);line-height:1.75;margin-top:14px">
+        <strong style="color:var(--text)">IFCA Application (May 2026):</strong> Run the pop-up on <strong style="color:var(--orange)">Sunday</strong> — 48 hrs after the Thursday or Friday live. Jordan + Taeler co-host for maximum trust transfer to the FCA audience. Address top 3 objections that came up in Zoom chat. Offer one pop-up-exclusive bonus (e.g., Loom audit, extended payment plan, or private hotline). Hard close midnight Sunday.<br><br>
+        <strong style="color:var(--text)">Constraint:</strong> Per Jeremy SOP — if you promise exclusivity (limited spots, pop-up only), honor it. Affluent buyers detect fake scarcity instantly and it destroys trust.
+      </div>
+    </div>
+
+    <!-- OBJECTION FRAMEWORK -->
+    <div class="card">
+      <div class="tag">Top Objections to Pre-Handle (Biz Op Angle)</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:10px">
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 14px">
+          <div style="font-weight:700;font-size:12px;color:var(--orange);margin-bottom:6px">"I need a bigger audience first"</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.6">Destroy in Secret #1. Show coaches with under 1K followers outearning coaches with 50K. The audience myth is the most expensive lie in the industry.</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 14px">
+          <div style="font-weight:700;font-size:12px;color:var(--orange);margin-bottom:6px">"I don't have money for ads"</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.6">Jan Rush 2024: $6,956 spend → $74,909 revenue. Frame it as the best ROI investment available. Organic + $10/day amplification is the entry point.</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 14px">
+          <div style="font-weight:700;font-size:12px;color:var(--orange);margin-bottom:6px">"I'm not tech-savvy enough"</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.6">GHL page builds in 2 hours. Zoom is plug-and-play. The tech stack is simpler than the Instagram algorithm they're already fighting every day.</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 14px">
+          <div style="font-weight:700;font-size:12px;color:var(--orange);margin-bottom:6px">"I've tried programs before and failed"</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.6">Feel-Felt-Found. Other programs teach tactics — IFCA installs the system. 4,600+ students, 7+ years, longest-standing mentorship in the space.</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:8px;padding:12px 14px">
+          <div style="font-weight:700;font-size:12px;color:var(--orange);margin-bottom:6px">"I don't have enough credibility yet"</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.6">The masterclass funnel doesn't require you to be famous — it requires you to be specific. One clear avatar, one clear problem, one clear solution = enough credibility to convert.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /lp-notes -->
 
 
 <!-- ══════════════════════════ JS ══════════════════════════ -->
@@ -1234,10 +1299,10 @@ const EVENTS = [
   {id:9,name:"AI Prompting / ChatGPT",date:"Jul 2023",type:"Webinar",regs:423,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
   {id:10,name:"September 2023 Q&A",date:"Sep 2023",type:"Q&A",regs:524,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
   {id:11,name:"Black Friday 2023",date:"Oct 2023",type:"Black Friday",regs:326,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
-  {id:12,name:"January Rush – 10 Clients in 1 Day",date:"Dec 2023",type:"Masterclass",regs:726,metaRegs:170,spend:6956,cpl:9.58,revenue:74909,roas:10.77,cpm:null,ctr:null,status:"complete",note:"Best ROAS ever. $103/reg. No dedicated FB campaign — Hyros Source ID 11064989."},
+  {id:12,name:"January Rush – 10 Clients in 1 Day",date:"Dec 2023",type:"Masterclass",regs:726,metaRegs:170,spend:6956,cpl:9.58,revenue:74909,roas:10.77,cpm:null,ctr:null,status:"complete",note:"Best event ROAS. $103/reg. Campaign split confirmed: CBO $3,345 → $36,859 @ 11.02x | ABO $3,611 → $38,050 @ 10.54x | Combined $6,956 → $74,909 @ 10.77x blended. Hyros Source ID 11064989."},
   {id:13,name:"March 2024 Challenge",date:"Mar 2024",type:"Challenge",regs:null,metaRegs:null,spend:3500,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"~$3,500 FB (7MM variants). Objective was Website Purchase — attribution mismatch. 🔶 Hyros pull needed."},
-  {id:14,name:"April 2024 Client Getting Workshop",date:"Apr 2024",type:"Workshop",regs:746,metaRegs:27,spend:6126,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"FB Phase 3 + 3v2 = $6,126. Anomalous $2,547 CPL — attribution mismatch. 🔶 Revenue needed."},
-  {id:15,name:"June 2024 Client Getting Workshop",date:"Jun 2024",type:"Workshop",regs:692,metaRegs:286,spend:12000,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"FB: 7MM June Webinar (8 variants) ~$12,000. First full source-split tracking. 🔶 Revenue needed."},
+  {id:14,name:"April 2024 Client Getting Workshop",date:"Apr 2024",type:"Workshop",regs:746,metaRegs:27,spend:6126,cpl:null,revenue:68341,roas:13.41,cpm:null,ctr:null,status:"complete",note:"🏆 BEST SINGLE-CAMPAIGN ROAS EVER — 13.41x. Phase 3 A+ Broad: $5,095 → $68,341 @ 13.41x (confirmed). Phase 3v2: $1,031 spend → revenue unconfirmed. Total event revenue ≥$68,341. Previously showing as no-revenue — now updated with confirmed campaign data. Campaign: BSA/JI Phase 3 Complete Registration Gate."},
+  {id:15,name:"June 2024 Client Getting Workshop",date:"Jun 2024",type:"Workshop",regs:692,metaRegs:286,spend:12000,cpl:null,revenue:15774,roas:1.31,cpm:null,ctr:null,status:"partial",note:"CBO variant confirmed: $3,319 → $15,774 @ 4.75x. Total event spend $12,000 across 8 variants — CBO is the only variant with confirmed revenue attribution. Remaining $8,681 spend across other variants revenue still TBD. Blended ROAS of 1.31x reflects CBO revenue only vs. total $12K spend. 🔶 Full event revenue needed to get true blended ROAS."},
   {id:16,name:"July 2024 AI Viral Webinar",date:"Jul 2024",type:"Webinar",regs:781,metaRegs:418,spend:14717,cpl:null,revenue:null,roas:null,cpm:55.11,ctr:1.19,status:"partial",note:"Most regs ever. CPM $55.11 | CTR 1.19% | CPC $4.65 | Outbound 1,935. 🔶 Revenue (UTM: viral_ai_webinar)."},
   {id:17,name:"October 2024 Client Engine",date:"Oct 2024",type:"Webinar",regs:671,metaRegs:330,spend:13989,cpl:null,revenue:null,roas:null,cpm:61.84,ctr:1.45,status:"partial",note:"CPM $61.84 | CTR 1.45% | CPC $4.26 | Outbound 1,764. 🔶 Revenue needed."},
   {id:18,name:"November 2024 Black Friday",date:"Nov 2024",type:"Black Friday",regs:603,metaRegs:144,spend:4696,cpl:32.61,revenue:null,roas:null,cpm:65.10,ctr:0.79,status:"partial",note:"GHL: Black Friday Playbook Webinar (4 steps). LP Conv 22.6%. 170 attendees, 149 saw offer. 🔶 Revenue (UTM: bf_webinar)."},
@@ -1403,7 +1468,7 @@ function calcAll(){
   roasBig.style.color = roas>=7?'var(--green)':roas>=4?'var(--yellow)':roas>=2?'var(--orange)':'var(--red)';
 
   // ROAS bar
-  const pct = Math.min(100,(roas/12)*100);
+  const pct = Math.min(100,(roas/15)*100);
   const fill = document.getElementById('roas-fill');
   fill.style.width = pct+'%';
 
@@ -1444,6 +1509,158 @@ function calcAll(){
 
 updateAllLabels();
 calcAll();
+
+// ── HEADLINE PICKERS ─────────────────────────────────────────
+
+// Option A — Biz Op / First Clients
+// Sources: November_2025_Webinar_.md (Section 1) + IFCA Masterclass Handover Doc (Section 6 LP formula)
+// Headline formula from Handover: [AVATAR WHO WANTS X] + [COUNTERINTUITIVE METHOD] + [OUTCOME]
+const HL_A = [
+  {
+    label:"1 · Original (Nov 2025 Doc)",
+    tag:"From masterclass MD",
+    html:`How to Land Your<br><span class="ital">First 5 High-Paying Clients</span><br><span class="acc">in 30 Days</span><br>Without Posting Non-Stop`,
+    sub:`The <strong>One-Day Masterclass Funnel™</strong> — the system 4,600+ coaches have used to sign clients consistently without a big audience or hours of daily content.`
+  },
+  {
+    label:"2 · Contrarian / No-Posting",
+    tag:"High cold-traffic appeal",
+    html:`<span class="ital">Stop Chasing Clients.</span><br>Here's the <span class="acc">30-Day System</span><br>That Makes Them<br>Come to You`,
+    sub:`The <strong>One-Day Masterclass Funnel™</strong> flips the model: instead of grinding DMs and posting daily, your next 3–5 clients find you — from a single 90-minute live event.`
+  },
+  {
+    label:"3 · Mechanism-Forward",
+    tag:"Best for warm audiences",
+    html:`The <span class="acc">One-Day Masterclass</span><br><span class="ital">Funnel™:</span> How New Coaches<br>Sign 3–5 High-Ticket Clients<br><span class="acc">in 30 Days</span>`,
+    sub:`No big following. No complex tech. No cold outreach. Just <strong>one proven system</strong> that generates, warms, and converts leads in a single 90-minute event.`
+  },
+  {
+    label:"4 · Myth-Buster",
+    tag:"Strong cold-traffic hook",
+    html:`Why Most New Coaches<br><span class="ital">Never Get Their First Client</span><br>— And the <span class="acc">Exact 3-Step System</span><br>That Changes Everything`,
+    sub:`The problem isn't your offer, your niche, or your following. <strong>It's the system — and we're giving you ours</strong> in this free 90-minute masterclass.`
+  },
+  {
+    label:"5 · Social Proof Lead",
+    tag:"Trust-first angle",
+    html:`The Framework That's Helped<br><span class="acc">4,600+ Coaches</span> Land Their<br><span class="ital">First Clients Fast</span><br>— Even With a Tiny Audience`,
+    sub:`Proven across 7+ years and $100M+ in student revenue. In 90 minutes, you'll walk away with <strong>the complete system to sign your first 3–5 high-paying clients</strong>.`
+  },
+  {
+    label:"6 · No-Tech / No-Ads",
+    tag:"Beginner-friendly angle",
+    html:`The Simple <span class="acc">3-Step Launch System</span><br>to Sign Your First<br><span class="ital">5 Coaching Clients</span> in 30 Days<br>— No Ads, No Complex Tech`,
+    sub:`The <strong>One-Day Masterclass Funnel™</strong> — the exact system coaches are using right now to go from zero to fully booked, using nothing but a simple live event and $10/day in ads.`
+  },
+  {
+    label:"7 · Identity / Emotional",
+    tag:"Erin's voice — high engagement",
+    html:`You Became a Coach<br>to <span class="ital">Change Lives.</span><br>Here's How to Actually<br><span class="acc">Get Paid for It.</span>`,
+    sub:`5 clients. 30 days. <strong>Without begging for leads, posting every day, or hoping someone DMs you.</strong> This free masterclass shows you exactly how.`
+  },
+  {
+    label:"8 · Speed / Proof Stack",
+    tag:"High-credibility angle",
+    html:`From Zero to First 5 Clients:<br><span class="ital">The 30-Day Roadmap</span><br>We've Used With <span class="acc">4,600+ Coaches</span><br>— Copy It Live`,
+    sub:`<strong>Jan Rush 2024: 726 registrants, $74,909 revenue, 10.77x ROAS.</strong> In this masterclass we hand you the complete playbook — live, step by step, for free.`
+  },
+];
+
+// Option D — Content → Clients (AI Agentic)
+// New angle: bridges Options A + C. Mechanism: AI agentic workflows close the gap
+// from view → booked call → closed client. Pitch: IFCA Accelerator + AI Engine.
+const HL_D = [
+  {
+    label:"1 · Flagship",
+    tag:"Recommended starting point",
+    html:`From <span style="color:#22C55E">Content</span> to <span style="color:#E87722">Clients:</span><br>How AI Agentic Systems<br>Turn Your Posts Into<br><span style="color:#22C55E">High-Ticket Revenue</span>`,
+    sub:`The <strong style="color:#e8fff2">Content-to-Clients Engine™</strong> — how our coaches are using AI agentic workflows to create high-converting content, automate lead nurture, and close <strong style="color:#e8fff2">5–10 high-paying clients per month</strong> without the content hamster wheel.`
+  },
+  {
+    label:"2 · Mechanism-First",
+    tag:"Best for tech-curious coaches",
+    html:`The <span style="color:#22C55E">AI Content-to-Clients</span><br><span style="color:#E87722">Engine™:</span> Create Once,<br>Amplify Everywhere,<br><span style="color:#22C55E">Sign Clients on Autopilot</span>`,
+    sub:`One voice note becomes 30 pieces of content. One reel becomes 500 booked-call leads. <strong style="color:#e8fff2">AI does the work between your content and your calendar</strong> — we'll show you exactly how, live.`
+  },
+  {
+    label:"3 · Problem-Aware Hook",
+    tag:"Highest resonance for active posters",
+    html:`You're Posting.<br>You're Getting Views.<br><span style="color:#E87722">You're Not Getting Clients.</span><br><span style="color:#22C55E">Here's the AI Fix.</span>`,
+    sub:`The missing layer between your content and your revenue isn't more posting — it's an <strong style="color:#e8fff2">AI-powered conversion system</strong> that turns every view into a conversation and every conversation into a client.`
+  },
+  {
+    label:"4 · Agentic AI Angle",
+    tag:"Cutting-edge positioning",
+    html:`How to Deploy <span style="color:#22C55E">Agentic AI</span><br>to Turn Your Content Into<br>a <span style="color:#E87722">24/7 Client-Acquisition</span><br><span style="color:#22C55E">System</span>`,
+    sub:`Stop building content for an algorithm. Start building a <strong style="color:#e8fff2">Content-to-Clients Engine™</strong> — an AI-powered system that amplifies your best content, qualifies leads automatically, and fills your calendar while you coach.`
+  },
+  {
+    label:"5 · Contrarian / Direct",
+    tag:"Strong cold traffic hook",
+    html:`Stop Creating Content<br><span style="color:#E87722">for the Algorithm.</span><br>Start Creating It<br><span style="color:#22C55E">for Your Bank Account.</span>`,
+    sub:`There's a way to make every reel, every carousel, every email pay you back. <strong style="color:#e8fff2">The Content-to-Clients Engine™</strong> is the AI system that does it — and we're teaching it live in 90 minutes.`
+  },
+  {
+    label:"6 · Outcome-Lead",
+    tag:"Proof-driven, broad appeal",
+    html:`How Fitness Coaches Are Using<br><span style="color:#22C55E">AI to Sign 5–10 High-Ticket</span><br>Clients per Month — Starting<br>With Content <span style="color:#E87722">They Already Have</span>`,
+    sub:`No new content required. No ad budget required to start. Just <strong style="color:#e8fff2">an AI system applied to what you're already creating</strong> — turning it into a predictable client-acquisition machine.`
+  },
+  {
+    label:"7 · ROI Frame",
+    tag:"Advanced / established coaches",
+    html:`The 90-Minute System That Turns<br><span style="color:#22C55E">One Piece of Content</span><br>Into <span style="color:#E87722">$10K+ in Monthly</span><br>Recurring Revenue — Using AI`,
+    sub:`781 registrants. Millions of views. 5–10 new clients monthly. <strong style="color:#e8fff2">The Content-to-Clients Engine™</strong> is the AI workflow making it happen — and you'll build it live in this masterclass.`
+  },
+  {
+    label:"8 · Plain / Direct",
+    tag:"Lowest friction, easiest to scan",
+    html:`Create Content.<br><span style="color:#22C55E">Let AI Convert It.</span><br><span style="color:#E87722">Get Clients.</span><br>Live Masterclass for Fitness Coaches`,
+    sub:`The step-by-step AI system that closes the gap between your content and your calendar. <strong style="color:#e8fff2">90 minutes. Free. No replay.</strong> The Content-to-Clients Engine™ — live with Jordan & Erin.`
+  },
+];
+
+function buildPicker(headlines, optionsId, displayId, accentColor, isD) {
+  const container = document.getElementById(optionsId);
+  const display   = document.getElementById(displayId);
+  if (!container || !display) return;
+
+  headlines.forEach((hl, i) => {
+    const btn = document.createElement('button');
+    btn.style.cssText = `display:flex;align-items:center;gap:10px;padding:8px 12px;background:${i===0?'rgba(255,255,255,.08)':'transparent'};border:1px solid ${i===0?accentColor:'rgba(255,255,255,.1)'};border-radius:6px;cursor:pointer;text-align:left;transition:all .15s;width:100%`;
+    btn.innerHTML = `
+      <span style="font-family:'DM Mono',monospace;font-size:9px;color:${accentColor};flex-shrink:0;letter-spacing:1px;min-width:26px">${i+1}</span>
+      <span style="font-size:11px;font-weight:600;color:#e8ecf4;flex:1">${hl.label}</span>
+      <span style="font-size:9px;font-family:'DM Mono',monospace;color:rgba(255,255,255,.35);white-space:nowrap">${hl.tag}</span>
+    `;
+    btn.addEventListener('click', () => {
+      // Update display headline
+      display.innerHTML = hl.html;
+      // Update subhead if present
+      const subEl = isD
+        ? display.nextElementSibling
+        : display.nextElementSibling;
+      if (subEl && subEl.tagName === 'P') subEl.innerHTML = hl.sub;
+      // Update button styles
+      container.querySelectorAll('button').forEach(b => {
+        b.style.background = 'transparent';
+        b.style.borderColor = 'rgba(255,255,255,.1)';
+      });
+      btn.style.background = 'rgba(255,255,255,.08)';
+      btn.style.borderColor = accentColor;
+    });
+    container.appendChild(btn);
+  });
+
+  // Set first headline as default
+  display.innerHTML = headlines[0].html;
+  const sub = display.nextElementSibling;
+  if (sub && sub.tagName === 'P') sub.innerHTML = headlines[0].sub;
+}
+
+// Init both pickers once DOM is ready
+buildPicker(HL_A, 'hl-options-a', 'hl-display-a', 'rgba(232,119,34,.9)', false);
+buildPicker(HL_D, 'hl-options-d', 'hl-display-d', 'rgba(34,197,94,.9)', true);
 
 // ── NAV ──────────────────────────────────────────────────────
 function showMain(id,btn){
