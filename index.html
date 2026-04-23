@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFCA Masterclass Landing Page Kit — 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+/* ─── BRAND KIT VARIABLES ─── */
+:root {
+  --navy-dark: #102236;
+  --navy: #1E3A5F;
+  --navy-mid: #1a3352;
+  --orange: #E87722;
+  --orange-light: #F09040;
+  --blue-light: #D6E4F0;
+  --gold-playbook: #F59E0B;
+  --ink: #0E0E0C;
+  --gold: #B89356;
+  --gold-light: #D4AF71;
+  --cream: #F5F0E6;
+  --cream-dark: #EDE5D5;
+  --ink-mid: #1C1C1A;
+  --ink-light: #2A2A27;
+  --gray-500: #64748B;
+  --white: #FFFFFF;
+  --green-check: #22C55E;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* ─── SWITCHER NAV ─── */
+.kit-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 52px;
+  gap: 4px;
+}
+.kit-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: var(--orange);
+  margin-right: 24px;
+  flex-shrink: 0;
+}
+.kit-btn {
+  padding: 6px 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.kit-btn:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.06); }
+.kit-btn.active { color: #fff; background: rgba(232,119,34,0.15); border-color: rgba(232,119,34,0.4); }
+.kit-note {
+  margin-left: auto;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+/* ─── PAGE WRAPPER ─── */
+.page { display: none; padding-top: 52px; }
+.page.active { display: block; }
+
+/* ════════════════════════════════════════
+   PAGE A — BIZ OP / CLIENT ACQUISITION
+   Navy + Orange · Bebas · Playbook brand
+════════════════════════════════════════ */
+
+/* HERO A */
+.a-hero {
+  background: linear-gradient(160deg, var(--navy-dark) 0%, #0d1d31 40%, #071526 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 24px 72px;
+  text-align: center;
+}
+.a-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% -10%, rgba(232,119,34,0.18) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(74,127,165,0.03) 60px, rgba(74,127,165,0.03) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(74,127,165,0.03) 60px, rgba(74,127,165,0.03) 61px);
+  pointer-events: none;
+}
+.a-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+.a-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(232,119,34,0.12);
+  border: 1px solid rgba(232,119,34,0.35);
+  border-radius: 24px;
+  padding: 7px 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--orange-light);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.a-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(44px, 8vw, 88px);
+  line-height: 0.92;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 10px;
+  position: relative;
+}
+.a-headline .accent { color: var(--orange); }
+.a-headline .italic-serif {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 0.9em;
+  color: var(--orange-light);
+}
+.a-subhead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  max-width: 680px;
+  margin: 20px auto 36px;
+  line-height: 1.55;
+}
+.a-subhead strong { color: #fff; font-weight: 600; }
+.a-meta-row {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.a-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+}
+.a-meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+
+/* CTA BUTTON A */
+.btn-a {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 18px 52px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.4s;
+}
+.btn-a:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(232,119,34,0.35); }
+.btn-a:hover::after { transform: translateX(100%); }
+.btn-sub { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,0.35); text-transform: uppercase; margin-top: 10px; }
+
+/* PROOF BAR A */
+.a-proof-bar {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.a-proof-stat {
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+}
+.a-proof-stat .num { font-size: 22px; font-weight: 500; color: var(--orange); display: block; line-height: 1; }
+.a-proof-stat .label { font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,0.35); text-transform: uppercase; margin-top: 4px; display: block; }
+
+/* SECTION A */
+.a-section { background: var(--navy-dark); padding: 72px 24px; }
+.a-section.alt { background: #0d1d31; }
+.a-container { max-width: 800px; margin: 0 auto; }
+.a-section-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  opacity: 0.7;
+}
+.a-section-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(32px, 5vw, 52px);
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.a-section-h2 span { color: var(--orange); }
+.a-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.a-body strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+/* BULLET LIST A */
+.a-bullets { list-style: none; display: grid; gap: 14px; margin-bottom: 36px; }
+.a-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+.a-bullets li::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: rgba(232,119,34,0.15);
+  border: 1px solid rgba(232,119,34,0.4);
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+}
+.a-bullets li::after {
+  content: '✓';
+  position: absolute;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 700;
+  transform: translate(-34px, 2px);
+  pointer-events: none;
+}
+.a-bullets li strong { color: #fff; }
+
+/* SECRET CARDS A */
+.a-secrets { display: grid; gap: 16px; margin-bottom: 36px; }
+.a-secret {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(74,127,165,0.2);
+  border-left: 3px solid var(--orange);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.a-secret-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: rgba(232,119,34,0.25);
+  line-height: 1;
+  flex-shrink: 0;
+}
+.a-secret-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.a-secret-body {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* TESTIMONIAL A */
+.a-testimonials { display: grid; gap: 16px; }
+.a-testi {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(74,127,165,0.15);
+  border-radius: 10px;
+  padding: 24px;
+}
+.a-testi-result {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--orange);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.a-testi-quote {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.a-testi-author {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.35);
+  text-transform: uppercase;
+}
+
+/* BONUS A */
+.a-bonus-box {
+  background: rgba(232,119,34,0.06);
+  border: 1px solid rgba(232,119,34,0.25);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 36px;
+}
+.a-bonus-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+.a-bonus-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 14px;
+  align-items: flex-start;
+}
+.a-bonus-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--orange);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.a-bonus-title { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.a-bonus-desc { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.55; }
+
+/* HOST BIO A */
+.a-hosts { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+.a-host-card {
+  flex: 1;
+  min-width: 240px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(74,127,165,0.15);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.a-host-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), #4A7FA5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: var(--orange);
+  flex-shrink: 0;
+  border: 2px solid rgba(232,119,34,0.3);
+}
+.a-host-name { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.a-host-title { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: var(--orange); text-transform: uppercase; margin-bottom: 8px; }
+.a-host-bio { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+
+/* CTA SECTION A */
+.a-cta-section {
+  background: linear-gradient(160deg, #0d1d31 0%, var(--navy-dark) 100%);
+  padding: 80px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(232,119,34,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.a-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(232,119,34,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* FOOTER A */
+.a-footer {
+  background: var(--ink);
+  padding: 24px;
+  text-align: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ════════════════════════════════════════
+   PAGE B — LTV RETENTION REMAKE
+   Ink + Gold · Playfair · Closer brand
+════════════════════════════════════════ */
+
+.b-page { background: var(--cream); color: var(--ink); }
+
+.b-hero {
+  background: var(--ink);
+  padding: 80px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.b-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 0%, rgba(184,147,86,0.12) 0%, transparent 60%),
+    repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(184,147,86,0.02) 80px, rgba(184,147,86,0.02) 81px);
+  pointer-events: none;
+}
+.b-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+.b-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.0;
+  color: var(--cream);
+  margin-bottom: 14px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.b-headline em {
+  font-style: italic;
+  color: var(--gold-light);
+  font-weight: 400;
+}
+.b-subhead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(15px, 2.5vw, 18px);
+  font-weight: 300;
+  color: rgba(245,240,230,0.6);
+  max-width: 620px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+.b-subhead strong { color: var(--cream); font-weight: 600; }
+.b-badge {
+  display: inline-block;
+  border: 1px solid rgba(184,147,86,0.4);
+  color: var(--gold-light);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 24px;
+  margin-bottom: 28px;
+}
+
+.btn-b {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 16px 48px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-b:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,147,86,0.3); }
+
+.b-proof-bar {
+  background: var(--ink-mid);
+  border-top: 1px solid rgba(184,147,86,0.12);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.b-stat .num { display: block; font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--gold-light); line-height: 1; }
+.b-stat .label { display: block; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(245,240,230,0.3); margin-top: 4px; }
+
+.b-section { background: var(--cream); padding: 72px 24px; }
+.b-section.dark { background: var(--ink); }
+.b-section.mid { background: var(--cream-dark); }
+.b-container { max-width: 780px; margin: 0 auto; }
+.b-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; }
+.b-h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 46px);
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.b-h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+.b-h2.light { color: var(--cream); }
+.b-h2.light em { color: var(--gold-light); }
+.b-body { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; color: rgba(14,14,12,0.7); line-height: 1.8; margin-bottom: 28px; }
+.b-body.light { color: rgba(245,240,230,0.6); }
+.b-body strong { font-weight: 600; color: var(--ink); }
+.b-body.light strong { color: var(--cream); }
+
+.b-divider { width: 48px; height: 2px; background: var(--gold); margin: 0 0 28px; }
+
+.b-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 36px; }
+.b-pillar {
+  background: var(--ink);
+  border: 1px solid rgba(184,147,86,0.15);
+  border-radius: 8px;
+  padding: 24px;
+}
+.b-pillar-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; font-style: italic; color: rgba(184,147,86,0.2); line-height: 1; margin-bottom: 10px; }
+.b-pillar-title { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
+.b-pillar-body { font-size: 12px; color: rgba(245,240,230,0.45); line-height: 1.6; }
+
+.b-testimonials { display: grid; gap: 16px; }
+.b-testi {
+  border: 1px solid rgba(14,14,12,0.1);
+  border-left: 3px solid var(--gold);
+  background: #fff;
+  border-radius: 6px;
+  padding: 24px 28px;
+}
+.b-testi-result { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+.b-testi-quote { font-size: 13px; font-style: italic; color: rgba(14,14,12,0.6); line-height: 1.7; margin-bottom: 12px; }
+.b-testi-author { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: var(--gold); text-transform: uppercase; }
+
+.b-bonus {
+  background: var(--ink-light);
+  border: 1px solid rgba(184,147,86,0.2);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 32px;
+}
+.b-bonus-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+.b-bonus-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+.b-bonus-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; font-style: italic; color: rgba(184,147,86,0.3); line-height: 1; flex-shrink: 0; width: 32px; }
+.b-bonus-title { font-size: 14px; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
+.b-bonus-desc { font-size: 12px; color: rgba(245,240,230,0.4); line-height: 1.55; }
+
+.b-cta-section { background: var(--ink); padding: 80px 24px; text-align: center; border-top: 1px solid rgba(184,147,86,0.12); }
+.b-footer { background: #0a0a0a; padding: 20px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,0.15); text-transform: uppercase; }
+
+/* ════════════════════════════════════════
+   PAGE C — AI CLAUDE MASTERCLASS
+   Dark + Electric · Bebas + DM Sans
+════════════════════════════════════════ */
+
+.c-page { background: #060810; color: #e8ecf0; }
+
+.c-hero {
+  background: #060810;
+  padding: 80px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.c-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -5%, rgba(99,179,237,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 80%, rgba(232,119,34,0.06) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(99,179,237,0.02) 40px, rgba(99,179,237,0.02) 41px);
+  pointer-events: none;
+}
+.c-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #63B3ED;
+  margin-bottom: 20px;
+}
+.c-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(99,179,237,0.3);
+  background: rgba(99,179,237,0.06);
+  color: #90CDF4;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 24px;
+  margin-bottom: 28px;
+}
+.c-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: #63B3ED; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.c-headline {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 7.5vw, 86px);
+  line-height: 0.92;
+  letter-spacing: 1px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.c-headline .blue { color: #63B3ED; }
+.c-headline .orange { color: var(--orange); }
+.c-subhead {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(15px, 2.5vw, 19px);
+  font-weight: 300;
+  color: rgba(232,236,240,0.55);
+  max-width: 660px;
+  margin: 20px auto 36px;
+  line-height: 1.6;
+}
+.c-subhead strong { color: #e8ecf0; font-weight: 600; }
+
+.btn-c {
+  display: inline-block;
+  background: linear-gradient(135deg, #3182CE 0%, #63B3ED 100%);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 18px 52px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 0 32px rgba(99,179,237,0.2);
+}
+.btn-c:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(99,179,237,0.35); }
+
+.c-proof-bar {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(99,179,237,0.1);
+  border-bottom: 1px solid rgba(99,179,237,0.1);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.c-stat .num { display: block; font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #63B3ED; line-height: 1; }
+.c-stat .label { display: block; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(232,236,240,0.3); margin-top: 3px; }
+
+.c-section { background: #060810; padding: 72px 24px; }
+.c-section.alt { background: #0a0d17; }
+.c-container { max-width: 780px; margin: 0 auto; }
+.c-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: #63B3ED; text-transform: uppercase; margin-bottom: 12px; }
+.c-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 5vw, 52px);
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.c-h2 .blue { color: #63B3ED; }
+.c-h2 .orange { color: var(--orange); }
+.c-body { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; color: rgba(232,236,240,0.55); line-height: 1.8; margin-bottom: 28px; }
+.c-body strong { color: #e8ecf0; font-weight: 600; }
+
+.c-modules { display: grid; gap: 12px; margin-bottom: 36px; }
+.c-module {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(99,179,237,0.12);
+  border-left: 3px solid #3182CE;
+  border-radius: 8px;
+  padding: 18px 22px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.c-module-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #63B3ED;
+  text-transform: uppercase;
+  background: rgba(99,179,237,0.1);
+  padding: 4px 8px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.c-module-title { font-size: 14px; font-weight: 700; color: #e8ecf0; margin-bottom: 5px; }
+.c-module-body { font-size: 12px; color: rgba(232,236,240,0.45); line-height: 1.6; }
+
+.c-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-bottom: 36px; }
+.c-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(99,179,237,0.1);
+  border-radius: 10px;
+  padding: 22px;
+  transition: border-color 0.2s;
+}
+.c-card:hover { border-color: rgba(99,179,237,0.3); }
+.c-card-icon { font-size: 24px; margin-bottom: 10px; }
+.c-card-title { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 700; color: #e8ecf0; margin-bottom: 6px; }
+.c-card-body { font-size: 12px; color: rgba(232,236,240,0.45); line-height: 1.6; }
+
+.c-testimonials { display: grid; gap: 14px; }
+.c-testi {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(99,179,237,0.1);
+  border-radius: 10px;
+  padding: 22px;
+}
+.c-testi-result { font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: #63B3ED; letter-spacing: 0.5px; margin-bottom: 10px; }
+.c-testi-quote { font-size: 13px; font-style: italic; color: rgba(232,236,240,0.5); line-height: 1.65; margin-bottom: 10px; }
+.c-testi-author { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: rgba(99,179,237,0.5); text-transform: uppercase; }
+
+.c-bonus {
+  background: rgba(99,179,237,0.05);
+  border: 1px solid rgba(99,179,237,0.2);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 32px;
+}
+.c-bonus-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: #63B3ED; text-transform: uppercase; margin-bottom: 16px; }
+.c-bonus-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; }
+.c-bonus-icon { width: 32px; height: 32px; border-radius: 6px; background: rgba(99,179,237,0.15); border: 1px solid rgba(99,179,237,0.3); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.c-bonus-title { font-size: 14px; font-weight: 700; color: #e8ecf0; margin-bottom: 3px; }
+.c-bonus-desc { font-size: 12px; color: rgba(232,236,240,0.4); line-height: 1.55; }
+
+.c-cta-section { background: #0a0d17; padding: 80px 24px; text-align: center; border-top: 1px solid rgba(99,179,237,0.08); }
+.c-footer { background: #040507; padding: 20px 24px; text-align: center; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; color: rgba(255,255,255,0.12); text-transform: uppercase; border-top: 1px solid rgba(255,255,255,0.04); }
+
+/* ─── SHARED ─── */
+.text-center { text-align: center; }
+.mt-8 { margin-top: 8px; }
+.mt-16 { margin-top: 16px; }
+.mt-32 { margin-top: 32px; }
+.mb-0 { margin-bottom: 0; }
+</style>
+</head>
+<body>
+
+<!-- ══ SWITCHER ══ -->
+<nav class="kit-nav">
+  <div class="kit-brand">IFCA</div>
+  <button class="kit-btn active" onclick="show('a',this)">A · Biz Op / First Clients</button>
+  <button class="kit-btn" onclick="show('b',this)">B · LTV Retention Remake</button>
+  <button class="kit-btn" onclick="show('c',this)">C · AI Claude Masterclass</button>
+  <div class="kit-note">Copy Kit — 3 Landing Page Options</div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+  PAGE A — BIZ OP / CLIENT ACQUISITION
+  Angle: Getting your first or next 3–5 paying clients
+  Design: Navy + Orange · Bebas Neue · Playbook brand
+  Benchmark to beat: 13.93% (LTV) · 14.61% (Sept 2025)
+══════════════════════════════════════════════════════ -->
+<div id="page-a" class="page active">
+
+  <!-- HERO -->
+  <section class="a-hero">
+    <p class="a-eyebrow">Free Live Masterclass · For Online Fitness, Nutrition & Health Coaches</p>
+    <div class="a-badge">📅 Join us live · [Date] at [Time] EST</div>
+    <h1 class="a-headline">
+      How To Sign Your<br>
+      <span class="italic-serif">First (Or Next) 3–5</span><br>
+      <span class="accent">High-Ticket Clients</span><br>
+      In 30 Days
+    </h1>
+    <p class="a-subhead">
+      The <strong>One-Day Masterclass Funnel™</strong> — the exact system 4,600+ coaches have used to go from grinding DMs and posting daily to <strong>consistent $10K–$50K months</strong> without a big audience or complicated tech.
+    </p>
+    <div class="a-meta-row">
+      <div class="a-meta-item"><span class="a-meta-dot"></span>Live on Zoom · [Date]</div>
+      <div class="a-meta-item"><span class="a-meta-dot"></span>90 Minutes · No Replay</div>
+      <div class="a-meta-item"><span class="a-meta-dot"></span>Free · Limited Seats</div>
+    </div>
+    <a href="#" class="btn-a">Save My Free Seat Now →</a>
+    <p class="btn-sub">Limited spots · Seats are filling fast</p>
+  </section>
+
+  <!-- PROOF BAR -->
+  <div class="a-proof-bar">
+    <div class="a-proof-stat"><span class="num">4,600+</span><span class="label">Coaches Trained</span></div>
+    <div class="a-proof-stat"><span class="num">$100M+</span><span class="label">Client Revenue Generated</span></div>
+    <div class="a-proof-stat"><span class="num">3.5 Wks</span><span class="label">Avg. First Client</span></div>
+    <div class="a-proof-stat"><span class="num">7+ Yrs</span><span class="label">In The Trenches</span></div>
+  </div>
+
+  <!-- PROBLEM SECTION -->
+  <section class="a-section">
+    <div class="a-container">
+      <p class="a-section-tag">The Real Problem</p>
+      <h2 class="a-section-h2">You're Not Running <span>One Business.</span><br>You're Running Three.</h2>
+      <p class="a-body">
+        Right now, you're spinning three separate, exhausting plates: <strong>generating leads, nurturing those leads, and converting them into paying clients</strong> — all at the same time, with the same limited hours, on the same phone you're trying to coach from.
+      </p>
+      <p class="a-body">
+        Cold outreach sucks. Posting every day is exhausting and unpredictable. And your sales calls keep booking with people who "need to think about it." <strong>The system is broken — not you.</strong>
+      </p>
+      <ul class="a-bullets">
+        <li><strong>Lead Generation:</strong> You're told to post more, DM more, story more. It works until it doesn't.</li>
+        <li><strong>Lead Nurture:</strong> Content alone doesn't go deep enough. DMs don't scale.</li>
+        <li><strong>Lead Conversion:</strong> Sales calls with cold, un-nurtured leads who haven't been pre-sold.</li>
+      </ul>
+      <div class="text-center mt-32">
+        <p class="a-section-tag" style="margin-bottom:8px">What if there was one system</p>
+        <h2 class="a-section-h2" style="font-size:clamp(28px,4vw,44px)">That does all three jobs<br><span>simultaneously?</span></h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="a-section alt">
+    <div class="a-container">
+      <p class="a-section-tag">Inside The Masterclass</p>
+      <h2 class="a-section-h2">3 <span>Secrets</span> That Change<br>Everything For Coaches</h2>
+      <div class="a-secrets">
+        <div class="a-secret">
+          <div class="a-secret-num">01</div>
+          <div>
+            <div class="a-secret-title">Why You Don't Need More Followers — You Need a Better System</div>
+            <div class="a-secret-body">We'll debunk the biggest lie in online coaching: that a bigger audience = more clients. You'll see exactly how coaches with under 1,000 followers are outearning coaches with 50,000.</div>
+          </div>
+        </div>
+        <div class="a-secret">
+          <div class="a-secret-num">02</div>
+          <div>
+            <div class="a-secret-title">The One-Day Funnel That Generates, Warms, and Converts — All in 90 Minutes</div>
+            <div class="a-secret-body">The exact funnel architecture behind $74,909 in revenue from a single event. How to build it in 2 hours, run it once a month, and make it your primary client acquisition engine.</div>
+          </div>
+        </div>
+        <div class="a-secret">
+          <div class="a-secret-num">03</div>
+          <div>
+            <div class="a-secret-title">The Paid Amplification Method That Turns $10 into Booked Calls</div>
+            <div class="a-secret-body">We'll show you the simple ad strategy that makes this work for coaches with tiny audiences — including the Andromeda creative framework that's generating $31/lead for IFCA right now.</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#" class="btn-a">Claim Your Spot — It's Free →</a>
+        <p class="btn-sub">Live Only · No Replay · [Date] at [Time] EST</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="a-section">
+    <div class="a-container">
+      <p class="a-section-tag">Real Results. Real Coaches.</p>
+      <h2 class="a-section-h2">Coaches Who've <span>Built This System</span></h2>
+      <div class="a-testimonials">
+        <div class="a-testi">
+          <div class="a-testi-result">$3K → $61K/Month in Under 12 Months</div>
+          <div class="a-testi-quote">"I had no audience, no ad budget, and no idea what I was doing. After IFCA I ran my first masterclass with 726 registrants and signed clients I never would have found through DMs. This system is the difference between guessing and knowing."</div>
+          <div class="a-testi-author">— Kacey, Online Fitness Coach, IFCA Student</div>
+        </div>
+        <div class="a-testi">
+          <div class="a-testi-result">$74,909 Revenue From One Live Event</div>
+          <div class="a-testi-quote">"The January Rush masterclass changed everything. 726 registrants, 10.77x ROAS, and a system I now run monthly. I used to think I needed viral content to get clients. I just needed the right event."</div>
+          <div class="a-testi-author">— IFCA Student, Online Nutrition Coach</div>
+        </div>
+        <div class="a-testi">
+          <div class="a-testi-result">First Client Signed in 3.5 Weeks</div>
+          <div class="a-testi-quote">"I was brand new — no followers, no ads, no email list. IFCA gave me the system and my first high-paying client closed in week 3. The masterclass funnel did all the heavy lifting."</div>
+          <div class="a-testi-author">— New Coach, IFCA Student 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="a-section alt">
+    <div class="a-container">
+      <p class="a-section-tag">Exclusive Live Bonuses</p>
+      <h2 class="a-section-h2">Attend Live and <span>Walk Away With</span></h2>
+      <div class="a-bonus-box">
+        <div class="a-bonus-label">🎁 For Live Attendees Only</div>
+        <div class="a-bonus-item">
+          <div class="a-bonus-icon">📊</div>
+          <div>
+            <div class="a-bonus-title">Bonus #1: The IFCA Projection Calculator™</div>
+            <div class="a-bonus-desc">Know exactly what you'll make before spending $1 on ads. Plug in your numbers and get your CPL, show rate, booking rate, and ROAS forecast in 5 minutes.</div>
+          </div>
+        </div>
+        <div class="a-bonus-item">
+          <div class="a-bonus-icon">🎯</div>
+          <div>
+            <div class="a-bonus-title">Bonus #2: The Client Getting Ad Script Pack</div>
+            <div class="a-bonus-desc">5 proven ad scripts you can film on your phone this week. The exact hooks and angles that drove 421 registrants at $31/lead on IFCA's last webinar.</div>
+          </div>
+        </div>
+        <div class="a-bonus-item">
+          <div class="a-bonus-icon">🔥</div>
+          <div>
+            <div class="a-bonus-title">Bonus #3: Live Q&A with Jordan & Erin</div>
+            <div class="a-bonus-desc">Bring your specific situation, niche, or funnel question. This is where 6- and 7-figure coaches get answers to what's actually holding them back.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOST BIO -->
+  <section class="a-section">
+    <div class="a-container">
+      <p class="a-section-tag">Your Hosts</p>
+      <h2 class="a-section-h2">Built <span>4,600+</span> Coaching<br>Businesses From Scratch</h2>
+      <div class="a-hosts">
+        <div class="a-host-card">
+          <div class="a-host-avatar">JD</div>
+          <div>
+            <div class="a-host-name">Jordan Dugger</div>
+            <div class="a-host-title">Co-Founder, IFCA</div>
+            <div class="a-host-bio">Jordan built IFCA into the longest-standing mentorship in the online fitness coaching space — 7+ years, 4,600+ students, $100M+ in client revenue. He's the architect behind the One-Day Masterclass Funnel™.</div>
+          </div>
+        </div>
+        <div class="a-host-card">
+          <div class="a-host-avatar">ED</div>
+          <div>
+            <div class="a-host-name">Erin Dimond</div>
+            <div class="a-host-title">Co-Founder, IFCA</div>
+            <div class="a-host-bio">Erin built a $500K/year online coaching business before burnout forced her to build systems. Now she teaches coaches how to sign high-ticket clients without sacrificing their life in the process.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="a-cta-section">
+    <div class="a-container">
+      <p class="a-eyebrow" style="margin-bottom:12px">Don't Miss This</p>
+      <h2 class="a-section-h2" style="font-size:clamp(32px,5vw,58px);margin-bottom:16px">
+        Your Next 3–5 Clients Are<br><span class="accent">One System Away</span>
+      </h2>
+      <p class="a-body" style="max-width:540px;margin:0 auto 32px">
+        Every month you don't have this system is another month of DMs, guesswork, and inconsistent revenue. This masterclass takes 90 minutes. The system takes 2 hours to build. <strong>Your first client could be within 30 days.</strong>
+      </p>
+      <a href="#" class="btn-a">Reserve My Free Seat →</a>
+      <p class="btn-sub" style="margin-top:12px">[Date] · [Time] EST · Live on Zoom · Limited Spots</p>
+    </div>
+  </section>
+
+  <footer class="a-footer">
+    © 2026 Impact Fitness Coaching Academy · All Rights Reserved<br>
+    NASM · AFAA · ISSA Approved Continuing Education Provider
+    <br><br>
+    <span style="opacity:0.5">Disclaimer · Privacy Policy · Terms and Conditions</span>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+  PAGE B — LTV RETENTION METHOD REMAKE
+  Angle: Add $100K+ without signing a single new client
+  Design: Ink + Gold · Playfair Display · Closer brand
+  Based on: 5,679 LP views · 715 opt-ins · 13.93% CVR
+  Target: Beat 13.93% with stronger above-fold hook
+══════════════════════════════════════════════════════ -->
+<div id="page-b" class="page b-page">
+
+  <!-- HERO -->
+  <section class="b-hero">
+    <p class="b-eyebrow">Free Live Workshop · Online Fitness, Nutrition & Health Coaches</p>
+    <div class="b-badge">📅 Live · [Date] at [Time] EST</div>
+    <h1 class="b-headline">
+      How to Add <em>$146,000</em><br>
+      in Revenue Without<br>
+      Signing a Single<br>
+      New Client
+    </h1>
+    <p class="b-subhead">
+      The <strong>5-Step Community Funnel™</strong> — the retention method behind Vanessa's $702K year signing just 2–3 clients per month, and David's $96,260 from one round of back-end calls.
+    </p>
+    <a href="#" class="btn-b">Watch the Free Workshop →</a>
+    <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,0.25);text-transform:uppercase;margin-top:12px">Limited replay access · [Date] only</p>
+  </section>
+
+  <!-- PROOF BAR -->
+  <div class="b-proof-bar">
+    <div class="b-stat"><span class="num">$702K</span><span class="label">Vanessa's Year (2–3 Clients/Mo)</span></div>
+    <div class="b-stat"><span class="num">$96,260</span><span class="label">David's Back-End in One Round</span></div>
+    <div class="b-stat"><span class="num">40–60%</span><span class="label">Back-End Close Rate</span></div>
+    <div class="b-stat"><span class="num">3,987+</span><span class="label">Coaches Trained</span></div>
+  </div>
+
+  <!-- PROBLEM -->
+  <section class="b-section dark">
+    <div class="b-container">
+      <div class="b-tag">The Problem No One Talks About</div>
+      <h2 class="b-h2 light">You're Leaving Six Figures<br><em>on the Table Every Year.</em></h2>
+      <div class="b-divider" style="background:var(--gold);"></div>
+      <p class="b-body light">
+        Most coaches are so focused on getting <em>new</em> clients that they completely ignore the most valuable asset they already have: <strong>their existing client base.</strong>
+      </p>
+      <p class="b-body light">
+        Every client who finishes your program and disappears is a missed $5,000–$15,000 opportunity. Every re-sign you don't ask for is revenue your business is quietly hemorrhaging. <strong>The math behind $146K is simpler than you think — and it starts with the clients already paying you.</strong>
+      </p>
+      <div class="b-pillars">
+        <div class="b-pillar">
+          <div class="b-pillar-num">01</div>
+          <div class="b-pillar-title">The Back-End Revenue Gap</div>
+          <div class="b-pillar-body">Back-end clients convert at 40–60% vs. 20–40% for new clients. You're working twice as hard for worse results.</div>
+        </div>
+        <div class="b-pillar">
+          <div class="b-pillar-num">02</div>
+          <div class="b-pillar-title">The Retention Blindspot</div>
+          <div class="b-pillar-body">Most programs have a churn problem disguised as a growth problem. The fix isn't more leads — it's a community.</div>
+        </div>
+        <div class="b-pillar">
+          <div class="b-pillar-num">03</div>
+          <div class="b-pillar-title">The New Client Treadmill</div>
+          <div class="b-pillar-body">Constantly replacing lost clients is expensive and exhausting. One retention system breaks this cycle permanently.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="b-section mid">
+    <div class="b-container">
+      <div class="b-tag">Inside the Workshop</div>
+      <h2 class="b-h2">What You'll Walk Away<br><em>Knowing How to Do</em></h2>
+      <div class="b-divider"></div>
+      <ul class="a-bullets" style="--check-color: var(--gold)">
+        <li style="font-family:'DM Sans',sans-serif;color:rgba(14,14,12,0.8)"><strong>The Only 3 Ways to Build a Profitable Coaching Business</strong> — and why most coaches are stuck on the hardest, most expensive one.</li>
+        <li style="font-family:'DM Sans',sans-serif;color:rgba(14,14,12,0.8)"><strong>The Money Math Behind $146K</strong> — sign just 2 clients per month with this back-end structure and watch what happens to your annual revenue.</li>
+        <li style="font-family:'DM Sans',sans-serif;color:rgba(14,14,12,0.8)"><strong>The 5-Step Community Funnel™</strong> — the exact framework that 2–4x's retention, builds recurring income, and fills back-end offers at 40–60% close rates.</li>
+        <li style="font-family:'DM Sans',sans-serif;color:rgba(14,14,12,0.8)"><strong>How to Uncover Your Hidden Back-End Revenue</strong> — the offer structure killing your retention and exactly how to fix it.</li>
+        <li style="font-family:'DM Sans',sans-serif;color:rgba(14,14,12,0.8)"><strong>The Re-Sign Script</strong> — how Erin walks coaches through the exact 6-step script that David used to go 24-for-26 on back-end calls.</li>
+      </ul>
+      <div class="text-center">
+        <a href="#" class="btn-b">Access the Free Workshop →</a>
+        <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(14,14,12,0.3);text-transform:uppercase;margin-top:10px">Live [Date] · Limited Access</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="b-section">
+    <div class="b-container">
+      <div class="b-tag">Proven Results</div>
+      <h2 class="b-h2">The Method Behind<br><em>Real Coach Transformations</em></h2>
+      <div class="b-divider"></div>
+      <div class="b-testimonials">
+        <div class="b-testi">
+          <div class="b-testi-result">$702K Year. 2–3 Clients Per Week.</div>
+          <div class="b-testi-quote">"In 2022 my business made $702,000 in revenue, and I only had to sign 2–3 clients per week. That means I only had to take 3–5 sales calls per week at a 70% close rate. I quit my job as an accountant, went full-time in 4 weeks, and now I'm on track to $1M."</div>
+          <div class="b-testi-author">— Vanessa Gillette, IFCA Student</div>
+        </div>
+        <div class="b-testi">
+          <div class="b-testi-result">$96,260 From One Round of Back-End Calls.</div>
+          <div class="b-testi-quote">"Before IFCA I was working 4 jobs making $8,000/month. I had a $40K launch and re-signed 24 current clients — went 24 of 26. I'd never done back-ends before. I was terrified. $96,260 contracted in one round. It's uncomfortable in the best way."</div>
+          <div class="b-testi-author">— David Pegram, IFCA Student</div>
+        </div>
+        <div class="b-testi">
+          <div class="b-testi-result">$30K–$40K MRR Without New Clients.</div>
+          <div class="b-testi-quote">"I was doing $20K–$30K months but losing money. We implemented the LTV retention method. Now I have $30K–$40K in MRR. I could not sign another client for 4–6 months and still be profitable."</div>
+          <div class="b-testi-author">— Alycia Israel, IFCA Student</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="b-section dark">
+    <div class="b-container">
+      <div class="b-tag">Live Attendee Bonuses</div>
+      <h2 class="b-h2 light">Register Now and Receive<br><em>3 Exclusive Resources</em></h2>
+      <div class="b-divider" style="background:var(--gold)"></div>
+      <div class="b-bonus">
+        <div class="b-bonus-tag">🎁 Yours When You Register</div>
+        <div class="b-bonus-item">
+          <div class="b-bonus-num">I</div>
+          <div>
+            <div class="b-bonus-title">The LTV Re-Sign Script</div>
+            <div class="b-bonus-desc">The 6-step script to convert back-end clients at 40–60%. This will be the easiest sales call you've ever had.</div>
+          </div>
+        </div>
+        <div class="b-bonus-item">
+          <div class="b-bonus-num">II</div>
+          <div>
+            <div class="b-bonus-title">The IFCA Money Math Spreadsheet</div>
+            <div class="b-bonus-desc">Determine exactly how many clients you need to hit your 2026 revenue goal. (It's way less than you think.)</div>
+          </div>
+        </div>
+        <div class="b-bonus-item">
+          <div class="b-bonus-num">III</div>
+          <div>
+            <div class="b-bonus-title">Unfiltered Q&A with Jordan & Erin</div>
+            <div class="b-bonus-desc">6– and 7–figure coaches ask the exact questions you're thinking. Bring your most challenging retention or back-end situation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOST -->
+  <section class="b-section">
+    <div class="b-container">
+      <div class="b-tag">Your Hosts</div>
+      <h2 class="b-h2">The System Behind<br><em>4,600+ Coaching Businesses</em></h2>
+      <div class="b-divider"></div>
+      <div class="a-hosts">
+        <div class="a-host-card" style="background:var(--ink);border-color:rgba(184,147,86,0.15)">
+          <div class="a-host-avatar" style="background:linear-gradient(135deg,var(--ink-light),#2a2a27);border-color:rgba(184,147,86,0.3);color:var(--gold)">JD</div>
+          <div>
+            <div class="a-host-name" style="color:var(--cream)">Jordan Dugger</div>
+            <div class="a-host-title" style="color:var(--gold)">Co-Founder, IFCA</div>
+            <div class="a-host-bio" style="color:rgba(245,240,230,0.4)">Built the longest-standing mentorship in online fitness coaching. Architect of the LTV Retention Method and Community Funnel framework that's added millions in back-end revenue for IFCA students.</div>
+          </div>
+        </div>
+        <div class="a-host-card" style="background:var(--ink);border-color:rgba(184,147,86,0.15)">
+          <div class="a-host-avatar" style="background:linear-gradient(135deg,var(--ink-light),#2a2a27);border-color:rgba(184,147,86,0.3);color:var(--gold)">ED</div>
+          <div>
+            <div class="a-host-name" style="color:var(--cream)">Erin Dimond</div>
+            <div class="a-host-title" style="color:var(--gold)">Co-Founder, IFCA</div>
+            <div class="a-host-bio" style="color:rgba(245,240,230,0.4)">Made $500K/year online — and didn't take a single day off. Until she built systems. Now she teaches coaches how to build recurring revenue without sacrificing their life in the process.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="b-cta-section">
+    <div class="b-container">
+      <div class="b-tag" style="color:var(--gold-light)">One Last Thing</div>
+      <h2 class="b-h2 light" style="font-size:clamp(28px,5vw,52px);margin-bottom:16px">
+        Your Back-End Revenue Is<br><em>Already Waiting for You</em>
+      </h2>
+      <p class="b-body light" style="max-width:520px;margin:0 auto 32px">
+        The clients who trust you most are the ones you already have. This workshop shows you exactly how to turn that trust into $146,000+ in recurring, back-end revenue — without a single new client.
+      </p>
+      <a href="#" class="btn-b">Access the Free Workshop →</a>
+      <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,0.2);text-transform:uppercase;margin-top:12px">[Date] · [Time] EST · Limited Replay Access</p>
+    </div>
+  </section>
+
+  <footer class="b-footer">
+    © 2026 Impact Fitness Coaching Academy · All Rights Reserved ·
+    NASM · AFAA · ISSA Approved Continuing Education Provider<br>
+    <span style="opacity:0.5">Disclaimer · Privacy Policy · Terms and Conditions</span>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+  PAGE C — AI CLAUDE MASTERCLASS
+  Angle: AI content system → 5–10 clients/month on autopilot
+  Design: Dark navy/black + electric blue · Tech-forward
+  Based on: Sept 2025 — 4,846 views · 606 opt-ins · 14.61%
+  Target: Use AI-specific urgency + system language to beat 14.61%
+══════════════════════════════════════════════════════ -->
+<div id="page-c" class="page c-page">
+
+  <!-- HERO -->
+  <section class="c-hero">
+    <p class="c-eyebrow">Free Live Masterclass · Online Health, Fitness & Nutrition Coaches</p>
+    <div class="c-badge"><span class="c-badge-dot"></span>Live Event · [Date] at [Time] EST</div>
+    <h1 class="c-headline">
+      The <span class="blue">AI Masterclass</span><br>
+      <span class="orange">Funnel™:</span> How to Use<br>
+      Claude to Build a<br>
+      <span class="blue">Client-Getting Machine</span>
+    </h1>
+    <p class="c-subhead">
+      How our coaches are using <strong>AI + simple paid amplification</strong> to generate millions of views, fill their DMs with qualified leads, and sign <strong>5–10 high-paying clients per month</strong> — without becoming full-time content creators.
+    </p>
+    <div class="a-meta-row">
+      <div class="a-meta-item" style="color:rgba(232,236,240,0.4)"><span style="width:6px;height:6px;border-radius:50%;background:#63B3ED;flex-shrink:0;display:inline-block;margin-right:8px"></span>Live on Zoom · [Date]</div>
+      <div class="a-meta-item" style="color:rgba(232,236,240,0.4)"><span style="width:6px;height:6px;border-radius:50%;background:#63B3ED;flex-shrink:0;display:inline-block;margin-right:8px"></span>90 Minutes · No Replay</div>
+      <div class="a-meta-item" style="color:rgba(232,236,240,0.4)"><span style="width:6px;height:6px;border-radius:50%;background:#63B3ED;flex-shrink:0;display:inline-block;margin-right:8px"></span>Free · Limited Seats</div>
+    </div>
+    <a href="#" class="btn-c">Claim My Free Seat →</a>
+    <p class="btn-sub" style="color:rgba(232,236,240,0.25)">Spots are limited — AI-era coaches only</p>
+  </section>
+
+  <!-- PROOF BAR -->
+  <div class="c-proof-bar">
+    <div class="c-stat"><span class="num">Millions</span><span class="label">Views Generated for IFCA Coaches</span></div>
+    <div class="c-stat"><span class="num">$31/Lead</span><span class="label">Avg CPL on IFCA's AI Webinars</span></div>
+    <div class="c-stat"><span class="num">781</span><span class="label">Max Registrants in One Event</span></div>
+    <div class="c-stat"><span class="num">4,600+</span><span class="label">Coaches In the System</span></div>
+  </div>
+
+  <!-- DISCLAIMER / DISRUPTION -->
+  <section class="c-section">
+    <div class="c-container">
+      <p class="c-tag">The Old Rules Are Dead</p>
+      <h2 class="c-h2">The Coaches Who<br><span class="blue">Ignore AI</span> Are Being<br><span class="orange">Left Behind</span></h2>
+      <p class="c-body">
+        For years, coaches were told to grind out posts and <em>hope</em> one went viral. To hope their ideal client would magically appear in their DMs. <strong>That era is over.</strong>
+      </p>
+      <p class="c-body">
+        The coaches winning right now aren't posting more — they're using AI to create content that's already been proven to convert, then paying cents to amplify it to the exact people who need them. <strong>This masterclass shows you exactly how they're doing it.</strong>
+      </p>
+      <div class="c-cards">
+        <div class="c-card">
+          <div class="c-card-icon">🚀</div>
+          <div class="c-card-title">Content on Autopilot</div>
+          <div class="c-card-body">AI builds your 90-day content calendar in minutes. You film once, amplify forever, and stop the endless hamster wheel.</div>
+        </div>
+        <div class="c-card">
+          <div class="c-card-icon">🎯</div>
+          <div class="c-card-title">Qualified Leads in Your DMs</div>
+          <div class="c-card-body">Every post is engineered to attract buyers, not just followers. No more DMing cold strangers — they come to you.</div>
+        </div>
+        <div class="c-card">
+          <div class="c-card-icon">⚡</div>
+          <div class="c-card-title">Scale Without More Hours</div>
+          <div class="c-card-body">The system works while you coach. One good reel, amplified right, can book your calendar for weeks.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="c-section alt">
+    <div class="c-container">
+      <p class="c-tag">Inside the Masterclass</p>
+      <h2 class="c-h2">The 3-Step <span class="blue">AI Content Engine™</span><br>You'll Build Live</h2>
+      <div class="c-modules">
+        <div class="c-module">
+          <div class="c-module-tag">Module 01</div>
+          <div>
+            <div class="c-module-title">The AI Content Factory — 10 Templates That Drive Views and Sales</div>
+            <div class="c-module-body">We'll hand you the 10 proven post templates that have generated millions of views for IFCA coaches. Then use Claude to turn them into content in your own voice in under 10 minutes.</div>
+          </div>
+        </div>
+        <div class="c-module">
+          <div class="c-module-tag">Module 02</div>
+          <div>
+            <div class="c-module-title">The Done-For-You 90-Day Content Calendar</div>
+            <div class="c-module-body">Never stare at a blank screen again. You'll leave this masterclass with a full 90-day content plan — hooks, angles, and post ideas — built specifically for your niche using AI.</div>
+          </div>
+        </div>
+        <div class="c-module">
+          <div class="c-module-tag">Module 03</div>
+          <div>
+            <div class="c-module-title">The Andromeda Paid Amplification Method — $31/Lead on Meta</div>
+            <div class="c-module-body">The exact ad strategy we're running right now: how to take your best organic content, add $10–$50/day in paid amplification, and turn it into a predictable lead machine. No big budget required.</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#" class="btn-c">Save My Seat →</a>
+        <p class="btn-sub" style="color:rgba(232,236,240,0.25)">Live [Date] · [Time] EST · No Replay</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="c-section">
+    <div class="c-container">
+      <p class="c-tag">Coaches Using the System</p>
+      <h2 class="c-h2">Real Results from<br><span class="blue">AI-First Coaches</span></h2>
+      <div class="c-testimonials">
+        <div class="c-testi">
+          <div class="c-testi-result">781 Registrants From One AI-Backed Webinar</div>
+          <div class="c-testi-quote">"We used the AI content system to promote our July masterclass and hit 781 registrants — the most we'd ever had. The organic content did half the heavy lifting and the paid ads did the rest. Total spend: $14,717. This is the future."</div>
+          <div class="c-testi-author">— IFCA Team, July 2024 AI Viral Webinar</div>
+        </div>
+        <div class="c-testi">
+          <div class="c-testi-result">5–10 New Clients Monthly, No Content Burnout</div>
+          <div class="c-testi-quote">"Before AI I was posting every day and getting nowhere. Now I batch my content in 2 hours, let Claude write the hooks, run $20/day in ads, and my DMs don't stop. I went from 2 clients to fully booked in 8 weeks."</div>
+          <div class="c-testi-author">— IFCA Student, Online Nutrition Coach</div>
+        </div>
+        <div class="c-testi">
+          <div class="c-testi-result">$29,300 From a Single AI-Promoted Webinar</div>
+          <div class="c-testi-quote">"The AI content framework made our March 2025 webinar the easiest we've ever launched. 477 registrants, all from content we built in an afternoon using Claude. The system works."</div>
+          <div class="c-testi-author">— IFCA Student, March 2025 Webinar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="c-section alt">
+    <div class="c-container">
+      <p class="c-tag">Live Attendee Bonuses</p>
+      <h2 class="c-h2">Stay Live and Walk Away<br>with <span class="blue">These Resources</span></h2>
+      <div class="c-bonus">
+        <div class="c-bonus-tag">🎁 Live Attendees Only</div>
+        <div class="c-bonus-item">
+          <div class="c-bonus-icon">🤖</div>
+          <div>
+            <div class="c-bonus-title">Bonus #1: The Claude Prompt Pack for Coaches</div>
+            <div class="c-bonus-desc">50 battle-tested prompts that turn a 30-second idea into a week of scroll-stopping content. Formatted for Claude, ready to run.</div>
+          </div>
+        </div>
+        <div class="c-bonus-item">
+          <div class="c-bonus-icon">📅</div>
+          <div>
+            <div class="c-bonus-title">Bonus #2: The 90-Day AI Content Calendar Template</div>
+            <div class="c-bonus-desc">The exact spreadsheet Jordan's team uses to plan 3 months of content in 2 hours. Drop in your niche and the AI fills it in.</div>
+          </div>
+        </div>
+        <div class="c-bonus-item">
+          <div class="c-bonus-icon">🎯</div>
+          <div>
+            <div class="c-bonus-title">Bonus #3: Live Ad Review with Jordan & Erin</div>
+            <div class="c-bonus-desc">Bring your current ads or organic content. We'll diagnose why it's not converting and show you exactly how to fix it using the Andromeda framework.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOSTS -->
+  <section class="c-section">
+    <div class="c-container">
+      <p class="c-tag">Your Hosts</p>
+      <h2 class="c-h2">The Team Behind<br><span class="blue">4,600+</span> Coaching Businesses</h2>
+      <div class="a-hosts">
+        <div class="a-host-card" style="background:rgba(255,255,255,0.03);border-color:rgba(99,179,237,0.15)">
+          <div class="a-host-avatar" style="background:rgba(99,179,237,0.1);border-color:rgba(99,179,237,0.3);color:#63B3ED">JD</div>
+          <div>
+            <div class="a-host-name">Jordan Dugger</div>
+            <div class="a-host-title" style="color:#63B3ED">Co-Founder, IFCA</div>
+            <div class="a-host-bio">Jordan has been at the forefront of AI-driven marketing for fitness coaches since 2023. He built the Andromeda ad creative framework and the AI content engine system that's now generating millions of views for IFCA coaches monthly.</div>
+          </div>
+        </div>
+        <div class="a-host-card" style="background:rgba(255,255,255,0.03);border-color:rgba(99,179,237,0.15)">
+          <div class="a-host-avatar" style="background:rgba(99,179,237,0.1);border-color:rgba(99,179,237,0.3);color:#63B3ED">ED</div>
+          <div>
+            <div class="a-host-name">Erin Dimond</div>
+            <div class="a-host-title" style="color:#63B3ED">Co-Founder, IFCA</div>
+            <div class="a-host-bio">Erin uses AI to batch a month of content in 2 hours. She's the proof that this system works for real coaches — and she'll show you exactly how she does it live in this masterclass.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="c-cta-section">
+    <div class="c-container">
+      <p class="c-tag" style="text-align:center;margin-bottom:8px">Don't Miss This</p>
+      <h2 class="c-h2" style="text-align:center;font-size:clamp(28px,5vw,52px);margin-bottom:16px">
+        The AI Advantage is<br><span class="blue">Closing Fast</span>
+      </h2>
+      <p class="c-body" style="max-width:520px;margin:0 auto 32px;text-align:center">
+        Every month you're posting manually is another month your competitors are using AI to out-create, out-distribute, and out-earn you. This masterclass takes 90 minutes. <strong>The system change lasts forever.</strong>
+      </p>
+      <div class="text-center">
+        <a href="#" class="btn-c">Reserve My Free Seat →</a>
+        <p class="btn-sub" style="color:rgba(232,236,240,0.25);margin-top:12px">[Date] · [Time] EST · Live on Zoom · Limited Spots</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="c-footer">
+    © 2026 Impact Fitness Coaching Academy · All Rights Reserved ·
+    NASM · AFAA · ISSA Approved Continuing Education Provider<br>
+    <span style="opacity:0.5">Disclaimer · Privacy Policy · Terms and Conditions</span>
+  </footer>
+</div>
+
+<script>
+function show(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.kit-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
