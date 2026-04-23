@@ -304,6 +304,110 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 .lp-ta-c{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(99,179,237,.48);text-transform:uppercase;}
 .lp-c-footer{background:#040507;padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.12);text-transform:uppercase;}
 
+/* ─ Option D — Built, Scaled & Sold ─ */
+.lp-page-d{background:#0D0F14;}
+.lp-d-ticker{background:#C44B2B;overflow:hidden;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.12);}
+.lp-d-ticker-track{display:flex;width:max-content;animation:lp-ticker 28s linear infinite;}
+.lp-d-ticker-track span{white-space:nowrap;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;padding:0 36px;}
+.lp-d-ticker-track span::before{content:"★  ";opacity:.6;}
+@keyframes lp-ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.lp-d-breaking{background:#F5F0E8;padding:9px 24px;display:flex;align-items:center;gap:12px;border-bottom:3px solid #C44B2B;}
+.lp-d-btag{background:#C44B2B;color:#fff;font-family:'DM Mono',monospace;font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;flex-shrink:0;}
+.lp-d-btext{font-family:'DM Sans',sans-serif;font-weight:500;font-size:12px;color:#0D0F14;}
+.lp-d-btext strong{font-weight:700;}
+.lp-d-hero{background:#0D0F14;min-height:96vh;display:flex;flex-direction:column;justify-content:center;padding:80px 24px 96px;position:relative;overflow:hidden;}
+.lp-d-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 65% 50%,rgba(201,168,76,0.07) 0%,transparent 65%),radial-gradient(ellipse 35% 70% at 5% 50%,rgba(196,75,43,0.05) 0%,transparent 60%);pointer-events:none;}
+.lp-d-hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.lp-d-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.lp-d-eyebrow-line{width:32px;height:2px;background:#C9A84C;}
+.lp-d-eyebrow-txt{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;}
+.lp-d-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(50px,6.5vw,84px);line-height:.93;letter-spacing:.02em;color:#F5F0E8;margin-bottom:12px;}
+.lp-d-h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;letter-spacing:0;font-size:.9em;}
+.lp-d-sub{font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;color:rgba(245,240,232,0.6);margin:14px 0 28px;line-height:1.55;}
+.lp-d-meta{display:flex;flex-direction:column;gap:9px;margin-bottom:32px;}
+.lp-d-meta-row{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.75);}
+.lp-d-meta-icon{color:#C9A84C;flex-shrink:0;font-size:13px;}
+.lp-d-meta-row strong{color:#F5F0E8;}
+.lp-d-reg{background:rgba(245,240,232,0.04);border:1px solid rgba(201,168,76,0.25);padding:32px 28px 28px;position:relative;overflow:hidden;}
+.lp-d-reg::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C44B2B,#C9A84C,#C44B2B);}
+.lp-d-reg-lbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#C9A84C;margin-bottom:8px;}
+.lp-d-reg h3{font-family:'Instrument Serif',serif;font-size:22px;color:#F5F0E8;margin-bottom:4px;line-height:1.2;}
+.lp-d-reg-date{font-family:'DM Mono',monospace;font-size:10px;color:rgba(245,240,232,0.4);margin-bottom:24px;font-style:italic;}
+.lp-d-seats{background:rgba(196,75,43,0.12);border:1px solid rgba(196,75,43,0.35);color:#e88070;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;display:inline-flex;align-items:center;gap:6px;margin-bottom:18px;}
+.lp-d-seats::before{content:'●';animation:lp-blink 1.4s ease-in-out infinite;}
+@keyframes lp-blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+.lp-d-input{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(201,168,76,0.2);color:#F5F0E8;font-family:'DM Sans',sans-serif;font-size:13px;padding:12px 14px;margin-bottom:10px;outline:none;transition:border-color .2s;}
+.lp-d-input::placeholder{color:rgba(245,240,232,0.3);}
+.lp-d-input:focus{border-color:#C9A84C;}
+.btn-lp-d{display:block;width:100%;background:#C9A84C;color:#0D0F14;font-family:'DM Sans',sans-serif;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:15px;border:none;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s,transform .15s;}
+.btn-lp-d:hover{background:#E8C96A;transform:translateY(-2px);}
+.lp-d-privacy{font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.28);text-align:center;margin-top:10px;font-style:italic;}
+.lp-d-statbar{max-width:1100px;margin:0 auto;background:linear-gradient(135deg,#2B3A4A 0%,rgba(43,58,74,0.7) 100%);border:1px solid rgba(201,168,76,0.2);display:grid;grid-template-columns:repeat(4,1fr);position:relative;overflow:hidden;}
+.lp-d-statbar::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#C44B2B,#C9A84C,#C44B2B);}
+.lp-d-stat{padding:20px;text-align:center;border-right:1px solid rgba(201,168,76,0.12);}
+.lp-d-stat:last-child{border-right:none;}
+.lp-d-stat-n{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;color:#C9A84C;letter-spacing:.02em;display:block;}
+.lp-d-stat-l{font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,0.45);margin-top:4px;display:block;}
+.lp-d-story{background:#0D0F14;padding:88px 24px;}
+.lp-d-story-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;}
+.lp-d-chapter{font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;margin-bottom:12px;}
+.lp-d-sh{font-family:'Instrument Serif',serif;font-size:clamp(24px,3.5vw,38px);line-height:1.15;color:#F5F0E8;margin-bottom:18px;}
+.lp-d-body{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;line-height:1.8;color:rgba(245,240,232,0.68);margin-bottom:14px;}
+.lp-d-body strong{color:#F5F0E8;font-weight:600;}
+.lp-d-pullquote{border-left:3px solid #C9A84C;padding:14px 0 14px 22px;margin:24px 0;font-family:'Instrument Serif',serif;font-style:italic;font-size:18px;line-height:1.55;color:#F5F0E8;}
+.lp-d-accentnum{font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:.8;color:rgba(201,168,76,0.05);position:absolute;top:-16px;left:-8px;pointer-events:none;user-select:none;}
+.lp-d-img-wrap{position:relative;}
+.lp-d-img-wrap img{width:100%;display:block;border:1px solid rgba(201,168,76,0.15);}
+.lp-d-img-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,15,20,0.94),transparent);padding:36px 16px 14px;font-family:'DM Mono',monospace;font-size:9px;font-style:italic;color:rgba(245,240,232,0.5);text-align:center;}
+.lp-d-glow{position:absolute;inset:-2px;background:linear-gradient(135deg,rgba(201,168,76,0.14),transparent 55%);pointer-events:none;}
+.lp-d-placeholder{background:linear-gradient(135deg,rgba(43,58,74,0.8),rgba(13,15,20,0.9));aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,168,76,0.15);}
+.lp-d-divider{max-width:1100px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.25),transparent);}
+.lp-d-learn{padding:88px 24px;background:#0D0F14;}
+.lp-d-learn-grid{max-width:1100px;margin:48px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.lp-d-learn-card{background:rgba(245,240,232,0.025);border:1px solid rgba(201,168,76,0.1);padding:28px 24px;position:relative;transition:background .2s,border-color .2s;}
+.lp-d-learn-card:hover{background:rgba(201,168,76,0.04);border-color:rgba(201,168,76,0.28);}
+.lp-d-card-num{font-family:'Bebas Neue',sans-serif;font-size:56px;line-height:1;color:rgba(201,168,76,0.1);position:absolute;top:12px;right:16px;}
+.lp-d-learn-card h4{font-family:'Instrument Serif',serif;font-size:18px;color:#F5F0E8;margin-bottom:8px;line-height:1.25;margin-top:32px;}
+.lp-d-learn-card p{font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.65;color:rgba(245,240,232,0.55);}
+.lp-d-learn-icon{font-size:22px;position:absolute;top:14px;left:20px;}
+.lp-d-hosts{background:rgba(43,58,74,0.2);padding:88px 24px;}
+.lp-d-hosts-grid{max-width:1100px;margin:48px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.lp-d-host-card{background:rgba(13,15,20,0.6);border:1px solid rgba(201,168,76,0.14);padding:32px 28px;}
+.lp-d-host-name{font-family:'Bebas Neue',sans-serif;font-size:32px;color:#C9A84C;letter-spacing:.05em;margin-bottom:3px;}
+.lp-d-host-role{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,240,232,0.38);margin-bottom:16px;}
+.lp-d-host-story{font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.7;color:rgba(245,240,232,0.65);}
+.lp-d-host-story strong{color:#F5F0E8;}
+.lp-d-host-stats{display:flex;gap:16px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(201,168,76,0.1);}
+.lp-d-hs-n{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#C9A84C;display:block;}
+.lp-d-hs-l{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(245,240,232,0.35);}
+.lp-d-testi{padding:88px 24px;background:#0D0F14;}
+.lp-d-testi-grid{max-width:1100px;margin:48px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.lp-d-tcard{background:rgba(245,240,232,0.025);border:1px solid rgba(201,168,76,0.09);padding:24px 20px;}
+.lp-d-tstars{color:#C9A84C;font-size:12px;letter-spacing:2px;margin-bottom:10px;}
+.lp-d-tq{font-family:'Instrument Serif',serif;font-style:italic;font-size:15px;line-height:1.62;color:rgba(245,240,232,0.82);margin-bottom:14px;}
+.lp-d-tname{font-family:'DM Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#C9A84C;}
+.lp-d-ttitle{font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.35);margin-top:2px;}
+.lp-d-faq{padding:88px 24px;background:rgba(245,240,232,0.015);}
+.lp-d-faq-list{max-width:740px;margin:48px auto 0;}
+.lp-d-faq-item{border-bottom:1px solid rgba(201,168,76,0.1);padding:20px 0;}
+.lp-d-faq-q{font-family:'Instrument Serif',serif;font-size:17px;color:#F5F0E8;display:flex;justify-content:space-between;align-items:center;gap:14px;}
+.lp-d-faq-q::after{content:'+';font-family:'DM Sans',sans-serif;font-size:20px;color:#C9A84C;flex-shrink:0;}
+.lp-d-faq-a{font-family:'DM Sans',sans-serif;font-size:13px;line-height:1.72;color:rgba(245,240,232,0.55);margin-top:12px;}
+.lp-d-final{background:linear-gradient(135deg,#2B3A4A 0%,#0D0F14 100%);border-top:1px solid rgba(201,168,76,0.18);padding:96px 24px;text-align:center;position:relative;overflow:hidden;}
+.lp-d-final::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(201,168,76,0.055),transparent 70%);pointer-events:none;}
+.lp-d-final-inner{position:relative;z-index:1;max-width:660px;margin:0 auto;}
+.lp-d-final h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,6vw,76px);line-height:.93;color:#F5F0E8;margin-bottom:14px;}
+.lp-d-final h2 em{font-family:'Instrument Serif',serif;color:#C9A84C;}
+.lp-d-final p{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.68;color:rgba(245,240,232,0.6);margin-bottom:36px;}
+.lp-d-final-btn{display:inline-block;background:#C9A84C;color:#0D0F14;font-family:'DM Sans',sans-serif;font-weight:800;font-size:15px;letter-spacing:.1em;text-transform:uppercase;padding:18px 48px;text-decoration:none;transition:background .2s,transform .15s;}
+.lp-d-final-btn:hover{background:#E8C96A;transform:translateY(-2px);}
+.lp-d-footer{background:rgba(0,0,0,0.55);border-top:1px solid rgba(245,240,232,0.05);padding:24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,0.16);text-transform:uppercase;}
+@media(max-width:900px){
+  .lp-d-hero-inner,.lp-d-story-grid,.lp-d-hosts-grid{grid-template-columns:1fr;}
+  .lp-d-learn-grid,.lp-d-testi-grid{grid-template-columns:1fr;}
+  .lp-d-statbar{grid-template-columns:repeat(2,1fr);}
+}
+
 /* ─ Landing page ul overrides ─ */
 .lp-wrap ul{list-style:none;display:grid;gap:11px;margin-bottom:28px;}
 .lp-wrap ul li{display:flex;align-items:flex-start;gap:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.72);line-height:1.6;}
@@ -334,6 +438,7 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
   <button class="sub-btn active" onclick="showLP('a',this)">A · Biz Op / First Clients</button>
   <button class="sub-btn" onclick="showLP('b',this)">B · LTV Retention</button>
   <button class="sub-btn" onclick="showLP('c',this)">C · AI Claude Masterclass</button>
+  <button class="sub-btn" onclick="showLP('d',this)" style="border-color:rgba(201,168,76,0.35);color:rgba(201,168,76,0.8);">D · Built, Scaled &amp; Sold ✦</button>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════
@@ -817,6 +922,299 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
     </section>
     <div class="lp-c-footer">© 2026 Impact Fitness Coaching Academy · NASM · AFAA · ISSA Approved CEP<br><span style="opacity:.5">Disclaimer · Privacy Policy · Terms</span></div>
   </div><!-- /lp-c -->
+
+
+  <!-- ══ OPTION D: Built, Scaled & Sold ══ -->
+  <div id="lp-d" class="sub-panel lp-page-d">
+
+    <!-- Ticker -->
+    <div class="lp-d-ticker">
+      <div class="lp-d-ticker-track">
+        <span>FREE LIVE MASTERCLASS — LIMITED SEATS</span>
+        <span>HOW WE BUILT, SCALED &amp; SOLD A FITNESS COACHING COMPANY</span>
+        <span>JORDAN DUGGER &amp; ERIN DIMOND</span>
+        <span>IMPACT FITNESS COACHING ACADEMY</span>
+        <span>$35M+ IN COMBINED REVENUE</span>
+        <span>4,600+ COACHES TRAINED</span>
+        <span>FREE LIVE MASTERCLASS — LIMITED SEATS</span>
+        <span>HOW WE BUILT, SCALED &amp; SOLD A FITNESS COACHING COMPANY</span>
+        <span>JORDAN DUGGER &amp; ERIN DIMOND</span>
+        <span>IMPACT FITNESS COACHING ACADEMY</span>
+        <span>$35M+ IN COMBINED REVENUE</span>
+        <span>4,600+ COACHES TRAINED</span>
+      </div>
+    </div>
+
+    <!-- Breaking news bar -->
+    <div class="lp-d-breaking">
+      <div class="lp-d-btag">🔴 Breaking</div>
+      <div class="lp-d-btext"><strong>Nutrition Dynamics acquires T4E Systems</strong> — Co-founders Erin Dimond &amp; Jordan Dugger reveal the full story: how they built, scaled, and sold for 7 figures &nbsp;→&nbsp; <strong>Free live masterclass, one time only</strong></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="lp-d-hero">
+      <div class="lp-d-hero-inner">
+        <div>
+          <div class="lp-d-eyebrow">
+            <div class="lp-d-eyebrow-line"></div>
+            <div class="lp-d-eyebrow-txt">Free Live Masterclass</div>
+          </div>
+          <h1 class="lp-d-h1">HOW WE<br><em>Built, Scaled</em><br>&amp; SOLD<br>A FITNESS<br>COMPANY</h1>
+          <p class="lp-d-sub">The unfiltered story behind $35M in revenue, a 7-figure exit, and exactly what we'd do if we were starting over today.</p>
+          <div class="lp-d-meta">
+            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">📅</span><span><strong>[DATE] — [TIME] [TIMEZONE]</strong></span></div>
+            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">⏱</span><span><strong>90 Minutes</strong> — Live &amp; Interactive</span></div>
+            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">👥</span><span><strong>Hosted by</strong> Erin Dimond &amp; Jordan Dugger</span></div>
+            <div class="lp-d-meta-row"><span class="lp-d-meta-icon">▶</span><span>Free — <strong>No replay. Live only.</strong></span></div>
+          </div>
+        </div>
+        <!-- Reg card -->
+        <div class="lp-d-reg">
+          <div class="lp-d-seats">Seats filling fast</div>
+          <div class="lp-d-reg-lbl">Register Free Below</div>
+          <h3>Save Your Spot for the Live Masterclass</h3>
+          <div class="lp-d-reg-date">[DATE] at [TIME] [TZ] — 90 min, live only</div>
+          <input class="lp-d-input" type="text" placeholder="First Name" />
+          <input class="lp-d-input" type="email" placeholder="Email Address" />
+          <input class="lp-d-input" type="tel" placeholder="Mobile (for reminders)" />
+          <a href="#" class="btn-lp-d">SAVE MY FREE SEAT →</a>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.25);text-align:center;margin-top:8px;font-style:italic;">No replay. Show up or miss it.</div>
+          <div class="lp-d-privacy">100% free. We respect your privacy.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stat bar -->
+    <div style="padding:0 24px;background:#0D0F14;">
+      <div class="lp-d-statbar">
+        <div class="lp-d-stat"><span class="lp-d-stat-n">$35M+</span><span class="lp-d-stat-l">Combined Revenue Built</span></div>
+        <div class="lp-d-stat"><span class="lp-d-stat-n">4,600+</span><span class="lp-d-stat-l">Coaches Trained</span></div>
+        <div class="lp-d-stat"><span class="lp-d-stat-n">$330M+</span><span class="lp-d-stat-l">Student Revenue Generated</span></div>
+        <div class="lp-d-stat"><span class="lp-d-stat-n">2</span><span class="lp-d-stat-l">Successful 7-Figure Exits</span></div>
+      </div>
+    </div>
+
+    <!-- Chapter 1 -->
+    <section class="lp-d-story">
+      <div class="lp-d-story-grid">
+        <div style="position:relative;">
+          <div class="lp-d-accentnum">01</div>
+          <div class="lp-d-chapter">Chapter 1 — The Origin</div>
+          <h2 class="lp-d-sh">She left a stable job with $50K saved and built a $500K business. Alone. Working 16-hour days.</h2>
+          <p class="lp-d-body">In 2012, <strong>Erin Dimond</strong> was one of the first coaches in the country to take fitness coaching fully online. By 2013, she was generating $500K/year — but working every day including holidays. Including her first wedding day.</p>
+          <p class="lp-d-body">She had the revenue. She didn't have the life.</p>
+          <div class="lp-d-pullquote">"I was making half a million dollars a year and I wasn't happy. Money without systems isn't freedom — it's just a fancier prison."</div>
+          <p class="lp-d-body">Then in 2017 she met <strong>Jordan Dugger</strong> — a farm town Ohio kid, five arrests before 21, opiate addiction after a college injury, who'd just moved to Chicago to start over. She convinced him to quit his job and go all-in online. One Tuesday, she woke him up from a nap: <em>"You're wasting your potential."</em> That was the switch.</p>
+        </div>
+        <div class="lp-d-img-wrap">
+          <div class="lp-d-placeholder">
+            <div style="text-align:center;padding:40px;">
+              <div style="font-size:36px;margin-bottom:14px;">📸</div>
+              <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(201,168,76,0.55);font-weight:600;">Jordan + Erin Photo</div>
+              <div style="font-size:10px;color:rgba(245,240,232,0.25);margin-top:6px;font-style:italic;">Replace with couple asset</div>
+            </div>
+          </div>
+          <div class="lp-d-img-cap">Erin &amp; Jordan — founders, partners, parents.</div>
+        </div>
+      </div>
+    </section>
+
+    <div style="padding:0 24px;"><div class="lp-d-divider"></div></div>
+
+    <!-- Chapter 2 -->
+    <section class="lp-d-story" style="padding-top:72px;">
+      <div class="lp-d-story-grid">
+        <div class="lp-d-img-wrap">
+          <div style="position:relative;">
+            <img src="/mnt/user-data/uploads/image__2_.png" alt="Nutrition Dynamics Acquires T4E Systems" />
+            <div class="lp-d-glow"></div>
+          </div>
+        </div>
+        <div style="position:relative;">
+          <div class="lp-d-accentnum">02</div>
+          <div class="lp-d-chapter">Chapter 2 — The Exit</div>
+          <h2 class="lp-d-sh">Together they built to $3M, then sold. One of only two online coaching companies to ever exit successfully.</h2>
+          <p class="lp-d-body">Year one together: <strong>$1M in revenue.</strong> Year three: <strong>$2.1M at 58% profit margins, working 3–4 hours per week.</strong> 3,000+ client transformations. Then their mentors Alex and Leila Hormozi said: <em>"Sell the fitness business. Focus on IFCA."</em></p>
+          <div class="lp-d-pullquote">"We sold to Nutrition Dynamics — the largest online health coaching company in the world. One of only two online coaching businesses to ever exit for 7 figures."</div>
+          <p class="lp-d-body">The business ran on <strong>3–4 hours per week</strong> because they'd built real systems — not just a hard-working team. That's what made it acquirable. And it's what made the exit possible on their terms.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- T4E stats image -->
+    <div style="padding:32px 24px 0;max-width:1100px;margin:0 auto;">
+      <img src="/mnt/user-data/uploads/Screenshot_2026-04-23_at_10_30_36_AM.png" alt="Transform 4Ever Systems — $5M Revenue, 58% Margins, 3-4 hrs/week" style="width:100%;display:block;border:1px solid rgba(201,168,76,0.14);" />
+    </div>
+
+    <div style="height:72px;"></div>
+    <div style="padding:0 24px;"><div class="lp-d-divider"></div></div>
+
+    <!-- Chapter 3 -->
+    <section class="lp-d-story" style="padding-top:72px;">
+      <div class="lp-d-story-grid">
+        <div style="position:relative;">
+          <div class="lp-d-accentnum">03</div>
+          <div class="lp-d-chapter">Chapter 3 — Building IFCA</div>
+          <h2 class="lp-d-sh">Then they built it again. This time teaching 4,600 coaches to do the same thing.</h2>
+          <p class="lp-d-body">Jordan didn't want to do it. His exact words: <em>"I don't want to coach coaches to coach."</em> Erin's response: <strong>"Well, we're doing it anyway."</strong></p>
+          <p class="lp-d-body">They launched <strong>IFCA — Impact Fitness Coaching Academy</strong> in 2018. Only enrolled students two months per year. Obsessed over delivery. Built a waitlist industry coaches knew by name.</p>
+          <p class="lp-d-body">Eight years later: <strong>4,600+ coaches. $330M+ in student-generated revenue. $8M annual run-rate. 87% student retention.</strong> NASM, ISSA, and AFAA preferred partner.</p>
+          <div class="lp-d-pullquote">"We sold while the business was thriving — not in distress. At peak value. Because we were strong enough to walk away and put something more important first."</div>
+          <p class="lp-d-body">For the first time, they're sharing every chapter live — what worked, what broke them, what they'd do differently, and exactly what they'd do if starting from scratch today.</p>
+        </div>
+        <div>
+          <!-- IFCA flashing results video -->
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;">📊 IFCA Results — Live Metrics</div>
+          <div style="padding:75% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1185909315?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IFCA Results Metrics"></iframe>
+          </div>
+          <script src="https://player.vimeo.com/api/player.js"></script>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.4);margin-top:8px;font-style:italic;">Real-time metrics from active IFCA students.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section class="lp-d-learn">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>What You'll Learn</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">90 MINUTES THAT COULD CHANGE <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">EVERYTHING</span></div>
+      </div>
+      <div class="lp-d-learn-grid" style="max-width:1100px;margin:40px auto 0;">
+        <div class="lp-d-learn-card">
+          <div class="lp-d-learn-icon">🏗️</div>
+          <div class="lp-d-card-num">01</div>
+          <h4>The System That Made 3–4 Hour Weeks Possible</h4>
+          <p>The exact infrastructure inside T4E that hit $2.1M while working barely part-time — and how to replicate it in your coaching business now.</p>
+        </div>
+        <div class="lp-d-learn-card">
+          <div class="lp-d-learn-icon">📈</div>
+          <div class="lp-d-card-num">02</div>
+          <h4>How to Build a Coaching Company That's Worth Selling</h4>
+          <p>Most coaches build a job, not a business. What Jordan and Erin did differently that made T4E acquirable — and how IFCA was built the same way.</p>
+        </div>
+        <div class="lp-d-learn-card">
+          <div class="lp-d-learn-icon">💰</div>
+          <div class="lp-d-card-num">03</div>
+          <h4>The $35M Revenue Model — Broken Down</h4>
+          <p>What their offers looked like, how they priced them, the funnel that actually worked, and the biggest mistakes that cost them 6 figures.</p>
+        </div>
+        <div class="lp-d-learn-card">
+          <div class="lp-d-learn-icon">🤝</div>
+          <div class="lp-d-card-num">04</div>
+          <h4>Why They Sold — And What It Felt Like</h4>
+          <p>The 3AM moment Jordan realized the business was winning but he was losing. Selling at the peak — a choice most coaches never get to make.</p>
+        </div>
+        <div class="lp-d-learn-card">
+          <div class="lp-d-learn-icon">🚀</div>
+          <div class="lp-d-card-num">05</div>
+          <h4>If You Were Starting Today — Here's Exactly What We'd Do</h4>
+          <p>No sugarcoating. The exact 90-day blueprint to build a fitness coaching business that generates $10K–$50K/month reliably.</p>
+        </div>
+        <div class="lp-d-learn-card">
+          <div class="lp-d-learn-icon">🔑</div>
+          <div class="lp-d-card-num">06</div>
+          <h4>The Client Engine Behind $330M in Student Revenue</h4>
+          <p>The done-for-you system IFCA installs into coaching businesses — and why no other program in the industry has matched its results at scale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student results + testimonial wall video -->
+    <div style="padding:0 24px 72px;background:#0D0F14;">
+      <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:16px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>Student Results</div>
+          <h3 style="font-family:'Instrument Serif',serif;font-size:28px;color:#F5F0E8;margin-bottom:14px;line-height:1.2;">What Happens When Coaches Use the System.</h3>
+          <p style="font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.72;color:rgba(245,240,232,0.6);margin-bottom:18px;">4,600+ coaches. $330M+ in combined student revenue. These aren't outliers — this is what the system consistently produces.</p>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>Brand-new coaches land their first client in 3–4 weeks</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>Coaches with 5+ clients hit full ROI by week 8</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>Average IFCA graduate adds 12 new clients in 90 days</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(245,240,232,0.72);"><span style="color:#C9A84C;font-weight:700;">✓</span>87% student retention rate — unmatched in the industry</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#C9A84C;margin-bottom:10px;">🎥 Client Results Wall</div>
+          <div style="padding:75% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1185910541?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="IFCA Client Results Wall"></iframe>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.38);margin-top:8px;font-style:italic;">Running testimonial wall from IFCA students across all niches.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hosts -->
+    <section class="lp-d-hosts">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>Your Hosts</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">THE PEOPLE WHO <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">Actually Did It</span></div>
+      </div>
+      <div class="lp-d-hosts-grid">
+        <div class="lp-d-host-card">
+          <div class="lp-d-host-name">ERIN DIMOND</div>
+          <div class="lp-d-host-role">Co-Founder, IFCA — @erindimondfitness (136K)</div>
+          <p class="lp-d-host-story">Started online coaching in <strong>2012</strong> — one of the first. Built to <strong>$500K/year solo</strong> working 16-hour days. Realized she had money but no life. Met Jordan, built <strong>Transform 4Ever Systems to $3M</strong>, sold it for 7 figures. Built IFCA and helped 4,600+ coaches do what she did — but faster and with far less suffering.</p>
+          <div class="lp-d-host-stats">
+            <div><span class="lp-d-hs-n">$500K</span><span class="lp-d-hs-l">Solo Year 1</span></div>
+            <div><span class="lp-d-hs-n">2012</span><span class="lp-d-hs-l">Online Pioneer</span></div>
+            <div><span class="lp-d-hs-n">2</span><span class="lp-d-hs-l">Exits Built</span></div>
+          </div>
+        </div>
+        <div class="lp-d-host-card">
+          <div class="lp-d-host-name">JORDAN DUGGER</div>
+          <div class="lp-d-host-role">Co-Founder, IFCA — @jordandugger_ (39K)</div>
+          <p class="lp-d-host-story">Farm town Ohio. Five arrests before 21. Opiate addiction after a college injury. Moved to Chicago to get clean. Met Erin in <strong>2017</strong> — she told him he was wasting his potential, he quit his job that week. <strong>Built T4E to $2.1M</strong> at 58% margins working 3–4 hrs/week. Co-built IFCA to <strong>$8M/year</strong>. Sold at peak.</p>
+          <div class="lp-d-host-stats">
+            <div><span class="lp-d-hs-n">$8M</span><span class="lp-d-hs-l">IFCA Revenue/yr</span></div>
+            <div><span class="lp-d-hs-n">3–4hrs</span><span class="lp-d-hs-l">T4E Per Week</span></div>
+            <div><span class="lp-d-hs-n">700+</span><span class="lp-d-hs-l">Podcast Episodes</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="lp-d-testi">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>What Coaches Are Saying</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">Results Speak <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">Louder</span></div>
+      </div>
+      <div class="lp-d-testi-grid">
+        <div class="lp-d-tcard"><div class="lp-d-tstars">★★★★★</div><div class="lp-d-tq">"IFCA gave me the systems I didn't know I was missing. My business isn't just bigger — it runs better."</div><div class="lp-d-tname">Jeremy Park</div><div class="lp-d-ttitle">Online Fitness Coach</div></div>
+        <div class="lp-d-tcard"><div class="lp-d-tstars">★★★★★</div><div class="lp-d-tq">"Finally feel like a CEO instead of a one-person chaos machine. Best investment I've made in my business. Period."</div><div class="lp-d-tname">Alyson Taylor</div><div class="lp-d-ttitle">Scaling Coach</div></div>
+        <div class="lp-d-tcard"><div class="lp-d-tstars">★★★★★</div><div class="lp-d-tq">"I was skeptical because I already had a working business. The Scale Phase work was exactly what I needed. Backend offer changed everything."</div><div class="lp-d-tname">Gustave Christensen</div><div class="lp-d-ttitle">Established Coach — 7-Figure Track</div></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="lp-d-faq">
+      <div style="max-width:1100px;margin:0 auto;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;gap:10px;margin-bottom:10px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>FAQ</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,60px);line-height:.95;letter-spacing:.02em;color:#F5F0E8;">Questions <span style="font-family:'Instrument Serif',serif;font-style:italic;color:#C9A84C;">Answered</span></div>
+      </div>
+      <div class="lp-d-faq-list">
+        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Is this really free?</div><div class="lp-d-faq-a">Yes — completely free. We host these to serve the fitness coaching community and introduce coaches to IFCA. No catch, no hidden fees. You'll learn real strategy that's generated $400M+ for us and our students combined.</div></div>
+        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Will there be a replay?</div><div class="lp-d-faq-a">No. Live only. We do this intentionally — coaches who show up live get the most out of it. A Sunday re-run will be announced after the live event for those who can't make the original time.</div></div>
+        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Is this for coaches at any stage?</div><div class="lp-d-faq-a">Yes. Whether you're brand new trying to land your first client, or already making $10K–$30K/month — there's a chapter of this story that's directly relevant to where you are right now.</div></div>
+        <div class="lp-d-faq-item"><div class="lp-d-faq-q">Will you pitch something?</div><div class="lp-d-faq-a">At the end we'll briefly mention how IFCA works for coaches who want hands-on help implementing what we teach. No pressure. The vast majority of the 90 minutes is pure content and story.</div></div>
+        <div class="lp-d-faq-item"><div class="lp-d-faq-q">I'm a nutrition coach / PT / health coach — does this apply?</div><div class="lp-d-faq-a">IFCA has trained 4,600+ coaches across fitness, nutrition, health, PT, and more. The systems we teach work regardless of niche. All of it applies.</div></div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="lp-d-final">
+      <div class="lp-d-final-inner">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#C9A84C;display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;"><span style="display:block;width:24px;height:1px;background:#C9A84C;"></span>One More Time<span style="display:block;width:24px;height:1px;background:#C9A84C;"></span></div>
+        <h2>Don't Miss<br>This <em>Story</em></h2>
+        <p>Two people. One farm town kid who hit rock bottom. One determined woman who built half a million dollars alone. Together they built $35M in revenue, trained 4,600 coaches, sold two companies — and are sharing every chapter of it, live, for free, one time only.</p>
+        <a href="#" class="lp-d-final-btn">SAVE MY FREE SEAT →</a>
+        <div style="font-family:'DM Mono',monospace;font-size:9px;color:rgba(245,240,232,0.28);margin-top:20px;font-style:italic;">[DATE] at [TIME] — No replay. No recording. Show up or miss it.</div>
+      </div>
+    </section>
+
+    <div class="lp-d-footer">© 2026 Impact Fitness Coaching Academy · Jordan Dugger &amp; Erin Dimond<br><span style="opacity:.5">Disclaimer · Privacy Policy · Terms</span></div>
+  </div><!-- /lp-d -->
 
 </div><!-- /panel-landing -->
 
