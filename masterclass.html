@@ -244,6 +244,16 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 
 .lp-footer{background:#080e16;padding:20px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.18);text-transform:uppercase;border-top:1px solid rgba(74,127,165,.1);}
 
+.hl-btn{
+  padding:0 14px;height:44px;line-height:44px;
+  background:none;border:none;border-bottom:2px solid transparent;
+  color:rgba(184,147,86,.5);font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.06em;cursor:pointer;white-space:nowrap;
+  transition:all .15s;flex-shrink:0;
+}
+.hl-btn:hover{color:var(--gold-light);}
+.hl-btn.active{color:var(--gold-light);border-bottom-color:var(--gold);}
+
 /* ─ Option B ─ */
 .lp-hero-b{background:var(--ink);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden;}
 .lp-hero-b::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(184,147,86,.12) 0%,transparent 60%);pointer-events:none;}
@@ -725,13 +735,36 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 
 
   <div id="lp-b" class="sub-panel" style="background:var(--cream)">
+
+    <!-- ══ HEADLINE TOGGLE BAR ══ -->
+    <div id="hl-toggle-bar" style="
+      position:sticky;top:94px;z-index:180;
+      background:rgba(14,14,12,0.97);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(184,147,86,.2);
+      padding:0 20px;
+      overflow-x:auto;
+    ">
+      <div style="display:flex;align-items:center;gap:0;min-width:max-content;height:44px;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(184,147,86,.5);text-transform:uppercase;padding-right:14px;border-right:1px solid rgba(184,147,86,.15);margin-right:8px;flex-shrink:0;">Headline Variants</span>
+        <button class="hl-btn active" onclick="setHeadline(0,this)">1 · $14,800 MRR <span style="color:rgba(184,147,86,.6);font-size:9px;margin-left:4px">✦ CHOSEN</span></button>
+        <button class="hl-btn" onclick="setHeadline(1,this)">2 · $146K Hidden</button>
+        <button class="hl-btn" onclick="setHeadline(2,this)">3 · New-Client Treadmill</button>
+        <button class="hl-btn" onclick="setHeadline(3,this)">4 · MRR Method™</button>
+        <button class="hl-btn" onclick="setHeadline(4,this)">5 · Paying You Twice</button>
+        <button class="hl-btn" onclick="setHeadline(5,this)">6 · $30K–$40K MRR</button>
+        <button class="hl-btn" onclick="setHeadline(6,this)">7 · Back-End Clients</button>
+        <button class="hl-btn" onclick="setHeadline(7,this)">8 · Retention Engine</button>
+      </div>
+    </div>
+
     <section class="lp-hero-b">
-      <p class="lp-eyebrow-a" style="color:var(--gold-light)">Free Live Workshop · Online Fitness, Nutrition & Health Coaches</p>
-      <div style="display:inline-block;border:1px solid rgba(184,147,86,.4);color:var(--gold-light);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:24px;margin-bottom:26px;">📅 Live · [Date] at [Time] EST</div>
-      <h1 class="lp-h1-b">How to Add <em>$146,000</em><br>in Revenue Without<br>Signing a Single<br>New Client</h1>
-      <p class="lp-sub-b">The <strong>5-Step Community Funnel™</strong> — the retention method behind Vanessa's $702K year signing just 2–3 clients per month, and David's $96,260 from one round of back-end calls.</p>
-      <a href="#" class="btn-lp-b">Watch the Free Workshop →</a>
-      <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,.22);text-transform:uppercase;margin-top:12px">Limited replay access</p>
+      <p class="lp-eyebrow-a" style="color:var(--gold-light)">Free Live Masterclass · Online Fitness, Nutrition & Health Coaches</p>
+      <div style="display:inline-block;border:1px solid rgba(184,147,86,.4);color:var(--gold-light);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:24px;margin-bottom:26px;">📅 Live · June 11 at 7PM EST</div>
+      <h1 class="lp-h1-b" id="lp-b-h1">How to Add <em>$14,800/Month</em><br>Signing Just<br><em>2 Clients Per Week</em><br>— The MRR Method™</h1>
+      <p class="lp-sub-b" id="lp-b-sub">The <strong>retention-first back-end system</strong> behind Vanessa's $702K year, David's $96,260 from one round of re-sign calls, and Alycia's <strong>$30K–$40K in monthly recurring revenue</strong> — without chasing a single new client.</p>
+      <a href="#" class="btn-lp-b">Save My Free Seat →</a>
+      <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,.22);text-transform:uppercase;margin-top:12px">Live Only · No Replay · June 11 @ 7PM EST</p>
     </section>
     <div class="lp-b-proof">
       <div class="lp-b-stat"><span class="n">$702K</span><span class="l">Vanessa's Year (2–3 Clients/Mo)</span></div>
@@ -1243,6 +1276,66 @@ function showLP(id,btn){
   document.getElementById('lp-'+id).classList.add('active');
   btn.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+}
+// ── HEADLINE TOGGLE (LP-B LTV/MRR) ──────────────────────────────
+const LP_B_HEADLINES = [
+  {
+    label:'1 · $14,800 MRR · CHOSEN',
+    h1:'How to Add <em>$14,800/Month</em><br>Signing Just<br><em>2 Clients Per Week</em><br>— The MRR Method™',
+    sub:'The <strong>retention-first back-end system</strong> behind Vanessa\'s $702K year, David\'s $96,260 from one round of re-sign calls, and Alycia\'s <strong>$30K–$40K in monthly recurring revenue</strong> — without chasing a single new client.',
+    note:'MRR / June 11 angle — CHOSEN for this event'
+  },
+  {
+    label:'2 · $146K Hidden Revenue',
+    h1:'The <em>$146,000</em> Already Sitting<br>in Your Business —<br><em>You Just Don\'t Know It Yet</em>',
+    sub:'The <strong>5-Step Community Funnel™</strong> — how coaches are finding six figures in the client relationships they already have, without posting more, spending more on ads, or signing a single new client.',
+    note:'Hidden revenue angle — strong for cold traffic'
+  },
+  {
+    label:"3 · New-Client Treadmill",
+    h1:'Stop Running the<br><em>New-Client Treadmill.</em><br>Here\'s the System<br>That Pays You <em>Twice.</em>',
+    sub:'Every client you sign is worth <strong>2–3x what you\'re currently collecting.</strong> The coaches earning $30K–$40K in MRR aren\'t signing more clients — they\'re built a back-end system. This masterclass shows you exactly how.',
+    note:'Problem-aware · great for $5K–$30K/month coaches'
+  },
+  {
+    label:'4 · MRR Method™',
+    h1:'The <em>$14,800 MRR Method™:</em><br>Add Predictable Monthly<br>Recurring Revenue Without<br><em>A Single New Client</em>',
+    sub:'The <strong>retention-first back-end system</strong> behind Alycia\'s $30K–$40K MRR, Vanessa\'s $702K year, and David\'s 24-for-26 re-sign rate — taught live on June 11.',
+    note:'Mechanism-led · works well with warm audiences'
+  },
+  {
+    label:'5 · Your Clients Are Paying You Twice',
+    h1:'Your Best Clients Are<br>Willing to Pay You <em>Again.</em><br>Most Coaches Never<br><em>Let Them.</em>',
+    sub:'The back-end close rate for a properly positioned re-sign offer is <strong>40–60%.</strong> David went 24-for-26. Vanessa built $702K from 2–3 clients per week. This masterclass is the exact playbook.',
+    note:'Trust-based angle · warm email list or retargeting'
+  },
+  {
+    label:'6 · $30K–$40K MRR',
+    h1:'How Alycia Built<br><em>$30K–$40K in MRR</em><br>Without Signing<br>Another New Client</h1>',
+    sub:'"I could not sign another client for 4–6 months and still be profitable." — Alycia Israel, IFCA Student. On June 11, we\'re teaching the <strong>exact retention system</strong> behind this result.',
+    note:'Case study lead · high specificity, strong social proof'
+  },
+  {
+    label:'7 · Your Back-End Clients',
+    h1:'You Already Have<br>the Clients You Need.<br><em>Here\'s How to Keep<br>Getting Paid by Them.</em>',
+    sub:'The <strong>Community Funnel™ + Re-Sign System</strong> — 2–4x retention, 40–60% back-end close rate, and a path to $14,800+/month in recurring revenue from the client relationships you already have.',
+    note:'Curiosity angle · broad appeal'
+  },
+  {
+    label:'8 · Retention Revenue Engine',
+    h1:'The Retention <em>Revenue Engine:</em><br>How Coaches Are Building<br><em>$10K–$40K in MRR</em><br>From Existing Clients',
+    sub:'Forget finding new clients. The coaches growing fastest right now have one thing in common: a <strong>retention-first back-end system</strong> that turns client relationships into recurring income. We\'re teaching it live June 11.',
+    note:'Momentum angle · good for competitive markets'
+  }
+];
+
+function setHeadline(idx, btn) {
+  const v = LP_B_HEADLINES[idx];
+  document.getElementById('lp-b-h1').innerHTML = v.h1;
+  document.getElementById('lp-b-sub').innerHTML = v.sub;
+  document.querySelectorAll('.hl-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // Update the badge on button 0 to remove "CHOSEN" visual emphasis after switching
 }
 </script>
 </body>
