@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IFCA Masterclass Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════ BRAND TOKENS ══════════════════════════ */
+:root {
+  --navy-dark:#102236; --navy:#1E3A5F; --navy-mid:#1a3352;
+  --orange:#E87722; --orange-light:#F09040;
+  --blue-light:#D6E4F0; --blue-mid:#4A7FA5;
+  --gold:#B89356; --gold-light:#D4AF71;
+  --ink:#0E0E0C; --ink-mid:#1C1C1A; --ink-light:#2A2A27;
+  --cream:#F5F0E6; --cream-dark:#EDE5D5;
+  --green:#22C55E; --red:#EF4444; --yellow:#F59E0B;
+  --electric:#63B3ED;
+  --bg:#0a0d14; --surface:#121820; --surface2:#161e2a;
+  --border:rgba(74,127,165,0.18); --border-bright:rgba(74,127,165,0.32);
+  --text:#e8ecf4; --muted:#7a95b0;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;}
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--border-bright);border-radius:2px;}
+
+/* ══════════════════════════ TOP NAV ══════════════════════════ */
+.top-nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(10,13,20,0.97);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:0;
+  padding:0 20px;height:54px;overflow-x:auto;
+}
+.top-nav::-webkit-scrollbar{display:none;}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;font-size:17px;
+  color:var(--orange);letter-spacing:.12em;
+  padding:0 16px 0 0;border-right:1px solid var(--border);
+  margin-right:6px;white-space:nowrap;flex-shrink:0;
+}
+.nav-btn{
+  padding:0 16px;height:54px;line-height:54px;
+  background:none;border:none;border-bottom:3px solid transparent;
+  color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;
+  font-weight:600;cursor:pointer;white-space:nowrap;
+  transition:all .15s;letter-spacing:.02em;
+}
+.nav-btn:hover{color:var(--text);}
+.nav-btn.active{color:var(--orange);border-bottom-color:var(--orange);}
+.nav-tag{
+  margin-left:auto;font-family:'DM Mono',monospace;
+  font-size:9px;color:rgba(255,255,255,.2);
+  letter-spacing:1.5px;text-transform:uppercase;
+  flex-shrink:0;padding-left:16px;
+}
+
+/* ══════════════════════════ SUB-NAV ══════════════════════════ */
+.sub-nav{
+  position:sticky;top:54px;z-index:190;
+  background:rgba(18,24,32,0.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(74,127,165,.1);
+  display:none;align-items:center;gap:4px;
+  padding:0 20px;height:40px;overflow-x:auto;
+}
+.sub-nav::-webkit-scrollbar{display:none;}
+.sub-nav.visible{display:flex;}
+.sub-btn{
+  padding:4px 14px;background:none;border:1px solid transparent;
+  border-radius:20px;color:var(--muted);
+  font-family:'DM Mono',monospace;font-size:10px;
+  letter-spacing:.06em;text-transform:uppercase;
+  cursor:pointer;transition:all .15s;white-space:nowrap;
+}
+.sub-btn:hover{color:var(--text);background:rgba(255,255,255,.05);}
+.sub-btn.active{color:var(--orange);border-color:rgba(232,119,34,.35);background:rgba(232,119,34,.08);}
+
+/* ══════════════════════════ PANELS ══════════════════════════ */
+.panel{display:none;min-height:calc(100vh - 54px);}
+.panel.active{display:block;}
+.sub-panel{display:none;}
+.sub-panel.active{display:block;}
+
+/* ══════════════════════════ SHARED LAYOUT ══════════════════════════ */
+.wrap{max-width:1100px;margin:0 auto;padding:28px 20px;}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;color:var(--text);margin-bottom:4px;}
+.section-sub{font-size:11px;color:var(--muted);margin-bottom:20px;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;}
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:9px;font-family:'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;font-weight:600;}
+.tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:8px;opacity:.8;}
+.mono{font-family:'DM Mono',monospace;}
+.bold{font-weight:700;}
+.muted{color:var(--muted);}
+.green{color:var(--green);}
+.red{color:var(--red);}
+.orange{color:var(--orange);}
+.yellow{color:var(--yellow);}
+.blue{color:var(--electric);}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;}
+.flex{display:flex;align-items:center;gap:8px;}
+.flex-between{display:flex;align-items:center;justify-content:space-between;}
+.mt8{margin-top:8px;}
+.mt16{margin-top:16px;}
+.mt24{margin-top:24px;}
+.mb8{margin-bottom:8px;}
+.mb16{margin-bottom:16px;}
+.text-center{text-align:center;}
+.divider{height:1px;background:var(--border);margin:20px 0;}
+
+/* KPI CARD */
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi-label{font-size:9px;font-family:'DM Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.kpi-val{font-size:26px;font-weight:800;line-height:1;margin-bottom:3px;}
+.kpi-sub{font-size:10px;color:var(--muted);}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;font-size:12px;}
+.tbl th{padding:8px 10px;color:var(--muted);font-size:9px;font-family:'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase;border-bottom:2px solid var(--border-bright);white-space:nowrap;font-weight:600;}
+.tbl td{padding:9px 10px;border-bottom:1px solid rgba(74,127,165,.08);vertical-align:middle;}
+.tbl tr:hover td{background:rgba(74,127,165,.04);}
+.tbl td.num{text-align:center;font-family:'DM Mono',monospace;font-size:11px;}
+.tbl td.muted-num{text-align:center;color:var(--muted);font-family:'DM Mono',monospace;font-size:11px;}
+
+/* SLIDER ROWS */
+.slider-row{margin-bottom:12px;}
+.slider-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;}
+.slider-name{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;letter-spacing:.04em;}
+.slider-val{font-size:13px;font-weight:700;color:var(--orange);font-family:'DM Mono',monospace;}
+input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4px;}
+.slider-minmax{display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.2);font-family:'DM Mono',monospace;margin-top:2px;}
+
+/* NUMBER INPUT */
+.num-input{
+  background:var(--surface2);border:1px solid var(--border-bright);
+  border-radius:6px;padding:6px 10px;color:var(--text);
+  font-family:'DM Mono',monospace;font-size:12px;
+  width:100%;outline:none;transition:border-color .15s;
+}
+.num-input:focus{border-color:rgba(232,119,34,.5);}
+
+/* FUNNEL FLOW BAR */
+.funnel-bar{display:flex;flex-direction:column;gap:3px;margin-bottom:16px;}
+.funnel-step{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:rgba(74,127,165,.06);border-radius:6px;font-size:11px;}
+.funnel-step .step-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.04em;}
+.funnel-step .step-val{font-weight:700;font-family:'DM Mono',monospace;}
+
+/* ROAS METER */
+.roas-track{height:12px;background:rgba(74,127,165,.15);border-radius:6px;overflow:hidden;position:relative;margin-bottom:4px;}
+.roas-fill{height:100%;border-radius:6px;transition:width .4s;}
+.roas-marker{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--orange);}
+
+/* SCENARIO CHIPS */
+.scenario-chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.s-chip{padding:6px 16px;border-radius:6px;border:1px solid;background:transparent;cursor:pointer;font-size:11px;font-weight:600;transition:all .15s;}
+.s-chip:hover{opacity:.85;}
+
+/* WARN BOX */
+.warn-box{background:rgba(239,71,111,.07);border:1px solid rgba(239,71,111,.25);border-radius:10px;padding:14px 18px;}
+.info-box{background:rgba(232,119,34,.07);border:1px solid rgba(232,119,34,.25);border-radius:10px;padding:14px 18px;}
+
+/* TYPE BADGES */
+.type-webinar{background:rgba(74,127,165,.2);color:var(--electric);}
+.type-workshop{background:rgba(34,197,94,.15);color:var(--green);}
+.type-bf{background:rgba(239,71,111,.15);color:#f87171;}
+.type-mc{background:rgba(232,119,34,.15);color:var(--orange);}
+.type-challenge{background:rgba(139,92,246,.2);color:#a78bfa;}
+.type-qa{background:rgba(245,158,11,.15);color:var(--yellow);}
+.type-partner{background:rgba(249,115,22,.15);color:#fb923c;}
+
+/* EVENT ROW EXPAND */
+.ev-row{cursor:pointer;transition:background .1s;}
+.ev-row:hover td{background:rgba(232,119,34,.04);}
+.ev-expand td{background:rgba(232,119,34,.03);border-bottom:1px solid rgba(74,127,165,.15);}
+.ev-detail{padding:12px 16px 16px;font-size:11px;}
+.detail-grid{display:flex;gap:20px;flex-wrap:wrap;}
+.detail-item .dl{font-size:9px;font-family:'DM Mono',monospace;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-bottom:2px;}
+.detail-item .dv{font-size:12px;font-weight:600;color:var(--text);}
+.detail-note{font-size:11px;color:var(--muted);max-width:600px;line-height:1.6;margin-top:10px;border-top:1px solid var(--border);padding-top:8px;}
+
+/* ══════════════════════════ LANDING PAGE STYLES ══════════════════════════ */
+/* (Scoped inside .lp-preview container to avoid conflicts) */
+.lp-preview{background:var(--navy-dark);}
+
+.lp-hero-a{background:linear-gradient(160deg,var(--navy-dark) 0%,#0d1d31 40%,#071526 100%);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden;}
+.lp-hero-a::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% -10%,rgba(232,119,34,.18) 0%,transparent 70%);pointer-events:none;}
+.lp-eyebrow-a{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3.5px;text-transform:uppercase;color:var(--orange);margin-bottom:18px;opacity:.9;}
+.lp-badge-a{display:inline-flex;align-items:center;gap:8px;background:rgba(232,119,34,.12);border:1px solid rgba(232,119,34,.35);border-radius:24px;padding:7px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--orange-light);text-transform:uppercase;margin-bottom:28px;}
+.lp-h1-a{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,80px);line-height:.92;letter-spacing:1px;color:#fff;margin-bottom:10px;}
+.lp-h1-a .acc{color:var(--orange);}
+.lp-h1-a .ital{font-family:'Instrument Serif',serif;font-style:italic;font-size:.88em;color:var(--orange-light);}
+.lp-sub-a{font-family:'DM Sans',sans-serif;font-size:clamp(15px,2.2vw,18px);font-weight:300;color:rgba(255,255,255,.62);max-width:660px;margin:18px auto 34px;line-height:1.6;}
+.lp-sub-a strong{color:#fff;font-weight:600;}
+.lp-meta-a{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:34px;}
+.lp-meta-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);display:inline-block;margin-right:8px;}
+.lp-meta-txt{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.4);text-transform:uppercase;display:flex;align-items:center;}
+.btn-lp-a{display:inline-block;background:var(--orange);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;padding:18px 52px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:all .2s;}
+.btn-lp-a:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,119,34,.35);}
+.lp-btn-sub{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:10px;}
+
+.lp-proof{background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+.lp-pstat .pn{font-family:'DM Mono',monospace;font-size:22px;font-weight:500;color:var(--orange);display:block;line-height:1;}
+.lp-pstat .pl{font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.3);text-transform:uppercase;margin-top:4px;display:block;}
+
+.lp-section-a{background:var(--navy-dark);padding:60px 24px;}
+.lp-section-a.alt{background:#0d1d31;}
+.lp-wrap{max-width:780px;margin:0 auto;}
+.lp-sh2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4.5vw,46px);color:#fff;letter-spacing:.5px;line-height:1;margin-bottom:16px;}
+.lp-sh2 span{color:var(--orange);}
+.lp-body{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:24px;}
+.lp-body strong{color:rgba(255,255,255,.9);font-weight:600;}
+
+.lp-secret{background:rgba(255,255,255,.03);border:1px solid rgba(74,127,165,.18);border-left:3px solid var(--orange);border-radius:8px;padding:18px 22px;display:flex;gap:18px;align-items:flex-start;margin-bottom:12px;}
+.lp-snum{font-family:'Bebas Neue',sans-serif;font-size:34px;color:rgba(232,119,34,.22);line-height:1;flex-shrink:0;}
+.lp-stitle{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+.lp-sbody{font-size:12px;color:rgba(255,255,255,.46);line-height:1.6;}
+
+.lp-testi{background:rgba(255,255,255,.03);border:1px solid rgba(74,127,165,.14);border-radius:10px;padding:20px;margin-bottom:12px;}
+.lp-tres{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--orange);margin-bottom:8px;letter-spacing:.3px;}
+.lp-tq{font-size:13px;font-style:italic;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:10px;}
+.lp-ta{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.3);text-transform:uppercase;}
+
+.lp-bonus-box{background:rgba(232,119,34,.06);border:1px solid rgba(232,119,34,.22);border-radius:12px;padding:24px;margin-bottom:28px;}
+.lp-bi{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;}
+.lp-bicon{width:30px;height:30px;background:var(--orange);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.lp-btitle{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
+.lp-bdesc{font-size:11px;color:rgba(255,255,255,.42);line-height:1.55;}
+
+.lp-host-row{display:flex;gap:16px;flex-wrap:wrap;}
+.lp-host{flex:1;min-width:220px;background:rgba(255,255,255,.03);border:1px solid rgba(74,127,165,.14);border-radius:10px;padding:18px;display:flex;gap:12px;}
+.lp-hav{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--navy),#4A7FA5);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--orange);flex-shrink:0;border:2px solid rgba(232,119,34,.3);}
+.lp-hname{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;}
+.lp-htitle{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--orange);text-transform:uppercase;margin-bottom:6px;}
+.lp-hbio{font-size:11px;color:rgba(255,255,255,.42);line-height:1.6;}
+
+.lp-cta-a{background:linear-gradient(160deg,#0d1d31,var(--navy-dark));padding:70px 24px;text-align:center;border-top:1px solid rgba(232,119,34,.14);position:relative;overflow:hidden;}
+.lp-cta-a::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 100%,rgba(232,119,34,.07) 0%,transparent 70%);}
+
+.lp-footer{background:#080e16;padding:20px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.18);text-transform:uppercase;border-top:1px solid rgba(74,127,165,.1);}
+
+/* ─ Option B ─ */
+.lp-hero-b{background:var(--ink);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden;}
+.lp-hero-b::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(184,147,86,.12) 0%,transparent 60%);pointer-events:none;}
+.lp-h1-b{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,6vw,68px);line-height:1.0;color:var(--cream);margin-bottom:14px;max-width:720px;margin-left:auto;margin-right:auto;}
+.lp-h1-b em{font-style:italic;color:var(--gold-light);font-weight:400;}
+.lp-sub-b{font-family:'DM Sans',sans-serif;font-size:clamp(14px,2.2vw,17px);font-weight:300;color:rgba(245,240,230,.58);max-width:600px;margin:0 auto 32px;line-height:1.6;}
+.lp-sub-b strong{color:var(--cream);font-weight:600;}
+.btn-lp-b{display:inline-block;background:var(--gold);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;padding:15px 46px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:all .2s;}
+.btn-lp-b:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(184,147,86,.3);}
+.lp-b-proof{background:var(--ink-mid);border-top:1px solid rgba(184,147,86,.12);padding:14px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+.lp-b-stat .n{display:block;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold-light);line-height:1;}
+.lp-b-stat .l{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(245,240,230,.28);margin-top:3px;}
+.lp-s-b{background:var(--cream);padding:60px 24px;}
+.lp-s-b.dark{background:var(--ink);}
+.lp-s-b.mid{background:var(--cream-dark);}
+.lp-h2-b{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,4vw,42px);color:var(--ink);line-height:1.1;margin-bottom:18px;}
+.lp-h2-b em{font-style:italic;color:var(--gold);font-weight:400;}
+.lp-h2-b.lt{color:var(--cream);}
+.lp-h2-b.lt em{color:var(--gold-light);}
+.lp-body-b{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:rgba(14,14,12,.68);line-height:1.8;margin-bottom:24px;}
+.lp-body-b strong{font-weight:600;color:var(--ink);}
+.lp-body-b.lt{color:rgba(245,240,230,.58);}
+.lp-body-b.lt strong{color:var(--cream);}
+.lp-testi-b{border:1px solid rgba(14,14,12,.1);border-left:3px solid var(--gold);background:#fff;border-radius:6px;padding:20px 24px;margin-bottom:12px;}
+.lp-tres-b{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.lp-tq-b{font-size:13px;font-style:italic;color:rgba(14,14,12,.58);line-height:1.68;margin-bottom:10px;}
+.lp-ta-b{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;}
+
+/* ─ Option C ─ */
+.lp-page-c{background:#060810;}
+.lp-hero-c{background:#060810;padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden;}
+.lp-hero-c::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -5%,rgba(99,179,237,.12) 0%,transparent 60%);pointer-events:none;}
+.lp-badge-c{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(99,179,237,.3);background:rgba(99,179,237,.06);color:#90CDF4;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:24px;margin-bottom:26px;}
+.c-dot{width:6px;height:6px;border-radius:50%;background:#63B3ED;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
+.lp-h1-c{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,7vw,80px);line-height:.92;letter-spacing:1px;color:#fff;margin-bottom:12px;}
+.lp-h1-c .cb{color:#63B3ED;}.lp-h1-c .co{color:var(--orange);}
+.lp-sub-c{font-family:'DM Sans',sans-serif;font-size:clamp(14px,2.2vw,18px);font-weight:300;color:rgba(232,236,240,.53);max-width:640px;margin:18px auto 34px;line-height:1.6;}
+.lp-sub-c strong{color:#e8ecf0;font-weight:600;}
+.btn-lp-c{display:inline-block;background:linear-gradient(135deg,#3182CE,#63B3ED);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;padding:18px 52px;border-radius:6px;border:none;cursor:pointer;text-decoration:none;transition:all .2s;box-shadow:0 0 32px rgba(99,179,237,.18);}
+.btn-lp-c:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(99,179,237,.35);}
+.lp-c-proof{background:rgba(255,255,255,.03);border-top:1px solid rgba(99,179,237,.1);border-bottom:1px solid rgba(99,179,237,.1);padding:14px 24px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;}
+.lp-c-stat .n{display:block;font-family:'Bebas Neue',sans-serif;font-size:24px;color:#63B3ED;line-height:1;}
+.lp-c-stat .l{display:block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(232,236,240,.28);margin-top:3px;}
+.lp-s-c{background:#060810;padding:60px 24px;}
+.lp-s-c.alt{background:#0a0d17;}
+.lp-h2-c{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,4.5vw,48px);color:#fff;letter-spacing:.5px;line-height:1;margin-bottom:18px;}
+.lp-h2-c .cb{color:#63B3ED;}.lp-h2-c .co{color:var(--orange);}
+.lp-body-c{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;color:rgba(232,236,240,.53);line-height:1.8;margin-bottom:24px;}
+.lp-body-c strong{color:#e8ecf0;font-weight:600;}
+.lp-module{background:rgba(255,255,255,.03);border:1px solid rgba(99,179,237,.12);border-left:3px solid #3182CE;border-radius:8px;padding:16px 20px;display:flex;gap:16px;align-items:flex-start;margin-bottom:10px;}
+.lp-mtag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#63B3ED;text-transform:uppercase;background:rgba(99,179,237,.1);padding:4px 8px;border-radius:3px;flex-shrink:0;margin-top:2px;}
+.lp-mtitle{font-size:13px;font-weight:700;color:#e8ecf0;margin-bottom:4px;}
+.lp-mbody{font-size:11px;color:rgba(232,236,240,.42);line-height:1.6;}
+.lp-testi-c{background:rgba(255,255,255,.02);border:1px solid rgba(99,179,237,.1);border-radius:10px;padding:18px;margin-bottom:10px;}
+.lp-tres-c{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#63B3ED;letter-spacing:.3px;margin-bottom:8px;}
+.lp-tq-c{font-size:12px;font-style:italic;color:rgba(232,236,240,.47);line-height:1.65;margin-bottom:8px;}
+.lp-ta-c{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(99,179,237,.48);text-transform:uppercase;}
+.lp-c-footer{background:#040507;padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.12);text-transform:uppercase;}
+
+/* ─ Landing page ul overrides ─ */
+.lp-wrap ul{list-style:none;display:grid;gap:11px;margin-bottom:28px;}
+.lp-wrap ul li{display:flex;align-items:flex-start;gap:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(255,255,255,.72);line-height:1.6;}
+.lp-wrap ul li::before{content:'✓';width:18px;height:18px;background:rgba(232,119,34,.15);border:1px solid rgba(232,119,34,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--orange);flex-shrink:0;margin-top:1px;}
+.lp-b-ul{list-style:none;display:grid;gap:11px;margin-bottom:28px;}
+.lp-b-ul li{display:flex;align-items:flex-start;gap:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:rgba(14,14,12,.72);line-height:1.6;}
+.lp-b-ul li::before{content:'✓';width:18px;height:18px;background:rgba(184,147,86,.15);border:1px solid rgba(184,147,86,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--gold);flex-shrink:0;margin-top:1px;}
+
+@media(max-width:640px){
+  .grid-2,.grid-3{grid-template-columns:1fr;}
+  .lp-host-row{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TOP NAV ══ -->
+<nav class="top-nav">
+  <div class="nav-logo">IFCA MC</div>
+  <button class="nav-btn active" onclick="showMain('dashboard',this)">📊 Dashboard</button>
+  <button class="nav-btn" onclick="showMain('projection',this)">🧮 Projection Calc</button>
+  <button class="nav-btn" onclick="showMain('attribution',this)">🔍 Attribution</button>
+  <button class="nav-btn" onclick="showMain('landing',this)">🖥 Landing Pages</button>
+  <div class="nav-tag">Command Center · v2.2 · Apr 2026</div>
+</nav>
+
+<!-- ══ SUB NAV (landing pages) ══ -->
+<div id="lp-subnav" class="sub-nav">
+  <button class="sub-btn active" onclick="showLP('a',this)">A · Biz Op / First Clients</button>
+  <button class="sub-btn" onclick="showLP('b',this)">B · LTV Retention</button>
+  <button class="sub-btn" onclick="showLP('c',this)">C · AI Claude Masterclass</button>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+  PANEL 1: DASHBOARD
+══════════════════════════════════════════════════════════ -->
+<div id="panel-dashboard" class="panel active">
+<div class="wrap">
+
+  <!-- KPIs -->
+  <div class="section-title">All-Time Masterclass & Webinar Results</div>
+  <div class="section-sub">April 2026 · Sources: Hyros, FB Ads Manager (act_623048835231084), GHL rQfRlcnhAA1RazfxjykB · 🔶 = manual Hyros UTM pull needed</div>
+
+  <div class="grid-auto mb16" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+    <div class="kpi-card"><div class="kpi-label">Hyros Revenue</div><div class="kpi-val orange">$8.85M</div><div class="kpi-sub">Lifetime attributed</div></div>
+    <div class="kpi-card"><div class="kpi-label">Blended ROAS</div><div class="kpi-val" style="color:var(--yellow)">2.58x</div><div class="kpi-sub">Last-click, all campaigns</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best Event ROAS</div><div class="kpi-val green">10.77x</div><div class="kpi-sub">Jan Rush 2024</div></div>
+    <div class="kpi-card"><div class="kpi-label">Meta Acct Spend</div><div class="kpi-val red">$2.99M</div><div class="kpi-sub">Mar 2023–Mar 2026</div></div>
+    <div class="kpi-card"><div class="kpi-label">Event Spend</div><div class="kpi-val" style="color:var(--electric)">$108K</div><div class="kpi-sub">53 webinar+challenge campaigns</div></div>
+    <div class="kpi-card"><div class="kpi-label">Max Registrants</div><div class="kpi-val" style="color:#a78bfa">781</div><div class="kpi-sub">Jul 2024 AI Webinar</div></div>
+    <div class="kpi-card"><div class="kpi-label">Peak Rev (event)</div><div class="kpi-val orange">$113.5K</div><div class="kpi-sub">May 2025 Challenge</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best CPL (Event)</div><div class="kpi-val green">$9.58</div><div class="kpi-sub">Jan Rush 2024 (726 regs)</div></div>
+  </div>
+
+  <!-- GHL Lifetime Stats (from screenshots) -->
+  <div class="card mb16">
+    <div class="tag">GHL Funnel Lifetime Stats — From Screenshots</div>
+    <div style="overflow-x:auto">
+    <table class="tbl">
+      <thead><tr>
+        <th>Funnel</th><th>Page</th><th>All Views</th><th>Unique Views</th><th>Opt-Ins</th><th>CVR</th><th>Orders</th>
+      </tr></thead>
+      <tbody>
+        <tr><td rowspan="6" style="font-weight:600;color:var(--text);border-right:1px solid var(--border);white-space:nowrap">LTV Retention / Community Webinar</td><td class="muted">Landing Page</td><td class="num">5,679</td><td class="num">5,132</td><td class="num green bold">715</td><td class="num green bold">13.93%</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Replay Access</td><td class="num">109</td><td class="num">62</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Thank You Page</td><td class="num">850</td><td class="num">740</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Cory Live Event LP</td><td class="num">66</td><td class="num">52</td><td class="num green">12</td><td class="num green">23.08%</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Replay Access (Cory)</td><td class="num">21</td><td class="num">11</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Bonus Expired</td><td class="num">3</td><td class="num">2</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr style="border-top:2px solid var(--border-bright)"><td rowspan="3" style="font-weight:600;color:var(--text);border-right:1px solid var(--border);white-space:nowrap">September 2025 Webinar</td><td class="muted">Registration Page 1</td><td class="num">4,846</td><td class="num">4,148</td><td class="num green bold">606</td><td class="num green bold">14.61%</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Confirmation Page</td><td class="num">763</td><td class="num">647</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Webinar Replay (no opt-in)</td><td class="num">2,257</td><td class="num">1,769</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr style="border-top:2px solid var(--border-bright)"><td rowspan="9" style="font-weight:600;color:var(--text);border-right:1px solid var(--border);white-space:nowrap">May/June 2025 Challenge</td><td class="muted">Free 3 Day Challenge</td><td class="num">10,001</td><td class="num">7,779</td><td class="num yellow bold">791</td><td class="num yellow bold">10.17%</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">VIP Bullet Based</td><td class="num">1,193</td><td class="num">928</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Order Form</td><td class="num">157</td><td class="num">126</td><td class="num">67</td><td class="num orange">53.17%</td><td class="num green bold">58</td></tr>
+        <tr><td class="muted">Seat Confirmed (General)</td><td class="num">501</td><td class="num">382</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Seat Confirmed (VIP)</td><td class="num">135</td><td class="num">100</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Free 3-Day Replay</td><td class="num">538</td><td class="num">470</td><td class="num">43</td><td class="num">9.15%</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Day 1 Replay</td><td class="num">85</td><td class="num">51</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Day 2 Replay</td><td class="num">11</td><td class="num">6</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+        <tr><td class="muted">Day 3 Replay</td><td class="num">7</td><td class="num">3</td><td class="num muted">—</td><td class="num muted">—</td><td class="num muted">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div style="margin-top:10px;font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">
+      Key benchmarks: LTV LP 13.93% · Sept 2025 LP 14.61% · Challenge LP 10.17% · Cory Event 23.08% · Order Form 53.17% close rate
+    </div>
+  </div>
+
+  <!-- Events Table -->
+  <div class="card">
+    <div class="tag">All Events — Ad Spend & Performance</div>
+    <div style="overflow-x:auto">
+    <table class="tbl" id="events-tbl">
+      <thead><tr>
+        <th style="text-align:left">Event</th><th>Type</th><th>Regs</th><th>Meta Regs</th><th>Spend</th><th>CPL</th><th>Revenue</th><th>ROAS</th><th>CPM</th><th>CTR</th><th></th>
+      </tr></thead>
+      <tbody id="events-tbody"></tbody>
+    </table>
+    </div>
+    <div class="mt8" style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">
+      🔶 = Hyros per-event revenue pull needed (10-15 min each, UTM filter: ltv_webinar / bf_webinar / viral_ai_webinar)
+    </div>
+  </div>
+
+  <!-- Data reconciliation -->
+  <div class="warn-box mt16">
+    <div style="font-weight:700;font-size:12px;color:var(--red);margin-bottom:6px">⚠️ Data Reconciliation Notes</div>
+    <div style="font-size:11px;color:var(--muted);line-height:1.7">
+      FB Ads Manager shows $2.99M vs Hyros $3.43M — $430K delta likely from Hyros including YouTube/Google + wider date window (Nov 2022 start vs Mar 2023 for this FB pull). <br>
+      Only $108K of $2.99M Meta spend (3.6%) is under event campaign names — bulk is evergreen Client Engine / lead-gen. GHL lifetime stats blocked by Chrome extension conflict on date-range selector. Must pull manually with extension disabled (~15 min).
+    </div>
+  </div>
+
+</div>
+</div><!-- /panel-dashboard -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+  PANEL 2: PROJECTION CALCULATOR
+══════════════════════════════════════════════════════════ -->
+<div id="panel-projection" class="panel">
+<div class="wrap">
+
+  <div class="section-title">Projection Calculator</div>
+  <div class="section-sub">Adjust any input — outputs update live · Based on IFCA historical benchmarks · All numbers editable</div>
+
+  <!-- Scenario presets -->
+  <div class="scenario-chips">
+    <button class="s-chip" style="color:var(--green);border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.08)" onclick="loadScenario('best')">🏆 Best Case</button>
+    <button class="s-chip" style="color:var(--yellow);border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.08)" onclick="loadScenario('mid')">🟡 Mid Case</button>
+    <button class="s-chip" style="color:var(--red);border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.08)" onclick="loadScenario('worst')">🔴 Worst Case</button>
+    <button class="s-chip" style="color:#fb923c;border-color:rgba(249,115,22,.35);background:rgba(249,115,22,.08)" onclick="loadScenario('partner')">🤝 Partner Boost</button>
+    <button class="s-chip" style="color:var(--electric);border-color:rgba(99,179,237,.35);background:rgba(99,179,237,.08)" onclick="loadScenario('janrush')">⚡ Jan Rush 2024</button>
+    <button class="s-chip" style="color:var(--muted);border-color:var(--border)" onclick="loadScenario('custom')">✏️ Custom</button>
+  </div>
+
+  <div class="grid-2" style="gap:20px;align-items:start">
+
+    <!-- LEFT: Inputs -->
+    <div>
+      <div class="card mb16">
+        <div class="tag">Ad Spend & Traffic</div>
+
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Ad Spend ($)</span><span class="slider-val" id="lbl-spend">$15,000</span></div>
+          <input type="range" id="sl-spend" min="1000" max="30000" step="500" value="15000" oninput="syncSlider('spend',this.value)">
+          <div class="slider-minmax"><span>$1K</span><span>$30K</span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">CPM ($)</span><span class="slider-val" id="lbl-cpm">$55</span></div>
+          <input type="range" id="sl-cpm" min="25" max="120" step="1" value="55" oninput="syncSlider('cpm',this.value)">
+          <div class="slider-minmax"><span>$25</span><span style="color:var(--red)">$120</span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">CTR (%)</span><span class="slider-val" id="lbl-ctr">0.90%</span></div>
+          <input type="range" id="sl-ctr" min="0.003" max="0.02" step="0.001" value="0.009" oninput="syncSlider('ctr',this.value)">
+          <div class="slider-minmax"><span>0.3%</span><span style="color:var(--green)">2.0%</span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">LP Conversion Rate</span><span class="slider-val" id="lbl-lpconv">27%</span></div>
+          <input type="range" id="sl-lpconv" min="0.10" max="0.60" step="0.01" value="0.27" oninput="syncSlider('lpconv',this.value)">
+          <div class="slider-minmax"><span>10%<span style="color:var(--muted)"> (poor: 15-25%)</span></span><span style="color:var(--green)">60%<span style="color:var(--muted)"> (excellent: 45-60%)</span></span></div>
+        </div>
+      </div>
+
+      <div class="card mb16">
+        <div class="tag">Funnel Conversion Rates</div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Lead → Attendance</span><span class="slider-val" id="lbl-attend">25%</span></div>
+          <input type="range" id="sl-attend" min="0.10" max="0.50" step="0.01" value="0.25" oninput="syncSlider('attend',this.value)">
+          <div class="slider-minmax"><span>10%<span style="color:var(--muted)"> (poor: 15-20%)</span></span><span style="color:var(--green)">50%<span style="color:var(--muted)"> (excellent: 35-50%)</span></span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Attendance → See Offer</span><span class="slider-val" id="lbl-seeoffer">80%</span></div>
+          <input type="range" id="sl-seeoffer" min="0.40" max="1.0" step="0.05" value="0.80" oninput="syncSlider('seeoffer',this.value)">
+          <div class="slider-minmax"><span>40%<span style="color:var(--muted)"> (poor: 50-65%)</span></span><span style="color:var(--green)">100%<span style="color:var(--muted)"> (excellent: 85-95%)</span></span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">See Offer → Book Call (CVR)</span><span class="slider-val" id="lbl-cvr">4.0%</span></div>
+          <input type="range" id="sl-cvr" min="0.01" max="0.25" step="0.005" value="0.04" oninput="syncSlider('cvr',this.value)">
+          <div class="slider-minmax"><span>1%<span style="color:var(--muted)"> (poor: 3-8%)</span></span><span style="color:var(--green)">25%<span style="color:var(--muted)"> (excellent: 25-40%)</span></span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Book Call → Close</span><span class="slider-val" id="lbl-close">45%</span></div>
+          <input type="range" id="sl-close" min="0.15" max="0.80" step="0.05" value="0.45" oninput="syncSlider('close',this.value)">
+          <div class="slider-minmax"><span>15%<span style="color:var(--muted)"> (floor: 30%)</span></span><span style="color:var(--green)">80%</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tag">Offer & Revenue</div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Avg Contract Value ($)</span><span class="slider-val" id="lbl-aov">$11,350</span></div>
+          <input type="range" id="sl-aov" min="2000" max="25000" step="250" value="11350" oninput="syncSlider('aov',this.value)">
+          <div class="slider-minmax"><span>$2K</span><span>$25K</span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Upsell Rate</span><span class="slider-val" id="lbl-upsell">10%</span></div>
+          <input type="range" id="sl-upsell" min="0.0" max="0.30" step="0.01" value="0.10" oninput="syncSlider('upsell',this.value)">
+          <div class="slider-minmax"><span>0%</span><span>30%</span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Upsell AOV ($)</span><span class="slider-val" id="lbl-upsell-aov">$20,000</span></div>
+          <input type="range" id="sl-upsell-aov" min="5000" max="50000" step="1000" value="20000" oninput="syncSlider('upsell-aov',this.value)">
+          <div class="slider-minmax"><span>$5K</span><span>$50K</span></div>
+        </div>
+        <div class="slider-row">
+          <div class="slider-label"><span class="slider-name">Partner List Boost</span><span class="slider-val" id="lbl-partner">0%</span></div>
+          <input type="range" id="sl-partner" min="0" max="0.60" step="0.05" value="0" oninput="syncSlider('partner',this.value)">
+          <div class="slider-minmax"><span>0% (solo)</span><span style="color:#fb923c">+60% (partner)</span></div>
+        </div>
+
+        <!-- Direct number overrides -->
+        <div class="divider"></div>
+        <div class="tag">Direct Input Overrides</div>
+        <div class="grid-2" style="gap:10px">
+          <div>
+            <div class="mono muted mb8" style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase">Total Registrants (override)</div>
+            <input type="number" class="num-input" id="in-regs" placeholder="Leave blank to calculate" oninput="calcAll()">
+          </div>
+          <div>
+            <div class="mono muted mb8" style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase">Organic Registrants</div>
+            <input type="number" class="num-input" id="in-organic" placeholder="0" oninput="calcAll()">
+          </div>
+          <div>
+            <div class="mono muted mb8" style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase">Email List Size</div>
+            <input type="number" class="num-input" id="in-email-list" placeholder="e.g. 3000" oninput="calcAll()">
+          </div>
+          <div>
+            <div class="mono muted mb8" style="font-size:9px;letter-spacing:1.5px;text-transform:uppercase">Email → Reg Rate</div>
+            <input type="number" class="num-input" id="in-email-rate" placeholder="0.02 = 2%" step="0.001" oninput="calcAll()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Outputs -->
+    <div>
+      <!-- ROAS Meter -->
+      <div class="card mb16">
+        <div class="flex-between mb8">
+          <span class="tag" style="margin-bottom:0">Projected ROAS</span>
+          <span id="out-roas-big" style="font-family:'Bebas Neue',sans-serif;font-size:48px;line-height:1;color:var(--green)">0.0x</span>
+        </div>
+        <div class="roas-track">
+          <div id="roas-fill" class="roas-fill" style="width:0%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e)"></div>
+          <div class="roas-marker" style="left:58.3%" title="Target: 7x"></div>
+          <div class="roas-marker" style="left:89.8%;background:var(--green)" title="Best: 10.77x"></div>
+        </div>
+        <div class="flex-between mono" style="font-size:9px;color:var(--muted);margin-top:4px">
+          <span>0x</span><span style="color:var(--orange)">Target: 7x ↑</span><span style="color:var(--green)">Best: 10.77x ↑</span><span>12x</span>
+        </div>
+      </div>
+
+      <!-- Output KPIs -->
+      <div class="grid-2 mb16" style="gap:10px">
+        <div class="kpi-card"><div class="kpi-label">Leads Generated</div><div class="kpi-val" id="out-leads" style="color:var(--electric)">—</div><div class="kpi-sub" id="out-cpl-sub">CPL: —</div></div>
+        <div class="kpi-card"><div class="kpi-label">Total Registrants</div><div class="kpi-val orange" id="out-regs">—</div><div class="kpi-sub" id="out-organic-sub">incl. organic/email</div></div>
+        <div class="kpi-card"><div class="kpi-label">Live Attendees</div><div class="kpi-val" id="out-attend" style="color:#a78bfa">—</div><div class="kpi-sub" id="out-showrate-sub">Show rate: —</div></div>
+        <div class="kpi-card"><div class="kpi-label">See Offer</div><div class="kpi-val yellow" id="out-seeoffer">—</div><div class="kpi-sub">Of attendees</div></div>
+        <div class="kpi-card"><div class="kpi-label">Calls Booked</div><div class="kpi-val orange" id="out-calls">—</div><div class="kpi-sub" id="out-bookrate-sub">Booking rate: —</div></div>
+        <div class="kpi-card"><div class="kpi-label">Clients Closed</div><div class="kpi-val green" id="out-clients">—</div><div class="kpi-sub" id="out-closerate-sub">Close rate: —</div></div>
+      </div>
+
+      <!-- Funnel flow -->
+      <div class="card mb16">
+        <div class="tag">Funnel Flow</div>
+        <div class="funnel-bar" id="funnel-flow"></div>
+        <div class="flex-between" style="padding:10px 12px;background:rgba(34,197,94,.06);border-radius:6px;border:1px solid rgba(34,197,94,.2)">
+          <span class="mono muted" style="font-size:11px">TOTAL REVENUE</span>
+          <span id="out-revenue" style="font-size:18px;font-weight:800;color:var(--green);font-family:'DM Mono',monospace">—</span>
+        </div>
+      </div>
+
+      <!-- Benchmark comparison -->
+      <div class="card">
+        <div class="tag">Live vs Kevin SOP Benchmarks</div>
+        <div id="benchmark-bars"></div>
+        <div class="divider"></div>
+        <div class="tag">vs Kevin SOP Benchmarks (Student Campaigns)</div>
+        <div style="overflow-x:auto;margin-bottom:14px">
+        <table class="tbl">
+          <thead><tr><th style="text-align:left">Metric</th><th style="color:var(--red)">Poor</th><th style="color:var(--yellow)">Good</th><th style="color:var(--green)">Excellent</th></tr></thead>
+          <tbody>
+            <tr><td class="muted">LP CVR</td><td class="num red">15–25%</td><td class="num yellow">30–40%</td><td class="num green">45–60%</td></tr>
+            <tr><td class="muted">CPL</td><td class="num red">$15–25</td><td class="num yellow">$8–15</td><td class="num green">$3–8</td></tr>
+            <tr><td class="muted">Lead → Attend</td><td class="num red">15–20%</td><td class="num yellow">25–35%</td><td class="num green">35–50%</td></tr>
+            <tr><td class="muted">Attend → See Offer</td><td class="num red">50–65%</td><td class="num yellow">70–85%</td><td class="num green">85–95%</td></tr>
+            <tr><td class="muted">See Offer → Book</td><td class="num red">3–8%</td><td class="num yellow">12–20%</td><td class="num green">25–40%</td></tr>
+            <tr><td class="muted">Book → Close</td><td class="num red">20–35%</td><td class="num yellow">40–55%</td><td class="num green">60–75%</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="divider"></div>
+        <div class="tag">IFCA Historical Events (Actual)</div>
+        <table class="tbl">
+          <thead><tr><th style="text-align:left">Event</th><th>Spend</th><th>Regs</th><th>CPL</th><th>ROAS</th></tr></thead>
+          <tbody>
+            <tr><td><span style="font-weight:600">Jan Rush 2024</span> <span class="badge type-mc">🏆 Best</span></td><td class="num">$6,956</td><td class="num green bold">726</td><td class="num green bold">$9.58</td><td class="num green bold">10.77x</td></tr>
+            <tr><td>Apr 2024 Workshop</td><td class="num">$6,126</td><td class="num">746</td><td class="num muted">—</td><td class="num muted">🔶</td></tr>
+            <tr><td>Jul 2024 AI Webinar</td><td class="num">$14,717</td><td class="num">781</td><td class="num muted">—</td><td class="num muted">🔶</td></tr>
+            <tr><td>Nov 2024 Black Friday</td><td class="num">$4,696</td><td class="num">603</td><td class="num yellow">$32.61</td><td class="num muted">🔶</td></tr>
+            <tr><td>LTV Webinar Jan 2026</td><td class="num">$13,137</td><td class="num">421</td><td class="num yellow">$31.20</td><td class="num muted">🔶</td></tr>
+            <tr><td>May 2025 Challenge</td><td class="num">$21,626</td><td class="num">714</td><td class="num red">$53.00</td><td class="num" style="color:#a78bfa">5.25x</td></tr>
+            <tr><td><span style="color:var(--red)">Mar 2025 Webinar</span> <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">Worst</span></td><td class="num">$13,073</td><td class="num">477</td><td class="num red">$27.41</td><td class="num red">2.24x</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Warn box -->
+  <div class="warn-box mt16">
+    <div style="font-weight:700;font-size:12px;color:var(--red);margin-bottom:5px">⚠️ Scale Warning: More Spend ≠ More ROAS</div>
+    <div style="font-size:11px;color:var(--muted);line-height:1.65">March 2025 spent <strong style="color:var(--text)">$13,073</strong> (highest event spend at the time) and returned only <strong style="color:var(--red)">2.24x</strong> — worst ROAS on record. Jan Rush spent <strong style="color:var(--text)">$6,956</strong> and returned <strong style="color:var(--green)">10.77x</strong>. Angle, timing, and audience quality drive results — not budget. The recalibrated Jan Rush scenario now correctly models ~724 leads at $9.60 CPL, matching the actual event.</div>
+  </div>
+
+</div>
+</div><!-- /panel-projection -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+  PANEL 3: LANDING PAGES
+══════════════════════════════════════════════════════════ -->
+<div id="panel-landing" class="panel">
+
+  <!-- Sub-panels -->
+  <div id="lp-a" class="sub-panel active lp-preview">
+
+    <section class="lp-hero-a">
+      <p class="lp-eyebrow-a">Free Live Masterclass · Online Fitness, Nutrition & Health Coaches</p>
+      <div class="lp-badge-a">📅 Join Us Live · [Date] at [Time] EST</div>
+      <h1 class="lp-h1-a">How To Sign Your<br><span class="ital">First (Or Next) 3–5</span><br><span class="acc">High-Ticket Clients</span><br>In 30 Days</h1>
+      <p class="lp-sub-a">The <strong>One-Day Masterclass Funnel™</strong> — the exact system 4,600+ coaches have used to go from grinding DMs and posting daily to <strong>consistent $10K–$50K months</strong> without a big audience or complicated tech.</p>
+      <div class="lp-meta-a">
+        <span class="lp-meta-txt"><span class="lp-meta-dot"></span>Live on Zoom · [Date]</span>
+        <span class="lp-meta-txt"><span class="lp-meta-dot"></span>90 Minutes · No Replay</span>
+        <span class="lp-meta-txt"><span class="lp-meta-dot"></span>Free · Limited Seats</span>
+      </div>
+      <a href="#" class="btn-lp-a">Save My Free Seat Now →</a>
+      <p class="lp-btn-sub">Limited spots · Seats are filling fast</p>
+    </section>
+
+    <div class="lp-proof">
+      <div class="lp-pstat"><span class="pn">4,600+</span><span class="pl">Coaches Trained</span></div>
+      <div class="lp-pstat"><span class="pn">$100M+</span><span class="pl">Client Revenue Generated</span></div>
+      <div class="lp-pstat"><span class="pn">3.5 Wks</span><span class="pl">Avg. First Client</span></div>
+      <div class="lp-pstat"><span class="pn">10.77x</span><span class="pl">Best Event ROAS</span></div>
+    </div>
+
+    <section class="lp-section-a">
+      <div class="lp-wrap">
+        <p class="tag">The Real Problem</p>
+        <h2 class="lp-sh2">You're Not Running <span>One Business.</span> You're Running Three.</h2>
+        <p class="lp-body">Right now, you're spinning three separate, exhausting plates: <strong>generating leads, nurturing those leads, and converting them into paying clients</strong> — all at the same time, with the same limited hours.</p>
+        <p class="lp-body">Cold outreach sucks. Posting every day is exhausting and unpredictable. Sales calls keep booking with people who "need to think about it." <strong>The system is broken — not you.</strong></p>
+        <ul>
+          <li><strong>Lead Generation:</strong> Post more, DM more, story more. It works until it doesn't.</li>
+          <li><strong>Lead Nurture:</strong> Content alone doesn't go deep enough. DMs don't scale.</li>
+          <li><strong>Lead Conversion:</strong> Sales calls with cold, un-nurtured leads who haven't been pre-sold.</li>
+        </ul>
+        <div class="text-center" style="margin-top:28px">
+          <p class="tag" style="margin-bottom:6px">What if there was one system</p>
+          <h2 class="lp-sh2" style="font-size:clamp(24px,3.5vw,38px)">That does all three jobs <span>simultaneously?</span></h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section-a alt">
+      <div class="lp-wrap">
+        <p class="tag">Inside The Masterclass</p>
+        <h2 class="lp-sh2">3 <span>Secrets</span> That Change Everything</h2>
+        <div class="lp-secret"><div class="lp-snum">01</div><div><div class="lp-stitle">Why You Don't Need More Followers — You Need a Better System</div><div class="lp-sbody">Coaches with under 1,000 followers outearning coaches with 50,000. We'll show you exactly how — and why audience size is the most expensive myth in this industry.</div></div></div>
+        <div class="lp-secret"><div class="lp-snum">02</div><div><div class="lp-stitle">The One-Day Funnel That Generates, Warms, and Converts in 90 Minutes</div><div class="lp-sbody">The exact funnel architecture behind $74,909 in revenue from a single event. Build it in 2 hours, run it monthly, and make it your primary client acquisition engine.</div></div></div>
+        <div class="lp-secret"><div class="lp-snum">03</div><div><div class="lp-stitle">The Paid Amplification Method That Turns $10/Day into Booked Calls</div><div class="lp-sbody">The simple ad strategy generating $31/lead for IFCA right now — even with a tiny audience and no ad experience.</div></div></div>
+        <div class="text-center mt24"><a href="#" class="btn-lp-a">Claim Your Free Spot →</a><p class="lp-btn-sub">Live Only · No Replay · [Date] at [Time] EST</p></div>
+      </div>
+    </section>
+
+    <section class="lp-section-a">
+      <div class="lp-wrap">
+        <p class="tag">Real Coaches. Real Results.</p>
+        <h2 class="lp-sh2">Coaches Who've <span>Built This System</span></h2>
+        <div class="lp-testi"><div class="lp-tres">$74,909 From One Live Event · 10.77x ROAS</div><div class="lp-tq">"The January Rush masterclass changed everything. 726 registrants, 10.77x ROAS, a system I now run monthly. I used to think I needed viral content to get clients. I just needed the right event."</div><div class="lp-ta">— IFCA Student, Online Coaching Business</div></div>
+        <div class="lp-testi"><div class="lp-tres">$3K → $61K/Month in Under 12 Months</div><div class="lp-tq">"No audience, no ad budget, no idea. After IFCA I ran my first masterclass with 726 registrants and signed clients I never would have found through DMs."</div><div class="lp-ta">— Kacey, Online Fitness Coach</div></div>
+        <div class="lp-testi"><div class="lp-tres">First High-Ticket Client in 3.5 Weeks</div><div class="lp-tq">"Brand new — no followers, no ads, no email list. The masterclass funnel did all the heavy lifting. First client closed in week 3."</div><div class="lp-ta">— New Coach, IFCA Student 2024</div></div>
+      </div>
+    </section>
+
+    <section class="lp-section-a alt">
+      <div class="lp-wrap">
+        <p class="tag">Exclusive Live Bonuses</p>
+        <h2 class="lp-sh2">Attend Live, Walk Away <span>With These</span></h2>
+        <div class="lp-bonus-box">
+          <div class="tag">🎁 For Live Attendees Only</div>
+          <div class="lp-bi"><div class="lp-bicon">📊</div><div><div class="lp-btitle">Bonus #1: The IFCA Projection Calculator™</div><div class="lp-bdesc">Know what you'll make before spending $1 on ads. CPL, show rate, booking rate, and ROAS forecast in 5 minutes.</div></div></div>
+          <div class="lp-bi"><div class="lp-bicon">🎯</div><div><div class="lp-btitle">Bonus #2: The Client Getting Ad Script Pack</div><div class="lp-bdesc">5 proven ad scripts you can film on your phone this week — the exact hooks driving 421 registrants at $31/lead right now.</div></div></div>
+          <div class="lp-bi"><div class="lp-bicon">🔥</div><div><div class="lp-btitle">Bonus #3: Live Q&A with Jordan & Erin</div><div class="lp-bdesc">Bring your specific situation. This is where 6- and 7-figure coaches get answers to what's actually holding them back.</div></div></div>
+        </div>
+        <div class="lp-host-row">
+          <div class="lp-host"><div class="lp-hav">JD</div><div><div class="lp-hname">Jordan Dugger</div><div class="lp-htitle">Co-Founder, IFCA</div><div class="lp-hbio">Built IFCA into the longest-standing mentorship in online fitness coaching. 7+ years, 4,600+ students, $100M+ in client revenue.</div></div></div>
+          <div class="lp-host"><div class="lp-hav">ED</div><div><div class="lp-hname">Erin Dimond</div><div class="lp-htitle">Co-Founder, IFCA</div><div class="lp-hbio">Built a $500K/year coaching business before burnout forced her to build systems. Now she helps coaches sign high-ticket clients without sacrificing their life.</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-cta-a">
+      <div class="lp-wrap" style="position:relative">
+        <p class="lp-eyebrow-a">Don't Miss This</p>
+        <h2 class="lp-sh2" style="font-size:clamp(28px,4.5vw,52px);margin-bottom:14px">Your Next 3–5 Clients Are<br><span>One System Away</span></h2>
+        <p class="lp-body" style="max-width:520px;margin:0 auto 28px">Every month without this system is another month of DMs, guesswork, and inconsistent revenue. 90 minutes. 2 hours to build. <strong>First client in 30 days.</strong></p>
+        <a href="#" class="btn-lp-a">Reserve My Free Seat →</a>
+        <p class="lp-btn-sub" style="margin-top:12px">[Date] · [Time] EST · Live on Zoom · Limited Spots</p>
+      </div>
+    </section>
+    <footer class="lp-footer">© 2026 Impact Fitness Coaching Academy · NASM · AFAA · ISSA Approved CEP<br><span style="opacity:.5">Disclaimer · Privacy Policy · Terms</span></footer>
+  </div><!-- /lp-a -->
+
+
+  <div id="lp-b" class="sub-panel" style="background:var(--cream)">
+    <section class="lp-hero-b">
+      <p class="lp-eyebrow-a" style="color:var(--gold-light)">Free Live Workshop · Online Fitness, Nutrition & Health Coaches</p>
+      <div style="display:inline-block;border:1px solid rgba(184,147,86,.4);color:var(--gold-light);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:7px 18px;border-radius:24px;margin-bottom:26px;">📅 Live · [Date] at [Time] EST</div>
+      <h1 class="lp-h1-b">How to Add <em>$146,000</em><br>in Revenue Without<br>Signing a Single<br>New Client</h1>
+      <p class="lp-sub-b">The <strong>5-Step Community Funnel™</strong> — the retention method behind Vanessa's $702K year signing just 2–3 clients per month, and David's $96,260 from one round of back-end calls.</p>
+      <a href="#" class="btn-lp-b">Watch the Free Workshop →</a>
+      <p style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,.22);text-transform:uppercase;margin-top:12px">Limited replay access</p>
+    </section>
+    <div class="lp-b-proof">
+      <div class="lp-b-stat"><span class="n">$702K</span><span class="l">Vanessa's Year (2–3 Clients/Mo)</span></div>
+      <div class="lp-b-stat"><span class="n">$96,260</span><span class="l">David — One Round of Back-Ends</span></div>
+      <div class="lp-b-stat"><span class="n">40–60%</span><span class="l">Back-End Close Rate</span></div>
+      <div class="lp-b-stat"><span class="n">3,987+</span><span class="l">Coaches Trained</span></div>
+    </div>
+    <section class="lp-s-b dark">
+      <div class="lp-wrap">
+        <div class="tag" style="color:var(--gold-light)">The Problem No One Talks About</div>
+        <h2 class="lp-h2-b lt">You're Leaving Six Figures<br><em>on the Table Every Year.</em></h2>
+        <div style="width:40px;height:2px;background:var(--gold);margin-bottom:22px"></div>
+        <p class="lp-body-b lt">Most coaches are so focused on getting <em>new</em> clients that they completely ignore the most valuable asset they already have: <strong>their existing client base.</strong></p>
+        <p class="lp-body-b lt">Every client who finishes and disappears is a missed $5K–$15K opportunity. <strong>The math behind $146K is simpler than you think.</strong></p>
+      </div>
+    </section>
+    <section class="lp-s-b mid">
+      <div class="lp-wrap">
+        <div class="tag">Inside the Workshop</div>
+        <h2 class="lp-h2-b">What You'll Walk Away<br><em>Knowing How to Do</em></h2>
+        <div style="width:40px;height:2px;background:var(--gold);margin-bottom:22px"></div>
+        <ul class="lp-b-ul">
+          <li><strong>The Only 3 Ways to Build a Profitable Coaching Business</strong> — and why most coaches are stuck on the hardest, most expensive one.</li>
+          <li><strong>The Money Math Behind $146K</strong> — sign just 2 clients per month with this back-end structure.</li>
+          <li><strong>The 5-Step Community Funnel™</strong> — 2–4x retention, recurring income, 40–60% back-end close rates.</li>
+          <li><strong>How to Uncover Your Hidden Back-End Revenue</strong> — the offer structure killing your retention and how to fix it.</li>
+          <li><strong>The Re-Sign Script</strong> — the exact 6-step script David used to go 24-for-26 on back-end calls.</li>
+        </ul>
+        <div class="text-center"><a href="#" class="btn-lp-b">Access the Free Workshop →</a></div>
+      </div>
+    </section>
+    <section class="lp-s-b">
+      <div class="lp-wrap">
+        <div class="tag">Proven Results</div>
+        <h2 class="lp-h2-b">The Method Behind<br><em>Real Transformations</em></h2>
+        <div style="width:40px;height:2px;background:var(--gold);margin-bottom:22px"></div>
+        <div class="lp-testi-b"><div class="lp-tres-b">$702K Year. 2–3 Clients Per Week.</div><div class="lp-tq-b">"In 2022 my business made $702,000 and I only had to sign 2–3 clients per week. I quit my job as an accountant, went full-time in 4 weeks, and now I'm on track to $1M."</div><div class="lp-ta-b">— Vanessa Gillette, IFCA Student</div></div>
+        <div class="lp-testi-b"><div class="lp-tres-b">$96,260 From One Round of Back-End Calls.</div><div class="lp-tq-b">"Before IFCA I was working 4 jobs making $8,000/month. I re-signed 24 current clients, went 24 of 26. $96,260 contracted. It's uncomfortable in the best way."</div><div class="lp-ta-b">— David Pegram, IFCA Student</div></div>
+        <div class="lp-testi-b"><div class="lp-tres-b">$30K–$40K MRR Without New Clients.</div><div class="lp-tq-b">"Now I have $30K–$40K in MRR. I could not sign another client for 4–6 months and still be profitable."</div><div class="lp-ta-b">— Alycia Israel, IFCA Student</div></div>
+      </div>
+    </section>
+    <section class="lp-s-b dark" style="text-align:center">
+      <div class="lp-wrap">
+        <div class="tag" style="color:var(--gold-light)">One Last Thing</div>
+        <h2 class="lp-h2-b lt" style="font-size:clamp(26px,4.5vw,46px);margin-bottom:14px">Your Back-End Revenue Is<br><em>Already Waiting for You</em></h2>
+        <p class="lp-body-b lt" style="max-width:500px;margin:0 auto 28px">The clients who trust you most are the ones you already have. This workshop shows you how to turn that trust into $146,000+ without a single new client.</p>
+        <a href="#" class="btn-lp-b">Access the Free Workshop →</a>
+      </div>
+    </section>
+    <div style="background:#0a0a0a;padding:18px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.15);text-transform:uppercase;">© 2026 Impact Fitness Coaching Academy · NASM · AFAA · ISSA CEP<br><span style="opacity:.5">Disclaimer · Privacy Policy · Terms</span></div>
+  </div><!-- /lp-b -->
+
+
+  <div id="lp-c" class="sub-panel lp-page-c">
+    <section class="lp-hero-c">
+      <p class="lp-eyebrow-a" style="color:#63B3ED">Free Live Masterclass · Online Health, Fitness & Nutrition Coaches</p>
+      <div class="lp-badge-c"><span class="c-dot"></span>Live Event · [Date] at [Time] EST</div>
+      <h1 class="lp-h1-c">The <span class="cb">AI Masterclass</span><br><span class="co">Funnel™:</span> How to Use<br>Claude to Build a<br><span class="cb">Client-Getting Machine</span></h1>
+      <p class="lp-sub-c">How our coaches are using <strong>AI + simple paid amplification</strong> to generate millions of views, fill their DMs with qualified leads, and sign <strong>5–10 high-paying clients per month</strong> — without becoming full-time content creators.</p>
+      <div class="lp-meta-a" style="justify-content:center">
+        <span class="lp-meta-txt" style="color:rgba(232,236,240,.38)"><span style="width:6px;height:6px;border-radius:50%;background:#63B3ED;display:inline-block;margin-right:8px"></span>Live on Zoom</span>
+        <span class="lp-meta-txt" style="color:rgba(232,236,240,.38)"><span style="width:6px;height:6px;border-radius:50%;background:#63B3ED;display:inline-block;margin-right:8px"></span>90 Minutes</span>
+        <span class="lp-meta-txt" style="color:rgba(232,236,240,.38)"><span style="width:6px;height:6px;border-radius:50%;background:#63B3ED;display:inline-block;margin-right:8px"></span>Free · Limited</span>
+      </div>
+      <a href="#" class="btn-lp-c">Claim My Free Seat →</a>
+      <p class="lp-btn-sub" style="color:rgba(232,236,240,.22)">AI-era coaches only · Seats limited</p>
+    </section>
+    <div class="lp-c-proof">
+      <div class="lp-c-stat"><span class="n">Millions</span><span class="l">Views Generated</span></div>
+      <div class="lp-c-stat"><span class="n">$31/Lead</span><span class="l">Avg CPL (LTV Webinar 2026)</span></div>
+      <div class="lp-c-stat"><span class="n">781</span><span class="l">Max Regs — One Event</span></div>
+      <div class="lp-c-stat"><span class="n">14.61%</span><span class="l">Sept 2025 LP CVR</span></div>
+    </div>
+    <section class="lp-s-c">
+      <div class="lp-wrap">
+        <div class="tag" style="color:#63B3ED">The 3-Step AI Content Engine™</div>
+        <h2 class="lp-h2-c">You'll Build This Live<br><span class="cb">Inside The Masterclass</span></h2>
+        <div class="lp-module"><div class="lp-mtag">Module 01</div><div><div class="lp-mtitle">The AI Content Factory — 10 Templates That Drive Views and Sales</div><div class="lp-mbody">Swipe the same 10 post templates that have generated millions of views for IFCA coaches — and use Claude to turn them into content in your own voice in under 10 minutes.</div></div></div>
+        <div class="lp-module"><div class="lp-mtag">Module 02</div><div><div class="lp-mtitle">The Done-For-You 90-Day Content Calendar</div><div class="lp-mbody">Leave with a full 90-day content plan — hooks, angles, and post ideas — built specifically for your niche using AI. Never stare at a blank screen again.</div></div></div>
+        <div class="lp-module"><div class="lp-mtag">Module 03</div><div><div class="lp-mtitle">The Andromeda Paid Amplification Method — $31/Lead on Meta</div><div class="lp-mbody">Take your best organic content, add $10–$50/day in paid amplification, and turn it into a predictable lead machine. No big budget required.</div></div></div>
+        <div class="text-center mt24"><a href="#" class="btn-lp-c">Save My Seat →</a><p class="lp-btn-sub" style="color:rgba(232,236,240,.22)">Live [Date] · No Replay</p></div>
+      </div>
+    </section>
+    <section class="lp-s-c alt">
+      <div class="lp-wrap">
+        <div class="tag" style="color:#63B3ED">Coaches Using the System</div>
+        <h2 class="lp-h2-c">Real Results from<br><span class="cb">AI-First Coaches</span></h2>
+        <div class="lp-testi-c"><div class="lp-tres-c">781 Registrants From One AI-Backed Webinar</div><div class="lp-tq-c">"We used the AI content system to promote our July masterclass and hit 781 registrants — the most we'd ever had. The organic content did half the heavy lifting and the paid ads did the rest. Total spend: $14,717."</div><div class="lp-ta-c">— IFCA Team, July 2024 AI Viral Webinar</div></div>
+        <div class="lp-testi-c"><div class="lp-tres-c">5–10 New Clients Monthly, No Content Burnout</div><div class="lp-tq-c">"Before AI I was posting every day and getting nowhere. Now I batch content in 2 hours, let Claude write the hooks, run $20/day in ads, and my DMs don't stop. Fully booked in 8 weeks."</div><div class="lp-ta-c">— IFCA Student, Online Nutrition Coach</div></div>
+        <div class="lp-testi-c"><div class="lp-tres-c">606 Registrants · 14.61% LP Conversion</div><div class="lp-tq-c">"The AI content framework made our September 2025 webinar the easiest launch we've run. 4,846 page views, 606 opt-ins at 14.61% CVR, and a replay page that hit 2,257 views on its own."</div><div class="lp-ta-c">— IFCA Team, September 2025</div></div>
+      </div>
+    </section>
+    <section class="lp-s-c" style="text-align:center">
+      <div class="lp-wrap">
+        <div class="tag" style="color:#63B3ED;text-align:center">The AI Advantage</div>
+        <h2 class="lp-h2-c" style="font-size:clamp(26px,4.5vw,48px);margin-bottom:14px">Is Closing Fast</h2>
+        <p class="lp-body-c" style="max-width:500px;margin:0 auto 28px">Every month you're posting manually is another month your competitors are using AI to out-create and out-earn you. This masterclass takes 90 minutes. <strong style="color:#e8ecf0">The system change lasts forever.</strong></p>
+        <a href="#" class="btn-lp-c">Reserve My Free Seat →</a>
+        <p class="lp-btn-sub" style="color:rgba(232,236,240,.22);margin-top:12px">[Date] · [Time] EST · Limited</p>
+      </div>
+    </section>
+    <div class="lp-c-footer">© 2026 Impact Fitness Coaching Academy · NASM · AFAA · ISSA Approved CEP<br><span style="opacity:.5">Disclaimer · Privacy Policy · Terms</span></div>
+  </div><!-- /lp-c -->
+
+</div><!-- /panel-landing -->
+
+
+<!-- ══════════════════════════════════════════════════════════
+  PANEL 4: ATTRIBUTION INTELLIGENCE
+══════════════════════════════════════════════════════════ -->
+<div id="panel-attribution" class="panel">
+<div class="wrap">
+
+  <div class="section-title">Attribution Intelligence</div>
+  <div class="section-sub">Confirmed closes cross-referenced via Slack #ifca-closed-deals · Webinar Attribution Sheet · Challenge Source Breakdown · New Deal Attribution Sheet · April 2026</div>
+
+  <!-- Attribution KPIs -->
+  <div class="grid-auto mb16" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+    <div class="kpi-card"><div class="kpi-label">Webinar-Attributed Closes</div><div class="kpi-val orange">26</div><div class="kpi-sub">Confirmed multi-touch closes</div></div>
+    <div class="kpi-card"><div class="kpi-label">Challenge-Attributed Closes</div><div class="kpi-val" style="color:#a78bfa">11</div><div class="kpi-sub">May/Jun 2025 Challenge</div></div>
+    <div class="kpi-card"><div class="kpi-label">Challenge VIP Revenue</div><div class="kpi-val green">$2,491</div><div class="kpi-sub">53 VIP purchases @ $47</div></div>
+    <div class="kpi-card"><div class="kpi-label">Avg Touchpoints / Close</div><div class="kpi-val" style="color:var(--electric)">3–4</div><div class="kpi-sub">Multi-touch across 37 confirmed</div></div>
+    <div class="kpi-card"><div class="kpi-label">Longest Nurture Cycle</div><div class="kpi-val yellow">7+ mo</div><div class="kpi-sub">Sebastiaan de Ranitz</div></div>
+    <div class="kpi-card"><div class="kpi-label">Replay-Assisted Closes</div><div class="kpi-val" style="color:#a78bfa">~40%</div><div class="kpi-sub">Had webinar replay as warm-up</div></div>
+  </div>
+
+  <!-- Section 1: Webinar Attribution Closes -->
+  <div class="card mb16">
+    <div class="tag">Webinar / Masterclass Attributed Closes (26 Confirmed)</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:12px;line-height:1.7">
+      These clients had a webinar or masterclass touchpoint confirmed in their conversion journey via the Webinar Attribution Sheet (Hyros + GHL cross-reference). Most are multi-touch: typical path is <strong style="color:var(--text)">FB Ad → Community Funnel / AI Workshop → Webinar Replay → SMS/Email → Book Call → Close.</strong>
+    </div>
+    <div style="overflow-x:auto">
+    <table class="tbl">
+      <thead><tr>
+        <th style="text-align:left">Name</th><th style="text-align:left">Email</th><th style="text-align:left">First Touch</th><th style="text-align:left">Last Touch / Journey Note</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="font-weight:600">Lilia Fedulova</td><td class="muted" style="font-size:10px">lilucools@gmail.com</td><td><span class="badge type-webinar">IG organic</span></td><td class="muted" style="font-size:10px;max-width:340px">el=ig → el=organic → AI Viral Workshop. Re-engaged after initial drop-off via organic link.</td></tr>
+        <tr><td style="font-weight:600">Lisa Swanson</td><td class="muted" style="font-size:10px">lisa@bodyandsoulcoaching.com</td><td><span class="badge type-webinar">FB Paid</span></td><td class="muted" style="font-size:10px;max-width:340px">FB ads (Sep 2024) → Content Planner → Black Friday Page → AI Workshop replay. Long nurture cycle.</td></tr>
+        <tr><td style="font-weight:600">Monica Saavedra</td><td class="muted" style="font-size:10px">mnsaav15@gmail.com</td><td><span class="badge type-webinar">Organic</span></td><td class="muted" style="font-size:10px;max-width:340px">el=organic → AI Viral Content Workshop only. Short, clean single-funnel close.</td></tr>
+        <tr><td style="font-weight:600">Alina Glover</td><td class="muted" style="font-size:10px">coachqueenfitness@gmail.com</td><td><span class="badge type-webinar">FB Paid</span></td><td class="muted" style="font-size:10px;max-width:340px">May 2023 first touch via FB. IG Playbook → Application → Book Call. Long 18-month nurture.</td></tr>
+        <tr><td style="font-weight:600">Daniel Wheeler</td><td class="muted" style="font-size:10px">danwheeler19@hotmail.com</td><td><span class="badge type-webinar">FB Paid</span></td><td class="muted" style="font-size:10px;max-width:340px">FB ad → Community Funnel → re-engaged via SMS (el=sms) → AI Workshop.</td></tr>
+        <tr><td style="font-weight:600">Emma Kirchner</td><td class="muted" style="font-size:10px">emma@fithabit.club</td><td><span class="badge type-webinar">Paid Media</span></td><td class="muted" style="font-size:10px;max-width:340px">Paid media initial → SMS re-engage → post-webinar email follow-up (el=email_postwebinar_followup) → close.</td></tr>
+        <tr><td style="font-weight:600">Mike McVeigh</td><td class="muted" style="font-size:10px">mikemcveigh29@gmail.com</td><td><span class="badge type-webinar">FB Paid</span></td><td class="muted" style="font-size:10px;max-width:340px">FB campaign → re-opted into AI Workshop via organic. Simple 2-touch close.</td></tr>
+        <tr><td style="font-weight:600">Shya Familia</td><td class="muted" style="font-size:10px">shyaefamilia@gmail.com</td><td><span class="badge type-webinar">IG DM Ad</span></td><td class="muted" style="font-size:10px;max-width:340px">IG DM VSL Ads → MAHA Grant → Community Funnel → Content Planner → AI Workshop. Highest-touch journey in dataset.</td></tr>
+        <tr><td style="font-weight:600">Tyler Kirby</td><td class="muted" style="font-size:10px">tylerkirbyhealth@gmail.com</td><td><span class="badge type-webinar">FB + IG</span></td><td class="muted" style="font-size:10px;max-width:340px">Extremely active lead. AI Workshop → 10K in 14 Days → Challenge Funnel → Community Funnel → Content Planner. Multi-campaign across 3+ months.</td></tr>
+        <tr><td style="font-weight:600">Chris Ellis</td><td class="muted" style="font-size:10px">deerebanks@yahoo.com</td><td><span class="badge type-webinar">IFCA IG</span></td><td class="muted" style="font-size:10px;max-width:340px">el=ifcaig → FB ad → AI Workshop. 2-touch with IG organic entry.</td></tr>
+        <tr><td style="font-weight:600">Jared Pike</td><td class="muted" style="font-size:10px">pikeperformancetraining@gmail.com</td><td><span class="badge type-mc" style="background:rgba(232,119,34,.15);color:var(--orange)">Webinar</span></td><td class="muted" style="font-size:10px;max-width:340px"><strong style="color:var(--green)">$21,000 Legacy Upsell</strong> confirmed in #ifca-closed-deals (Feb 24 2026). Webinar touchpoint led to upsell conversion.</td></tr>
+        <tr><td colspan="4" style="text-align:center;color:var(--muted);font-size:10px;padding:8px;font-family:'DM Mono',monospace">+ 15 additional confirmed closes: Karla Black, Natalie Thomas, Jordyn Brown, Rich Ardizzone, Heidi Iyizoba, Shaina Kuhn, Margaret Lamothe, Preston Maynard, Cass Bruins, Kate-Bradley Harris, Kianna Griffith, Omar Segura, Sy Banks, Andre Williams, Chris Swipes</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="mt8" style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">
+      ⚡ Key insight: <strong style="color:var(--text)">Avg webinar close has 3–4 touchpoints.</strong> Email re-engagement and SMS are the most common last-touch before booking. SMS alone re-activated 4 of 26 closes.
+    </div>
+  </div>
+
+  <!-- Section 2: Challenge Attribution -->
+  <div class="card mb16">
+    <div class="tag">Challenge-Attributed Closes — May/Jun 2025 · 11 Confirmed</div>
+    <div style="font-size:11px;color:var(--muted);margin-bottom:12px;line-height:1.7">
+      From the Challenge Source Breakdown sheet. Challenge close rate: <strong style="color:var(--text)">~1.54%</strong> of total leads (11 of 714). Estimated backend revenue from these 11 closes: <strong style="color:var(--green)">$110K–$132K</strong> at $10–12K ACV. Combined with $2,491 VIP FE revenue = total challenge-attributed est. <strong style="color:var(--green)">$112K–$134K</strong>.
+    </div>
+    <div style="overflow-x:auto">
+    <table class="tbl">
+      <thead><tr>
+        <th style="text-align:left">Name</th><th style="text-align:left">Email</th><th style="text-align:left">Source Path</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="font-weight:600">Sebastiaan de Ranitz</td><td class="muted" style="font-size:10px">sderanitz@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">Organic (Nov 2024) → webinar 6x → VSL ads → IG DM ad → Challenge (email). Longest nurture in dataset — 7+ months.</td></tr>
+        <tr><td style="font-weight:600">Cory Glasgow</td><td class="muted" style="font-size:10px">cory.s.glasgow@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">Organic Black Friday promo → Content Planner (paid) → Challenge.</td></tr>
+        <tr><td style="font-weight:600">Joel Prior</td><td class="muted" style="font-size:10px">joel.j.prior@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">Hyros: organic first touch via challenge. HubSpot: SLO (May 2024) first. Challenge was re-entry point.</td></tr>
+        <tr><td style="font-weight:600">Rachael Van Schoick</td><td class="muted" style="font-size:10px">rachael@alignmovement.com</td><td class="muted" style="font-size:10px;max-width:360px">SLO (April 2024) → site visits (Accelerator, Reviews) → calls → Challenge. 13-month nurture.</td></tr>
+        <tr><td style="font-weight:600">Tricialynn Podolak</td><td class="muted" style="font-size:10px">ctricialynn@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">No prior source → Webinar replay (multiple) → Challenge. Webinar replay was the primary warm-up.</td></tr>
+        <tr><td style="font-weight:600">Kevin Stadlbauer</td><td class="muted" style="font-size:10px">kevinstadlbauer13@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">No source in HS/Hyros → joined webinar first → replay → Challenge. Organic via webinar.</td></tr>
+        <tr><td style="font-weight:600">Samantha Olson</td><td class="muted" style="font-size:10px">samanthafoxolson@hotmail.com</td><td class="muted" style="font-size:10px;max-width:360px">Content Planner (paid ads) → Challenge.</td></tr>
+        <tr><td style="font-weight:600">Philip Zozobrado</td><td class="muted" style="font-size:10px">philipz@cpzfitness.com</td><td class="muted" style="font-size:10px;max-width:360px">Content Planner paid → scholarship page → podcast pages → Scholarship (2025) → IFCA IG post → Challenge.</td></tr>
+        <tr><td style="font-weight:600">Rachel Johnson</td><td class="muted" style="font-size:10px">rjterp8@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">VSL Community ads → Workshop replay → Challenge via Erin IG post.</td></tr>
+        <tr><td style="font-weight:600">Vanessa Flores</td><td class="muted" style="font-size:10px">vmugflores@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">No prior source but on SMS list → Challenge opt-in.</td></tr>
+        <tr><td style="font-weight:600">Braden Hunt</td><td class="muted" style="font-size:10px">bradenthunt@gmail.com</td><td class="muted" style="font-size:10px;max-width:360px">Challenge opt-in via VIP purchase ($47). Converted from VIP to IFCA close.</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="mt8" style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">
+      ⚡ Key insight: <strong style="color:var(--text)">Webinar replay is the hidden warm-up engine.</strong> 4 of 11 challenge closes watched webinar replays before entering the challenge. The challenge is a re-activation tool as much as a new lead tool.
+    </div>
+  </div>
+
+  <!-- Section 3: Multi-Touch Patterns -->
+  <div class="card mb16">
+    <div class="tag">Multi-Touch Attribution Patterns (All 37 Confirmed Closes)</div>
+    <div class="grid-auto" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:6px">
+      <div style="background:rgba(74,127,165,.08);border:1px solid rgba(74,127,165,.2);border-radius:8px;padding:14px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Avg Touchpoints</div>
+        <div style="font-size:28px;font-weight:800;color:var(--electric);font-family:'DM Mono',monospace">3–4</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">Per confirmed close</div>
+      </div>
+      <div style="background:rgba(74,127,165,.08);border:1px solid rgba(74,127,165,.2);border-radius:8px;padding:14px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Top Last-Touch</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text)">SMS / Email</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">Re-activation before booking</div>
+      </div>
+      <div style="background:rgba(74,127,165,.08);border:1px solid rgba(74,127,165,.2);border-radius:8px;padding:14px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Top First-Touch</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text)">FB/IG Paid</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">Cold entry via ad</div>
+      </div>
+      <div style="background:rgba(74,127,165,.08);border:1px solid rgba(74,127,165,.2);border-radius:8px;padding:14px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Longest Nurture</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text)">7+ Months</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">Sebastiaan de Ranitz</div>
+      </div>
+      <div style="background:rgba(74,127,165,.08);border:1px solid rgba(74,127,165,.2);border-radius:8px;padding:14px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Webinar Replay Role</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text)">~40% of closes</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">Had replay as warm-up</div>
+      </div>
+      <div style="background:rgba(74,127,165,.08);border:1px solid rgba(74,127,165,.2);border-radius:8px;padding:14px">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;margin-bottom:6px">IG Organic Entry</div>
+        <div style="font-size:14px;font-weight:700;color:var(--text)">~30% of closes</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px">Erin/Jordan IG as entry</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Historical reference -->
+  <div class="card">
+    <div class="tag">All-Time Event Summary — 22 Events · 8,120+ Total Registrants</div>
+    <div style="overflow-x:auto">
+    <table class="tbl">
+      <thead><tr><th style="text-align:left">Event</th><th>Date</th><th>Type</th><th>Regs</th><th>Ad Regs</th><th>Organic</th><th>Spend</th><th>CPL</th><th>Revenue</th><th>ROAS</th></tr></thead>
+      <tbody>
+        <tr><td colspan="10" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.2);padding:6px 8px">PRE-TRACKING ERA (2022–MID 2023)</td></tr>
+        <tr><td>Promotion Offers</td><td class="muted">May 2022</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">202</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>Reels &amp; TikTok</td><td class="muted">Jul 2022</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">285</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>Grow Your IG</td><td class="muted">Oct 2022</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">350</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>Referral Method Masterclass</td><td class="muted">Oct 2022</td><td><span class="badge type-mc">Masterclass</span></td><td class="num">351</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>Black Friday Cash Generator</td><td class="muted">Nov 2022</td><td><span class="badge type-bf">Black Friday</span></td><td class="num">461</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>ChatGPT &amp; Recession</td><td class="muted">Jan 2023</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">451</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>LTV / Community Funnel</td><td class="muted">Apr 2023</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">271</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>AI Prompting / ChatGPT</td><td class="muted">Jul 2023</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">423</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>September 2023 Q&amp;A</td><td class="muted">Sep 2023</td><td><span class="badge type-qa">Q&amp;A</span></td><td class="num">524</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td>Black Friday 2023</td><td class="muted">Oct 2023</td><td><span class="badge type-bf">Black Friday</span></td><td class="num">326</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+        <tr><td colspan="10" style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:rgba(255,255,255,.2);padding:6px 8px">TRACKED ERA (2024–PRESENT)</td></tr>
+        <tr style="background:rgba(34,197,94,.04)"><td><strong>January Rush</strong> ⭐</td><td class="muted">Dec 2023</td><td><span class="badge type-mc">Masterclass</span></td><td class="num green bold">726</td><td class="num">170</td><td class="muted num">—</td><td class="num">$6,956</td><td class="num green">$9.58</td><td class="num green bold">$74,909</td><td class="num green bold">10.77x</td></tr>
+        <tr><td>April 2024 Workshop</td><td class="muted">Apr 2024</td><td><span class="badge type-workshop">Workshop</span></td><td class="num">746</td><td class="num">441</td><td class="muted num">—</td><td class="num">$6,126</td><td class="muted num">—</td><td class="muted num">🔶</td><td class="muted num">🔶</td></tr>
+        <tr><td>June 2024 Workshop</td><td class="muted">Jun 2024</td><td><span class="badge type-workshop">Workshop</span></td><td class="num">692</td><td class="num">286</td><td class="muted num">—</td><td class="num">$12,000</td><td class="muted num">—</td><td class="muted num">🔶</td><td class="muted num">🔶</td></tr>
+        <tr style="background:rgba(99,179,237,.04)"><td><strong>July 2024 AI Webinar</strong> 🏆</td><td class="muted">Jul 2024</td><td><span class="badge type-webinar">Webinar</span></td><td class="num" style="color:var(--electric)">781</td><td class="num">418</td><td class="num" style="color:var(--electric)">196</td><td class="num">$14,717</td><td class="muted num">—</td><td class="muted num">🔶</td><td class="muted num">🔶</td></tr>
+        <tr><td>October 2024 Client Engine</td><td class="muted">Oct 2024</td><td><span class="badge type-mc">Masterclass</span></td><td class="num">671</td><td class="num">330</td><td class="muted num">—</td><td class="num">$13,989</td><td class="muted num">—</td><td class="muted num">🔶</td><td class="muted num">🔶</td></tr>
+        <tr><td>November 2024 Black Friday</td><td class="muted">Nov 2024</td><td><span class="badge type-bf">Black Friday</span></td><td class="num">603</td><td class="num">205</td><td class="muted num">—</td><td class="num">$4,696</td><td class="num yellow">$32.61</td><td class="muted num">🔶</td><td class="muted num">🔶</td></tr>
+        <tr><td>March 2025 AI Workshop</td><td class="muted">Mar 2025</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">477</td><td class="num">477</td><td class="muted num">—</td><td class="num">$13,073</td><td class="num yellow">$27.41</td><td class="num red">$29,300</td><td class="num red">2.24x</td></tr>
+        <tr style="background:rgba(167,139,250,.04)"><td><strong>May 2025 Challenge</strong></td><td class="muted">May 2025</td><td><span class="badge type-challenge">Challenge</span></td><td class="num">714</td><td class="num">406</td><td class="muted num">—</td><td class="num">$21,626</td><td class="num red">$53.00</td><td class="num" style="color:#a78bfa">$113,500</td><td class="num" style="color:#a78bfa">5.25x</td></tr>
+        <tr><td>September 2025 Webinar</td><td class="muted">Sep 2025</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">606</td><td class="num">53</td><td class="muted num">—</td><td class="num">$2,402</td><td class="num red">$45.32</td><td class="muted num">🔶</td><td class="muted num">🔶</td></tr>
+        <tr><td>LTV Webinar Jan 2026</td><td class="muted">Jan 2026</td><td><span class="badge type-webinar">Webinar</span></td><td class="num">421</td><td class="num">421</td><td class="muted num">—</td><td class="num">$13,137</td><td class="num yellow">$31.20</td><td class="muted num">🔶</td><td class="muted num">🔶</td></tr>
+        <tr><td>May 2026 Partner MC</td><td class="muted" style="color:var(--electric)">Jun 2026</td><td><span class="badge type-partner">Partner MC</span></td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td><td class="muted num">—</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="mt8" style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">🔶 = Revenue pull needed via Hyros UTM filter. Events 14–17 and 21–22 are the highest-priority pulls. Organic registrant column populated where confirmed from Webinar Results Tracker benchmarks sheet.</div>
+  </div>
+
+</div>
+</div><!-- /panel-attribution -->
+
+
+
+<script>
+// ── EVENTS DATA ──────────────────────────────────────────────
+const EVENTS = [
+  {id:1,name:"Promotion Offers",date:"May 2022",type:"Webinar",regs:202,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:2,name:"Reels & TikTok",date:"Jul 2022",type:"Webinar",regs:285,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:3,name:"Grow Your IG",date:"Oct 2022",type:"Webinar",regs:350,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:4,name:"Referral Method Masterclass",date:"Oct 2022",type:"Masterclass",regs:351,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:5,name:"Black Friday Cash Generator",date:"Nov 2022",type:"Black Friday",regs:461,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:6,name:"ChatGPT & Recession",date:"Jan 2023",type:"Webinar",regs:451,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:7,name:"LTV Retention (2023)",date:"Apr 2023",type:"Webinar",regs:271,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:8,name:"May 2023 Live Q&A",date:"May 2023",type:"Q&A",regs:257,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:9,name:"AI Prompting / ChatGPT",date:"Jul 2023",type:"Webinar",regs:423,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:10,name:"September 2023 Q&A",date:"Sep 2023",type:"Q&A",regs:524,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:11,name:"Black Friday 2023",date:"Oct 2023",type:"Black Friday",regs:326,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
+  {id:12,name:"January Rush – 10 Clients in 1 Day",date:"Dec 2023",type:"Masterclass",regs:726,metaRegs:170,spend:6956,cpl:9.58,revenue:74909,roas:10.77,cpm:null,ctr:null,status:"complete",note:"Best ROAS ever. $103/reg. No dedicated FB campaign — Hyros Source ID 11064989."},
+  {id:13,name:"March 2024 Challenge",date:"Mar 2024",type:"Challenge",regs:null,metaRegs:null,spend:3500,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"~$3,500 FB (7MM variants). Objective was Website Purchase — attribution mismatch. 🔶 Hyros pull needed."},
+  {id:14,name:"April 2024 Client Getting Workshop",date:"Apr 2024",type:"Workshop",regs:746,metaRegs:441,spend:6126,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"All-time high: 304 live attendees | 441 paid ad opt-ins | 27 applications submitted (all-time high). FB Phase 3 + 3v2 = $6,126. Anomalous $2,547 CPL — attribution mismatch likely. 🔶 Revenue needed (UTM pull)."},
+  {id:15,name:"June 2024 Client Getting Workshop",date:"Jun 2024",type:"Workshop",regs:692,metaRegs:286,spend:12000,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"FB: 7MM June Webinar (8 variants) ~$12,000. First full source-split tracking. 27 apps submitted (tied all-time high). Attribution: 2 confirmed closes cross-referenced via webinar touchpoint sheet. 🔶 Revenue needed."},
+  {id:16,name:"July 2024 AI Viral Webinar",date:"Jul 2024",type:"Webinar",regs:781,metaRegs:418,spend:14717,cpl:null,revenue:null,roas:null,cpm:55.11,ctr:1.19,status:"partial",note:"All-time high registrants (781). Organic regs: 196 (all-time high). CPM $55.11 | CTR 1.19% | CPC $4.65 | Outbound 1,935. Attribution: webinar touchpoint confirmed on 3+ closes cross-referenced in attribution sheet. 🔶 Revenue (UTM: viral_ai_webinar)."},
+  {id:17,name:"October 2024 Client Engine",date:"Oct 2024",type:"Webinar",regs:671,metaRegs:330,spend:13989,cpl:null,revenue:null,roas:null,cpm:61.84,ctr:1.45,status:"partial",note:"CPM $61.84 | CTR 1.45% | CPC $4.26 | Outbound 1,764. 🔶 Revenue needed."},
+  {id:18,name:"November 2024 Black Friday",date:"Nov 2024",type:"Black Friday",regs:603,metaRegs:144,spend:4696,cpl:32.61,revenue:null,roas:null,cpm:65.10,ctr:0.79,status:"partial",note:"GHL: Black Friday Playbook Webinar (4 steps). LP Conv 22.6%. 170 attendees, 149 saw offer. 🔶 Revenue (UTM: bf_webinar)."},
+  {id:19,name:"March 2025 AI Viral Workshop",date:"Mar 2025",type:"Webinar",regs:477,metaRegs:477,spend:13073,cpl:27.41,revenue:29300,roas:2.24,cpm:null,ctr:null,status:"complete",note:"FB: $13,072.57 | 477 WL @ $27.41 CPL. Hyros Source 11335725. Worst ROAS ever — angle/timing missed."},
+  {id:20,name:"May/June 2025 3-Day Challenge",date:"May 2025",type:"Challenge",regs:714,metaRegs:406,spend:21626,cpl:53,revenue:113500,roas:5.25,cpm:null,ctr:null,status:"complete",note:"TOF $10,180 (139 WL) + MOF/BOF $11,446 (267 WL). GHL LP: 10,001 views / 791 opt-ins / 10.17% CVR. Day1: 231 | Day2: 161 | Day3: 129. Cash $82,950. ACV $11,350. VIP: 54 @ $47."},
+  {id:21,name:"September 2025 Webinar",date:"Sep 2025",type:"Webinar",regs:606,metaRegs:53,spend:2402,cpl:45.32,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"FB: $2,402.16 | 53 WL @ $45.32 CPL. GHL: 4,846 views / 606 opt-ins / 14.61% CVR. Replay: 2,257 views. 🔶 Revenue needed."},
+  {id:22,name:"LTV / Community Webinar",date:"Jan 2026",type:"Webinar",regs:421,metaRegs:421,spend:13137,cpl:31.20,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"FB: $13,136.88 | 421 WL @ $31.20 CPL. GHL: 5,679 views / 715 opt-ins / 13.93% CVR. Headline: 'Add $14,800 signing 2 clients/month'. 🔶 Revenue (UTM: ltv_webinar)."},
+  {id:23,name:"Feb 2026 Live Q&A Hot Seat",date:"Feb 2026",type:"Q&A",regs:null,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"GHL funnel exists (3 steps, updated Mar 17 2026). No dedicated FB campaign. 🔶 GHL lifetime stats + Hyros Feb 2026 pull needed."},
+  {id:24,name:"May 2026 Partner Masterclass",date:"Jun 2026",type:"Partner MC",regs:null,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"upcoming",note:"IFCA x Taeler (FCA). Dual audiences. Target 900–1,100 regs. June 11 @ 7PM. $12–15K ad budget."},
+];
+
+const TYPE_COLORS = {"Webinar":"#4A7FA5","Workshop":"#22C55E","Black Friday":"#EF4444","Masterclass":"#E87722","Challenge":"#a78bfa","Q&A":"#F59E0B","Partner MC":"#fb923c"};
+const TYPE_BADGE = {"Webinar":"type-webinar","Workshop":"type-workshop","Black Friday":"type-bf","Masterclass":"type-mc","Challenge":"type-challenge","Q&A":"type-qa","Partner MC":"type-partner"};
+
+function fmt(n,t){
+  if(n===null||n===undefined)return'<span class="muted">—</span>';
+  if(t==='$')return'$'+Number(n).toLocaleString();
+  if(t==='x')return Number(n).toFixed(2)+'x';
+  if(t==='%')return Number(n).toFixed(1)+'%';
+  return Number(n).toLocaleString();
+}
+
+function roasColor(r){if(!r)return'';if(r>=7)return'green';if(r>=4)return'';if(r>=2)return'yellow';return'red';}
+
+let expandedRow = null;
+
+function renderEvents(){
+  const tbody = document.getElementById('events-tbody');
+  tbody.innerHTML = '';
+  EVENTS.forEach(ev=>{
+    // Main row
+    const tr = document.createElement('tr');
+    tr.className = 'ev-row';
+    tr.onclick = ()=>toggleExpand(ev.id);
+    const statusDot = ev.status==='complete'?'🟢':ev.status==='upcoming'?'🔜':ev.status==='partial'?'🟡':'⬜';
+    const rc = ev.roas? roasColor(ev.roas):'';
+    tr.innerHTML = `
+      <td style="min-width:220px">
+        <div style="font-weight:600;font-size:12px">${statusDot} ${ev.name}</div>
+        <div style="font-size:10px;color:var(--muted)">${ev.date}</div>
+      </td>
+      <td class="num"><span class="badge ${TYPE_BADGE[ev.type]||''}">${ev.type}</span></td>
+      <td class="num">${fmt(ev.regs)}</td>
+      <td class="muted-num">${fmt(ev.metaRegs)}</td>
+      <td class="num">${ev.spend?'$'+ev.spend.toLocaleString():'<span class="muted">—</span>'}</td>
+      <td class="num">${ev.cpl?'<span class="'+(ev.cpl<=25?'green':ev.cpl<=40?'yellow':'red')+'">$'+ev.cpl+'</span>':'<span class="muted">—</span>'}</td>
+      <td class="num">${ev.revenue?'<span class="green bold">$'+ev.revenue.toLocaleString()+'</span>':'<span style="color:var(--yellow);font-size:10px">🔶</span>'}</td>
+      <td class="num">${ev.roas?'<span class="bold '+rc+'">'+ev.roas.toFixed(2)+'x</span>':'<span style="color:var(--yellow);font-size:10px">🔶</span>'}</td>
+      <td class="muted-num">${ev.cpm?'$'+ev.cpm:'—'}</td>
+      <td class="muted-num">${ev.ctr?ev.ctr+'%':'—'}</td>
+      <td class="num" style="color:var(--muted);font-size:11px">${expandedRow===ev.id?'▲':'▼'}</td>
+    `;
+    tbody.appendChild(tr);
+
+    // Expand row
+    if(expandedRow === ev.id && ev.note){
+      const exp = document.createElement('tr');
+      exp.className = 'ev-expand';
+      exp.innerHTML = `<td colspan="11"><div class="ev-detail"><div class="detail-note">${ev.note}</div></div></td>`;
+      tbody.appendChild(exp);
+    }
+  });
+}
+
+function toggleExpand(id){
+  expandedRow = expandedRow===id?null:id;
+  renderEvents();
+}
+
+renderEvents();
+
+// ── PROJECTION CALCULATOR ─────────────────────────────────
+const VALS = {spend:15000,cpm:55,ctr:0.009,lpconv:0.27,attend:0.25,seeoffer:0.80,cvr:0.04,close:0.45,aov:11350,upsell:0.10,'upsell-aov':20000,partner:0};
+
+const SCENARIOS = {
+  best:   {spend:15000,cpm:52,ctr:0.012,lpconv:0.35,attend:0.30,seeoffer:0.87,cvr:0.06,close:0.55,aov:11350,upsell:0.10,'upsell-aov':20000,partner:0},
+  mid:    {spend:15000,cpm:58,ctr:0.009,lpconv:0.27,attend:0.24,seeoffer:0.80,cvr:0.04,close:0.45,aov:11350,upsell:0.08,'upsell-aov':20000,partner:0},
+  worst:  {spend:15000,cpm:90,ctr:0.006,lpconv:0.18,attend:0.16,seeoffer:0.60,cvr:0.02,close:0.28,aov:11350,upsell:0.05,'upsell-aov':20000,partner:0},
+  partner:{spend:12000,cpm:52,ctr:0.012,lpconv:0.32,attend:0.30,seeoffer:0.87,cvr:0.06,close:0.50,aov:11350,upsell:0.10,'upsell-aov':20000,partner:0.40},
+  janrush:{spend:6956, cpm:52,ctr:0.013,lpconv:0.40,attend:0.25,seeoffer:0.85,cvr:0.06,close:0.60,aov:11350,upsell:0.10,'upsell-aov':20000,partner:0},
+  custom: null
+};
+
+function loadScenario(s){
+  if(!SCENARIOS[s])return;
+  Object.assign(VALS,SCENARIOS[s]);
+  Object.keys(VALS).forEach(k=>{
+    const sl = document.getElementById('sl-'+k);
+    if(sl){sl.value=VALS[k];}
+  });
+  updateAllLabels();
+  calcAll();
+}
+
+function syncSlider(key,raw){
+  VALS[key]=parseFloat(raw);
+  updateLabel(key);
+  calcAll();
+}
+
+function updateLabel(k){
+  const lbl = document.getElementById('lbl-'+k);
+  if(!lbl)return;
+  const v = VALS[k];
+  if(k==='spend')lbl.textContent='$'+Number(v).toLocaleString();
+  else if(k==='cpm')lbl.textContent='$'+v;
+  else if(k==='ctr')lbl.textContent=(v*100).toFixed(2)+'%';
+  else if(k==='lpconv')lbl.textContent=Math.round(v*100)+'%';
+  else if(k==='attend')lbl.textContent=Math.round(v*100)+'%';
+  else if(k==='seeoffer')lbl.textContent=Math.round(v*100)+'%';
+  else if(k==='cvr')lbl.textContent=(v*100).toFixed(1)+'%';
+  else if(k==='close')lbl.textContent=Math.round(v*100)+'%';
+  else if(k==='aov')lbl.textContent='$'+Number(v).toLocaleString();
+  else if(k==='upsell')lbl.textContent=Math.round(v*100)+'%';
+  else if(k==='upsell-aov')lbl.textContent='$'+Number(v).toLocaleString();
+  else if(k==='partner')lbl.textContent=v>0?'+'+Math.round(v*100)+'%':'0%';
+}
+
+function updateAllLabels(){Object.keys(VALS).forEach(k=>updateLabel(k));}
+
+function calcAll(){
+  const v = VALS;
+  const overrideRegs = parseInt(document.getElementById('in-regs').value)||0;
+  const organic = parseInt(document.getElementById('in-organic').value)||0;
+  const emailList = parseInt(document.getElementById('in-email-list').value)||0;
+  const emailRate = parseFloat(document.getElementById('in-email-rate').value)||0;
+
+  const impressions = v.spend / v.cpm * 1000;
+  const clicks = impressions * v.ctr;
+  const paidLeads = clicks * v.lpconv;
+  const emailLeads = emailList * emailRate;
+  const baseRegs = paidLeads + organic + emailLeads;
+  const totalRegs = overrideRegs>0 ? overrideRegs : Math.round(baseRegs * (1 + v.partner));
+
+  const cpl = v.spend / Math.max(paidLeads,1);
+  const attendees = totalRegs * v.attend;
+  const seeoffer = attendees * v.seeoffer;
+  const calls = seeoffer * v.cvr;
+  const clients = calls * v.close;
+  const feRev = clients * v.aov;
+  const upsellUnits = clients * v.upsell;
+  const upsellRev = upsellUnits * v['upsell-aov'];
+  const totalRev = feRev + upsellRev;
+  const roas = totalRev / v.spend;
+
+  // Update outputs
+  document.getElementById('out-leads').textContent = Math.round(paidLeads).toLocaleString();
+  document.getElementById('out-cpl-sub').textContent = 'CPL: $'+cpl.toFixed(2);
+  document.getElementById('out-regs').textContent = totalRegs.toLocaleString();
+  document.getElementById('out-organic-sub').textContent = organic>0||emailLeads>0 ? `+${organic} organic, +${Math.round(emailLeads)} email` : 'from paid only';
+  document.getElementById('out-attend').textContent = Math.round(attendees).toLocaleString();
+  document.getElementById('out-showrate-sub').textContent = 'Show rate: '+(v.attend*100).toFixed(0)+'%';
+  document.getElementById('out-seeoffer').textContent = Math.round(seeoffer).toLocaleString();
+  document.getElementById('out-calls').textContent = calls.toFixed(1);
+  document.getElementById('out-bookrate-sub').textContent = 'Booking rate: '+(v.cvr*100).toFixed(1)+'%';
+  document.getElementById('out-clients').textContent = clients.toFixed(1);
+  document.getElementById('out-closerate-sub').textContent = 'Close rate: '+(v.close*100).toFixed(0)+'%';
+  document.getElementById('out-revenue').textContent = '$'+Math.round(totalRev).toLocaleString();
+
+  // ROAS big
+  const roasBig = document.getElementById('out-roas-big');
+  roasBig.textContent = roas.toFixed(2)+'x';
+  roasBig.style.color = roas>=7?'var(--green)':roas>=4?'var(--yellow)':roas>=2?'var(--orange)':'var(--red)';
+
+  // ROAS bar
+  const pct = Math.min(100,(roas/12)*100);
+  const fill = document.getElementById('roas-fill');
+  fill.style.width = pct+'%';
+
+  // Funnel flow
+  const ff = document.getElementById('funnel-flow');
+  const steps = [
+    {label:'Ad Spend',val:'$'+v.spend.toLocaleString(),color:'var(--muted)'},
+    {label:'→ Paid Leads',val:Math.round(paidLeads).toLocaleString()+' @ $'+cpl.toFixed(2)+'/lead',color:'var(--electric)'},
+    {label:'→ Total Registrants',val:totalRegs.toLocaleString()+(v.partner>0?' (+'+Math.round(v.partner*100)+'% partner)':''),color:'var(--orange)'},
+    {label:'→ Live Attendees',val:Math.round(attendees).toLocaleString()+' ('+(v.attend*100).toFixed(0)+'%)',color:'#a78bfa'},
+    {label:'→ See Offer',val:Math.round(seeoffer).toLocaleString(),color:'var(--yellow)'},
+    {label:'→ Calls Booked',val:calls.toFixed(1),color:'var(--orange)'},
+    {label:'→ Clients Closed',val:clients.toFixed(1)+' @ $'+Number(v.aov).toLocaleString(),color:'var(--green)'},
+    {label:'→ FE Revenue',val:'$'+Math.round(feRev).toLocaleString(),color:'var(--green)'},
+    {label:'→ Upsell Revenue',val:'$'+Math.round(upsellRev).toLocaleString(),color:'var(--green)'},
+  ];
+  ff.innerHTML = steps.map(s=>`<div class="funnel-step"><span class="step-label">${s.label}</span><span class="step-val" style="color:${s.color}">${s.val}</span></div>`).join('');
+
+  // Benchmark bars
+  const benches = [
+    {label:'Lead → Attendance',val:v.attend*100,floor:18,target:28,exceed:40,note:'Kevin SOP: Poor 15-20% / Good 25-35% / Excellent 35-50%'},
+    {label:'Attendance → See Offer',val:v.seeoffer*100,floor:65,target:78,exceed:90,note:'Kevin SOP: Poor 50-65% / Good 70-85% / Excellent 85-95%'},
+    {label:'See Offer → Book Call',val:v.cvr*100,floor:6,target:14,exceed:25,note:'Kevin SOP: Poor 3-8% / Good 12-20% / Excellent 25-40%'},
+    {label:'Book Call → Close',val:v.close*100,floor:30,target:47,exceed:67,note:'Kevin SOP: Poor 20-35% / Good 40-55% / Excellent 60-75%'},
+    {label:'LP Conversion Rate',val:v.lpconv*100,floor:20,target:33,exceed:50,note:'Kevin SOP: Poor 15-25% / Good 30-40% / Excellent 45-60%'},
+    {label:'CPL (lower = better)',val:cpl,floor:30,target:15,exceed:9,invert:true,prefix:'$',note:'Kevin SOP: High $15-25 / Good $8-15 / Excellent $3-8. IFCA best-ever: $9.58'},
+  ];
+  const bb = document.getElementById('benchmark-bars');
+  bb.innerHTML = benches.map(b=>{
+    const pct = b.invert ? Math.min(100,Math.max(0,(b.floor-b.val)/(b.floor-b.exceed)*100)) : Math.min(100,(b.val/b.exceed)*100);
+    const col = b.invert ? (b.val<=b.exceed?'var(--green)':b.val<=b.target?'var(--yellow)':b.val<=b.floor?'var(--orange)':'var(--red)') : (b.val>=b.exceed?'var(--green)':b.val>=b.target?'var(--yellow)':b.val>=b.floor?'var(--orange)':'var(--red)');
+    const fmt_v = b.prefix ? b.prefix+b.val.toFixed(2) : b.val.toFixed(1)+'%';
+    return `<div style="margin-bottom:14px">
+      <div class="flex-between mb8" style="font-size:11px"><span class="mono muted">${b.label}</span><span style="font-weight:700;color:${col};font-family:'DM Mono',monospace">${fmt_v}</span></div>
+      <div style="height:5px;background:rgba(74,127,165,.15);border-radius:3px;overflow:hidden"><div style="width:${pct}%;height:100%;background:${col};border-radius:3px;transition:width .3s"></div></div>
+      <div class="flex-between" style="font-size:9px;margin-top:3px"><span style="color:rgba(255,255,255,.18);font-family:'DM Mono',monospace">Floor: ${b.invert?b.prefix:''}${b.floor}${b.invert?'':' %'} · Target: ${b.invert?b.prefix:''}${b.target}${b.invert?'':' %'} · Excellent: ${b.invert?b.prefix:''}${b.exceed}${b.invert?'':' %'}</span></div>
+      ${b.note?`<div style="font-size:9px;color:rgba(255,255,255,.12);font-family:'DM Mono',monospace;margin-top:1px">${b.note}</div>`:''}
+    </div>`;
+  }).join('');
+}
+
+updateAllLabels();
+calcAll();
+
+// ── NAV ──────────────────────────────────────────────────────
+function showMain(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  btn.classList.add('active');
+  document.getElementById('lp-subnav').classList.toggle('visible', id==='landing');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showLP(id,btn){
+  document.querySelectorAll('.sub-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.sub-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('lp-'+id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
