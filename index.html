@@ -173,6 +173,56 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 .type-challenge{background:rgba(139,92,246,.2);color:#a78bfa;}
 .type-qa{background:rgba(245,158,11,.15);color:var(--yellow);}
 .type-partner{background:rgba(249,115,22,.15);color:#fb923c;}
+.type-scholarship{background:rgba(184,147,86,.18);color:var(--gold-light);}
+.type-grant{background:rgba(99,179,237,.15);color:var(--electric);}
+.type-maha{background:rgba(239,68,68,.15);color:#f87171;}
+.type-impact{background:rgba(34,197,94,.15);color:var(--green);}
+
+/* ── SCHOLARSHIP-SPECIFIC COMPONENTS ── */
+.campaign-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;transition:all .15s;position:relative;overflow:hidden;}
+.campaign-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);border-radius:2px 0 0 2px;}
+.campaign-card:hover{border-color:rgba(184,147,86,.4);background:var(--surface2);}
+.campaign-card.trust::before{background:var(--electric);}
+.campaign-card.mission::before{background:var(--green);}
+.campaign-card.standard::before{background:var(--orange);}
+.big-idea-toggle{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px;}
+.bi-chip{padding:8px 16px;border-radius:6px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:11px;font-weight:600;color:var(--muted);transition:all .15s;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+.bi-chip.active{background:rgba(184,147,86,.12);border-color:rgba(184,147,86,.4);color:var(--gold-light);}
+.bi-chip.active.trust{background:rgba(99,179,237,.1);border-color:rgba(99,179,237,.35);color:var(--electric);}
+.bi-chip.active.mission{background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.3);color:var(--green);}
+.bi-chip.active.standard{background:rgba(232,119,34,.1);border-color:rgba(232,119,34,.35);color:var(--orange);}
+.hl-display-sch{min-height:80px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,3vw,36px);line-height:1.1;letter-spacing:.5px;color:#fff;}
+.hl-options-sch{display:grid;gap:6px;margin-top:12px;}
+.hl-opt-sch{padding:10px 14px;background:rgba(74,127,165,.05);border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:all .15s;display:flex;align-items:flex-start;gap:10px;}
+.hl-opt-sch:hover{background:rgba(74,127,165,.1);border-color:var(--border-bright);}
+.hl-opt-sch.sel{border-color:rgba(184,147,86,.5);background:rgba(184,147,86,.06);}
+.hl-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.08em;min-width:20px;margin-top:2px;}
+.hl-txt{font-size:11px;color:var(--text);line-height:1.5;}
+.hl-sub-txt{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5;}
+/* Calendar */
+.cal-grid{display:grid;grid-template-columns:80px 1fr 1fr 1fr 1fr 1fr 1fr;gap:4px;font-size:10px;}
+.cal-header{font-family:'DM Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;text-align:center;}
+.cal-date{padding:8px 10px;background:var(--surface);border:1px solid var(--border);border-radius:6px;display:flex;flex-direction:column;gap:3px;}
+.cal-phase-label{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--orange);letter-spacing:.04em;padding:6px 8px;align-self:center;}
+.cal-cell{padding:6px 8px;background:rgba(74,127,165,.04);border:1px solid rgba(74,127,165,.06);border-radius:5px;min-height:52px;}
+.cal-cell.launch{background:rgba(34,197,94,.07);border-color:rgba(34,197,94,.2);}
+.cal-cell.ads{background:rgba(232,119,34,.05);border-color:rgba(232,119,34,.15);}
+.cal-cell.urgency{background:rgba(239,68,68,.05);border-color:rgba(239,68,68,.15);}
+.cal-cell.winner{background:rgba(184,147,86,.08);border-color:rgba(184,147,86,.25);}
+.cal-cell.extend{background:rgba(99,179,237,.05);border-color:rgba(99,179,237,.12);}
+.cal-cell.off{background:rgba(74,127,165,.02);border-color:rgba(74,127,165,.04);opacity:.5;}
+.cal-cell-label{font-family:'DM Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px;}
+.cal-cell-content{font-size:9px;color:var(--text);line-height:1.4;}
+.channel-dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:3px;}
+.d-ads{background:var(--orange);}
+.d-organic{background:var(--green);}
+.d-email{background:var(--electric);}
+.d-sms{background:var(--yellow);}
+/* Sch funnel */
+.sch-funnel-step{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:7px;margin-bottom:4px;font-size:12px;}
+.sch-funnel-step .s-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.05em;}
+.sch-funnel-step .s-val{font-weight:800;font-family:'DM Mono',monospace;font-size:14px;}
+
 
 /* EVENT ROW EXPAND */
 .ev-row{cursor:pointer;transition:background .1s;}
@@ -322,12 +372,23 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 
 <!-- ══ TOP NAV ══ -->
 <nav class="top-nav">
-  <div class="nav-logo">IFCA MC</div>
+  <div class="nav-logo">IFCA HQ</div>
   <button class="nav-btn active" onclick="showMain('dashboard',this)">📊 Dashboard</button>
   <button class="nav-btn" onclick="showMain('projection',this)">🧮 Projection Calc</button>
   <button class="nav-btn" onclick="showMain('landing',this)">🖥 Landing Pages</button>
+  <button class="nav-btn" onclick="showMain('scholarship',this)" style="color:var(--gold-light);border-bottom-color:transparent;">🎓 Scholarship Campaign</button>
   <div class="nav-tag">Command Center · Apr 2026</div>
 </nav>
+
+<!-- ══ SUB NAV (scholarship) ══ -->
+<div id="sch-subnav" class="sub-nav">
+  <button class="sub-btn active" onclick="showSch('sch-history',this)">📊 Historical Data</button>
+  <button class="sub-btn" onclick="showSch('sch-projection',this)">🧮 Projection Calc</button>
+  <button class="sub-btn" onclick="showSch('sch-schedule',this)">📅 Campaign Schedule</button>
+  <button class="sub-btn" onclick="showSch('sch-bigideas',this)" style="color:var(--gold-light)">💡 Big Ideas · 4 Angles</button>
+  <button class="sub-btn" onclick="showSch('sch-landing',this)">🖥 LP Options</button>
+  <button class="sub-btn" onclick="showSch('sch-cowork',this)" style="color:var(--yellow);border-color:rgba(245,158,11,.35)">🔗 Co-Work Data Pull</button>
+</div>
 
 <!-- ══ SUB NAV (landing pages) ══ -->
 <div id="lp-subnav" class="sub-nav">
@@ -352,6 +413,9 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
     <div class="kpi-card"><div class="kpi-label">Hyros Revenue</div><div class="kpi-val orange">$8.85M</div><div class="kpi-sub">Lifetime attributed</div></div>
     <div class="kpi-card"><div class="kpi-label">Blended ROAS</div><div class="kpi-val" style="color:var(--yellow)">2.58x</div><div class="kpi-sub">Last-click, all campaigns</div></div>
     <div class="kpi-card"><div class="kpi-label">Best Campaign ROAS</div><div class="kpi-val green">13.41x</div><div class="kpi-sub">Phase 3 A+ Broad · Apr 2024</div></div>
+    <div class="kpi-card"><div class="kpi-label">Avg ROAS (tracked)</div><div class="kpi-val" style="color:var(--electric)">5.9x</div><div class="kpi-sub">Across events w/ revenue data</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best Show Rate</div><div class="kpi-val green">32.4%</div><div class="kpi-sub">May 2025 Challenge Day 1</div></div>
+    <div class="kpi-card"><div class="kpi-label">Best App Rate</div><div class="kpi-val" style="color:var(--orange)">19%</div><div class="kpi-sub">May 2025 Challenge (of regs)</div></div>
     <div class="kpi-card"><div class="kpi-label">Meta Acct Spend</div><div class="kpi-val red">$2.99M</div><div class="kpi-sub">Mar 2023–Mar 2026</div></div>
     <div class="kpi-card"><div class="kpi-label">Event Spend</div><div class="kpi-val" style="color:var(--electric)">$108K</div><div class="kpi-sub">53 webinar+challenge campaigns</div></div>
     <div class="kpi-card"><div class="kpi-label">Max Registrants</div><div class="kpi-val" style="color:#a78bfa">781</div><div class="kpi-sub">Jul 2024 AI Webinar</div></div>
@@ -400,7 +464,7 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
     <div style="overflow-x:auto">
     <table class="tbl" id="events-tbl">
       <thead><tr>
-        <th style="text-align:left">Event</th><th>Type</th><th>Regs</th><th>Meta Regs</th><th>Spend</th><th>CPL</th><th>Revenue</th><th>ROAS</th><th>CPM</th><th>CTR</th><th></th>
+        <th style="text-align:left">Event</th><th>Type</th><th>Regs</th><th>Attend</th><th>Show%</th><th>Apps</th><th>App%</th><th>Spend</th><th>CPL</th><th>Revenue</th><th>ROAS</th><th>CPM</th><th>CTR</th><th></th>
       </tr></thead>
       <tbody id="events-tbody"></tbody>
     </table>
@@ -498,6 +562,66 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
     <div style="font-size:11px;color:var(--muted);line-height:1.7">
       FB Ads Manager shows $2.99M vs Hyros $3.43M — $430K delta likely from Hyros including YouTube/Google + wider date window (Nov 2022 start vs Mar 2023 for this FB pull). <br>
       Only $108K of $2.99M Meta spend (3.6%) is under event campaign names — bulk is evergreen Client Engine / lead-gen. GHL lifetime stats blocked by Chrome extension conflict on date-range selector. Must pull manually with extension disabled (~15 min).
+    </div>
+  </div>
+
+  <!-- Confirmed Attribution Closes — from Slack + Attribution Sheets -->
+  <div class="card mt16">
+    <div class="tag">Confirmed Event-Attributed Closes — From Slack #ifca-closed-deals + Attribution Sheets</div>
+    <div style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:14px;line-height:1.6">
+      Multi-touch journey analysis · Sources: Webinar Attribution Sheet, Challenge Source Breakdown Sheet, Slack #ifca-closed-deals
+    </div>
+    <div class="grid-2" style="gap:16px">
+
+      <!-- Webinar closes -->
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--electric);margin-bottom:10px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">🎓 26 Confirmed Webinar-Attributed Closes</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
+          ${['Lilia Fedulova','Lisa Swanson','Monica Saavedra','Alina Glover','Daniel Wheeler','Emma Kirchner','Mike McVeigh','Shya Familia','Tyler Kirby','Chris Ellis','Karla Black','Natalie Thomas','Jordyn Brown','Rich Ardizzone','Heidi Iyizoba','Shaina Kuhn','Margaret Lamothe','Preston Maynard','Cass Bruins','Kate-Bradley Harris','Kianna Griffith','Omar Segura','Sy Banks','Andre Williams','Jared Pike','Chris Swipes'].map(n=>`<span style="display:inline-block;padding:3px 8px;background:rgba(99,179,237,.08);border:1px solid rgba(99,179,237,.15);border-radius:4px;font-size:10px;font-family:'DM Mono',monospace;color:var(--electric)">${n}</span>`).join('')}
+        </div>
+        <div style="background:rgba(99,179,237,.06);border:1px solid rgba(99,179,237,.15);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">Key Attribution Patterns</div>
+          <div style="font-size:10px;color:var(--muted);line-height:1.7">
+            · Most closes were <strong style="color:var(--text)">multi-touch</strong>: Community Funnel → AI Workshop → Webinar Replay → Challenge<br>
+            · <strong style="color:var(--text)">SMS + post-webinar email</strong> = common last-touch before booking<br>
+            · <strong style="color:var(--text)">Organic Instagram</strong> = #1 organic first-touch for webinar leads<br>
+            · <strong style="color:var(--text)">Facebook paid ads</strong> = most ad-attributed first touches<br>
+            · <strong style="color:var(--text)">Jared Pike</strong> = confirmed $21K Legacy upsell included<br>
+            · Several leads <strong style="color:var(--text)">re-engaged 3–6+ months</strong> after first opt-in via replay emails
+          </div>
+        </div>
+      </div>
+
+      <!-- Challenge closes -->
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:10px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">🏆 11 Confirmed Challenge-Attributed Closes</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
+          ${['Sebastiaan de Ranitz','Cory Glasgow','Joel Prior','Rachael Van Schoick','Tricialynn Podolak','Kevin Stadlbauer','Samantha Olson','Philip Zozobrado','Rachel Johnson','Vanessa Flores','Braden Hunt'].map(n=>`<span style="display:inline-block;padding:3px 8px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.15);border-radius:4px;font-size:10px;font-family:'DM Mono',monospace;color:var(--green)">${n}</span>`).join('')}
+        </div>
+        <div style="background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.15);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px">May/Jun 2025 Challenge VIP Economics</div>
+          <div class="grid-2" style="gap:8px;margin-bottom:8px">
+            <div style="text-align:center;padding:8px;background:rgba(0,0,0,.2);border-radius:5px">
+              <div style="font-size:18px;font-weight:800;color:var(--green);font-family:'DM Mono',monospace">714</div>
+              <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em">Total challenge leads</div>
+            </div>
+            <div style="text-align:center;padding:8px;background:rgba(0,0,0,.2);border-radius:5px">
+              <div style="font-size:18px;font-weight:800;color:var(--yellow);font-family:'DM Mono',monospace">53</div>
+              <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em">VIP at $47 = $2,491 FE</div>
+            </div>
+            <div style="text-align:center;padding:8px;background:rgba(0,0,0,.2);border-radius:5px">
+              <div style="font-size:18px;font-weight:800;color:var(--green);font-family:'DM Mono',monospace">11</div>
+              <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em">Backend IFCA closes</div>
+            </div>
+            <div style="text-align:center;padding:8px;background:rgba(0,0,0,.2);border-radius:5px">
+              <div style="font-size:18px;font-weight:800;color:var(--orange);font-family:'DM Mono',monospace">1.54%</div>
+              <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.06em">Challenge→IFCA close rate</div>
+            </div>
+          </div>
+          <div style="font-size:10px;color:var(--muted)">Backend revenue est: <strong style="color:var(--text)">$110K–$132K</strong> (11 closes × $10–12K avg)</div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -664,7 +788,77 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
 
       <!-- Benchmark comparison -->
       <div class="card">
-        <div class="tag">vs IFCA Benchmarks (Kevin's SOP)</div>
+        <div class="tag">KPI Benchmarks — Full Tier System (All Sources)</div>
+        <div style="font-size:10px;color:var(--muted);font-family:'DM Mono',monospace;margin-bottom:10px;line-height:1.6">
+          Sources: Kevin's Internal SOP + 90-Minute Money Machine PDF + IFCA Handover Docs. IFCA actual data shown for comparison.
+        </div>
+        <div style="overflow-x:auto">
+        <table class="tbl" style="font-size:10px">
+          <thead><tr>
+            <th style="text-align:left">Metric</th>
+            <th style="color:var(--red)">❌ Poor (Fix First)</th>
+            <th style="color:var(--yellow)">🟡 Good (Hold)</th>
+            <th style="color:var(--green)">🟢 Excellent (Scale)</th>
+            <th style="color:var(--electric)">IFCA Best Actual</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700">CPL</td><td class="num red">$15–25</td><td class="num yellow">$8–15</td><td class="num green">$3–8</td><td class="num" style="color:var(--electric)">$9.58 (Jan Rush)</td></tr>
+            <tr style="background:rgba(74,127,165,.03)"><td style="font-weight:700">LP Conversion Rate</td><td class="num red">15–25%</td><td class="num yellow">30–40%</td><td class="num green">45–60%</td><td class="num" style="color:var(--electric)">14.61% Sept 2025*</td></tr>
+            <tr><td style="font-weight:700">Show Rate (Lead→Attend)</td><td class="num red">15–20%</td><td class="num yellow">25–35%</td><td class="num green">35–50%</td><td class="num" style="color:var(--electric)">32.4% May 2025</td></tr>
+            <tr style="background:rgba(74,127,165,.03)"><td style="font-weight:700">Retention (Attend→See Offer)</td><td class="num red">50–65%</td><td class="num yellow">70–85%</td><td class="num green">85–95%</td><td class="num" style="color:var(--electric)">87.6% Nov 2024 BF</td></tr>
+            <tr><td style="font-weight:700">See Offer → Book Call</td><td class="num red">3–8%</td><td class="num yellow">12–20%</td><td class="num green">25–40%</td><td class="num muted">🔶 pending</td></tr>
+            <tr style="background:rgba(74,127,165,.03)"><td style="font-weight:700">Book Call → Close Rate</td><td class="num red">20–35%</td><td class="num yellow">40–55%</td><td class="num green">60–75%</td><td class="num muted">🔶 pending</td></tr>
+            <tr><td style="font-weight:700">Generated ROAS</td><td class="num red">&lt;2×</td><td class="num yellow">2–4×</td><td class="num green">5×+</td><td class="num" style="color:var(--electric)">13.41× (Phase 3)</td></tr>
+            <tr style="background:rgba(74,127,165,.03)"><td style="font-weight:700">Cash ROAS (day-zero)</td><td class="num red">&lt;1×</td><td class="num yellow">1–2×</td><td class="num green">2×+</td><td class="num muted">🔶 pending</td></tr>
+            <tr><td style="font-weight:700">App Rate (of attendees)</td><td class="num red">&lt;8%</td><td class="num yellow">10–15%</td><td class="num green">18%+</td><td class="num" style="color:var(--electric)">19% May 2025</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div style="font-size:9px;color:var(--muted);font-family:'DM Mono',monospace;margin-top:6px">*LP CVR for IFCA's webinar LP pages — different from LP Conv Rate in the funnel model above which refers to ad click→registration rate.</div>
+
+        <div class="divider" style="margin:20px 0"></div>
+        <div class="tag">Constraint Diagnosis — Fix Order (Do This After Every Campaign)</div>
+        <div style="display:grid;gap:6px;margin-bottom:16px">
+          <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 10px;background:rgba(239,68,68,.06);border-radius:6px;border-left:3px solid var(--red)">
+            <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--red);font-weight:700;white-space:nowrap">Show &lt;18%</span>
+            <span style="font-size:11px;color:var(--muted)">Nurture sequence is broken. Rewrite confirmation + reminder emails/SMS <em>first</em> before touching anything else.</span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 10px;background:rgba(239,68,68,.06);border-radius:6px;border-left:3px solid var(--red)">
+            <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--red);font-weight:700;white-space:nowrap">Retention &lt;60%</span>
+            <span style="font-size:11px;color:var(--muted)">Presentation has dead spots. Add open loops. Cut slides after slide 10. Add pattern interrupts every 10 min.</span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 10px;background:rgba(245,158,11,.06);border-radius:6px;border-left:3px solid var(--yellow)">
+            <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--yellow);font-weight:700;white-space:nowrap">Booking &lt;5%</span>
+            <span style="font-size:11px;color:var(--muted)">Pitch is weak. Rewrite the CTA. Add bonus stack. Review pitch section specifically — not the teaching section.</span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 10px;background:rgba(245,158,11,.06);border-radius:6px;border-left:3px solid var(--yellow)">
+            <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--yellow);font-weight:700;white-space:nowrap">Close &lt;30%</span>
+            <span style="font-size:11px;color:var(--muted)">Sales training needed OR leads are unqualified. Add a pre-call application to filter. Do not scale ad spend.</span>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-start;padding:8px 10px;background:rgba(239,68,68,.06);border-radius:6px;border-left:3px solid var(--red)">
+            <span style="font-family:'DM Mono',monospace;font-size:10px;color:var(--red);font-weight:700;white-space:nowrap">ROAS &lt;3×</span>
+            <span style="font-size:11px;color:var(--muted)">Do NOT scale. Fix the lowest-graded KPI first. Scaling a broken funnel only multiplies the loss.</span>
+          </div>
+        </div>
+
+        <div class="divider" style="margin:20px 0"></div>
+        <div class="tag">Campaign Phase Scaling Targets (90-Min Money Machine + Handover SOP)</div>
+        <div style="overflow-x:auto">
+        <table class="tbl" style="font-size:10px">
+          <thead><tr>
+            <th style="text-align:left">Phase</th><th>Ad Spend</th><th>Goal</th><th>Expected Clients</th><th>Revenue Target</th><th>Show Rate KPI</th><th>Booking KPI</th><th>Close KPI</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;color:var(--muted)">Phase 1 · Test</td><td class="num">$500–1K</td><td class="num muted">Break even</td><td class="num">1–3</td><td class="num yellow">$2.5K–7.5K</td><td class="num">25%+</td><td class="num">15%+</td><td class="num">40%+</td></tr>
+            <tr style="background:rgba(74,127,165,.03)"><td style="font-weight:700;color:var(--yellow)">Phase 2 · Optimize</td><td class="num">$1K–1.5K</td><td class="num yellow">3× ROAS min</td><td class="num">3–5</td><td class="num yellow">$7.5K–12.5K</td><td class="num">30%+</td><td class="num">20%+</td><td class="num">50%+</td></tr>
+            <tr><td style="font-weight:700;color:var(--orange)">Phase 3 · Scale</td><td class="num">$1.5K–2.5K</td><td class="num orange">5× ROAS</td><td class="num">5–8</td><td class="num orange">$12.5K–20K</td><td class="num">35%+</td><td class="num">25%+</td><td class="num">60%+</td></tr>
+            <tr style="background:rgba(74,127,165,.03)"><td style="font-weight:700;color:var(--green)">Phase 4 · Systemize</td><td class="num">$2.5K–5K+</td><td class="num green">6× ROAS</td><td class="num">8–15</td><td class="num green">$20K–37.5K+</td><td class="num">30%+</td><td class="num">20%+</td><td class="num">50%+</td></tr>
+            <tr><td style="font-weight:700;color:var(--electric)">IFCA Standard</td><td class="num">$12–15K</td><td class="num" style="color:var(--electric)">7× ROAS target</td><td class="num">15–25</td><td class="num" style="color:var(--electric)">$100K–175K</td><td class="num">28%+</td><td class="num">14%+</td><td class="num">45%+</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="divider" style="margin:16px 0"></div>
+        <div class="tag">Live Benchmark Bars vs Your Projection</div>
         <div id="benchmark-bars"></div>
         <div class="divider"></div>
         <div class="tag">Historical Reference Points</div>
@@ -1378,6 +1572,1249 @@ input[type=range]{width:100%;accent-color:var(--orange);cursor:pointer;height:4p
   </div><!-- /lp-notes -->
 
 
+
+<!-- ══════════════════════════════════════════════════════════
+  PANEL 4: SCHOLARSHIP CAMPAIGN COMMAND CENTER
+══════════════════════════════════════════════════════════ -->
+<div id="panel-scholarship" class="panel">
+
+  <!-- ── SUB-PANEL: HISTORICAL DATA ── -->
+  <div id="sch-history" class="sub-panel active">
+  <div class="wrap">
+    <div class="section-title">Scholarship / Grant Campaign — Historical Data</div>
+    <div class="section-sub">All campaigns · Sources: Slack #scholarship, GHL lead tracker, Hyros, FB Ads Manager · 🔶 = pull in co-work session · DM keyword: IMPACT FUND</div>
+
+    <!-- HERO KPIs — updated with new data -->
+    <div class="grid-auto mb16" style="grid-template-columns:repeat(auto-fit,minmax(155px,1fr))">
+      <div class="kpi-card" style="border-color:rgba(184,147,86,.3)"><div class="kpi-label">Campaigns Run</div><div class="kpi-val orange">6+</div><div class="kpi-sub">Summer 2024 → Spring 2026</div></div>
+      <div class="kpi-card"><div class="kpi-label">Full-Ride Recipients</div><div class="kpi-val" style="color:var(--gold-light)">9</div><div class="kpi-sub">Confirmed $0 closes across 5 campaigns</div></div>
+      <div class="kpi-card" style="border-color:rgba(34,197,94,.3)"><div class="kpi-label">Non-Winner Revenue</div><div class="kpi-val green">$23,000</div><div class="kpi-sub">Rich Ford $12K + Ocean Trail $11K · Spring 2026</div></div>
+      <div class="kpi-card"><div class="kpi-label">Best Single-Day Apps</div><div class="kpi-val yellow">50+</div><div class="kpi-sub">March 29, 2026 surge</div></div>
+      <div class="kpi-card"><div class="kpi-label">Spring 2026 Total Apps</div><div class="kpi-val" style="color:var(--electric)">90+</div><div class="kpi-sub">March 29 – April 9 · pipeline still active</div></div>
+      <div class="kpi-card"><div class="kpi-label">Best CPL (Paid Ads)</div><div class="kpi-val green">$26.24</div><div class="kpi-sub">Jan 2025 MAHA Grant campaign</div></div>
+      <div class="kpi-card"><div class="kpi-label">Best Revenue (Known)</div><div class="kpi-val green">$107,583</div><div class="kpi-sub">Oct–Nov 2025 · 3.12× ROAS</div></div>
+      <div class="kpi-card"><div class="kpi-label">Floor Price</div><div class="kpi-val orange">$9,500</div><div class="kpi-sub">Hard floor — never go below</div></div>
+    </div>
+
+    <!-- THE CORE ECONOMIC ENGINE — new section -->
+    <div style="background:linear-gradient(135deg,rgba(34,197,94,.08) 0%,rgba(184,147,86,.08) 100%);border:1px solid rgba(34,197,94,.3);border-radius:12px;padding:20px 22px;margin-bottom:20px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <span style="font-size:22px">💰</span>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--green);letter-spacing:.04em">THE CORE ECONOMIC ENGINE — Scholarship-to-Paid Conversion</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.06em">Spring 2026 · Confirmed by Slack #scholarship + ClarityPay records</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px">
+        <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:14px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Rich Ford</div>
+          <div style="font-size:22px;font-weight:800;color:var(--green);font-family:'DM Mono',monospace">$12,000</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5">Applied Apr 1 → Closed Apr 3<br><strong style="color:var(--text)">2 days from app to close</strong><br>IFCA via ClarityPay<br><span style="color:var(--electric)">Closer: Ramona Nijjar</span></div>
+        </div>
+        <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:14px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Ocean Trail</div>
+          <div style="font-size:22px;font-weight:800;color:var(--green);font-family:'DM Mono',monospace">$11,000</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5">Applied Apr 9 → Closed Apr 14<br><strong style="color:var(--text)">5 days from app to close</strong><br>IFCA enrollment<br><span style="color:var(--electric)">Closer: Jason Meland</span><br><span style="color:var(--muted)">Ref: Ashley &amp; Derrick Ball</span></div>
+        </div>
+        <div style="background:rgba(184,147,86,.08);border:1px solid rgba(184,147,86,.25);border-radius:8px;padding:14px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:6px">Non-Winner Total</div>
+          <div style="font-size:22px;font-weight:800;color:var(--gold-light);font-family:'DM Mono',monospace">$23,000</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5">In under 2 weeks<br><strong style="color:var(--text)">Without winning anything</strong><br>From 90+ app pipeline<br><span style="color:var(--yellow)">Floor: 2–5% app→close rate</span></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+        <div style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:14px">
+          <div style="font-size:10px;font-weight:700;color:var(--yellow);margin-bottom:6px">📐 Close Rate Floor Estimate</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.7">No campaign-level denominator confirmed yet (GHL tagging gap — see below). Floor estimate: <strong style="color:var(--text)">2–5% of applicants → paid close</strong>.<br>On 90 apps: <strong style="color:var(--green)">2–4 closes = $22K–$44K</strong> incremental revenue per campaign run.<br>On 200 apps (June 2026 target): <strong style="color:var(--green)">4–10 closes = $44K–$110K</strong> from non-winners alone.</div>
+        </div>
+        <div style="background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:8px;padding:14px">
+          <div style="font-size:10px;font-weight:700;color:var(--red);margin-bottom:6px">⚠️ GHL Tagging Gap — Fix Before June 2026</div>
+          <div style="font-size:11px;color:var(--muted);line-height:1.7">No <strong style="color:var(--text)">"scholarship_applicant"</strong> tag exists in GHL yet. Without it, paid close rate from applicants can only be confirmed by manually cross-referencing <strong style="color:var(--text)">#ifca-closed-deals</strong> against scholarship applicant dates.<br><strong style="color:var(--red)">Action:</strong> Create GHL tag + automate on application form submit before June 17 ads launch.</div>
+        </div>
+      </div>
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,.72);line-height:1.8;border-top:1px solid rgba(34,197,94,.15);padding-top:12px">
+        <strong style="color:var(--green)">What this proves:</strong> The scholarship campaign doesn't need to close non-winners — the application process itself qualifies and converts them. Every applicant who applies but doesn't win is a <strong style="color:var(--text)">high-intent warm prospect</strong> who has already self-selected as serious. The sales call just confirms what they already decided. This is why the campaign produces revenue far beyond the number of scholarships awarded.
+        <br><br><strong style="color:var(--gold-light)">June 2026 implication:</strong> With 90+ apps from a single Spring 2026 campaign, projecting 100–200+ apps for June (with joint IFCA×FCA audience + trust transfer hype), the non-winner pipeline alone could generate <strong style="color:var(--text)">$100K–$200K+</strong> in paid enrollments at current conversion rates.
+      </div>
+    </div>
+
+    <!-- BOTTLENECK CALLOUT -->
+    <div class="info-box mb16">
+      <div style="font-weight:700;color:var(--orange);margin-bottom:6px;font-size:13px">🔑 THE #1 LEVER — Contact Rate</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.7">
+        The close rate is NOT the problem. Both Jan 2025 and Oct 2025 closed at ~19–20% when a call happened. The bottleneck is getting people on the phone. Jan 2025 contacted only <strong style="color:var(--orange)">22.7%</strong> of leads. Oct 2025: <strong style="color:var(--orange)">26.9%</strong>. Target for June 2026: <strong style="color:var(--green)">50%+</strong>.
+        If June produces 800 leads at 50% contact → 400 contacted → 240 calls booked (60%) → 48 closes (20%) = <strong style="color:var(--green)">$456K–$480K revenue</strong>.
+      </div>
+    </div>
+
+    <!-- FULL CAMPAIGN HISTORY TABLE — updated with all 6+ campaigns -->
+    <div class="card mb16">
+      <div class="tag">All Scholarship Campaigns — Complete History</div>
+      <div style="overflow-x:auto">
+      <table class="tbl">
+        <thead><tr>
+          <th style="text-align:left;min-width:180px">Campaign</th>
+          <th>Date</th><th>Big Idea / Frame</th>
+          <th>Spend</th><th>Leads / Apps</th><th>CPL</th>
+          <th>Revenue</th><th>ROAS</th>
+          <th>Contact%</th><th>Closed</th><th>Close%</th>
+          <th>Full Rides</th><th>Hot Pipeline</th>
+        </tr></thead>
+        <tbody>
+          <tr>
+            <td>
+              <div style="font-weight:700;color:var(--text)">Summer 2024 Scholarship</div>
+              <span class="badge type-scholarship">SS</span>
+            </td>
+            <td class="num muted">Aug 2024</td>
+            <td style="font-size:10px;color:var(--muted)">🔶 FILL — angle unknown</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num yellow">2 <span style="font-size:9px;color:var(--muted)">(Alexis, Rose)</span></td>
+            <td class="num muted">—</td>
+          </tr>
+          <tr style="background:rgba(34,197,94,.02)">
+            <td>
+              <div style="font-weight:700;color:var(--text)">New Client Rush Scholarship</div>
+              <span class="badge type-scholarship">OCT–NOV 2024</span>
+            </td>
+            <td class="num muted">Oct–Nov 2024</td>
+            <td style="font-size:10px;color:var(--muted)">Jan Rush / First Clients Before New Year</td>
+            <td class="num muted">🔶</td><td class="num">321 leads</td><td class="num green">$29.41</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td>
+            <td class="num muted">—</td>
+          </tr>
+          <tr style="background:rgba(34,197,94,.03)">
+            <td>
+              <div style="font-weight:700;color:var(--text)">MAHA Grant Campaign</div>
+              <span class="badge type-maha">Jan 2025</span>
+            </td>
+            <td class="num muted">Jan 2025</td>
+            <td style="font-size:10px;color:var(--muted)">Make America Healthy Again · Health Crisis</td>
+            <td class="num orange">$16,454</td>
+            <td class="num">627 paid<br><span style="font-size:9px;color:var(--muted)">1,205 total</span></td>
+            <td class="num green">$26.24</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num yellow">22.7%</td>
+            <td class="num green bold">17</td><td class="num green">19.1%</td>
+            <td class="num muted">🔶</td>
+            <td class="num yellow">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="font-weight:700;color:var(--text)">Summer 2025 Scholarship</div>
+              <span class="badge type-scholarship">SS</span>
+            </td>
+            <td class="num muted">Jul 2025</td>
+            <td style="font-size:10px;color:var(--muted)">🔶 FILL — angle unknown</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num yellow">2 <span style="font-size:9px;color:var(--muted)">(Demi, Theresa)</span></td>
+            <td class="num muted">—</td>
+          </tr>
+          <tr style="background:rgba(184,147,86,.03)">
+            <td>
+              <div style="font-weight:700;color:var(--text)">Health Crisis / Nuclear Rush</div>
+              <span class="badge type-impact">OCT–NOV 2025</span>
+              <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green);margin-left:4px">🏆 Best Revenue</span>
+            </td>
+            <td class="num muted">Oct–Nov 2025</td>
+            <td style="font-size:10px;color:var(--muted)">Health Crisis · Coaches as Frontline Solution</td>
+            <td class="num orange">$34,460</td>
+            <td class="num">1,201 leads</td>
+            <td class="num yellow">$28.69</td>
+            <td class="num green bold">$107,583</td>
+            <td class="num green bold">3.12×</td>
+            <td class="num yellow">26.9%</td>
+            <td class="num green bold">15+</td><td class="num green">19.7%</td>
+            <td class="num muted">🔶</td>
+            <td class="num orange">111</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="font-weight:700;color:var(--text)">Fall 2025 Scholarship</div>
+              <span class="badge type-scholarship">SS</span>
+            </td>
+            <td class="num muted">Jan 2026</td>
+            <td style="font-size:10px;color:var(--muted)">🔶 FILL — angle unknown</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num yellow">2 <span style="font-size:9px;color:var(--muted)">(Jasmine, Mikko)</span></td>
+            <td class="num muted">—</td>
+          </tr>
+          <tr>
+            <td>
+              <div style="font-weight:700;color:var(--text)">NCIxIFCA Jan 2026 Scholarship</div>
+              <span class="badge type-scholarship">NCIxIFCA</span>
+            </td>
+            <td class="num muted">Jan 2026</td>
+            <td style="font-size:10px;color:var(--muted)">🔶 FILL — NCI collaboration angle</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num muted">🔶</td><td class="num muted">🔶</td><td class="num muted">🔶</td>
+            <td class="num yellow">2 <span style="font-size:9px;color:var(--muted)">(Tom, Siope)</span></td>
+            <td class="num muted">—</td>
+          </tr>
+          <tr style="background:rgba(99,179,237,.04)">
+            <td>
+              <div style="font-weight:700;color:var(--electric)">Spring 2026 — Impact Fund</div>
+              <span class="badge type-impact">SPRING 2026</span>
+              <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green);margin-left:4px">✅ $23K Non-Winner Revenue</span>
+            </td>
+            <td class="num" style="color:var(--electric)">Mar–Apr 2026</td>
+            <td style="font-size:10px;color:var(--muted)">Impact Fund · Mission Frame</td>
+            <td class="num muted">🔶</td>
+            <td class="num green bold">90+ apps<br><span style="font-size:9px;color:var(--green)">50 in one day (Mar 29)</span></td>
+            <td class="num muted">🔶</td>
+            <td class="num green bold">$23,000+<br><span style="font-size:9px;color:var(--muted)">(non-winners paid)</span></td>
+            <td class="num muted">🔶</td>
+            <td class="num muted">🔶</td>
+            <td class="num green">2 paid<br><span style="font-size:9px">Rich Ford $12K<br>Ocean Trail $11K</span></td>
+            <td class="num muted" style="font-size:9px;color:var(--electric)">Closers:<br>R. Nijjar<br>J. Meland</td>
+            <td class="num yellow">1 <span style="font-size:9px;color:var(--muted)">(Steven Lalonde)</span></td>
+            <td class="num orange">Active</td>
+          </tr>
+          <tr style="background:rgba(99,179,237,.03);border-top:2px solid rgba(99,179,237,.25)">
+            <td>
+              <div style="font-weight:700;color:var(--electric)">IFCA × FCA Impact Fund — June 2026</div>
+              <span class="badge" style="background:rgba(99,179,237,.15);color:var(--electric)">UPCOMING</span>
+              <span class="badge" style="background:rgba(184,147,86,.15);color:var(--gold-light);margin-left:4px">Trust Transfer</span>
+            </td>
+            <td class="num" style="color:var(--electric)">Jun 2026</td>
+            <td style="font-size:10px;color:var(--muted)">Transfer of Trust + Duty/Honor + IFCA×FCA launch event</td>
+            <td class="num muted">TBD</td>
+            <td class="num muted">Target: 800+ leads<br>100–200+ apps</td>
+            <td class="num" style="color:var(--electric)">Target &lt;$30</td>
+            <td class="num" style="color:var(--electric)">Target: $200K+</td>
+            <td class="num" style="color:var(--electric)">Target: 3.5×+</td>
+            <td class="num" style="color:var(--green)">Target: 50%+</td>
+            <td class="num muted">Target: 48+</td>
+            <td class="num muted">~20%</td>
+            <td class="num muted">TBD</td>
+            <td class="num muted">—</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div style="margin-top:10px;font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">🔶 Pull in co-work session → <strong>Slack #scholarship</strong> for app counts | <strong>GHL lead tracker</strong> for contact/book/show rates | <strong>Hyros</strong> for attributed revenue | <strong>FB Ads Manager</strong> for spend/CPL per campaign</div>
+    </div>
+
+    <!-- FULL-RIDE WINNERS TABLE -->
+    <div class="card mb16">
+      <div class="tag">All Confirmed Full-Ride / $0 Recipients — 9 Coaches Across 5 Campaigns</div>
+      <div style="overflow-x:auto">
+      <table class="tbl">
+        <thead><tr>
+          <th style="text-align:left">Name</th><th>Date</th><th>Campaign</th><th>Program</th><th>Deal Value</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="font-weight:600">Alexis Sierra</td><td class="num muted">Aug 2024</td><td><span class="badge type-scholarship">Summer 2024 SS</span></td><td class="muted">IFCA</td><td class="num muted">$0 (full ride)</td></tr>
+          <tr><td style="font-weight:600">Rose Holte</td><td class="num muted">Aug 2024</td><td><span class="badge type-scholarship">Summer 2024 SS</span></td><td class="muted">IFCA</td><td class="num muted">$0 (full ride)</td></tr>
+          <tr><td style="font-weight:600">Demi Moore</td><td class="num muted">Jul 2025</td><td><span class="badge type-scholarship">Summer 2025 SS</span></td><td class="muted">IFCA</td><td class="num muted">$0 (full ride)</td></tr>
+          <tr><td style="font-weight:600">Theresa Barakat</td><td class="num muted">Jul 2025</td><td><span class="badge type-scholarship">Summer 2025 SS</span></td><td class="muted">LaunchKit</td><td class="num muted">$0 (full ride)</td></tr>
+          <tr><td style="font-weight:600">Jasmine Torres</td><td class="num muted">Jan 2026</td><td><span class="badge type-impact">Fall 2025 SS</span></td><td class="muted">IFCA</td><td class="num muted">$0 (full ride)</td></tr>
+          <tr><td style="font-weight:600">Mikko Kormano</td><td class="num muted">Jan 2026</td><td><span class="badge type-impact">Fall 2025 SS</span></td><td class="muted">LaunchKit</td><td class="num muted">$0 (continued access)</td></tr>
+          <tr><td style="font-weight:600">Tom Grike</td><td class="num muted">Jan 2026</td><td><span class="badge type-scholarship">NCIxIFCA Jan 2026</span></td><td class="muted">LaunchKit</td><td class="num muted">$0 (full ride)</td></tr>
+          <tr><td style="font-weight:600">Siope Osai</td><td class="num muted">Jan 2026</td><td><span class="badge type-scholarship">NCIxIFCA Jan 2026</span></td><td class="muted">IFCA</td><td class="num muted">$0 (full ride)</td></tr>
+          <tr style="background:rgba(34,197,94,.04)"><td style="font-weight:600;color:var(--green)">Steven Lalonde</td><td class="num" style="color:var(--green)">Mar 30, 2026</td><td><span class="badge type-impact">Spring 2026 SS</span></td><td class="muted">IFCA</td><td class="num muted">$0 (full ride)</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div style="margin-top:8px;font-size:10px;color:var(--muted);font-family:'DM Mono',monospace">Note: Brittany and Nadi (early full-ride winners) pre-date this tracking sheet. Add to table when confirmed.</div>
+    </div>
+
+    <!-- CROSS-CAMPAIGN INSIGHTS -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="tag">What Always Works</div>
+        <div style="display:grid;gap:8px;margin-top:8px">
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green);font-size:14px;margin-top:1px">✓</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--green)">Non-winner pipeline closes fast</strong> — Rich Ford 2 days, Ocean Trail 5 days. The application pre-qualifies them. Stop treating non-winners as cold.</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green);font-size:14px;margin-top:1px">✓</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Duty/Honor/Mission frame</strong> — MAHA Grant and Oct 2025 Health Crisis both outperformed generic angles</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green);font-size:14px;margin-top:1px">✓</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Extension on Day 7</strong> — engineered FOMO, not a backup. Pre-write the extension email before launch</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green);font-size:14px;margin-top:1px">✓</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Golden Ticket frame</strong> — earned, not discounted. Never lottery language. Never coupon energy.</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--green);font-size:14px;margin-top:1px">✓</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Real winner stories</strong> — Named, specific, outcome-dated. Brittany, Nadi, Rich Ford, Ocean Trail.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">What Kills Performance</div>
+        <div style="display:grid;gap:8px;margin-top:8px">
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--red);font-size:14px;margin-top:1px">✕</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--red)">Abandoning non-winner pipeline</strong> — $23K in 2 weeks proves non-winners are your best immediate close opportunity. These need same-day setter follow-up.</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--red);font-size:14px;margin-top:1px">✕</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Low contact rate</strong> — Jan 2025: 77% of leads never reached. Single highest-leverage fix.</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--red);font-size:14px;margin-top:1px">✕</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Lottery framing</strong> — kills the Golden Ticket positioning. It's selection, not luck.</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--red);font-size:14px;margin-top:1px">✕</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Word "Fellowship"</strong> — retired. Never use. Replaced by Impact Fund.</div></div>
+          <div style="display:flex;gap:10px;align-items:flex-start"><span style="color:var(--red);font-size:14px;margin-top:1px">✕</span><div style="font-size:11px;line-height:1.6"><strong style="color:var(--text)">Under-60-day relaunch</strong> — Minimum 60 days between full-channel campaigns to same audience.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /sch-history -->
+
+  <!-- ── SUB-PANEL: PROJECTION CALCULATOR ── -->
+  <div id="sch-projection" class="sub-panel">
+  <div class="wrap">
+    <div class="section-title">Scholarship Campaign — Projection Calculator</div>
+    <div class="section-sub">June 2026 · Scholarship-specific funnel: Leads → Applications → Calls → Shows → Closes</div>
+
+    <!-- Scenario chips -->
+    <div class="scenario-chips">
+      <button class="s-chip" style="color:var(--muted);border-color:var(--border)" onclick="schScenario('conservative')">Conservative (Jan 2025 pace)</button>
+      <button class="s-chip" style="color:var(--yellow);border-color:rgba(245,158,11,.35)" onclick="schScenario('base')">Base Case (Oct 2025 ROAS)</button>
+      <button class="s-chip" style="color:var(--green);border-color:rgba(34,197,94,.35)" onclick="schScenario('optimized')">Optimized (50% contact rate)</button>
+      <button class="s-chip" style="color:var(--gold-light);border-color:rgba(184,147,86,.35)" onclick="schScenario('joint')">Joint IFCA × FCA Launch</button>
+    </div>
+
+    <div class="grid-2" style="gap:20px;align-items:start">
+      <!-- LEFT: INPUTS -->
+      <div>
+        <div class="card mb16">
+          <div class="tag">Ad Spend &amp; CPL</div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Ad Spend ($)</span><span class="slider-val" id="sch-lbl-spend">$25,000</span></div>
+            <input type="range" id="sch-sl-spend" min="5000" max="80000" step="1000" value="25000" oninput="schSyncSlider('spend',this.value)">
+            <div class="slider-minmax"><span>$5K</span><span>$80K</span></div>
+          </div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Target CPL ($)</span><span class="slider-val" id="sch-lbl-cpl">$29</span></div>
+            <input type="range" id="sch-sl-cpl" min="15" max="60" step="1" value="29" oninput="schSyncSlider('cpl',this.value)">
+            <div class="slider-minmax"><span style="color:var(--green)">$15 (stretch)</span><span>$60</span></div>
+          </div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Organic / Email Leads (bonus)</span><span class="slider-val" id="sch-lbl-organic">150</span></div>
+            <input type="range" id="sch-sl-organic" min="0" max="500" step="25" value="150" oninput="schSyncSlider('organic',this.value)">
+            <div class="slider-minmax"><span>0</span><span>500</span></div>
+          </div>
+        </div>
+
+        <div class="card mb16">
+          <div class="tag">Funnel Conversion Rates</div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Contact Rate (reach % of leads)</span><span class="slider-val" id="sch-lbl-contact">35%</span></div>
+            <input type="range" id="sch-sl-contact" min="0.15" max="0.70" step="0.05" value="0.35" oninput="schSyncSlider('contact',this.value)">
+            <div class="slider-minmax"><span style="color:var(--red)">15% (Jan 2025)</span><span style="color:var(--green)">70% (target)</span></div>
+          </div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Book Rate (contacted → call booked)</span><span class="slider-val" id="sch-lbl-book">55%</span></div>
+            <input type="range" id="sch-sl-book" min="0.20" max="0.80" step="0.05" value="0.55" oninput="schSyncSlider('book',this.value)">
+            <div class="slider-minmax"><span>20%</span><span style="color:var(--green)">80%</span></div>
+          </div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Show Rate (booked → shows)</span><span class="slider-val" id="sch-lbl-show">38%</span></div>
+            <input type="range" id="sch-sl-show" min="0.20" max="0.65" step="0.05" value="0.38" oninput="schSyncSlider('show',this.value)">
+            <div class="slider-minmax"><span>20%</span><span style="color:var(--green)">65%</span></div>
+          </div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Close Rate (shows → closed)</span><span class="slider-val" id="sch-lbl-close">20%</span></div>
+            <input type="range" id="sch-sl-close" min="0.10" max="0.45" step="0.01" value="0.20" oninput="schSyncSlider('close',this.value)">
+            <div class="slider-minmax"><span>10%</span><span style="color:var(--green)">45%</span></div>
+          </div>
+          <div class="slider-row">
+            <div class="slider-label"><span class="slider-name">Avg Deal Size ($)</span><span class="slider-val" id="sch-lbl-deal">$9,750</span></div>
+            <input type="range" id="sch-sl-deal" min="9500" max="12500" step="250" value="9750" oninput="schSyncSlider('deal',this.value)">
+            <div class="slider-minmax"><span style="color:var(--orange)">$9,500 (floor)</span><span>$12,500 (full)</span></div>
+          </div>
+        </div>
+
+        <!-- Historical benchmarks for reference -->
+        <div class="card">
+          <div class="tag">Historical Benchmarks</div>
+          <table class="tbl" style="font-size:10px">
+            <thead><tr><th style="text-align:left">Campaign</th><th>Spend</th><th>Leads</th><th>CPL</th><th>Revenue</th><th>ROAS</th></tr></thead>
+            <tbody>
+              <tr><td>New Client Rush 2024</td><td class="num muted">🔶</td><td class="num">321</td><td class="num green">$29.41</td><td class="num muted">🔶</td><td class="num muted">🔶</td></tr>
+              <tr><td>MAHA Grant Jan 2025</td><td class="num orange">$16,454</td><td class="num">627</td><td class="num green">$26.24</td><td class="num muted">🔶 FILL</td><td class="num muted">🔶</td></tr>
+              <tr style="background:rgba(34,197,94,.03)"><td><strong>Health Crisis Oct 2025</strong></td><td class="num orange">$34,460</td><td class="num">1,201</td><td class="num">$28.69</td><td class="num green bold">$107,583</td><td class="num green bold">3.12×</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- RIGHT: OUTPUTS -->
+      <div>
+        <!-- ROAS Meter -->
+        <div class="card mb16">
+          <div class="flex-between mb8">
+            <span class="tag" style="margin-bottom:0">Projected ROAS</span>
+            <span id="sch-out-roas" style="font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;color:var(--green)">0.0×</span>
+          </div>
+          <div class="roas-track">
+            <div id="sch-roas-fill" class="roas-fill" style="width:0%;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e)"></div>
+            <div class="roas-marker" style="left:20.8%" title="Oct 2025: 3.12x"></div>
+            <div class="roas-marker" style="left:26.7%;background:var(--gold-light)" title="Target: 4x"></div>
+          </div>
+          <div class="flex-between mono" style="font-size:9px;color:var(--muted);margin-top:4px">
+            <span>0×</span><span style="color:var(--orange)">Oct 2025: 3.12× ↑</span><span style="color:var(--gold-light)">Target: 4× ↑</span><span>15×</span>
+          </div>
+        </div>
+
+        <!-- Output KPIs -->
+        <div class="grid-2 mb16" style="gap:10px">
+          <div class="kpi-card"><div class="kpi-label">Total Leads</div><div class="kpi-val" style="color:var(--electric)" id="sch-out-leads">—</div><div class="kpi-sub" id="sch-out-cpl-sub">CPL: —</div></div>
+          <div class="kpi-card"><div class="kpi-label">Leads Contacted</div><div class="kpi-val orange" id="sch-out-contacted">—</div><div class="kpi-sub" id="sch-out-contact-sub">Contact rate: —</div></div>
+          <div class="kpi-card"><div class="kpi-label">Calls Booked</div><div class="kpi-val yellow" id="sch-out-booked">—</div><div class="kpi-sub" id="sch-out-book-sub">Book rate: —</div></div>
+          <div class="kpi-card"><div class="kpi-label">Calls Shown</div><div class="kpi-val" style="color:#a78bfa" id="sch-out-shows">—</div><div class="kpi-sub" id="sch-out-show-sub">Show rate: —</div></div>
+          <div class="kpi-card"><div class="kpi-label">Clients Closed</div><div class="kpi-val green" id="sch-out-closed">—</div><div class="kpi-sub" id="sch-out-close-sub">Close rate: —</div></div>
+          <div class="kpi-card"><div class="kpi-label">Gross Revenue</div><div class="kpi-val" style="color:var(--gold-light)" id="sch-out-revenue">—</div><div class="kpi-sub" id="sch-out-deal-sub">Avg deal: —</div></div>
+        </div>
+
+        <!-- Funnel Flow -->
+        <div class="card mb16">
+          <div class="tag">Funnel Flow</div>
+          <div id="sch-funnel" style="display:grid;gap:3px;margin-bottom:12px"></div>
+          <div class="flex-between" style="padding:10px 12px;background:rgba(34,197,94,.06);border-radius:6px;border:1px solid rgba(34,197,94,.2)">
+            <span class="mono muted" style="font-size:11px">TOTAL REVENUE</span>
+            <span id="sch-out-rev-big" style="font-size:20px;font-weight:800;color:var(--green);font-family:'DM Mono',monospace">—</span>
+          </div>
+        </div>
+
+        <!-- Contact Rate Impact Callout -->
+        <div class="info-box">
+          <div style="font-weight:700;color:var(--orange);margin-bottom:6px;font-size:12px">📌 Contact Rate Sensitivity</div>
+          <div id="sch-contact-callout" style="font-size:11px;color:rgba(255,255,255,.72);line-height:1.7">Adjust the contact rate slider to see the impact.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div><!-- /sch-projection -->
+
+  <!-- ── SUB-PANEL: CAMPAIGN SCHEDULE ── -->
+  <div id="sch-schedule" class="sub-panel">
+  <div class="wrap">
+    <div class="section-title">June 2026 Campaign Schedule</div>
+    <div class="section-sub">10-day campaign · Organic launch Jun 21 · Ads launch Jun 17–18 · Winner announcement Jun 26 · Optional extension to Jun 29</div>
+
+    <!-- Key Dates Banner -->
+    <div class="grid-auto mb16" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+      <div class="kpi-card" style="border-color:rgba(232,119,34,.35)"><div class="kpi-label">Ads Launch</div><div class="kpi-val orange" style="font-size:18px">Jun 17–18</div><div class="kpi-sub">Begin paid push · test 3+ hooks</div></div>
+      <div class="kpi-card" style="border-color:rgba(34,197,94,.3)"><div class="kpi-label">Organic Launch</div><div class="kpi-val green" style="font-size:18px">Jun 21</div><div class="kpi-sub">Official announcement · full blast</div></div>
+      <div class="kpi-card" style="border-color:rgba(184,147,86,.35)"><div class="kpi-label">First Winner</div><div class="kpi-val" style="font-size:18px;color:var(--gold-light)">Jun 26</div><div class="kpi-sub">Winner + optional extension reveal</div></div>
+      <div class="kpi-card" style="border-color:rgba(99,179,237,.3)"><div class="kpi-label">Final Winner</div><div class="kpi-val" style="font-size:18px;color:var(--electric)">Jun 29</div><div class="kpi-sub">FOMO close · 2nd winner (optional)</div></div>
+    </div>
+
+    <!-- Channel Legend -->
+    <div class="flex mb16" style="gap:16px;flex-wrap:wrap">
+      <div class="flex" style="gap:6px"><span class="channel-dot d-ads"></span><span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">PAID ADS</span></div>
+      <div class="flex" style="gap:6px"><span class="channel-dot d-organic"></span><span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">ORGANIC / SOCIAL</span></div>
+      <div class="flex" style="gap:6px"><span class="channel-dot d-email"></span><span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">EMAIL</span></div>
+      <div class="flex" style="gap:6px"><span class="channel-dot d-sms"></span><span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">SMS</span></div>
+    </div>
+
+    <!-- Calendar Table -->
+    <div class="card mb16" style="overflow-x:auto">
+      <div class="tag">Day-by-Day Execution Calendar</div>
+      <table class="tbl" style="font-size:10px;min-width:800px">
+        <thead><tr>
+          <th style="text-align:left">Day</th>
+          <th style="text-align:left">Date</th>
+          <th style="text-align:left">Phase</th>
+          <th style="text-align:left;color:var(--orange)">🟠 Ads</th>
+          <th style="text-align:left;color:var(--green)">🟢 Organic</th>
+          <th style="text-align:left;color:var(--electric)">🔵 Email</th>
+          <th style="text-align:left;color:var(--yellow)">🟡 SMS</th>
+          <th style="text-align:left">Notes</th>
+        </tr></thead>
+        <tbody>
+          <tr><td class="muted">–7</td><td><strong>Jun 14</strong></td><td><span class="badge type-qa">Pre-Teaser</span></td><td class="muted">—</td><td style="font-size:10px">Problem agitation reel. "The gap between average coaches and exceptional ones..."</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Seed belief, identity</td></tr>
+          <tr><td class="muted">–6</td><td><strong>Jun 15</strong></td><td><span class="badge type-qa">Pre-Teaser</span></td><td class="muted">—</td><td style="font-size:10px">Identity content. "Two types of coaches." Who this is for/not for.</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Filter audience</td></tr>
+          <tr><td class="muted">–5</td><td><strong>Jun 16</strong></td><td><span class="badge type-qa">Pre-Teaser</span></td><td class="muted">—</td><td style="font-size:10px">Soft hint: "Something big is coming for coaches who are serious." Story poll/countdown.</td><td style="font-size:10px;color:var(--electric)">🔵 Teaser email to warm list + hot prospects from Jan/Oct</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Warm the list</td></tr>
+          <tr style="background:rgba(232,119,34,.04)"><td style="color:var(--orange);font-weight:700">–4</td><td><strong style="color:var(--orange)">Jun 17</strong></td><td><span class="badge type-mc">ADS LAUNCH</span></td><td style="font-size:10px;color:var(--orange)">🟠 Launch 3 hooks: Mission, Proof, Identity. Broad targeting. $100–300/day test budget.</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Begin paid. Test all 3 hook types. Let creative breathe 24–48 hrs before editing.</td></tr>
+          <tr style="background:rgba(232,119,34,.04)"><td style="color:var(--orange);font-weight:700">–3</td><td><strong style="color:var(--orange)">Jun 18</strong></td><td><span class="badge type-mc">ADS SCALE</span></td><td style="font-size:10px;color:var(--orange)">🟠 Review Day 1 data. Identify top hook. Scale winner 2–3×. Add urgency variation.</td><td style="font-size:10px">Credibility reel. Jordan/Erin/Taeler intro or case study. DM keyword: IMPACT FUND</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Joint creator content starts</td></tr>
+          <tr><td class="muted">–2</td><td><strong>Jun 19</strong></td><td><span class="badge type-webinar">Build</span></td><td style="font-size:10px;color:var(--orange)">🟠 Scale top performer. Test Transfer of Trust angle.</td><td style="font-size:10px">Social proof reel. Winner story (Brittany or Nadi). No direct CTA yet.</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Build trust, not urgency</td></tr>
+          <tr><td class="muted">–1</td><td><strong>Jun 20</strong></td><td><span class="badge type-webinar">Pre-Launch</span></td><td style="font-size:10px;color:var(--orange)">🟠 Full budget. Add retargeting campaign to 3-sec video viewers.</td><td style="font-size:10px">"Tomorrow is the day." Story countdown. Hype, anticipation, exclusivity language.</td><td style="font-size:10px;color:var(--electric)">🔵 "Tomorrow we announce something we've never done before." Subject line A/B test.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Build tension</td></tr>
+          <tr style="background:rgba(34,197,94,.05);border-top:2px solid rgba(34,197,94,.25)"><td style="color:var(--green);font-weight:800">DAY 1</td><td><strong style="color:var(--green)">Jun 21</strong> 🚀</td><td><span class="badge type-workshop">LAUNCH DAY</span></td><td style="font-size:10px;color:var(--orange)">🟠 Launch announcement creative. All hooks live. Maximize volume.</td><td style="font-size:10px;color:var(--green)">🟢 Official announcement post + reel. CTA: DM "IMPACT FUND". Story: application open.</td><td style="font-size:10px;color:var(--electric)">🔵 LAUNCH EMAIL — full announcement. 3 subject line variants. Send to full list + hot prospects.</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #1 — "The IFCA Impact Fund is open. Apply now → [link]"</td><td style="font-size:9px;color:var(--muted)">Full channel blast. All hands on deck.</td></tr>
+          <tr><td class="muted">+2</td><td><strong>Jun 22</strong></td><td><span class="badge type-webinar">2nd Angle</span></td><td style="font-size:10px;color:var(--orange)">🟠 Rotate to second hook. Case study creative. Social proof ad.</td><td style="font-size:10px">Second angle post. Mission-driven or Transfer of Trust content. Story: "Applications already rolling in."</td><td style="font-size:10px;color:var(--electric)">🔵 Case study email. Real winner story. Brittany or Nadi.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Proof builds momentum</td></tr>
+          <tr><td class="muted">+3</td><td><strong>Jun 23</strong></td><td><span class="badge type-webinar">Double Post</span></td><td style="font-size:10px;color:var(--orange)">🟠 Test new hook variation. DM-reply capture optimization.</td><td style="font-size:10px">2 posts. AM: Objection handling ("I can't afford it"). PM: "This is not a scholarship for everyone."</td><td style="font-size:10px;color:var(--electric)">🔵 Objection breakdown email. Money, time, belief.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Overcome hesitation</td></tr>
+          <tr><td class="muted">+4</td><td><strong>Jun 24</strong></td><td><span class="badge type-webinar">Mission Day</span></td><td style="font-size:10px;color:var(--orange)">🟠 Push mission-angle creative hardest today. </td><td style="font-size:10px">Mission/calling post. Duty/honor/professionalism frame. Jordan or Taeler on-camera.</td><td style="font-size:10px;color:var(--electric)">🔵 Mission email. "Why we built this fund." Foundation story.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Deepen identity alignment</td></tr>
+          <tr style="background:rgba(239,68,68,.04)"><td style="color:var(--red);font-weight:700">+5</td><td><strong style="color:var(--red)">Jun 25</strong></td><td><span class="badge" style="background:rgba(239,68,68,.15);color:#f87171">URGENCY DAY</span></td><td style="font-size:10px;color:var(--orange)">🟠 Switch to urgency creatives only. "24 hours remaining." Countdown overlay.</td><td style="font-size:10px">"Applications close tomorrow." Story countdown. "Last day to apply."</td><td style="font-size:10px;color:var(--electric)">🔵 2× emails today. AM: "Applications close tomorrow." PM: "This is your last reminder."</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #2 — "24 hours left. Apply now → [link]"</td><td style="font-size:9px;color:var(--muted)">Max urgency. 2× email is mandatory.</td></tr>
+          <tr style="background:rgba(184,147,86,.06);border-top:2px solid rgba(184,147,86,.3)"><td style="color:var(--gold-light);font-weight:800">+6</td><td><strong style="color:var(--gold-light)">Jun 26</strong> 🏆</td><td><span class="badge" style="background:rgba(184,147,86,.2);color:var(--gold-light)">WINNER DAY</span></td><td style="font-size:10px;color:var(--orange)">🟠 Switch to FOMO/extension creative. "We picked a winner — AND we're extending."</td><td style="font-size:10px;color:var(--gold-light)">🟡 WINNER ANNOUNCEMENT POST. Full profile. Story series. Optional: extension announcement.</td><td style="font-size:10px;color:var(--electric)">🔵 Winner announcement email + extension reveal. "I Messed Up" style if extending. New deadline: Jun 29.</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #3 — "We picked a winner — and we opened one more spot. Here's why → [link]"</td><td style="font-size:9px;color:var(--muted)">Extension IS the campaign. Pre-write this email before launch day.</td></tr>
+          <tr style="background:rgba(99,179,237,.04)"><td style="color:var(--electric)">+7</td><td><strong>Jun 27</strong></td><td><span class="badge type-webinar">Extension Push</span></td><td style="font-size:10px;color:var(--orange)">🟠 Extension FOMO creative. "One more spot. One more coach." New landing page if possible.</td><td style="font-size:10px">Extension push reel. Reaction content from winner reveal. FOMO amplification.</td><td style="font-size:10px;color:var(--electric)">🔵 Extension re-engagement email. Hot prospects targeted specifically.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Re-activate all 183 hot prospects from Jan + Oct</td></tr>
+          <tr style="background:rgba(99,179,237,.04)"><td style="color:var(--electric)">+8</td><td><strong>Jun 28</strong></td><td><span class="badge type-webinar">Final Push</span></td><td style="font-size:10px;color:var(--orange)">🟠 Last day creatives. Maximum urgency. Countdown.</td><td style="font-size:10px">Last day content. Final push. "This is the last day." Stories every 2 hours.</td><td style="font-size:10px;color:var(--electric)">🔵 2× emails. "Last day." "Final hours."</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #4 — "Last day. Final application window closes tonight."</td><td style="font-size:9px;color:var(--muted)">2× email mandatory again</td></tr>
+          <tr style="background:rgba(184,147,86,.04);border-top:2px solid rgba(184,147,86,.2)"><td style="color:var(--gold-light);font-weight:800">+9</td><td><strong style="color:var(--gold-light)">Jun 29</strong> 🏆</td><td><span class="badge" style="background:rgba(184,147,86,.2);color:var(--gold-light)">FINAL WINNER</span></td><td style="font-size:10px;color:var(--muted)">🔴 Turn off ads.</td><td style="font-size:10px;color:var(--gold-light)">🏆 FINAL WINNER ANNOUNCEMENT. Celebration content. FOMO for anyone who didn't apply.</td><td style="font-size:10px;color:var(--electric)">🔵 Final winner email + close stragglers CTA. "We're closing apps — but if you're serious, reply now."</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #5 — "We picked our final winner. Here's their story → [link]"</td><td style="font-size:9px;color:var(--muted)">Turn off ads. Work the pipeline. Triage path activates.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pre-launch Checklist -->
+    <div class="grid-2">
+      <div class="card">
+        <div class="tag">Pre-Launch Checklist (Must be done before Jun 17)</div>
+        <div style="display:grid;gap:8px;margin-top:8px;font-size:11px">
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>Big Idea locked — which of the 4 angles (or combination)?</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>Landing page live and tested (GHL or HubSpot)</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>ManyChat DM keyword "IMPACT FUND" configured</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>All email sequences written + scheduled (launch, case study, objection, mission, urgency x2, winner + extension, final)</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>SMS sequence pre-written (5 texts)</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>Extension email pre-written ("I Messed Up" format)</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>183+ hot prospects (Jan + Oct) loaded into setter outreach queue</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>Setter scripts updated for Trust Transfer context (Taeler intro)</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>Ad creatives shot (shoot week content from Transfer of Trust shoot)</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer"><input type="checkbox" style="margin-top:2px;accent-color:var(--orange)"><span>Jordan + Taeler co-branded assets ready (logos, video intro)</span></label>
+          <label style="display:flex;gap:10px;align-items:flex-start;cursor:pointer;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:5px;padding:8px 10px"><input type="checkbox" style="margin-top:2px;accent-color:var(--red)"><span style="color:#f87171"><strong>⚠️ GHL: Create "scholarship_applicant" tag + automate on form submit</strong> — required to track paid close rate from applicants per campaign. Without this, attribution is manual only.</span></label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">Post-Campaign Actions</div>
+        <div style="display:grid;gap:8px;margin-top:8px;font-size:11px;color:var(--muted)">
+          <div><strong style="color:var(--text)">Days 1–3 after close:</strong> Pull all applicants from GHL. Tag: Closed / Hot / Cold / Nurture.</div>
+          <div><strong style="color:var(--text)">Week 1:</strong> Setter re-engagement on all hot prospects who didn't close. Partial award re-activation path.</div>
+          <div><strong style="color:var(--text)">Week 2:</strong> Winner profile content production. Turn winner into ongoing social proof asset.</div>
+          <div><strong style="color:var(--text)">30 days out:</strong> Pull revenue attribution from Hyros. Document CPL, contact rate, close rate, ROAS. Add to this dashboard.</div>
+          <div><strong style="color:var(--text)">60-day rule:</strong> Next scholarship campaign minimum 60 days after Jun 29. Earliest: late Aug 2026.</div>
+          <div style="margin-top:8px;padding:10px;background:rgba(184,147,86,.08);border:1px solid rgba(184,147,86,.2);border-radius:6px;color:var(--gold-light)"><strong>Pricing reminder:</strong> Full: $12,500 · Award: $2,500–$3,000 from fund · Scholar pays: $9,500–$10,000 · Floor: $9,500 — never go below.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /sch-schedule -->
+
+  <!-- ── SUB-PANEL: BIG IDEAS ── -->
+  <div id="sch-bigideas" class="sub-panel">
+  <div class="wrap">
+    <div class="section-title">4 Big Ideas — June 2026 Campaign Angles</div>
+    <div class="section-sub">Toggle between angles · 2 Trust Transfer themes · 2 Duty/Honor/Mission themes · Multiple headline variations per idea</div>
+
+    <!-- Idea selector -->
+    <div class="big-idea-toggle mb16">
+      <button class="bi-chip trust active" id="bi-btn-1" onclick="showBI(1,this)">🔁 1 · PASS THE TORCH (Trust Transfer)</button>
+      <button class="bi-chip trust" id="bi-btn-2" onclick="showBI(2,this)">🔑 2 · THE NEW OWNER'S FIRST ACT (Trust Transfer)</button>
+      <button class="bi-chip mission" id="bi-btn-3" onclick="showBI(3,this)">🔥 3 · THE CALLING, NOT THE CAREER (Mission)</button>
+      <button class="bi-chip standard" id="bi-btn-4" onclick="showBI(4,this)">⚔️ 4 · THE STANDARD (Honor / Professionalism)</button>
+    </div>
+
+    <!-- BIG IDEA 1 -->
+    <div id="bi-panel-1" class="bi-panel">
+      <div class="card mb16" style="border-color:rgba(99,179,237,.35)">
+        <div class="flex-between mb8">
+          <div>
+            <span class="badge" style="background:rgba(99,179,237,.15);color:var(--electric)">TRUST TRANSFER · ACQUISITION</span>
+            <span class="badge" style="background:rgba(184,147,86,.15);color:var(--gold-light);margin-left:6px">WHITE SPACE — Zero Competitors Running This</span>
+          </div>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--electric);letter-spacing:.04em;margin-bottom:8px">PASS THE TORCH — The Final Fund</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.7">Before Jordan and Erin hand over the keys to Taeler, they're giving away the biggest Impact Fund in IFCA history. This isn't a discount — it's a declaration of what this business has always stood for. The hype around the acquisition becomes the reason for the urgency. The sale becomes the gift.</div>
+        <div class="flex mt8" style="gap:12px;flex-wrap:wrap">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">CTA Keyword:</strong> IMPACT FUND</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Emotional Core:</strong> Legacy · Honor · Gratitude</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Presenters:</strong> Jordan + Erin + Taeler (joint)</div>
+        </div>
+      </div>
+
+      <div class="grid-2 mb16">
+        <div>
+          <div class="tag">Headline Picker</div>
+          <div id="bi-1-hl-display" class="hl-display-sch" style="background:rgba(99,179,237,.06);border:1px solid rgba(99,179,237,.2);border-radius:10px;color:var(--electric)">
+            Before We Hand Over The Keys,<br>We're Giving Away $25,000<br>To Fitness Coaches Who Still Believe<br>This Is A Calling
+          </div>
+        </div>
+        <div>
+          <div class="tag">All Headline Variations</div>
+          <div id="bi-1-hl-opts" class="hl-options-sch"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag">Organic Content Angles</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--electric)"><strong style="color:var(--electric)">Reel 1:</strong> "Why we're selling IFCA — and why our last act before we hand over the keys is giving away $25K."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--electric)"><strong style="color:var(--electric)">Reel 2:</strong> Jordan + Taeler together. "We're different people. Same mission. One final fund."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--electric)"><strong style="color:var(--electric)">Reel 3:</strong> Erin. "This isn't goodbye. This is the biggest thing we've ever done for this community."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--electric)"><strong style="color:var(--electric)">Story sequence:</strong> "Before I hand over my keys..." → countdown to Jun 21 launch.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">Ad Creative Entities (Andromeda Format)</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 1 · Founder Announcement</div>
+              Format: Sit-down · Jordan solo · Hook: "We just sold IFCA. Before I hand over the keys..." · Emotion: Legacy · Gratitude
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 2 · Joint Introduction</div>
+              Format: Jordan + Taeler together · Hook: "She's taking over. But first, here's what we built together." · Emotion: Trust · Novelty
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 3 · Erin Emotional</div>
+              Format: Erin solo · Hook: "We didn't build IFCA to sell it. We built it so coaches like you could win." · Emotion: Vulnerability · Mission
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /bi-panel-1 -->
+
+    <!-- BIG IDEA 2 -->
+    <div id="bi-panel-2" class="bi-panel" style="display:none">
+      <div class="card mb16" style="border-color:rgba(99,179,237,.35)">
+        <div class="flex-between mb8">
+          <div>
+            <span class="badge" style="background:rgba(99,179,237,.15);color:var(--electric)">TRUST TRANSFER · NEW ERA</span>
+            <span class="badge" style="background:rgba(139,92,246,.2);color:#a78bfa;margin-left:6px">Industry Disruption · Category of One</span>
+          </div>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--electric);letter-spacing:.04em;margin-bottom:8px">THE NEW OWNER'S FIRST ACT</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.7">Taeler just stepped into the most valuable fitness education platform in the industry. Her first move? Not a rebrand. Not a pivot. A scholarship fund. Because that's what this business has always been about — and because the merger of IFCA and FCA is the biggest thing to happen in fitness coaching in years. Be part of the first chapter.</div>
+        <div class="flex mt8" style="gap:12px;flex-wrap:wrap">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">CTA Keyword:</strong> IMPACT FUND</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Emotional Core:</strong> Novelty · Curiosity · FOMO</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Presenters:</strong> Taeler-led · Jordan supporting</div>
+        </div>
+      </div>
+
+      <div class="grid-2 mb16">
+        <div>
+          <div class="tag">Headline Picker</div>
+          <div id="bi-2-hl-display" class="hl-display-sch" style="background:rgba(99,179,237,.06);border:1px solid rgba(99,179,237,.2);border-radius:10px;color:var(--electric)">
+            She Inherited IFCA.<br>Her First Decision Was<br>To Fund A Scholarship.<br>Here's Why.
+          </div>
+        </div>
+        <div>
+          <div class="tag">All Headline Variations</div>
+          <div id="bi-2-hl-opts" class="hl-options-sch"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag">Organic Content Angles</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--electric)"><strong style="color:var(--electric)">Reel 1 (Taeler):</strong> "When Jordan handed me the keys to IFCA, I knew exactly what my first move would be."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--electric)"><strong style="color:var(--electric)">Reel 2 (Joint):</strong> "Two coaching education platforms. One fund. You've never seen this before."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--electric)"><strong style="color:var(--electric)">Reel 3 (Disruption):</strong> "The fitness coaching industry just changed. Here's what it means for you."</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">Ad Creative Entities</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 1 · Taeler Introduction</div>
+              Format: Taeler solo, walking frame · Hook: "When Jordan handed me the keys to IFCA..." · Emotion: Confidence · Mission
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 2 · Disruption Announcement</div>
+              Format: Jordan + Taeler · Hook: "We just combined two of the top coaching education companies in the world. And our first act is..." · Emotion: Excitement · FOMO
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 3 · "A New Era" Credibility</div>
+              Format: B-roll + VO · Hook: "A new era for fitness coaching. One platform. One fund." · Emotion: Awe · Belonging
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /bi-panel-2 -->
+
+    <!-- BIG IDEA 3 -->
+    <div id="bi-panel-3" class="bi-panel" style="display:none">
+      <div class="card mb16" style="border-color:rgba(34,197,94,.3)">
+        <div class="flex-between mb8">
+          <div>
+            <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">MISSION-FIRST · HEALTH CRISIS</span>
+            <span class="badge" style="background:rgba(34,197,94,.1);color:var(--green);margin-left:6px">✅ Proven Frame — MAHA Grant + Oct 2025 both used this</span>
+          </div>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--green);letter-spacing:.04em;margin-bottom:8px">THE CALLING, NOT THE CAREER</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.7">This isn't for coaches who got into fitness because it sounded cool. It's for coaches who see it as a calling — who wake up thinking about how to help people and won't stop until they've built something that actually matters. 74% of Americans are overweight. You decided to do something about it. We built this fund to honor that decision.</div>
+        <div class="flex mt8" style="gap:12px;flex-wrap:wrap">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">CTA Keyword:</strong> IMPACT FUND</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Emotional Core:</strong> Duty · Purpose · Validation</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Proven CPL:</strong> $26.24–$28.69 across both mission-frame campaigns</div>
+        </div>
+      </div>
+
+      <div class="grid-2 mb16">
+        <div>
+          <div class="tag">Headline Picker</div>
+          <div id="bi-3-hl-display" class="hl-display-sch" style="background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.2);border-radius:10px;color:var(--green)">
+            $25,000 For Coaches<br>Who Treat Helping People<br>Get Healthy As A Calling,<br>Not A Career
+          </div>
+        </div>
+        <div>
+          <div class="tag">All Headline Variations</div>
+          <div id="bi-3-hl-opts" class="hl-options-sch"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag">Organic Content Angles</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--green)"><strong style="color:var(--green)">Reel 1:</strong> "74% of Americans are overweight. You decided to do something about it. We built this fund for you."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--green)"><strong style="color:var(--green)">Reel 2:</strong> "You didn't get into coaching because it was easy. You got in because someone needed help and you showed up."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--green)"><strong style="color:var(--green)">Carousel:</strong> "5 signs you're a calling coach vs. a career coach." CTAs to apply for the fund.</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">Ad Creative Entities</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 1 · Jordan Mission Statement</div>
+              Format: Walking, outdoor · Hook: "We're giving away $25,000 to coaches who still believe this is a calling." · Emotion: Honor · Pride
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 2 · Health Crisis Data</div>
+              Format: Text overlay + VO · Hook: "74% of Americans are overweight. 600,000 coaches exist. Most don't make it." · Emotion: Urgency · Duty
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 3 · Erin "Why We Do This"</div>
+              Format: Kitchen table, casual · Hook: "We've had 4,000 coaches come through IFCA. The ones who stay aren't the ones who needed the money." · Emotion: Authenticity
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /bi-panel-3 -->
+
+    <!-- BIG IDEA 4 -->
+    <div id="bi-panel-4" class="bi-panel" style="display:none">
+      <div class="card mb16" style="border-color:rgba(232,119,34,.35)">
+        <div class="flex-between mb8">
+          <div>
+            <span class="badge" style="background:rgba(232,119,34,.15);color:var(--orange)">HONOR · PROFESSIONALISM · ELITE IDENTITY</span>
+            <span class="badge" style="background:rgba(232,119,34,.1);color:var(--orange);margin-left:6px">Strong filter — highest-intent applicants</span>
+          </div>
+        </div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--orange);letter-spacing:.04em;margin-bottom:8px">THE STANDARD</div>
+        <div style="font-size:12px;color:var(--muted);line-height:1.7">The best coaches in this industry don't have a marketing problem — they have a standards problem. 600,000+ fitness coaches are on Instagram right now. The gap between those who are exceptional and those who are average is widening every year. This fund is for the coaches who refuse to be average. Not every coach deserves this. That's the point.</div>
+        <div class="flex mt8" style="gap:12px;flex-wrap:wrap">
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">CTA Keyword:</strong> IMPACT FUND</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Emotional Core:</strong> Pride · Exclusivity · Identity elevation</div>
+          <div style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)"><strong style="color:var(--text)">Best Paired With:</strong> Big Ideas #1 or #3 as secondary messaging</div>
+        </div>
+      </div>
+
+      <div class="grid-2 mb16">
+        <div>
+          <div class="tag">Headline Picker</div>
+          <div id="bi-4-hl-display" class="hl-display-sch" style="background:rgba(232,119,34,.05);border:1px solid rgba(232,119,34,.25);border-radius:10px;color:var(--orange)">
+            600,000 Fitness Coaches Online.<br>We're Funding The 20<br>Who Want To Do It Right.
+          </div>
+        </div>
+        <div>
+          <div class="tag">All Headline Variations</div>
+          <div id="bi-4-hl-opts" class="hl-options-sch"></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="tag">Organic Content Angles</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--orange)"><strong style="color:var(--orange)">Reel 1:</strong> "Not every coach deserves this scholarship. That's not rude — that's the standard."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--orange)"><strong style="color:var(--orange)">Reel 2:</strong> "There are two types of coaches in this industry. This fund was built for exactly one of them."</div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px;border-left:2px solid var(--orange)"><strong style="color:var(--orange)">Carousel:</strong> "The fitness industry has a standards problem. Here's what raising yours actually looks like."</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="tag">Ad Creative Entities</div>
+          <div style="display:grid;gap:8px;font-size:11px;margin-top:8px">
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 1 · Jordan "The Standard"</div>
+              Format: Direct to camera, confident · Hook: "We've trained over 4,000 coaches. The ones who made it had one thing in common." · Emotion: Respect · Aspiration
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 2 · "Not For Everyone"</div>
+              Format: Text-overlay hook · Hook: "Not every coach deserves this. That's the point." → pivot to who it IS for. · Emotion: Exclusivity · Identity
+            </div>
+            <div style="padding:10px;background:rgba(74,127,165,.05);border-radius:6px">
+              <div style="color:var(--orange);font-weight:700;font-size:10px;margin-bottom:4px">ENTITY 3 · Industry Comparison</div>
+              Format: Taeler + Jordan · Hook: "The gap between average coaches and exceptional coaches is widening every year. Which side are you on?" · Emotion: Competition · Pride
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /bi-panel-4 -->
+
+    <!-- COMBINATION STRATEGY -->
+    <div class="card mt16">
+      <div class="tag">Recommended Combination Strategy — June 2026</div>
+      <div class="grid-2 mt8">
+        <div style="font-size:11px;line-height:1.7;color:var(--muted)">
+          <strong style="color:var(--text)">Primary Frame (lead with this in ads):</strong> Big Idea #1 or #2 — the Trust Transfer angle is completely unoccupied by competitors. No one in the market is running a "founder exit → scholarship" narrative. This is 100% white space.<br><br>
+          <strong style="color:var(--text)">Secondary Frame (organic content):</strong> Big Idea #3 — The Calling frame has the proven track record (MAHA + Oct 2025). Layer it as organic content for warm audiences who need emotional resonance.
+        </div>
+        <div style="font-size:11px;line-height:1.7;color:var(--muted)">
+          <strong style="color:var(--text)">Filter/Qualifier Frame (retargeting + setter scripts):</strong> Big Idea #4 — The Standard angle works best with people who already know IFCA. Retargeting and setter outreach should use this identity-elevating language to re-qualify fence-sitters.<br><br>
+          <strong style="color:var(--text)">Presenter breakdown:</strong> Jordan + Erin for #1/#3, Taeler leads #2, Jordan + Taeler together for #4. All should appear in at least one ad entity each for the Trust Transfer transition.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /sch-bigideas -->
+
+  <!-- ── SUB-PANEL: LANDING PAGES ── -->
+  <div id="sch-landing" class="sub-panel">
+  <div class="wrap">
+    <div class="section-title">Scholarship Landing Page — Option A (Dark / Impact)</div>
+    <div class="section-sub">Select a big idea above to see corresponding LP variant · All options use CTA keyword: IMPACT FUND</div>
+
+    <div class="lp-preview" style="border-radius:12px;overflow:hidden;border:1px solid var(--border)">
+      <!-- Hero -->
+      <div class="lp-hero-a" style="background:linear-gradient(160deg,#0a0d14 0%,#102236 50%,#071526 100%)">
+        <div class="lp-eyebrow-a">IFCA × FCA · June 2026</div>
+        <div class="lp-badge-a">🎓 Applications Now Open · Limited to 20 Coaches</div>
+        <h1 class="lp-h1-a">The IFCA <span class="acc">Impact Fund</span><br><span class="ital">is Giving Away</span><br>$25,000</h1>
+        <p class="lp-sub-a">Before we pass the torch to a new era of leadership, we're making one final declaration about what this business stands for. <strong>20 coaches. $25,000 in funds. One mission.</strong></p>
+        <div class="lp-meta-a">
+          <span class="lp-meta-txt"><span class="lp-meta-dot"></span>Applications close Jun 26</span>
+          <span class="lp-meta-txt"><span class="lp-meta-dot"></span>4,000+ coaches trained</span>
+          <span class="lp-meta-txt"><span class="lp-meta-dot"></span>DM "IMPACT FUND" to apply</span>
+        </div>
+        <div class="text-center">
+          <a href="#" class="btn-lp-a">APPLY FOR THE IMPACT FUND</a>
+          <div class="lp-btn-sub">DM us "IMPACT FUND" on Instagram or tap above to apply</div>
+        </div>
+      </div>
+      <!-- Proof bar -->
+      <div class="lp-proof">
+        <div class="lp-pstat"><span class="pn">4,000+</span><span class="pl">Coaches Trained</span></div>
+        <div class="lp-pstat"><span class="pn">$40M+</span><span class="pl">Client Revenue Generated</span></div>
+        <div class="lp-pstat"><span class="pn">$107K</span><span class="pl">Revenue (Oct 2025 Campaign)</span></div>
+        <div class="lp-pstat"><span class="pn">$30K</span><span class="pl">Brittany — 12 Weeks</span></div>
+      </div>
+      <!-- Body section -->
+      <div class="lp-section-a">
+        <div class="lp-wrap">
+          <h2 class="lp-sh2">This Is Not A <span>Discount.</span><br>This Is A <span>Declaration.</span></h2>
+          <p class="lp-body">The IFCA Impact Fund was created for one reason: <strong>to put serious resources behind coaches who treat this as a calling, not a career.</strong> We've seen what happens when a determined coach gets the right systems, the right team, and the right support. Brittany generated $30,000 in 12 weeks. Nadi went from rock bottom to $11K contracted in 7.5 weeks. This isn't theory — it's what happens when coaching ability meets business infrastructure.</p>
+          <ul>
+            <li>Award: $2,500–$3,000 from the fund (you invest $9,500 — we cover the rest)</li>
+            <li>Program: IFCA 6-Month Accelerator — the full system, not a shortcut</li>
+            <li>Selection: Merit-based application. Not everyone qualifies. That's the point.</li>
+            <li>Deadline: Applications close June 26. No extensions after final winner is announced.</li>
+            <li>New era: Jordan and Erin personally selecting final winners before handing over to Taeler</li>
+          </ul>
+          <div class="text-center">
+            <a href="#" class="btn-lp-a">SUBMIT YOUR APPLICATION</a>
+          </div>
+        </div>
+      </div>
+      <!-- Winner testimonials -->
+      <div class="lp-section-a alt">
+        <div class="lp-wrap">
+          <h2 class="lp-sh2">Past Impact Fund <span>Winners</span></h2>
+          <div style="background:rgba(232,119,34,.06);border:1px solid rgba(232,119,34,.2);border-left:4px solid var(--orange);border-radius:8px;padding:20px 24px;margin-bottom:16px">
+            <div style="font-weight:700;color:var(--orange);margin-bottom:8px">🏆 Brittany — Full Ride Winner</div>
+            <p class="lp-body" style="margin-bottom:0">"Scholarship or not, this is the path I'm on." Brittany joined with 1 client. In 12 weeks she generated over $30,000 in revenue — surpassing her 6-month goal by 6×.</p>
+          </div>
+          <div style="background:rgba(99,179,237,.05);border:1px solid rgba(99,179,237,.15);border-left:4px solid var(--electric);border-radius:8px;padding:20px 24px;margin-bottom:28px">
+            <div style="font-weight:700;color:var(--electric);margin-bottom:8px">🏆 Nadi — Full Ride Winner</div>
+            <p class="lp-body" style="margin-bottom:0">Unanimous team selection. From rock bottom to contracting over $11,000 in just 7.5 weeks. The determination was unmistakable.</p>
+          </div>
+          <div class="text-center">
+            <a href="#" class="btn-lp-a">APPLY FOR YOUR SCHOLARSHIP</a>
+            <div class="lp-btn-sub">Applications reviewed by Jordan Dugger + Taeler De Haes personally</div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div style="background:#040507;padding:16px 24px;text-align:center;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.12);text-transform:uppercase">
+        IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund June 2026 · DM "IMPACT FUND" to Apply
+      </div>
+    </div>
+  </div>
+  </div><!-- /sch-landing -->
+
+  <!-- ── SUB-PANEL: CO-WORK DATA PULL SESSION ── -->
+  <div id="sch-cowork" class="sub-panel">
+  <div class="wrap">
+    <div class="section-title">Co-Work Data Pull — Session Guide</div>
+    <div class="section-sub">Paste links below as you go · Priority order listed · Each pull = exact nav instructions + what to capture · 🔶 items unlock the full dashboard</div>
+
+    <!-- Session Status Banner -->
+    <div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);border-radius:10px;padding:16px 20px;margin-bottom:20px">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--yellow);letter-spacing:.04em;margin-bottom:8px">📋 SESSION GOAL — Fill These 5 Numbers First</div>
+      <div class="grid-3" style="gap:10px;margin-bottom:12px">
+        <div style="background:rgba(0,0,0,.3);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">1 · Spring 2026 Ad Spend</div>
+          <div style="font-size:13px;font-weight:700;color:var(--yellow)">🔶 FB Ads Manager</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">Filter: Mar 1 – Apr 15, 2026 · Scholarship campaigns only</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">2 · Spring 2026 Revenue</div>
+          <div style="font-size:13px;font-weight:700;color:var(--yellow)">🔶 Hyros + ClarityPay</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">Rich Ford $12K + Ocean Trail $11K + any others from 90+ pipeline</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">3 · Contact Rate (all campaigns)</div>
+          <div style="font-size:13px;font-weight:700;color:var(--yellow)">🔶 GHL Lead Tracker</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">How many leads were actually contacted per campaign · tabs in tracker</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">4 · Summer 2024 + 2025 Data</div>
+          <div style="font-size:13px;font-weight:700;color:var(--yellow)">🔶 Slack #scholarship</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">Application counts, spend, revenue for both summer campaigns</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">5 · MAHA + Oct 2025 Revenue</div>
+          <div style="font-size:13px;font-weight:700;color:var(--yellow)">🔶 Hyros UTM filter</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">Filter by scholarship campaign UTM tags · Jan 2025 and Oct 2025</div>
+        </div>
+        <div style="background:rgba(0,0,0,.3);border-radius:6px;padding:10px 12px">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">6 · Landing Page CVR</div>
+          <div style="font-size:13px;font-weight:700;color:var(--yellow)">🔶 GHL or HubSpot Pages</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:3px">All views → unique views → opt-ins per scholarship LP · all campaigns</div>
+        </div>
+        <div style="background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.35);border-radius:6px;padding:10px 12px;grid-column:1/-1">
+          <div style="font-size:9px;font-family:'DM Mono',monospace;color:#f87171;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">⚠️ 0 · Do This First — GHL Scholarship Tag</div>
+          <div style="font-size:12px;font-weight:700;color:#f87171">Create "scholarship_applicant" contact tag in GHL → automate on application form submit</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:4px;line-height:1.5">Currently, the only way to confirm paid close rate from applicants is manually cross-referencing #ifca-closed-deals against scholarship applicant dates. Rich Ford and Ocean Trail were found this way. Without this tag, you cannot build a true applicant-to-close funnel or run automated follow-up sequences targeting applicants specifically. <strong style="color:var(--text)">This must be live before June 17 ads launch.</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL #1: SLACK #SCHOLARSHIP -->
+    <div class="card mb16">
+      <div class="flex-between mb12">
+        <div>
+          <span class="badge" style="background:rgba(74,127,165,.2);color:var(--electric);font-size:10px">PULL #1</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--text);letter-spacing:.04em;margin-left:10px">Slack — #scholarship Channel</span>
+        </div>
+        <span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">~15 min · Priority: HIGH</span>
+      </div>
+      <div class="grid-2" style="gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Navigation</div>
+          <div style="display:grid;gap:6px;font-size:11px;color:var(--muted)">
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">1 · Open Slack → #scholarship channel</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">2 · Scroll back to Summer 2024 (Jul–Aug 2024) — note first application surge date + volume</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">3 · Scroll to Summer 2025 (Jun–Jul 2025) — same: first post date, surge, total app count</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">4 · Fall 2025 / NCIxIFCA (Dec 2025–Jan 2026) — capture both separate campaigns if different threads</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">5 · Spring 2026 (Mar 2026) — already know: 50 on Mar 29, ~90 total Mar 29–Apr 9. Confirm total and if pipeline extended past Apr 9.</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">6 · Search: "closed" OR "deal" — note any paid closes mentioned in the channel beyond Rich Ford + Ocean Trail</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">What to Capture → Paste Below</div>
+          <div style="display:grid;gap:8px">
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Link to #scholarship channel</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="https://ifca.slack.com/channels/scholarship">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Summer 2024 app count</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. ~40 applications noted">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Summer 2025 app count</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. ~60 applications noted">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Any additional paid closes from scholarship pipeline</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. 3 more closes: Name $X, Name $X...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL #2: FB ADS MANAGER -->
+    <div class="card mb16">
+      <div class="flex-between mb12">
+        <div>
+          <span class="badge" style="background:rgba(59,89,152,.3);color:#7b9ff5;font-size:10px">PULL #2</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--text);letter-spacing:.04em;margin-left:10px">Facebook Ads Manager — Scholarship Campaigns</span>
+        </div>
+        <span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">~20 min · Priority: HIGH</span>
+      </div>
+      <div class="grid-2" style="gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Navigation — Ads Manager (act_623048835231084)</div>
+          <div style="display:grid;gap:6px;font-size:11px;color:var(--muted)">
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">1 · business.facebook.com → Ads Manager → Campaigns</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">2 · Set date range: <strong style="color:var(--text)">Aug 1 2024 → Apr 15 2026</strong> (covers all scholarship campaigns)</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">3 · Search/filter: "scholarship" OR "grant" OR "SS" OR "impact fund" in campaign name</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">4 · Export columns: Campaign Name, Start Date, End Date, Amount Spent, Leads, Cost Per Lead, Reach, Impressions, CPM, CTR (Link)</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">5 · For each campaign: note the exact campaign name, date range, spend, leads, CPL</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">6 · Screenshot or export CSV → paste link or key numbers below</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Capture These Numbers</div>
+          <div style="display:grid;gap:8px">
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Ads Manager link (scholarship campaigns filtered)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="Paste URL from Ads Manager">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Summer 2024: Spend / Leads / CPL</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. $8,200 / 280 / $29.28">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Summer 2025: Spend / Leads / CPL</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. $12,100 / 390 / $31.03">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Spring 2026 (Mar–Apr): Spend / Leads / CPL</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. $22,000 / 740 / $29.73">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL #3: HYROS -->
+    <div class="card mb16">
+      <div class="flex-between mb12">
+        <div>
+          <span class="badge" style="background:rgba(139,92,246,.2);color:#a78bfa;font-size:10px">PULL #3</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--text);letter-spacing:.04em;margin-left:10px">Hyros — Revenue Attribution by Campaign</span>
+        </div>
+        <span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">~20 min · Priority: HIGH · UTM filter approach</span>
+      </div>
+      <div class="grid-2" style="gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Navigation — Hyros Revenue Attribution</div>
+          <div style="display:grid;gap:6px;font-size:11px;color:var(--muted)">
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">1 · app.hyros.com → Sales → Revenue</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">2 · Filter by UTM source / campaign name containing: "scholarship" / "grant" / "ss" / "impact_fund"</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">3 · <strong style="color:var(--text)">For MAHA (Jan 2025):</strong> Date range Jan 1 – Mar 31, 2025. Filter UTM. Export total attributed revenue.</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">4 · <strong style="color:var(--text)">For Oct 2025:</strong> Date range Oct 1 – Dec 31, 2025. Already know $107,583 — confirm source breakdown (paid vs. organic).</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">5 · <strong style="color:var(--text)">For Spring 2026:</strong> Date range Mar 1 – Apr 30, 2026. Confirm Rich Ford $12K + Ocean Trail $11K. Look for additional closes.</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">6 · Check "Source: Organic" filter too — scholarship organic closes won't show in ad attribution</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Capture These Numbers</div>
+          <div style="display:grid;gap:8px">
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Hyros link (scholarship/grant filter active)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="Paste Hyros URL with filter active">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">MAHA Jan 2025: Attributed Revenue</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. $161,500 (17 closes × ~$9,500)">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Oct 2025: Revenue confirmed / breakdown</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. $107,583 confirmed — 11 paid + 4 partial">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Spring 2026: Total Revenue (paid closes)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="$23,000 confirmed + any others found">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL #4: GHL LEAD TRACKER -->
+    <div class="card mb16">
+      <div class="flex-between mb12">
+        <div>
+          <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green);font-size:10px">PULL #4</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--text);letter-spacing:.04em;margin-left:10px">GHL — Scholarship Lead Tracker (Master Grant Tracker)</span>
+        </div>
+        <span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">~25 min · Priority: HIGH · Unlocks contact rate data</span>
+      </div>
+      <div class="grid-2" style="gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Navigation — GHL Lead Tracker</div>
+          <div style="display:grid;gap:6px;font-size:11px;color:var(--muted)">
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">1 · Open Master Grant Lead Tracker spreadsheet (Google Sheets link)</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">2 · Check all tabs — each campaign likely has its own tab (Jan 2025, Oct 2025, Mar 2026, etc.)</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">3 · For each campaign tab, note: Total leads in sheet | Leads with "contacted" or call status | Calls booked | Shows | Closes</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">4 · Check "Hot List" tab specifically — this is the re-engagement pool for June 2026</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">5 · Note any leads tagged "partial" or "scholarship applied" who later closed as paid</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">6 · Screenshot the hot list count + any open follow-up leads still active from Spring 2026</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Capture These Numbers</div>
+          <div style="display:grid;gap:8px">
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Master Grant Lead Tracker link</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="Paste Google Sheets link">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Hot List tab: total count + last updated</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. 183 contacts · last updated Apr 12, 2026">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Jan 2025: Contacted / Booked / Shows (confirm existing data)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="273 / 89 / [FILL shows] — verify against SOP">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Spring 2026: Contacted / Booked / Shows / Open pipeline</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. 45 / 28 / 19 / 12 still open">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL #5: HUBSPOT PIPELINE -->
+    <div class="card mb16">
+      <div class="flex-between mb12">
+        <div>
+          <span class="badge" style="background:rgba(232,119,34,.15);color:var(--orange);font-size:10px">PULL #5</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--text);letter-spacing:.04em;margin-left:10px">HubSpot — Scholarship Deal Pipeline</span>
+        </div>
+        <span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">~15 min · Priority: MEDIUM</span>
+      </div>
+      <div class="grid-2" style="gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Navigation — HubSpot CRM</div>
+          <div style="display:grid;gap:6px;font-size:11px;color:var(--muted)">
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">1 · app.hubspot.com → CRM → Deals → Filter by pipeline</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">2 · Search deals tagged with "scholarship" / "grant" / "impact fund" in source or notes field</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">3 · Filter: Create Date = Jan 2025 – Apr 2026. Stage = Closed Won. Pull total count + total value.</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">4 · Filter: Create Date same range. Stage = All. Look for contacts with "scholarship_applicant" property.</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">5 · Export list of scholarship-sourced deals: Name, Close Date, Amount, Stage</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">6 · Note: Rich Ford and Ocean Trail should both appear — verify the full deal value and close date</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Capture These Numbers</div>
+          <div style="display:grid;gap:8px">
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">HubSpot scholarship deals view link</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="Paste HubSpot view URL">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Total scholarship-sourced closed deals (all time)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. 34 deals · $336,500 total">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Spring 2026 pipeline: open deals count + total value</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. 8 open deals · $76,000 pipeline value">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">List any additional scholarship closes not already in tracker</div>
+              <textarea style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none;min-height:60px;resize:vertical" placeholder="Name, amount, date, program..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL #6: LANDING PAGES (GHL/HUBSPOT) -->
+    <div class="card mb16">
+      <div class="flex-between mb12">
+        <div>
+          <span class="badge" style="background:rgba(184,147,86,.2);color:var(--gold-light);font-size:10px">PULL #6</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--text);letter-spacing:.04em;margin-left:10px">Landing Page Stats — GHL or HubSpot Pages</span>
+        </div>
+        <span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">~15 min · Priority: MEDIUM</span>
+      </div>
+      <div class="grid-2" style="gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Navigation — LP Stats</div>
+          <div style="display:grid;gap:6px;font-size:11px;color:var(--muted)">
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">GHL: Sites → Funnels → find each scholarship funnel → Analytics tab</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">HubSpot: Marketing → Landing Pages → filter by campaign or date range</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">For each LP: Page URL, Total Views, Unique Views, Opt-ins (submissions), CVR%</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">Note which LP was used for each campaign (some may have been updated between campaigns)</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">Benchmark target: 25–35% CVR for scholarship LP. Below 20% = headline/offer problem.</div>
+          </div>
+          <div style="margin-top:12px;padding:10px;background:rgba(184,147,86,.08);border:1px solid rgba(184,147,86,.2);border-radius:6px">
+            <div style="font-size:10px;font-weight:700;color:var(--gold-light);margin-bottom:4px">Scholarship LP CVR Benchmarks</div>
+            <div style="font-size:10px;color:var(--muted)">Below 20% = rewrite headline | 20–30% = solid | 30%+ = scale hard</div>
+            <div style="font-size:10px;color:var(--muted);margin-top:3px">Note: Scholarship LPs typically outperform webinar LPs (14–15%) because the offer is more tangible</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Capture These Numbers</div>
+          <div style="display:grid;gap:8px">
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Jan 2025 LP: URL · Views · Opt-ins · CVR</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. /maha-grant · 4,200 views · 1,205 opt-ins · 28.7%">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Oct 2025 LP: URL · Views · Opt-ins · CVR</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. /impact-fund · 5,800 views · 1,201 opt-ins · 20.7%">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Spring 2026 LP: URL · Views · Opt-ins · CVR</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. /impact-fund-2026 · 3,100 views · 90+ opt-ins">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Best-performing LP headline (from A/B if run)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. Variant B ($25K framing) beat Variant A by 3.2pts">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PULL #7: SLACK #IFCA-CLOSED-DEALS (Scholarship Attribution) -->
+    <div class="card mb16">
+      <div class="flex-between mb12">
+        <div>
+          <span class="badge" style="background:rgba(245,158,11,.15);color:var(--yellow);font-size:10px">PULL #7</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--text);letter-spacing:.04em;margin-left:10px">Slack — #ifca-closed-deals (Scholarship Attribution)</span>
+        </div>
+        <span style="font-size:10px;font-family:'DM Mono',monospace;color:var(--muted)">~20 min · Priority: HIGH · Confirms total paid revenue</span>
+      </div>
+      <div class="grid-2" style="gap:16px">
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Navigation — #ifca-closed-deals</div>
+          <div style="display:grid;gap:6px;font-size:11px;color:var(--muted)">
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">1 · Slack → #ifca-closed-deals channel</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">2 · Use Slack search: <strong style="color:var(--text)">in:#ifca-closed-deals "scholarship"</strong> — note every deal mentioning scholarship source</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">3 · Search: <strong style="color:var(--text)">in:#ifca-closed-deals "impact fund"</strong> — same</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">4 · Search: <strong style="color:var(--text)">in:#ifca-closed-deals "grant"</strong> — same</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">5 · For each match: note name, deal amount, date, program (IFCA/LaunchKit/Legacy), closer name</div>
+            <div style="padding:8px 10px;background:rgba(74,127,165,.05);border-radius:5px">6 · Also look for Rich Ford (Apr 3), Ocean Trail (Apr 14) — confirm amounts and look for any notes on their sales call</div>
+          </div>
+          <div style="margin-top:10px;padding:10px;background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-radius:6px;font-size:10px;color:var(--muted);line-height:1.6">
+            <strong style="color:var(--green)">Why this matters:</strong> The closed-deals channel is likely the most complete record of scholarship-sourced revenue. Cross-referencing with Hyros will catch any attribution gaps — some scholarship closes may not have clean UTM tracking if they came through organic/DM paths.
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;font-family:'DM Mono',monospace;letter-spacing:.04em;text-transform:uppercase">Capture + Paste Below</div>
+          <div style="display:grid;gap:8px">
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">#ifca-closed-deals link (scholarship search active)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="https://ifca.slack.com/archives/...">
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">All scholarship-attributed closes found (name · amount · date)</div>
+              <textarea style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none;min-height:100px;resize:vertical" placeholder="Rich Ford · $12,000 · Apr 3 · Closer: Ramona Nijjar&#10;Ocean Trail · $11,000 · Apr 14 · Closer: Jason Meland · Ref: Ashley &amp; Derrick Ball&#10;[paste all others here]">Rich Ford · $12,000 · Apr 3, 2026 · Closer: Ramona Nijjar · IFCA via ClarityPay
+Ocean Trail · $11,000 · Apr 14, 2026 · Closer: Jason Meland · Ref: Ashley &amp; Derrick Ball</textarea>
+            </div>
+            <div>
+              <div style="font-size:9px;font-family:'DM Mono',monospace;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px">Total scholarship revenue (all-time, all campaigns)</div>
+              <input type="text" style="width:100%;background:var(--surface2);border:1px solid var(--border-bright);border-radius:5px;padding:7px 10px;color:var(--text);font-family:'DM Mono',monospace;font-size:11px;outline:none" placeholder="e.g. $387,000 across all campaigns">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT TO DO WITH THE DATA -->
+    <div class="card" style="border-color:rgba(184,147,86,.3)">
+      <div class="tag" style="color:var(--gold-light)">After the Session — What to Do with Each Number</div>
+      <div class="grid-2 mt8">
+        <div style="font-size:11px;line-height:1.8;color:var(--muted)">
+          <strong style="color:var(--red)">Step 0 (Do This Now) — GHL Scholarship Tag</strong><br>
+          Create <strong style="color:var(--text)">"scholarship_applicant"</strong> contact tag in GHL. Add automation: when a contact submits the scholarship application form, tag them automatically. This is the foundation for every attribution metric going forward. Without it, paid close rate can only be confirmed manually via #ifca-closed-deals cross-reference.<br><br>
+          <strong style="color:var(--text)">Step 1 — Update the Historical Data tab</strong><br>
+          Fill every 🔶 cell in the campaign table with real numbers. This turns the projection calculator into a true model instead of estimates.<br><br>
+          <strong style="color:var(--text)">Step 2 — Update the Projection Calculator defaults</strong><br>
+          Replace scenario defaults with real average CPL, contact rate, close rate from confirmed campaigns. Start from actual, not assumed. Floor: 2–5% app→close on non-winners.
+        </div>
+        <div style="font-size:11px;line-height:1.8;color:var(--muted)">
+          <strong style="color:var(--text)">Step 3 — Build the non-winner re-engagement list</strong><br>
+          From #scholarship + GHL data, create a prioritized list of every applicant who didn't win but never closed. This is the June 2026 warm-start pipeline. Ocean Trail closed 5 days after applying — most of these are still closeable.<br><br>
+          <strong style="color:var(--text)">Step 4 — Calculate true all-time scholarship ROI</strong><br>
+          Total scholarship revenue (paid closes, all campaigns) ÷ total scholarship ad spend = true multi-campaign ROAS. This justifies June 2026 budget.<br><br>
+          <strong style="color:var(--text)">Step 5 — Lock June 2026 ad budget with precision</strong><br>
+          With confirmed cost-per-application from Spring 2026 (90+ apps / known spend), reverse-engineer: "To get 150–200 applications, we need $X." Then set June budget with data, not gut.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /sch-cowork -->
+
+</div><!-- /panel-scholarship -->
+
 <!-- ══════════════════════════ JS ══════════════════════════ -->
 <script>
 // ── EVENTS DATA ──────────────────────────────────────────────
@@ -1395,15 +2832,15 @@ const EVENTS = [
   {id:11,name:"Black Friday 2023",date:"Oct 2023",type:"Black Friday",regs:326,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"pre-track"},
   {id:12,name:"January Rush – 10 Clients in 1 Day",date:"Dec 2023",type:"Masterclass",regs:726,metaRegs:170,spend:6956,cpl:9.58,revenue:74909,roas:10.77,cpm:null,ctr:null,status:"complete",note:"Best event ROAS. $103/reg. Campaign split confirmed: CBO $3,345 → $36,859 @ 11.02x | ABO $3,611 → $38,050 @ 10.54x | Combined $6,956 → $74,909 @ 10.77x blended. Hyros Source ID 11064989."},
   {id:13,name:"March 2024 Challenge",date:"Mar 2024",type:"Challenge",regs:null,metaRegs:null,spend:3500,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"~$3,500 FB (7MM variants). Objective was Website Purchase — attribution mismatch. 🔶 Hyros pull needed."},
-  {id:14,name:"April 2024 Client Getting Workshop",date:"Apr 2024",type:"Workshop",regs:746,metaRegs:27,spend:6126,cpl:null,revenue:68341,roas:13.41,cpm:null,ctr:null,status:"complete",note:"🏆 BEST SINGLE-CAMPAIGN ROAS EVER — 13.41x. Phase 3 A+ Broad: $5,095 → $68,341 @ 13.41x (confirmed). Phase 3v2: $1,031 spend → revenue unconfirmed. Total event revenue ≥$68,341. Previously showing as no-revenue — now updated with confirmed campaign data. Campaign: BSA/JI Phase 3 Complete Registration Gate."},
-  {id:15,name:"June 2024 Client Getting Workshop",date:"Jun 2024",type:"Workshop",regs:692,metaRegs:286,spend:12000,cpl:null,revenue:15774,roas:1.31,cpm:null,ctr:null,status:"partial",note:"CBO variant confirmed: $3,319 → $15,774 @ 4.75x. Total event spend $12,000 across 8 variants — CBO is the only variant with confirmed revenue attribution. Remaining $8,681 spend across other variants revenue still TBD. Blended ROAS of 1.31x reflects CBO revenue only vs. total $12K spend. 🔶 Full event revenue needed to get true blended ROAS."},
-  {id:16,name:"July 2024 AI Viral Webinar",date:"Jul 2024",type:"Webinar",regs:781,metaRegs:418,spend:14717,cpl:null,revenue:null,roas:null,cpm:55.11,ctr:1.19,status:"partial",note:"Most regs ever. CPM $55.11 | CTR 1.19% | CPC $4.65 | Outbound 1,935. 🔶 Revenue (UTM: viral_ai_webinar)."},
-  {id:17,name:"October 2024 Client Engine",date:"Oct 2024",type:"Webinar",regs:671,metaRegs:330,spend:13989,cpl:null,revenue:null,roas:null,cpm:61.84,ctr:1.45,status:"partial",note:"CPM $61.84 | CTR 1.45% | CPC $4.26 | Outbound 1,764. 🔶 Revenue needed."},
-  {id:18,name:"November 2024 Black Friday",date:"Nov 2024",type:"Black Friday",regs:603,metaRegs:144,spend:4696,cpl:32.61,revenue:null,roas:null,cpm:65.10,ctr:0.79,status:"partial",note:"GHL: Black Friday Playbook Webinar (4 steps). LP Conv 22.6%. 170 attendees, 149 saw offer. 🔶 Revenue (UTM: bf_webinar)."},
-  {id:19,name:"March 2025 AI Viral Workshop",date:"Mar 2025",type:"Webinar",regs:477,metaRegs:477,spend:13073,cpl:27.41,revenue:29300,roas:2.24,cpm:null,ctr:null,status:"complete",note:"FB: $13,072.57 | 477 WL @ $27.41 CPL. Hyros Source 11335725. Worst ROAS ever — angle/timing missed."},
-  {id:20,name:"May/June 2025 3-Day Challenge",date:"May 2025",type:"Challenge",regs:714,metaRegs:406,spend:21626,cpl:53,revenue:113500,roas:5.25,cpm:null,ctr:null,status:"complete",note:"TOF $10,180 (139 WL) + MOF/BOF $11,446 (267 WL). GHL LP: 10,001 views / 791 opt-ins / 10.17% CVR. Day1: 231 | Day2: 161 | Day3: 129. Cash $82,950. ACV $11,350. VIP: 54 @ $47."},
-  {id:21,name:"September 2025 Webinar",date:"Sep 2025",type:"Webinar",regs:606,metaRegs:53,spend:2402,cpl:45.32,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"FB: $2,402.16 | 53 WL @ $45.32 CPL. GHL: 4,846 views / 606 opt-ins / 14.61% CVR. Replay: 2,257 views. 🔶 Revenue needed."},
-  {id:22,name:"LTV / Community Webinar",date:"Jan 2026",type:"Webinar",regs:421,metaRegs:421,spend:13137,cpl:31.20,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"FB: $13,136.88 | 421 WL @ $31.20 CPL. GHL: 5,679 views / 715 opt-ins / 13.93% CVR. Headline: 'Add $14,800 signing 2 clients/month'. 🔶 Revenue (UTM: ltv_webinar)."},
+  {id:14,name:"April 2024 Client Getting Workshop",date:"Apr 2024",type:"Workshop",regs:746,metaRegs:441,attendees:null,apps:null,sales:4,spend:6126,cpl:null,revenue:68341,roas:13.41,cpm:null,ctr:null,showRate:null,appRate:null,status:"complete",campaign:"BSA/JI Phase 3 Complete Registration Gate",note:"🏆 BEST SINGLE-CAMPAIGN ROAS EVER — 13.41x. Phase 3 A+ Broad: $5,095 → $68,341 @ 13.41x (confirmed). Phase 3v2: $1,031 unconfirmed. Ads: 441 | Sales: 4 confirmed. Campaign: BSA/JI Phase 3 Complete Registration Gate."},
+  {id:15,name:"June 2024 Client Getting Workshop",date:"Jun 2024",type:"Workshop",regs:692,metaRegs:286,organic:122,emailRegs:162,smsRegs:90,attendees:163,apps:27,sales:6,spend:12000,cpl:null,revenue:15774,roas:1.31,cpm:null,ctr:null,showRate:23.6,appRate:16.6,status:"partial",campaign:"7MM June 2024 Webinar (8 variants)",note:"First full source tracking split. Regs: 692 | Ads:286 | Organic:122 | Email:162 | SMS:90. Attendees:163 (23.6% show) | Apps:27 (16.6% of attendees) | Sales:6. CBO variant confirmed: $3,319 → $15,774 @ 4.75x. Remaining $8,681 across 7 variants still unattributed. 🔶 Full event revenue needed."},
+  {id:16,name:"July 2024 AI Viral Webinar",date:"Jul 2024",type:"Webinar",regs:781,metaRegs:418,organic:196,emailRegs:82,smsRegs:67,attendees:218,apps:24,sales:1,spend:14717,cpl:null,revenue:null,roas:null,cpm:55.11,ctr:1.19,cpc:4.65,outbound:1935,showRate:27.9,appRate:11.0,status:"partial",campaign:"[BSA] | July AI Viral Webinar",note:"Most regs ever — 781. Source split: Ads:418 | Organic:196 | Email:82 | SMS:67. Attendees:218 (27.9% show) | Apps:24 (11.0% of attendees) | Sales:1. CPM $55.11 | CTR 1.19% | CPC $4.65 | Outbound: 1,935. 🔶 Revenue (UTM: viral_ai_webinar)."},
+  {id:17,name:"October 2024 Client Engine",date:"Oct 2024",type:"Webinar",regs:671,metaRegs:330,organic:155,emailRegs:98,smsRegs:50,attendees:130,apps:23,sales:5,spend:13989,cpl:null,revenue:null,roas:null,cpm:61.84,ctr:1.45,cpc:4.26,outbound:1764,showRate:19.4,appRate:17.7,status:"partial",campaign:"[BSA-CM] | October Client Engine",note:"Source split: Ads:330 | Organic:155 | Email:98 | SMS:50. Attendees:130 (19.4% show — below 25% target) | Apps:23 (17.7% of attendees) | Sales:5. CPM $61.84 | CTR 1.45% | CPC $4.26 | Outbound: 1,764. 🔶 Revenue needed."},
+  {id:18,name:"November 2024 Black Friday",date:"Nov 2024",type:"Black Friday",regs:603,metaRegs:144,organic:183,emailRegs:136,smsRegs:77,attendees:170,apps:25,seeoffer:149,sales:null,spend:4696,cpl:32.61,revenue:null,roas:4.0,cpm:65.10,ctr:0.79,showRate:28.2,appRate:14.7,status:"partial",campaign:"[BSA-CM] A+ | Black Friday Webinar | Conversions [Lead]",note:"Source split: Ads:205 | Organic:183 | Email:136 | SMS:77. Attendees:170 (28.2% show) | See Offer:149 (87.6% retention) | Apps:25 (14.7%). LP Conv 22.6%. ROAS ~4x (estimated from project handover). 🔶 Confirmed revenue needed (UTM: bf_webinar). Meta: $4,695.89 | 144 WL @ $32.61 CPL."},
+  {id:19,name:"March 2025 AI Viral Workshop",date:"Mar 2025",type:"Webinar",regs:477,metaRegs:477,organic:null,attendees:null,apps:null,sales:null,spend:13073,cpl:27.41,revenue:29300,roas:2.24,cpm:null,ctr:null,showRate:null,appRate:null,status:"complete",campaign:"[BSA] MOF | March 19th Webinar, 2025",note:"Worst ROAS ever (2.24x). $13,072.57 | 477 WL @ $27.41 CPL. Campaign: [BSA] MOF — middle-of-funnel targeting contributed to high CPL and low ROAS. Hyros Source: 11335725. No source split available — all 477 attributed to paid."},
+  {id:20,name:"May/June 2025 3-Day Challenge",date:"May 2025",type:"Challenge",regs:714,metaRegs:406,organic:308,emailRegs:null,smsRegs:null,attendees:231,apps:33,sales:10,spend:21626,cpl:53,revenue:113500,roas:5.25,cpm:null,ctr:null,showRate:32.4,appRate:14.3,applyRate:0.19,cpa:655,acv:11350,cashCollected:82950,vipPurchases:54,day1:231,day2:161,day3:129,status:"complete",campaign:"[BSA-CM] TOF + MOF/BOF | May/June 2025 Challenge",note:"Source split: Ads:406 (TOF $10,180/139 WL + MOF/BOF $11,446/267 WL) | Organic:308. Day1:231 (32.4% show) | Day2:161 | Day3:129. Apps:33 (14.3% of Day1 attendees) | Apply rate:19% of regs | Sales:10 | CPA:$655 | ACV:$11,350. Cash $82,950. VIP:54 @ $47=$2,538. GHL LP: 10,001 views / 791 opt-ins / 10.17% CVR."},
+  {id:21,name:"September 2025 Webinar",date:"Sep 2025",type:"Webinar",regs:606,metaRegs:53,organic:null,attendees:null,apps:null,sales:null,spend:2402,cpl:45.32,revenue:null,roas:null,cpm:null,ctr:null,showRate:null,appRate:null,status:"partial",campaign:"[BSA] BOF/MOF | September 25th Webinar",note:"FB: $2,402.16 | 53 WL @ $45.32 CPL. Campaign: [BSA] BOF/MOF — warm retargeting only, explains high CPL vs cold. GHL: 4,846 views / 606 opt-ins / 14.61% CVR (best LP CVR on record). Replay: 2,257 views. 🔶 Revenue needed (Hyros, Sept 2025)."},
+  {id:22,name:"LTV / Community Webinar",date:"Jan 2026",type:"Webinar",regs:421,metaRegs:421,organic:null,attendees:null,apps:null,sales:null,spend:13137,cpl:31.20,revenue:null,roas:null,cpm:null,ctr:null,showRate:null,appRate:null,status:"partial",campaign:"[BSA-CM] TOF/MOF/BOF | LTV/Community",note:"FB: $13,136.88 | 421 WL @ $31.20 CPL. Campaign: [BSA-CM] TOF/MOF/BOF | LTV/Community. GHL funnel: 2-4x-client-retention. Headline used: 'How to Add $14,800 by Signing 2 Clients/Month'. GHL lifetime: 5,679 views / 715 opt-ins / 13.93% CVR. 30-day GHL: 16 LP views / 15 opt-ins. 🔶 Revenue (UTM: ltv_webinar)."}, 
   {id:23,name:"Feb 2026 Live Q&A Hot Seat",date:"Feb 2026",type:"Q&A",regs:null,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"partial",note:"GHL funnel exists (3 steps, updated Mar 17 2026). No dedicated FB campaign. 🔶 GHL lifetime stats + Hyros Feb 2026 pull needed."},
   {id:24,name:"May 2026 Partner Masterclass",date:"Jun 2026",type:"Partner MC",regs:null,metaRegs:null,spend:null,cpl:null,revenue:null,roas:null,cpm:null,ctr:null,status:"upcoming",note:"IFCA x Taeler (FCA). Dual audiences. Target 900–1,100 regs. June 11 @ 7PM. $12–15K ad budget."},
 ];
@@ -1427,23 +2864,29 @@ function renderEvents(){
   const tbody = document.getElementById('events-tbody');
   tbody.innerHTML = '';
   EVENTS.forEach(ev=>{
-    // Main row
     const tr = document.createElement('tr');
     tr.className = 'ev-row';
     tr.onclick = ()=>toggleExpand(ev.id);
     const statusDot = ev.status==='complete'?'🟢':ev.status==='upcoming'?'🔜':ev.status==='partial'?'🟡':'⬜';
     const rc = ev.roas? roasColor(ev.roas):'';
+    const showCol = ev.showRate ? `<span class="${ev.showRate>=25?'green':ev.showRate>=18?'yellow':'red'}">${ev.showRate.toFixed(1)}%</span>` : '<span class="muted">—</span>';
+    const appCol  = ev.appRate  ? `<span class="${ev.appRate>=15?'green':ev.appRate>=10?'yellow':'red'}">${ev.appRate.toFixed(1)}%</span>` : '<span class="muted">—</span>';
+    const attendCol = ev.attendees ? `<span style="color:var(--electric)">${ev.attendees.toLocaleString()}</span>` : '<span class="muted">—</span>';
+    const appsCol   = ev.apps != null ? `<span style="color:var(--orange)">${ev.apps}</span>` : '<span class="muted">—</span>';
     tr.innerHTML = `
-      <td style="min-width:220px">
+      <td style="min-width:200px">
         <div style="font-weight:600;font-size:12px">${statusDot} ${ev.name}</div>
         <div style="font-size:10px;color:var(--muted)">${ev.date}</div>
       </td>
       <td class="num"><span class="badge ${TYPE_BADGE[ev.type]||''}">${ev.type}</span></td>
       <td class="num">${fmt(ev.regs)}</td>
-      <td class="muted-num">${fmt(ev.metaRegs)}</td>
+      <td class="num">${attendCol}</td>
+      <td class="num">${showCol}</td>
+      <td class="num">${appsCol}</td>
+      <td class="num">${appCol}</td>
       <td class="num">${ev.spend?'$'+ev.spend.toLocaleString():'<span class="muted">—</span>'}</td>
       <td class="num">${ev.cpl?'<span class="'+(ev.cpl<=25?'green':ev.cpl<=40?'yellow':'red')+'">$'+ev.cpl+'</span>':'<span class="muted">—</span>'}</td>
-      <td class="num">${ev.revenue?'<span class="green bold">$'+ev.revenue.toLocaleString()+'</span>':'<span style="color:var(--yellow);font-size:10px">🔶</span>'}</td>
+      <td class="num">${ev.revenue?'<span class="green bold">$'+ev.revenue.toLocaleString()+'</span>':ev.roas?'<span class="yellow" style="font-size:10px">~est</span>':'<span style="color:var(--yellow);font-size:10px">🔶</span>'}</td>
       <td class="num">${ev.roas?'<span class="bold '+rc+'">'+ev.roas.toFixed(2)+'x</span>':'<span style="color:var(--yellow);font-size:10px">🔶</span>'}</td>
       <td class="muted-num">${ev.cpm?'$'+ev.cpm:'—'}</td>
       <td class="muted-num">${ev.ctr?ev.ctr+'%':'—'}</td>
@@ -1451,11 +2894,26 @@ function renderEvents(){
     `;
     tbody.appendChild(tr);
 
-    // Expand row
-    if(expandedRow === ev.id && ev.note){
+    // Expanded detail row
+    if(expandedRow === ev.id){
       const exp = document.createElement('tr');
       exp.className = 'ev-expand';
-      exp.innerHTML = `<td colspan="11"><div class="ev-detail"><div class="detail-note">${ev.note}</div></div></td>`;
+      const srcParts = [];
+      if(ev.metaRegs)  srcParts.push(`Paid: ${ev.metaRegs}`);
+      if(ev.organic)   srcParts.push(`Organic: ${ev.organic}`);
+      if(ev.emailRegs) srcParts.push(`Email: ${ev.emailRegs}`);
+      if(ev.smsRegs)   srcParts.push(`SMS: ${ev.smsRegs}`);
+      const srcRow = srcParts.length ? `<div class="detail-item" style="flex:1;min-width:200px"><div class="dl">Registration Sources</div><div class="dv" style="font-size:11px">${srcParts.join(' · ')}</div></div>` : '';
+      const campRow = ev.campaign ? `<div class="detail-item" style="flex:1;min-width:200px"><div class="dl">Meta Campaign</div><div class="dv" style="font-size:11px;color:var(--electric)">${ev.campaign}</div></div>` : '';
+      const showRow = ev.showRate ? `<div class="detail-item"><div class="dl">Show Rate</div><div class="dv ${ev.showRate>=25?'green':ev.showRate>=18?'yellow':'red'}">${ev.showRate.toFixed(1)}%</div></div>` : '';
+      const appRow  = ev.appRate  ? `<div class="detail-item"><div class="dl">App Rate (of Attend)</div><div class="dv ${ev.appRate>=15?'green':ev.appRate>=10?'yellow':'red'}">${ev.appRate.toFixed(1)}%</div></div>` : '';
+      const cpaRow  = ev.cpa  ? `<div class="detail-item"><div class="dl">CPA</div><div class="dv">$${ev.cpa}</div></div>` : '';
+      const acvRow  = ev.acv  ? `<div class="detail-item"><div class="dl">ACV</div><div class="dv">$${ev.acv.toLocaleString()}</div></div>` : '';
+      const cashRow = ev.cashCollected ? `<div class="detail-item"><div class="dl">Cash Collected</div><div class="dv green">$${ev.cashCollected.toLocaleString()}</div></div>` : '';
+      exp.innerHTML = `<td colspan="14"><div class="ev-detail">
+        <div class="detail-grid">${srcRow}${campRow}${showRow}${appRow}${cpaRow}${acvRow}${cashRow}</div>
+        ${ev.note?`<div class="detail-note">${ev.note}</div>`:''}
+      </div></td>`;
       tbody.appendChild(exp);
     }
   });
@@ -1874,6 +3332,7 @@ function showMain(id,btn){
   document.getElementById('panel-'+id).classList.add('active');
   btn.classList.add('active');
   document.getElementById('lp-subnav').classList.toggle('visible', id==='landing');
+  document.getElementById('sch-subnav').classList.toggle('visible', id==='scholarship');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1884,6 +3343,189 @@ function showLP(id,btn){
   btn.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
+
+// ── SCHOLARSHIP NAV ──────────────────────────────────────────────
+function showSch(id,btn){
+  document.querySelectorAll('#panel-scholarship .sub-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('#sch-subnav .sub-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ── SCHOLARSHIP PROJECTION CALCULATOR ──────────────────────────
+const schState = {spend:25000,cpl:29,organic:150,contact:.35,book:.55,show:.38,close:.20,deal:9750};
+
+function schSyncSlider(key,val){
+  val = parseFloat(val);
+  schState[key]=val;
+  const fmts={spend:v=>'$'+v.toLocaleString(), cpl:v=>'$'+v, organic:v=>Math.round(v).toString(),
+    contact:v=>Math.round(v*100)+'%', book:v=>Math.round(v*100)+'%',
+    show:v=>Math.round(v*100)+'%', close:v=>Math.round(v*100)+'%',
+    deal:v=>'$'+v.toLocaleString()};
+  document.getElementById('sch-lbl-'+key).textContent = fmts[key](val);
+  schCalc();
+}
+
+function schCalc(){
+  const s = schState;
+  const paidLeads = Math.round(s.spend/s.cpl);
+  const totalLeads = paidLeads + s.organic;
+  const contacted = Math.round(totalLeads * s.contact);
+  const booked = Math.round(contacted * s.book);
+  const shows = Math.round(booked * s.show);
+  const closed = Math.round(shows * s.close);
+  const revenue = closed * s.deal;
+  const roas = s.spend>0 ? revenue/s.spend : 0;
+
+  document.getElementById('sch-out-leads').textContent = totalLeads.toLocaleString();
+  document.getElementById('sch-out-cpl-sub').textContent = 'CPL: $'+s.cpl+' paid · '+s.organic+' organic bonus';
+  document.getElementById('sch-out-contacted').textContent = contacted.toLocaleString();
+  document.getElementById('sch-out-contact-sub').textContent = 'Contact rate: '+Math.round(s.contact*100)+'%';
+  document.getElementById('sch-out-booked').textContent = booked.toLocaleString();
+  document.getElementById('sch-out-book-sub').textContent = 'Book rate: '+Math.round(s.book*100)+'%';
+  document.getElementById('sch-out-shows').textContent = shows.toLocaleString();
+  document.getElementById('sch-out-show-sub').textContent = 'Show rate: '+Math.round(s.show*100)+'%';
+  document.getElementById('sch-out-closed').textContent = closed.toLocaleString();
+  document.getElementById('sch-out-close-sub').textContent = 'Close rate: '+Math.round(s.close*100)+'%';
+  document.getElementById('sch-out-revenue').textContent = '$'+revenue.toLocaleString();
+  document.getElementById('sch-out-deal-sub').textContent = 'Avg deal: $'+s.deal.toLocaleString();
+  document.getElementById('sch-out-rev-big').textContent = '$'+revenue.toLocaleString();
+  document.getElementById('sch-out-roas').textContent = roas.toFixed(2)+'×';
+
+  // ROAS meter (max 15x)
+  const fillPct = Math.min(roas/15*100, 100);
+  document.getElementById('sch-roas-fill').style.width = fillPct+'%';
+  const roasEl = document.getElementById('sch-out-roas');
+  roasEl.style.color = roas>=4 ? 'var(--green)' : roas>=2.5 ? 'var(--yellow)' : 'var(--red)';
+
+  // Funnel flow
+  const steps = [
+    {label:'Ad Leads (paid)',val:paidLeads,color:'rgba(99,179,237,.15)'},
+    {label:'Total Leads (+ organic)',val:totalLeads,color:'rgba(99,179,237,.12)'},
+    {label:'Contacted',val:contacted,color:'rgba(245,158,11,.12)'},
+    {label:'Calls Booked',val:booked,color:'rgba(232,119,34,.12)'},
+    {label:'Calls Shown',val:shows,color:'rgba(139,92,246,.12)'},
+    {label:'Clients Closed',val:closed,color:'rgba(34,197,94,.15)'},
+  ];
+  const maxV = totalLeads||1;
+  document.getElementById('sch-funnel').innerHTML = steps.map(st=>{
+    const pct=Math.round(st.val/maxV*100);
+    return `<div class="sch-funnel-step" style="background:${st.color}">
+      <span class="s-label">${st.label}</span>
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:80px;height:6px;background:rgba(255,255,255,.08);border-radius:3px">
+          <div style="width:${pct}%;height:100%;background:rgba(232,119,34,.6);border-radius:3px"></div>
+        </div>
+        <span class="s-val">${st.val.toLocaleString()}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Contact rate callout
+  const doubleContacts = Math.round(totalLeads*Math.min(s.contact*2,0.70));
+  const doubleBooked = Math.round(doubleContacts*s.book);
+  const doubleShows = Math.round(doubleBooked*s.show);
+  const doubleClosed = Math.round(doubleShows*s.close);
+  const doubleRev = doubleClosed*s.deal;
+  document.getElementById('sch-contact-callout').innerHTML = 
+    `At your current <strong style="color:var(--orange)">${Math.round(s.contact*100)}% contact rate</strong>, you close <strong>${closed}</strong> clients for <strong style="color:var(--green)">$${revenue.toLocaleString()}</strong>.<br>
+    If you double contact rate to <strong style="color:var(--green)">${Math.round(Math.min(s.contact*2,.70)*100)}%</strong>: ${doubleContacts} contacted → ${doubleBooked} booked → ${doubleShows} shows → <strong style="color:var(--green)">${doubleClosed} closes = $${doubleRev.toLocaleString()}</strong>.<br>
+    <span style="color:var(--gold-light)">Contact rate improvement alone is worth $${(doubleRev-revenue).toLocaleString()} in additional revenue — without spending another dollar on ads.</span>`;
+}
+
+function schScenario(type){
+  const scenarios = {
+    conservative:{spend:16454,cpl:26,organic:100,contact:.23,book:.33,show:.30,close:.19,deal:9500},
+    base:{spend:34460,cpl:29,organic:150,contact:.27,book:.52,show:.35,close:.20,deal:9750},
+    optimized:{spend:35000,cpl:28,organic:200,contact:.50,book:.60,show:.40,close:.20,deal:10000},
+    joint:{spend:50000,cpl:27,organic:350,contact:.55,book:.65,show:.42,close:.22,deal:10000}
+  };
+  const s = scenarios[type];
+  Object.keys(s).forEach(k=>{ schState[k]=s[k]; });
+  // Sync sliders
+  const keys = ['spend','cpl','organic','contact','book','show','close','deal'];
+  const fmts = {spend:v=>'$'+v.toLocaleString(),cpl:v=>'$'+v,organic:v=>v.toString(),
+    contact:v=>Math.round(v*100)+'%',book:v=>Math.round(v*100)+'%',
+    show:v=>Math.round(v*100)+'%',close:v=>Math.round(v*100)+'%',
+    deal:v=>'$'+v.toLocaleString()};
+  keys.forEach(k=>{
+    const sl = document.getElementById('sch-sl-'+k);
+    if(sl) sl.value = s[k];
+    const lbl = document.getElementById('sch-lbl-'+k);
+    if(lbl) lbl.textContent = fmts[k](s[k]);
+  });
+  schCalc();
+}
+
+// ── BIG IDEAS HEADLINE PICKERS ─────────────────────────────────
+const BI_HEADLINES = {
+  1:[
+    {label:'1 · Legacy Declaration',sub:'Lead with the emotion of the handover + mission',hl:'Before We Hand Over The Keys,<br>We\'re Giving Away $25,000<br>To Fitness Coaches Who Still Believe<br>This Is A Calling'},
+    {label:'2 · Last Act',sub:'Scarcity through timeline — most emotionally direct',hl:'We Just Sold IFCA.<br>Our Last Act Before We Hand Over?<br>A $25,000 Impact Fund<br>For Coaches Who Are Serious.'},
+    {label:'3 · Final Campaign',sub:'History frame — creates status for applicants',hl:'The Final Impact Fund<br>From Jordan + Erin.<br>The First From Taeler.<br>One Campaign. One Mission.'},
+    {label:'4 · Gift Frame',sub:'Generous positioning — honor, not charity',hl:'We\'re Writing $25,000<br>Worth Of Scholarship Checks<br>Before We Pass The Torch.<br>Here\'s How To Apply.'},
+    {label:'5 · Personal',sub:'Most vulnerable, highest trust with warm audience',hl:'We Didn\'t Build IFCA To Sell It.<br>We Built It So Coaches Like You<br>Could Win. This Is Our<br>Last Gift Before The Handover.'},
+  ],
+  2:[
+    {label:'1 · New Owner Intro',sub:'Taeler-led. Disruption energy. Maximum novelty.',hl:'She Inherited IFCA.<br>Her First Decision Was<br>To Fund A Scholarship.<br>Here\'s Why.'},
+    {label:'2 · New Era',sub:'Category of one language. Industry-wide framing.',hl:'A New Era For<br>Fitness Coaching Is Here.<br>The First Impact Fund<br>Of The New Ownership Is Open.'},
+    {label:'3 · Two Brands',sub:'Merger announcement + scholarship. Double the credibility.',hl:'Two Of The Top Coaching<br>Education Companies Just Merged.<br>Their First Act Together?<br>Give Away $25,000.'},
+    {label:'4 · Taeler\'s First Move',sub:'Positions Taeler as mission-aligned from day one.',hl:'When Taeler Took Over IFCA,<br>She Didn\'t Change The Mission.<br>She Doubled Down On It.<br>$25,000 Says So.'},
+    {label:'5 · Disruption Angle',sub:'Bold market disruption hook. Best for cold traffic.',hl:'The Fitness Coaching Industry<br>Just Split In Two.<br>The New Category of One<br>Is Funding 20 Coaches. Are You In?'},
+  ],
+  3:[
+    {label:'1 · Calling vs Career',sub:'Most proven frame — runs across MAHA and Oct 2025',hl:'$25,000 For Coaches<br>Who Treat Helping People<br>Get Healthy As A Calling,<br>Not A Career'},
+    {label:'2 · 74% Stat',sub:'Data-led. Health crisis angle. Hard to scroll past.',hl:'74% Of Americans Are Overweight.<br>You Decided To Do<br>Something About It.<br>We Built This Fund To Honor That.'},
+    {label:'3 · The Entry Reason',sub:'Validates why they became a coach in the first place.',hl:'You Got Into Coaching<br>For A Reason.<br>The IFCA Impact Fund<br>Was Built To Honor It.'},
+    {label:'4 · Most Coaches',sub:'Contrarian. Separates serious from average.',hl:'Most Coaches Chase Revenue.<br>You Chase Impact.<br>This $25,000 Fund<br>Is Built For You.'},
+    {label:'5 · Identity Validation',sub:'Reward frame — they already qualify by virtue of who they are.',hl:'If You Wake Up Every Day<br>Thinking About How To Help<br>More People — You\'re Exactly<br>Who This Fund Is For.'},
+  ],
+  4:[
+    {label:'1 · The 20 of 600K',sub:'Scarcity meets identity. Elite filter from the first line.',hl:'600,000 Fitness Coaches Online.<br>We\'re Funding The 20<br>Who Want To Do It Right.'},
+    {label:'2 · Standards Problem',sub:'Industry critique. Thought leadership positioning.',hl:'The Fitness Industry<br>Has A Standards Problem.<br>We\'re Investing $25,000<br>In Coaches Who Want To Raise Theirs.'},
+    {label:'3 · Not For Everyone',sub:'Exclusivity as the hook. Controversial in the best way.',hl:'Not Every Coach<br>Deserves This.<br>That\'s The Point.<br>Apply If You\'re One Of The 20.'},
+    {label:'4 · Two Types',sub:'Binary filter. Clean, simple, high-converting.',hl:'There Are Two Types<br>Of Coaches In This Industry.<br>This Fund Is Built<br>For Exactly One Of Them.'},
+    {label:'5 · Honor The Calling',sub:'Bridge between Big Idea #3 and #4. Mission meets standards.',hl:'Honor The Calling.<br>Raise The Standard.<br>Apply For The<br>IFCA Impact Fund.'},
+  ]
+};
+
+function buildBIpicker(ideaNum){
+  const headlines = BI_HEADLINES[ideaNum];
+  const display = document.getElementById('bi-'+ideaNum+'-hl-display');
+  const opts = document.getElementById('bi-'+ideaNum+'-hl-opts');
+  if(!opts) return;
+  opts.innerHTML = headlines.map((h,i)=>`
+    <div class="hl-opt-sch ${i===0?'sel':''}" onclick="selectBIhl(${ideaNum},${i},this)">
+      <span class="hl-num">${i+1}</span>
+      <div>
+        <div class="hl-txt">${h.label}</div>
+        <div class="hl-sub-txt">${h.sub}</div>
+      </div>
+    </div>`).join('');
+  if(display) display.innerHTML = headlines[0].hl;
+}
+
+function selectBIhl(ideaNum,idx,el){
+  const opts = document.getElementById('bi-'+ideaNum+'-hl-opts');
+  opts.querySelectorAll('.hl-opt-sch').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  const display = document.getElementById('bi-'+ideaNum+'-hl-display');
+  if(display) display.innerHTML = BI_HEADLINES[ideaNum][idx].hl;
+}
+
+function showBI(num,btn){
+  document.querySelectorAll('.bi-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.bi-chip').forEach(b=>{b.classList.remove('active');});
+  document.getElementById('bi-panel-'+num).style.display='block';
+  btn.classList.add('active');
+}
+
+// Init scholarship on load
+document.addEventListener('DOMContentLoaded',function(){
+  schCalc();
+  [1,2,3,4].forEach(n=>buildBIpicker(n));
+});
 </script>
 </body>
 </html>
