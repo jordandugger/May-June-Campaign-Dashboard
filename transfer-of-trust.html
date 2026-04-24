@@ -1,1 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transfer of Trust · IFCA Campaign Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:#060d1a;color:#f1f5f9;min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(245,158,11,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(245,158,11,.02) 1px,transparent 1px);background-size:52px 52px;pointer-events:none;z-index:0;}
+.hero-glow{position:fixed;top:-240px;left:50%;transform:translateX(-50%);width:1100px;height:720px;background:radial-gradient(ellipse at 50% 30%,rgba(180,110,0,.12) 0%,transparent 65%);pointer-events:none;z-index:0;}
+.page{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:0 28px 100px;}
 
+/* HEADER */
+header{display:flex;align-items:center;justify-content:space-between;padding:30px 0 0;flex-wrap:wrap;gap:16px;}
+.logo-group{display:flex;align-items:center;gap:14px;}
+.logo-name{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#f59e0b;line-height:1;}
+.logo-sub{font-size:10px;color:#334155;letter-spacing:.07em;text-transform:uppercase;margin-top:3px;}
+.header-meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.header-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#78350f;border:1px solid #1e293b;border-radius:6px;padding:5px 13px;}
+.header-link{font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#f59e0b;border:1px solid rgba(245,158,11,.2);border-radius:6px;padding:5px 13px;text-decoration:none;transition:background .15s,border-color .15s;}
+.header-link:hover{background:rgba(245,158,11,.07);border-color:rgba(245,158,11,.4);}
+
+/* HERO */
+.hero{padding:56px 0 44px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#f59e0b;margin-bottom:18px;}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:28px;height:1px;background:#f59e0b;opacity:.4;}
+h1.hero-title{font-family:'Syne',sans-serif;font-size:clamp(32px,5vw,54px);font-weight:800;line-height:1.06;letter-spacing:-.04em;color:#f8fafc;margin-bottom:16px;}
+h1.hero-title .accent{color:#f59e0b;}
+.hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.hero-chip{display:flex;align-items:center;gap:7px;background:#0c1524;border:1px solid #1e293b;border-radius:8px;padding:8px 14px;}
+.hc-dot{width:6px;height:6px;border-radius:50%;background:#f59e0b;flex-shrink:0;}
+.hc-label{font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:.08em;margin-right:4px;}
+.hc-val{font-family:'DM Mono',monospace;font-size:11px;color:#94a3b8;font-weight:500;}
+.hero-sub{font-size:15px;color:#475569;line-height:1.7;max-width:660px;}
+.hero-sub strong{color:#94a3b8;font-weight:600;}
+
+/* SECTION DIVIDER */
+.sdiv{display:flex;align-items:center;gap:16px;margin:46px 0 22px;}
+.sdiv::before,.sdiv::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,#1e293b,transparent);}
+.sdiv-label{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f59e0b;text-align:center;}
+.sdiv-title{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:#f1f5f9;margin-top:4px;letter-spacing:-.03em;text-align:center;}
+
+/* ASSET CARDS */
+.asset-grid{display:flex;flex-direction:column;gap:10px;}
+.asset-card{background:#0c1524;border:1px solid #1e293b;border-radius:12px;overflow:hidden;transition:border-color .2s;}
+.asset-card:hover{border-color:rgba(245,158,11,.3);}
+.asset-header{display:flex;align-items:flex-start;gap:16px;padding:20px 22px;cursor:pointer;user-select:none;}
+.asset-num-badge{width:36px;height:36px;border-radius:8px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.asset-num-txt{font-family:'Syne',sans-serif;font-size:12px;font-weight:800;color:#f59e0b;}
+.asset-header-body{flex:1;}
+.asset-tag-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px;}
+.asset-type-tag{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--tag-bg,rgba(245,158,11,.1));color:var(--tag-c,#f59e0b);border:1px solid var(--tag-border,rgba(245,158,11,.25));border-radius:20px;padding:3px 9px;}
+.asset-priority{font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ef4444;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:20px;padding:3px 9px;}
+.asset-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#f1f5f9;letter-spacing:-.03em;margin-bottom:4px;}
+.asset-who{font-size:11px;color:#475569;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+.asset-arrow{color:#334155;font-size:12px;flex-shrink:0;margin-top:4px;transition:transform .2s;}
+.asset-card.open .asset-arrow{transform:rotate(180deg);}
+.asset-body{display:none;padding:0 22px 20px 74px;}
+.asset-card.open .asset-body{display:block;}
+.asset-desc{font-size:13.5px;color:#64748b;line-height:1.7;margin-bottom:14px;}
+.spec-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px;margin-bottom:14px;}
+.spec-item{background:#080f1c;border:1px solid #1e293b;border-radius:7px;padding:10px 13px;}
+.spec-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#334155;margin-bottom:3px;}
+.spec-val{font-size:12px;color:#94a3b8;line-height:1.45;}
+.brief-box{background:#080f1c;border:1px solid rgba(245,158,11,.15);border-radius:8px;padding:14px 16px;margin-bottom:10px;}
+.brief-label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:6px;}
+.brief-list{display:flex;flex-direction:column;gap:5px;}
+.brief-item{display:flex;gap:9px;font-size:12.5px;color:#64748b;line-height:1.55;}
+.brief-item::before{content:'→';color:#f59e0b;font-family:'DM Mono',monospace;font-size:11px;flex-shrink:0;margin-top:1px;}
+.push-channels{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px;}
+.push-ch{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#475569;background:#0a1524;border:1px solid #1e293b;border-radius:20px;padding:4px 10px;}
+
+/* SCHEDULE TABLE */
+.sched-table{width:100%;border-collapse:collapse;}
+.sched-table th{text-align:left;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#334155;padding:8px 12px;border-bottom:1px solid #1e293b;}
+.sched-table td{font-size:12.5px;color:#64748b;padding:10px 12px;border-bottom:1px solid rgba(30,41,59,.5);vertical-align:top;line-height:1.55;}
+.sched-table td:first-child{font-family:'DM Mono',monospace;font-size:10px;color:#f59e0b;white-space:nowrap;padding-right:16px;}
+.sched-table td strong{color:#94a3b8;font-weight:600;}
+.sched-table tr:last-child td{border-bottom:none;}
+.sched-table .sched-who{font-size:10px;color:#334155;font-family:'DM Mono',monospace;display:block;margin-top:2px;letter-spacing:.04em;}
+.sched-phase-row td{background:#080f1c;font-size:9px !important;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#475569 !important;padding:6px 12px !important;}
+.sched-phase-row td:first-child{color:#f59e0b !important;}
+
+/* PODCAST CARDS */
+.pod-grid{display:flex;flex-direction:column;gap:10px;}
+.pod-card{background:#0c1524;border:1px solid #1e293b;border-radius:12px;padding:22px 24px;}
+.pod-card:hover{border-color:rgba(245,158,11,.3);}
+.pod-num{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;}
+.pod-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:#f1f5f9;letter-spacing:-.03em;margin-bottom:4px;}
+.pod-meta{font-size:11px;color:#475569;font-family:'DM Mono',monospace;margin-bottom:12px;}
+.pod-desc{font-size:13px;color:#64748b;line-height:1.65;margin-bottom:14px;}
+.pod-sections{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;}
+.pod-section{background:#080f1c;border:1px solid #1e293b;border-radius:7px;padding:10px 13px;}
+.ps-time{font-family:'DM Mono',monospace;font-size:9px;color:#f59e0b;margin-bottom:3px;letter-spacing:.07em;}
+.ps-title{font-size:11px;font-weight:600;color:#94a3b8;margin-bottom:2px;}
+.ps-note{font-size:10px;color:#334155;line-height:1.4;}
+
+/* WRITTEN CONTENT */
+.written-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.written-card{background:#0c1524;border:1px solid #1e293b;border-radius:12px;padding:22px 24px;}
+.wc-tag{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;}
+.wc-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#f1f5f9;letter-spacing:-.02em;margin-bottom:8px;line-height:1.3;}
+.wc-desc{font-size:12px;color:#475569;line-height:1.65;margin-bottom:12px;}
+.wc-outline{display:flex;flex-direction:column;gap:5px;}
+.wc-section{display:flex;gap:8px;font-size:12px;color:#475569;line-height:1.5;}
+.wc-section::before{content:'—';color:#f59e0b;font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;margin-top:2px;}
+
+/* EMAIL CARDS */
+.email-grid{display:flex;flex-direction:column;gap:10px;}
+.email-card{background:#0c1524;border:1px solid #1e293b;border-radius:12px;padding:20px 22px;}
+.email-num{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f59e0b;margin-bottom:6px;}
+.email-subject{font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#f1f5f9;letter-spacing:-.02em;margin-bottom:4px;}
+.email-meta{font-size:11px;color:#334155;font-family:'DM Mono',monospace;margin-bottom:10px;}
+.email-desc{font-size:12.5px;color:#475569;line-height:1.65;}
+.email-points{display:flex;flex-direction:column;gap:5px;margin-top:8px;}
+.email-point{display:flex;gap:8px;font-size:12px;color:#475569;line-height:1.5;}
+.email-point::before{content:'·';color:#f59e0b;font-size:16px;flex-shrink:0;line-height:1.2;}
+
+/* WARN/NOTE BOX */
+.note-box{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:10px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;margin-top:14px;}
+.note-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.note-text{font-size:12.5px;color:#64748b;line-height:1.65;}
+.note-text strong{color:#94a3b8;font-weight:600;}
+
+/* FOOTER */
+.playbook-footer{margin-top:52px;border-top:1px solid #0f1c2e;padding-top:28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.pf-brand{font-family:'Syne',sans-serif;font-size:11px;font-weight:800;color:#1e3a5f;letter-spacing:.1em;text-transform:uppercase;}
+.pf-values{display:flex;gap:18px;}
+.pf-v{font-size:10px;color:#1e3a5f;letter-spacing:.07em;text-transform:uppercase;}
+.pf-meta{font-size:10px;color:#1e293b;font-family:'DM Mono',monospace;}
+
+@media(max-width:720px){.written-grid{grid-template-columns:1fr;}.asset-body{padding-left:22px;}}
+@media(max-width:560px){h1.hero-title{font-size:30px;}header{flex-direction:column;align-items:flex-start;}}
+</style>
+</head>
+<body>
+<div class="hero-glow"></div>
+<div class="page">
+
+<!-- HEADER -->
+<header>
+  <div class="logo-group">
+    <svg width="44" height="52" viewBox="0 0 44 52" fill="none">
+      <path d="M22 2L3 9.5V27C3 38.5 12.5 48 22 51C31.5 48 41 38.5 41 27V9.5L22 2Z" stroke="url(#ls2)" stroke-width="2.2" fill="none" stroke-linejoin="round"/>
+      <line x1="11" y1="20" x2="33" y2="20" stroke="url(#ls2)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="11" y1="26" x2="33" y2="26" stroke="url(#ls2)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="11" y1="32" x2="33" y2="32" stroke="url(#ls2)" stroke-width="2" stroke-linecap="round"/>
+      <line x1="13" y1="38" x2="31" y2="38" stroke="url(#ls2)" stroke-width="2" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="ls2" x1="3" y1="2" x2="41" y2="51" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div>
+      <div class="logo-name">IFCA</div>
+      <div class="logo-sub">Impact Fitness Coaching Academy</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <a class="header-link" href="../index.html">← Campaign Hub</a>
+    <div class="header-tag">Campaign 01 · May 1–17</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Campaign 01 of 03</div>
+  <h1 class="hero-title">Transfer of<br><span class="accent">Trust.</span></h1>
+  <div class="hero-meta">
+    <div class="hero-chip"><div class="hc-dot"></div><span class="hc-label">Film</span><span class="hc-val">May 1, 2026 (All-Day)</span></div>
+    <div class="hero-chip"><div class="hc-dot"></div><span class="hc-label">Campaign</span><span class="hc-val">May 2 → May 17</span></div>
+    <div class="hero-chip"><div class="hc-dot"></div><span class="hc-label">Assets</span><span class="hc-val">5 videos · 4 reels · 3 podcasts · 3 emails</span></div>
+  </div>
+  <p class="hero-sub">Everything Jordan, Erin, and Taeler need to execute the ownership handoff — from the first announcement to the final student FAQ. <strong>Every asset has a brief. Every day has a job.</strong></p>
+</div>
+
+<!-- ═══ SECTION 1: VIDEO ASSETS ═══ -->
+<div class="sdiv">
+  <div>
+    <div class="sdiv-label">Film May 1st · All-Day Session</div>
+    <div class="sdiv-title">The 5 Core Video Assets</div>
+  </div>
+</div>
+
+<div class="asset-grid">
+
+  <!-- Asset 1 -->
+  <div class="asset-card" id="a1">
+    <div class="asset-header" onclick="toggleAsset('a1')">
+      <div class="asset-num-badge"><div class="asset-num-txt">01</div></div>
+      <div class="asset-header-body">
+        <div class="asset-tag-row">
+          <div class="asset-type-tag">Trust Narrative</div>
+          <div class="asset-priority">🔑 Lead Asset</div>
+        </div>
+        <div class="asset-title">Why We're Selling</div>
+        <div class="asset-who">Jordan + Erin · Sit-down, casual office · 3–4 min</div>
+      </div>
+      <div class="asset-arrow">▼</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-desc">The foundational trust asset. This video addresses the "why" before anyone has to ask. Jordan and Erin are sitting together — equal energy, genuine — delivering the narrative the students and public need to believe before they'll accept the transition. This is not a corporate announcement. It's a conversation.</div>
+      <div class="spec-row">
+        <div class="spec-item"><div class="spec-label">Format</div><div class="spec-val">Sit-down · Casual office or couch setting · Warm lighting</div></div>
+        <div class="spec-item"><div class="spec-label">Length</div><div class="spec-val">3–4 min (don't cut it shorter — this needs to breathe)</div></div>
+        <div class="spec-item"><div class="spec-label">Tone</div><div class="spec-val">Grounded, proud, honest — not rehearsed</div></div>
+        <div class="spec-item"><div class="spec-label">Push Date</div><div class="spec-val">May 2–3 · Lead all channels</div></div>
+      </div>
+      <div class="brief-box">
+        <div class="brief-label">Story Arc — What to Cover</div>
+        <div class="brief-list">
+          <div class="brief-item">Open with a moment of honest reflection: what IFCA has meant, what it's become</div>
+          <div class="brief-item">Introduce the decision framing: "We built this to outlast us — that was always the plan"</div>
+          <div class="brief-item">Explain why now: the business reached the inflection point where new leadership accelerates the mission</div>
+          <div class="brief-item">Introduce Taeler by name — why her specifically, not just "a great buyer"</div>
+          <div class="brief-item">Close with the most important reassurance: the coaching, the methodology, the team — all stays</div>
+        </div>
+      </div>
+      <div class="push-channels">
+        <div class="push-ch">Instagram Feed</div>
+        <div class="push-ch">YouTube</div>
+        <div class="push-ch">Email Blast</div>
+        <div class="push-ch">Student Community</div>
+        <div class="push-ch">Facebook</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asset 2 -->
+  <div class="asset-card" id="a2">
+    <div class="asset-header" onclick="toggleAsset('a2')">
+      <div class="asset-num-badge"><div class="asset-num-txt">02</div></div>
+      <div class="asset-header-body">
+        <div class="asset-tag-row">
+          <div class="asset-type-tag" style="--tag-bg:rgba(99,179,237,.1);--tag-c:#63b3ed;--tag-border:rgba(99,179,237,.25)">Introduction</div>
+        </div>
+        <div class="asset-title">Meet Taeler</div>
+        <div class="asset-who">Taeler solo · Direct to camera · 2–3 min</div>
+      </div>
+      <div class="asset-arrow">▼</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-desc">Taeler's introduction to the IFCA audience. This is her moment to show up as a real person — not a suit who bought a business. The goal is one thing: likability with substance. They need to know who she is, what she believes, and why she cares about fitness coaches specifically.</div>
+      <div class="spec-row">
+        <div class="spec-item"><div class="spec-label">Format</div><div class="spec-val">Direct to camera · Clean background · Her natural energy</div></div>
+        <div class="spec-item"><div class="spec-label">Length</div><div class="spec-val">2–3 min — keep it tight and memorable</div></div>
+        <div class="spec-item"><div class="spec-label">Tone</div><div class="spec-val">Warm, confident, real — not polished-corporate</div></div>
+        <div class="spec-item"><div class="spec-label">Push Date</div><div class="spec-val">May 4–5</div></div>
+      </div>
+      <div class="brief-box">
+        <div class="brief-label">Story Arc — What to Cover</div>
+        <div class="brief-list">
+          <div class="brief-item">Quick genuine intro — who she is and what she runs (FCA context)</div>
+          <div class="brief-item">Why she sought out IFCA specifically — not just any coaching company</div>
+          <div class="brief-item">Her own belief about the fitness coaching industry and what it deserves</div>
+          <div class="brief-item">What she saw in the IFCA model that made her want to steward it</div>
+          <div class="brief-item">Direct acknowledgment to students: "I know change is uncomfortable — here's what I'm committed to"</div>
+        </div>
+      </div>
+      <div class="push-channels">
+        <div class="push-ch">Instagram Feed</div>
+        <div class="push-ch">Stories</div>
+        <div class="push-ch">Student Email #2</div>
+        <div class="push-ch">YouTube</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asset 3 -->
+  <div class="asset-card" id="a3">
+    <div class="asset-header" onclick="toggleAsset('a3')">
+      <div class="asset-num-badge"><div class="asset-num-txt">03</div></div>
+      <div class="asset-header-body">
+        <div class="asset-tag-row">
+          <div class="asset-type-tag" style="--tag-bg:rgba(34,197,94,.1);--tag-c:#22c55e;--tag-border:rgba(34,197,94,.25)">Fear Killer</div>
+          <div class="asset-priority">🔑 Most Important Asset</div>
+        </div>
+        <div class="asset-title">What Changes. What Doesn't.</div>
+        <div class="asset-who">Jordan + Taylor · Conversational · 2–3 min</div>
+      </div>
+      <div class="asset-arrow">▼</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-desc">The most strategically important piece in this entire campaign. The #1 student fear is: "My coaching experience is going to change for the worse." This video kills that fear directly and specifically. Jordan and Taeler are talking to each other — not performing for camera — which makes every claim land with more weight.</div>
+      <div class="spec-row">
+        <div class="spec-item"><div class="spec-label">Format</div><div class="spec-val">Two-shot conversational · Natural back-and-forth · No teleprompter</div></div>
+        <div class="spec-item"><div class="spec-label">Length</div><div class="spec-val">2–3 min — paced like a real conversation</div></div>
+        <div class="spec-item"><div class="spec-label">Tone</div><div class="spec-val">Direct, specific, trust-building — each claim gets a reason</div></div>
+        <div class="spec-item"><div class="spec-label">Push Date</div><div class="spec-val">May 6–7 · Pin on profile</div></div>
+      </div>
+      <div class="brief-box">
+        <div class="brief-label">Structure — Address Each Fear Directly</div>
+        <div class="brief-list">
+          <div class="brief-item"><strong>What doesn't change:</strong> The coaching methodology, the IFCA curriculum, the coaching team, the community, the results standard</div>
+          <div class="brief-item"><strong>What gets better:</strong> Taeler's operational focus, new resources FCA brings, fresh energy and systems</div>
+          <div class="brief-item">Jordan explicitly endorses Taeler's coaching philosophy — their alignment on client results</div>
+          <div class="brief-item">Taeler commits to specific things: maintaining the curriculum integrity, keeping the team, investing in product improvement</div>
+          <div class="brief-item">Close: "If you chose IFCA because of what we stand for — that's exactly what Taeler is here to protect and grow"</div>
+        </div>
+      </div>
+      <div class="push-channels">
+        <div class="push-ch">Instagram Feed (Pin)</div>
+        <div class="push-ch">YouTube</div>
+        <div class="push-ch">Email Blast</div>
+        <div class="push-ch">Student Community</div>
+        <div class="push-ch">Facebook</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asset 4 -->
+  <div class="asset-card" id="a4">
+    <div class="asset-header" onclick="toggleAsset('a4')">
+      <div class="asset-num-badge"><div class="asset-num-txt">04</div></div>
+      <div class="asset-header-body">
+        <div class="asset-tag-row">
+          <div class="asset-type-tag" style="--tag-bg:rgba(167,139,250,.1);--tag-c:#a78bfa;--tag-border:rgba(167,139,250,.25)">Emotional Close</div>
+        </div>
+        <div class="asset-title">A Note From Erin</div>
+        <div class="asset-who">Erin solo · Emotional, direct · 2–3 min</div>
+      </div>
+      <div class="asset-arrow">▼</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-desc">Erin's personal farewell and handoff to the community. This is the emotional anchor of the entire campaign — it doesn't need to be polished. In fact, the more raw and real it is, the more it lands. Erin has built relationships with hundreds of coaches in this community. This is her letter to them.</div>
+      <div class="spec-row">
+        <div class="spec-item"><div class="spec-label">Format</div><div class="spec-val">Solo · Selfie or F2C · Let the emotion come naturally</div></div>
+        <div class="spec-item"><div class="spec-label">Length</div><div class="spec-val">2–3 min — don't rush it, don't pad it</div></div>
+        <div class="spec-item"><div class="spec-label">Tone</div><div class="spec-val">Personal, warm, grateful — this is a goodbye letter on camera</div></div>
+        <div class="spec-item"><div class="spec-label">Push Date</div><div class="spec-val">May 11–12 · High engagement expected</div></div>
+      </div>
+      <div class="brief-box">
+        <div class="brief-label">Story Arc — What to Cover</div>
+        <div class="brief-list">
+          <div class="brief-item">What she's most proud of building — not the business metrics, the people</div>
+          <div class="brief-item">A specific memory or moment that represents what IFCA became to her</div>
+          <div class="brief-item">Why she feels peace about the transition — what she sees in Taeler that lets her let go</div>
+          <div class="brief-item">A direct message to current students: thank you, this was never just business for me</div>
+          <div class="brief-item">Where she's going next — brief, hopeful, no details needed. Just "I'm not disappearing."</div>
+        </div>
+      </div>
+      <div class="push-channels">
+        <div class="push-ch">Instagram Feed</div>
+        <div class="push-ch">Stories</div>
+        <div class="push-ch">Student Community</div>
+        <div class="push-ch">Email (personal note)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Asset 5 -->
+  <div class="asset-card" id="a5">
+    <div class="asset-header" onclick="toggleAsset('a5')">
+      <div class="asset-num-badge"><div class="asset-num-txt">05</div></div>
+      <div class="asset-header-body">
+        <div class="asset-tag-row">
+          <div class="asset-type-tag" style="--tag-bg:rgba(56,189,248,.1);--tag-c:#38bdf8;--tag-border:rgba(56,189,248,.25)">Long-Form</div>
+        </div>
+        <div class="asset-title">The Exit Interview</div>
+        <div class="asset-who">Jordan + Taylor · Podcast / Screen-share Gamma · 45–60 min</div>
+      </div>
+      <div class="asset-arrow">▼</div>
+    </div>
+    <div class="asset-body">
+      <div class="asset-desc">The deep-dive trust content. This serves two audiences: existing students who want the full story, and future students who discover IFCA through this. It's also Taeler's public debut as IFCA's new operator — her first long-form piece. Release as both a podcast episode and a YouTube video.</div>
+      <div class="spec-row">
+        <div class="spec-item"><div class="spec-label">Format</div><div class="spec-label">Podcast + YouTube · Screen-share Gamma presentation or no visuals</div></div>
+        <div class="spec-item"><div class="spec-label">Length</div><div class="spec-val">45–60 min · Full interview format</div></div>
+        <div class="spec-item"><div class="spec-label">Tone</div><div class="spec-val">Candid, behind-the-scenes, story-driven — like a real exit interview</div></div>
+        <div class="spec-item"><div class="spec-label">Push Date</div><div class="spec-val">May 9–10 · Repurpose clips all week</div></div>
+      </div>
+      <div class="brief-box">
+        <div class="brief-label">Segment Outline (45–60 min)</div>
+        <div class="brief-list">
+          <div class="brief-item"><strong>[0–10 min]</strong> The origin — how Jordan and Erin built IFCA from nothing and what it took</div>
+          <div class="brief-item"><strong>[10–20 min]</strong> The decision — when Jordan knew it was time, and how the idea of selling became real</div>
+          <div class="brief-item"><strong>[20–30 min]</strong> Finding Taeler — how the deal came together and what Jordan was looking for in a buyer</div>
+          <div class="brief-item"><strong>[30–40 min]</strong> Taeler's perspective — why she bought instead of built, what drew her to IFCA specifically</div>
+          <div class="brief-item"><strong>[40–50 min]</strong> The future — Taeler's vision for IFCA, what stays, what evolves, what gets built</div>
+          <div class="brief-item"><strong>[50–60 min]</strong> What Jordan is doing next + listener Q&A or closing reflection from both</div>
+        </div>
+      </div>
+      <div class="push-channels">
+        <div class="push-ch">Podcast (EP 1)</div>
+        <div class="push-ch">YouTube Full Video</div>
+        <div class="push-ch">Reel Clips (3–5 pulls)</div>
+        <div class="push-ch">LinkedIn</div>
+        <div class="push-ch">Email Link</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /asset-grid -->
+
+<!-- SHORT-FORM REELS -->
+<div class="sdiv">
+  <div>
+    <div class="sdiv-label">Film May 1 · B-Roll Session</div>
+    <div class="sdiv-title">4 Organic Short-Form Reels</div>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+  <div style="background:#0c1524;border:1px solid #1e293b;border-radius:12px;padding:20px 22px;">
+    <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;">Jordan · VO over B-Roll</div>
+    <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#f1f5f9;margin-bottom:8px;line-height:1.3;">"I sold my company and here's what I'm most proud of"</div>
+    <div style="font-size:12px;color:#475569;line-height:1.6;">Reflective voiceover over B-roll of the office, team, student wins. Not about the money — about what was built. Strong watch-through hook.</div>
+  </div>
+  <div style="background:#0c1524;border:1px solid #1e293b;border-radius:12px;padding:20px 22px;">
+    <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;">Erin · F2C Selfie Rant</div>
+    <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#f1f5f9;margin-bottom:8px;line-height:1.3;">"When I knew it was time to let go"</div>
+    <div style="font-size:12px;color:#475569;line-height:1.6;">Raw, emotional, real. Erin talking directly to camera — unscripted. The kind of content that gets shared because it feels like someone finally said what everyone's thinking about when to walk away.</div>
+  </div>
+  <div style="background:#0c1524;border:1px solid #1e293b;border-radius:12px;padding:20px 22px;">
+    <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;">Taylor · Direct to Camera</div>
+    <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#f1f5f9;margin-bottom:8px;line-height:1.3;">"Why I bought a business instead of building one from scratch"</div>
+    <div style="font-size:12px;color:#475569;line-height:1.6;">Taeler's "introduction" reel for the IFCA audience. The hook is the counterintuitive choice — buying vs. building. Gets immediate engagement from entrepreneurial coaches.</div>
+  </div>
+  <div style="background:#0c1524;border:1px solid #1e293b;border-radius:12px;padding:20px 22px;">
+    <div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;">Jordan + Taylor · Pure B-Roll</div>
+    <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;color:#f1f5f9;margin-bottom:8px;line-height:1.3;">Walkthrough B-Roll Library</div>
+    <div style="font-size:12px;color:#475569;line-height:1.6;">Office walkthrough, whiteboard session, candid handoff moments — no scripted VO. Raw, documentary feel. Use across stories, reels, and as B-roll for other content all month.</div>
+  </div>
+</div>
+
+<!-- CAMPAIGN SCHEDULE -->
+<div class="sdiv">
+  <div>
+    <div class="sdiv-label">May 2 → May 17</div>
+    <div class="sdiv-title">Day-by-Day Push Schedule</div>
+  </div>
+</div>
+
+<div style="background:#0c1524;border:1px solid #1e293b;border-radius:12px;overflow:hidden;">
+  <table class="sched-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Task / Asset</th>
+        <th>Who</th>
+        <th>Channels</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="sched-phase-row"><td>WEEK 1</td><td colspan="3">Announcement + Foundation (May 2–8)</td></tr>
+      <tr>
+        <td>MAY 2</td>
+        <td><strong>LAUNCH DAY — "Why We're Selling" drops</strong><br>Email blast + SMS + IG announcement + student community post</td>
+        <td><span class="sched-who">Jordan + Erin</span></td>
+        <td>All channels</td>
+      </tr>
+      <tr>
+        <td>MAY 3</td>
+        <td><strong>Jordan reel drops</strong> — "I sold my company and here's what I'm most proud of"</td>
+        <td><span class="sched-who">Jordan</span></td>
+        <td>IG · Stories</td>
+      </tr>
+      <tr>
+        <td>MAY 4</td>
+        <td><strong>"Meet Taeler" video drops</strong> — intro video on all channels</td>
+        <td><span class="sched-who">Taeler</span></td>
+        <td>IG · YouTube · Email</td>
+      </tr>
+      <tr>
+        <td>MAY 5</td>
+        <td><strong>Taeler reel drops</strong> — "Why I bought instead of built"</td>
+        <td><span class="sched-who">Taeler</span></td>
+        <td>IG · Stories</td>
+      </tr>
+      <tr>
+        <td>MAY 6</td>
+        <td><strong>"What Changes. What Doesn't." drops</strong> — PIN on profile · push hard</td>
+        <td><span class="sched-who">Jordan + Taylor</span></td>
+        <td>All channels · Pin</td>
+      </tr>
+      <tr>
+        <td>MAY 7</td>
+        <td>B-roll walkthrough reel drops · Stories push "What's your biggest question about the transition?" poll</td>
+        <td><span class="sched-who">Jordan + Taylor</span></td>
+        <td>IG · Stories</td>
+      </tr>
+      <tr>
+        <td>MAY 8</td>
+        <td><strong>Student Email #1: Official Announcement</strong> — full letter from Jordan</td>
+        <td><span class="sched-who">Jordan</span></td>
+        <td>Email · Community</td>
+      </tr>
+      <tr class="sched-phase-row"><td>WEEK 2</td><td colspan="3">Long-Form + Depth (May 9–13)</td></tr>
+      <tr>
+        <td>MAY 9</td>
+        <td><strong>Exit Interview Podcast drops (Ep 1)</strong> — full 45–60 min · push to all audio platforms + YouTube</td>
+        <td><span class="sched-who">Jordan + Taylor</span></td>
+        <td>Podcast · YouTube · IG clips</td>
+      </tr>
+      <tr>
+        <td>MAY 10</td>
+        <td>Pull 2–3 clip reels from Exit Interview · push best quote on IG</td>
+        <td><span class="sched-who">Jordan/Taeler</span></td>
+        <td>IG · Stories</td>
+      </tr>
+      <tr>
+        <td>MAY 11</td>
+        <td><strong>"A Note From Erin" drops</strong> — push everywhere · expect high engagement</td>
+        <td><span class="sched-who">Erin</span></td>
+        <td>All channels</td>
+      </tr>
+      <tr>
+        <td>MAY 12</td>
+        <td><strong>Erin reel drops</strong> — "When I knew it was time to let go" · selfie format</td>
+        <td><span class="sched-who">Erin</span></td>
+        <td>IG · Stories</td>
+      </tr>
+      <tr>
+        <td>MAY 13</td>
+        <td><strong>Student Email #2: "Meet Taeler"</strong> — 30 days before transition · formal intro</td>
+        <td><span class="sched-who">Taeler</span></td>
+        <td>Email · Community</td>
+      </tr>
+      <tr>
+        <td>MAY 14</td>
+        <td>"Taeler Takes Over" podcast drops (Ep 2) — Taeler solo, philosophy + vision</td>
+        <td><span class="sched-who">Taeler</span></td>
+        <td>Podcast · YouTube</td>
+      </tr>
+      <tr class="sched-phase-row"><td>WEEK 3</td><td colspan="3">Close + Credibility (May 15–17)</td></tr>
+      <tr>
+        <td>MAY 15</td>
+        <td>"The Team Perspective" podcast drops (Ep 3) · Medium article publishes</td>
+        <td><span class="sched-who">Team + Jordan</span></td>
+        <td>Podcast · Medium</td>
+      </tr>
+      <tr>
+        <td>MAY 16</td>
+        <td><strong>LinkedIn article publishes</strong> — "On Selling at the Peak" · Press release goes out · Masterclass ads LAUNCH</td>
+        <td><span class="sched-who">Jordan</span></td>
+        <td>LinkedIn · Press · Meta</td>
+      </tr>
+      <tr>
+        <td>MAY 17</td>
+        <td><strong>Student FAQ email</strong> — proactive answers to top transition questions · TOT campaign closes</td>
+        <td><span class="sched-who">Jordan/Taeler</span></td>
+        <td>Email · Community</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- PODCASTS -->
+<div class="sdiv">
+  <div>
+    <div class="sdiv-label">Section 2 · Long-Form Content</div>
+    <div class="sdiv-title">3 Podcast Episodes</div>
+  </div>
+</div>
+
+<div class="pod-grid">
+
+  <div class="pod-card">
+    <div class="pod-num">Podcast 01 · 45–60 Minutes · May 9–10</div>
+    <div class="pod-title">The Exit Interview</div>
+    <div class="pod-meta">Jordan Dugger + Taeler · Fitness Business Podcast</div>
+    <div class="pod-desc">The full story — why Jordan built IFCA, why now was the right time to sell, how Taeler was found, and what comes next. The highest-reach piece in this campaign. Repurpose aggressively for reels, clips, and written content.</div>
+    <div class="pod-sections">
+      <div class="pod-section"><div class="ps-time">0–10 min</div><div class="ps-title">The Origin Story</div><div class="ps-note">What IFCA was built to do · where it started</div></div>
+      <div class="pod-section"><div class="ps-time">10–20 min</div><div class="ps-title">The Decision to Sell</div><div class="ps-note">When Jordan knew · how the idea became real</div></div>
+      <div class="pod-section"><div class="ps-time">20–30 min</div><div class="ps-title">Finding the Right Buyer</div><div class="ps-note">What Jordan was looking for · why Taeler fit</div></div>
+      <div class="pod-section"><div class="ps-time">30–40 min</div><div class="ps-title">Taeler's Perspective</div><div class="ps-note">Why buy vs. build · what drew her to IFCA</div></div>
+      <div class="pod-section"><div class="ps-time">40–50 min</div><div class="ps-title">The Future of IFCA</div><div class="ps-note">Vision, what stays, what evolves, what's built</div></div>
+      <div class="pod-section"><div class="ps-time">50–60 min</div><div class="ps-title">Jordan's Next Chapter</div><div class="ps-note">What's next · closing reflections from both</div></div>
+    </div>
+  </div>
+
+  <div class="pod-card">
+    <div class="pod-num">Podcast 02 · 30–45 Minutes · May 14</div>
+    <div class="pod-title">Taeler Takes Over</div>
+    <div class="pod-meta">Taeler Solo · Fitness Business Podcast</div>
+    <div class="pod-desc">Taeler's first solo episode — her philosophy, her background, her vision for the IFCA student experience. This is her chance to speak directly to coaches in her own voice, without Jordan as a filter.</div>
+    <div class="pod-sections">
+      <div class="pod-section"><div class="ps-time">0–8 min</div><div class="ps-title">Who Taeler Is</div><div class="ps-note">Background, FCA, what she's built</div></div>
+      <div class="pod-section"><div class="ps-time">8–18 min</div><div class="ps-title">Why She Believes in This Industry</div><div class="ps-note">Her conviction about fitness coaches + what they deserve</div></div>
+      <div class="pod-section"><div class="ps-time">18–28 min</div><div class="ps-title">Her Vision for IFCA Students</div><div class="ps-note">What she wants to build · direct commitment to the community</div></div>
+      <div class="pod-section"><div class="ps-time">28–35 min</div><div class="ps-title">Open Q&A</div><div class="ps-note">Top student questions answered directly · honest, no spin</div></div>
+    </div>
+  </div>
+
+  <div class="pod-card">
+    <div class="pod-num">Podcast 03 · 20–30 Minutes · May 15</div>
+    <div class="pod-title">The Team Perspective</div>
+    <div class="pod-meta">IFCA Team Members · Fitness Business Podcast</div>
+    <div class="pod-desc">The team answers the question students are actually asking: "Are the people I love working with still going to be there?" Hearing directly from coaches, success managers, and ops team members closes the loop on this fear better than any founder video can.</div>
+    <div class="pod-sections">
+      <div class="pod-section"><div class="ps-time">0–7 min</div><div class="ps-title">Team Intro Round</div><div class="ps-note">Brief intro from each team member · their role</div></div>
+      <div class="pod-section"><div class="ps-time">7–17 min</div><div class="ps-title">What They're Excited About</div><div class="ps-note">Real reactions to the transition · what they see coming</div></div>
+      <div class="pod-section"><div class="ps-time">17–25 min</div><div class="ps-title">Message to Students</div><div class="ps-note">Each person speaks directly · what students can expect from them personally</div></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- WRITTEN CONTENT -->
+<div class="sdiv">
+  <div>
+    <div class="sdiv-label">Section 3 · Written Content</div>
+    <div class="sdiv-title">Articles + Internal Memo</div>
+  </div>
+</div>
+
+<div class="written-grid">
+
+  <div class="written-card">
+    <div class="wc-tag">Medium Article · May 15</div>
+    <div class="wc-title">"Why I'm Walking Away From Success"</div>
+    <div class="wc-desc">Jordan's public-facing long-form piece. Designed to get shared outside the IFCA ecosystem — coaches who've never heard of IFCA will find this and discover who Jordan is. Frame it as universal: every entrepreneur who has ever wondered when to let go.</div>
+    <div class="wc-outline">
+      <div class="wc-section">The moment Jordan realized success had become a ceiling</div>
+      <div class="wc-section">What "walking away" actually means vs. what people assume</div>
+      <div class="wc-section">The real cost of staying too long in something that no longer challenges you</div>
+      <div class="wc-section">What he's walking toward — not escaping from</div>
+      <div class="wc-section">The IFCA handoff as a case study in aligned exits</div>
+    </div>
+  </div>
+
+  <div class="written-card">
+    <div class="wc-tag">LinkedIn Article · May 16</div>
+    <div class="wc-title">"On Selling at the Peak"</div>
+    <div class="wc-desc">Business-audience piece for LinkedIn. More analytical and less emotional than the Medium piece. Speaks to entrepreneurs and operators who think about business exits. Positions Jordan as someone who understood the game well enough to play it differently.</div>
+    <div class="wc-outline">
+      <div class="wc-section">Why most founders wait too long — the data and the psychology</div>
+      <div class="wc-section">The signals that told Jordan the timing was right</div>
+      <div class="wc-section">What "peak" actually means for a service business vs. a product company</div>
+      <div class="wc-section">The buyer selection criteria and why mission alignment mattered most</div>
+      <div class="wc-section">What he'd tell a founder who's thinking about this decision right now</div>
+    </div>
+  </div>
+
+  <div class="written-card" style="grid-column:1/-1">
+    <div class="wc-tag">Internal Memo · May 2 (Private · Team Only)</div>
+    <div class="wc-title">To Our Students: The Official Announcement</div>
+    <div class="wc-desc">The student-facing letter that goes out alongside the video launch on May 2nd. Tone: warm, honest, direct. Not corporate. Jordan's voice. Acknowledges the uncertainty, answers the most important question first (does this affect my coaching?), and introduces Taeler personally.</div>
+    <div class="wc-outline">
+      <div class="wc-section">Open with honesty: "I have news to share, and I want you to hear it from me directly"</div>
+      <div class="wc-section">The what: IFCA has been acquired by Taeler [Last Name] / FCA</div>
+      <div class="wc-section">Answer the #1 question immediately: "Your coaching experience does not change"</div>
+      <div class="wc-section">Introduce Taeler — why her, what Jordan sees in her, their shared values</div>
+      <div class="wc-section">What happens next and when — no vague timeline. Specific dates.</div>
+      <div class="wc-section">Jordan's personal gratitude — real, not boilerplate</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- STUDENT EMAILS -->
+<div class="sdiv">
+  <div>
+    <div class="sdiv-label">Section 4 · Student Communication</div>
+    <div class="sdiv-title">Student Emails + FAQ</div>
+  </div>
+</div>
+
+<div class="email-grid">
+
+  <div class="email-card">
+    <div class="email-num">Student Email 01 · Send May 8</div>
+    <div class="email-subject">Official Announcement from Jordan</div>
+    <div class="email-meta">FROM: Jordan Dugger · TO: All Active Students</div>
+    <div class="email-desc">The formal announcement to the student community. By this point they've seen the videos, so this email goes deeper — answers the details the videos couldn't cover.</div>
+    <div class="email-points">
+      <div class="email-point">Reference the "Why We're Selling" + "What Changes" videos — assume they've seen them</div>
+      <div class="email-point">Official transition timeline and dates — specific, not vague</div>
+      <div class="email-point">What happens to their coaching relationship, their success manager, their curriculum access</div>
+      <div class="email-point">Open door: "Reply directly to this email with any questions" — Jordan or team responds personally</div>
+      <div class="email-point">CTA: Watch "What Changes. What Doesn't." if you haven't already</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-num">Student Email 02 · Send May 13</div>
+    <div class="email-subject">Meet Taeler — Your New IFCA Leader</div>
+    <div class="email-meta">FROM: Taeler [Last Name] · TO: All Active Students</div>
+    <div class="email-desc">Taeler's first direct email to the student community. Written in her voice — not Jordan's. The goal is warmth, specificity, and a direct commitment to the coaching standard they've already experienced.</div>
+    <div class="email-points">
+      <div class="email-point">Taeler introduces herself in her own words — background, FCA, why she pursued this</div>
+      <div class="email-point">What she's spent her first weeks learning about the IFCA students and their goals</div>
+      <div class="email-point">Her specific commitments: curriculum integrity, team continuity, results standard</div>
+      <div class="email-point">Invitation: "I'd love to meet you — I'll be in the community and on calls"</div>
+      <div class="email-point">CTA: Watch the "Taeler Takes Over" podcast to get to know her more</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-num">Student FAQ · Send May 17 (Closes TOT Campaign)</div>
+    <div class="email-subject">Your Questions About the Transition — Answered</div>
+    <div class="email-meta">FROM: Jordan + Taeler · TO: All Active Students</div>
+    <div class="email-desc">Proactive FAQ that addresses the questions students have been asking (or thinking). Pull real questions from community comments, replies, and DMs. Authenticity of the questions makes the answers land harder.</div>
+    <div class="email-points">
+      <div class="email-point">"Will my success coach change?" — answer specifically, with names if possible</div>
+      <div class="email-point">"Will the curriculum change?" — Taeler answers this one personally</div>
+      <div class="email-point">"What happens to my contract / payment plan?" — specific and reassuring</div>
+      <div class="email-point">"Is Jordan still involved in any capacity?" — honest answer, no vagueness</div>
+      <div class="email-point">"Can I still reach Jordan?" — set expectations clearly, warmly</div>
+      <div class="email-point">"What's the biggest change I'll actually notice?" — tell them something real, not just reassurances</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note-box">
+  <div class="note-icon">⚡</div>
+  <div class="note-text">
+    <strong>Transition into Campaign 2:</strong> On May 16th (the last week of TOT), masterclass ads go live. May 17th the TOT campaign formally ends and May 18th the masterclass organic push begins. The same trust being built in TOT is what fills the masterclass. <strong>Don't stop the content machine — redirect it.</strong>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="playbook-footer">
+  <div class="pf-brand">IFCA · Impact Fitness Coaching Academy</div>
+  <div class="pf-values">
+    <div class="pf-v">Campaign 01 of 03</div>
+    <div class="pf-v">May 1–17, 2026</div>
+  </div>
+  <div class="pf-meta">transfer-of-trust.html · v1.0</div>
+</footer>
+
+</div>
+<script>
+function toggleAsset(id){
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>
