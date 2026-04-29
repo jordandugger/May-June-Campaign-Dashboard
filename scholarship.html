@@ -343,6 +343,45 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 .lp-variant.active{display:block;}
 
 @media(max-width:640px){.grid2,.grid3,.grid4{grid-template-columns:1fr;}}
+/* ══════════════════════ EXTRA LP PANEL STYLES ══════════════════════ */
+
+/* VSL Placeholder */
+.lp-vsl-placeholder{aspect-ratio:16/9;background:rgba(232,119,34,.05);border:2px dashed rgba(232,119,34,.25);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;transition:border-color .2s;}
+.lp-vsl-placeholder:hover{border-color:rgba(232,119,34,.5);}
+.lp-vsl-b{background:rgba(196,163,90,.05);border-color:rgba(196,163,90,.25);}
+.lp-vsl-b:hover{border-color:rgba(196,163,90,.5);}
+.lp-vsl-icon{font-size:48px;margin-bottom:10px;color:var(--orange);opacity:.7;}
+.lp-vsl-label{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--orange);}
+.lp-vsl-hint{font-size:11px;color:rgba(255,255,255,.3);margin-top:6px;font-family:'DM Mono',monospace;}
+
+/* Benefit Grid */
+.lp-benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:8px;}
+.lp-benefit-card{background:rgba(232,119,34,.05);border:1px solid rgba(232,119,34,.15);border-radius:8px;padding:16px 18px;}
+.lp-benefit-title{font-size:14px;font-weight:700;color:#e8ecf4;margin-bottom:5px;}
+.lp-benefit-body{font-size:12px;color:rgba(232,236,244,.5);line-height:1.6;}
+
+/* LP B variant benefit grid */
+.lp-benefit-grid-b{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:8px;}
+.lp-benefit-card-b{background:#fff;border:1px solid rgba(196,163,90,.2);border-radius:8px;padding:16px 18px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.lp-benefit-title-b{font-size:14px;font-weight:700;color:#1a1208;margin-bottom:5px;}
+.lp-benefit-body-b{font-size:12px;color:rgba(26,18,8,.55);line-height:1.6;}
+
+/* LP B win cards */
+.lp-win-card-b{background:#fff;border-left:3px solid;border-radius:6px;padding:16px 20px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+.lp-win-name-b{font-weight:700;margin-bottom:6px;color:#8a6a20;}
+.lp-win-q-b{font-size:12px;font-style:italic;line-height:1.6;color:rgba(26,18,8,.6);}
+
+/* lp-b-page body text and check-list in section (light bg) */
+.lp-b-page .lp-section .lp-h2{color:var(--ink);}
+.lp-b-page .lp-section .lp-h2 span{color:var(--gold);}
+.lp-b-page .lp-section .lp-body-text{color:rgba(26,18,8,.65);}
+.lp-b-page .lp-section .lp-body-text strong{color:#1a1208;}
+.lp-b-page .lp-section .lp-check-list li{color:rgba(26,18,8,.72);}
+.lp-b-page .lp-section .lp-check-list li::before{background:rgba(196,163,90,.15);border:1px solid rgba(196,163,90,.4);color:#8a6a20;}
+
+/* audience tab snav */
+.mb20{margin-bottom:20px;}
+
 </style>
 </head>
 <body>
@@ -816,257 +855,386 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 </div><!-- /panel-calculator -->
 
 <!-- ══════════════════════════════════════════════════════════
-  PANEL 4: LANDING PAGES
+
+<!-- ══════════════════════════════════════════════════════════
+  PANEL 4: LANDING PAGES — ENHANCED
 ══════════════════════════════════════════════════════════ -->
 <div id="panel-landing" class="panel">
 <div class="wrap">
 
-  <div class="sec-title">Landing Page Options — 4 Big Ideas</div>
-  <div class="sec-sub">Each big idea has 5 headline variations · 2 Trust Transfer frames · 2 Duty/Honor/Mission frames · LP preview renders below headline picker</div>
+  <div class="sec-title">Landing Page Variations</div>
+  <div class="sec-sub">LP1 = IFCA Audience (Pass The Torch) · LP2 = Taeler's Audience (FCA Trust Transfer) · Click any headline to update the live LP preview below</div>
 
-  <!-- Big Idea selector -->
-  <div class="bi-tabs mb16">
-    <button class="bi-tab active-trust" id="bi-btn-1" onclick="showBI(1,this)">🔁 1 · Pass The Torch (Trust Transfer)</button>
-    <button class="bi-tab" id="bi-btn-2" onclick="showBI(2,this)">🔑 2 · New Owner's First Act (Trust Transfer)</button>
-    <button class="bi-tab" id="bi-btn-3" onclick="showBI(3,this)">🔥 3 · The Calling, Not the Career (Mission)</button>
-    <button class="bi-tab" id="bi-btn-4" onclick="showBI(4,this)">⚔️ 4 · The Standard (Honor)</button>
+  <!-- Audience Toggle -->
+  <div class="lp-sub-nav mb20">
+    <button class="lp-snav-btn active" id="snav-ifca" onclick="switchAudience('ifca',this)">🔁 LP1 — IFCA Audience · Pass The Torch</button>
+    <button class="lp-snav-btn" id="snav-taeler" onclick="switchAudience('taeler',this)">🔑 LP2 — Taeler's Audience · FCA Trust Transfer</button>
   </div>
 
-  <!-- === BIG IDEA 1 === -->
-  <div id="bi-1" class="bi-panel active">
-    <div class="card mb16" style="border-color:rgba(99,179,237,.3)">
+  <!-- ═══════════════════════════════════════
+       LP VARIANT 1: IFCA AUDIENCE
+  ═══════════════════════════════════════ -->
+  <div id="lp-var-ifca" class="lp-variant active">
+
+    <div class="card mb16" style="border-color:rgba(232,119,34,.35)">
       <div class="flex mb8" style="gap:8px;flex-wrap:wrap">
-        <span class="badge" style="background:var(--blue-dim);color:var(--blue)">TRUST TRANSFER · ACQUISITION</span>
-        <span class="badge" style="background:rgba(34,197,94,.1);color:var(--green)">100% White Space — No Competitor Has This</span>
+        <span class="badge" style="background:var(--orange-dim);color:var(--orange)">TRUST TRANSFER · IFCA WARM AUDIENCE</span>
+        <span class="badge" style="background:rgba(196,163,90,.12);color:var(--gold)">100% White Space — No Competitor Has This Frame</span>
       </div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.7">Before Jordan and Erin hand over the keys to Taeler, they're giving away the biggest Impact Fund in IFCA history. The sale becomes the gift. The acquisition hype becomes the urgency. Zero competitors are running a "founder exit → scholarship" narrative.
-      <span style="color:var(--text);margin-left:8px"><strong>Presenters:</strong> Jordan + Erin + Taeler (joint)</span>
-      <span style="margin-left:16px"><strong>CTA keyword:</strong> IMPACT FUND</span>
-      <span style="margin-left:16px"><strong>Emotional core:</strong> Legacy · Honor · Gratitude</span></div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.7">
+        Before Jordan and Erin hand over the keys to Taeler, they're running the biggest Impact Fund in IFCA history. The sale becomes the gift. The acquisition hype becomes the urgency. Zero competitors are running a "founder exit → scholarship" narrative.
+        <span style="color:var(--text);margin-left:12px"><strong>Presenters:</strong> Jordan + Erin (primary) + Taeler (supporting)</span>
+        <span style="margin-left:16px"><strong>CTA keyword:</strong> IMPACT FUND</span>
+        <span style="margin-left:16px"><strong>Emotional core:</strong> Legacy · Honor · Gratitude</span>
+      </div>
     </div>
-    <div class="grid2 mb16">
+
+    <!-- Headline Picker -->
+    <div class="grid2 mb16" style="gap:16px;align-items:start">
       <div>
-        <div class="tag">Active Headline</div>
-        <div id="hl-1-display" class="hl-display" style="background:var(--blue-dim);border:1px solid rgba(99,179,237,.2);color:var(--blue)">Before We Hand Over The Keys,<br>We're Giving Away $250,000<br>To Fitness Coaches Who Still Believe<br>This Is A Calling</div>
+        <div class="tag">Active Headline — Updates LP Preview Below</div>
+        <div id="hl-display-ifca" class="hl-display" style="background:var(--orange-dim);border:1px solid rgba(232,119,34,.25);color:var(--orange);font-size:clamp(16px,2.2vw,24px)">Before We Hand Over The Keys,<br>We're Giving Away $250,000<br>To Fitness Coaches Who Still Believe<br>This Is A Calling</div>
+        <div class="tag mt12" style="margin-top:14px">Active Subheadline</div>
+        <div id="hl-sub-display-ifca" style="font-size:11px;line-height:1.75;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:6px">Jordan &amp; Erin built IFCA for coaches who refuse to quit. Before handing the keys to Taeler, they're making one final investment — in coaches who deserve it most.</div>
       </div>
-      <div><div class="tag">Headline Variations</div><div id="hl-1-opts" class="hl-opts"></div></div>
+      <div>
+        <div class="tag">5 Headline Variations — Click To Apply</div>
+        <div id="hl-opts-ifca" class="hl-opts" style="margin-top:6px"></div>
+      </div>
     </div>
-    <!-- LP Preview A -->
-    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)">
+
+    <!-- LP1 Full Preview -->
+    <div class="tag">Live Landing Page Preview</div>
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-top:8px;max-height:none">
       <div class="lp-a-page">
+
+        <!-- HERO -->
         <div class="lp-hero">
           <div class="lp-eyebrow">IFCA × FCA · June 2026 Impact Fund</div>
           <div class="lp-badge">🎓 Applications Now Open · Limited Selection</div>
-          <h1 class="lp-h1">Before We Pass<br>The Torch, We're<br>Giving Away <span class="acc">$250,000</span></h1>
-          <p class="lp-sub">Jordan &amp; Erin's last act before handing over IFCA to Taeler De Haes. <strong>One final scholarship fund — for coaches who treat this as a calling, not a career.</strong></p>
-          <div><a href="#" class="lp-cta">APPLY FOR THE IMPACT FUND</a></div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.25);text-transform:uppercase;margin-top:10px">DM "IMPACT FUND" on Instagram · Applications close June 26</div>
+          <h1 class="lp-h1" id="lph1-ifca">Before We Hand<br>Over The Keys,<br>We're Giving Away <span class="acc">$250,000</span><br>To Coaches Who<br>Believe This Is A Calling</h1>
+          <p class="lp-sub" id="lpsub-ifca">Jordan &amp; Erin built IFCA for coaches who refuse to quit. <strong>Before handing the keys to Taeler, they're making one final investment — in coaches who deserve it most.</strong></p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a href="#" class="lp-cta">APPLY FOR THE IMPACT FUND</a>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.22);text-transform:uppercase;margin-top:12px">DM "IMPACT FUND" on Instagram · Applications close June 26</div>
         </div>
+
+        <!-- PROOF BAR -->
         <div class="lp-proof-bar">
           <div class="lp-stat"><span class="n">4,000+</span><span class="l">Coaches Trained</span></div>
           <div class="lp-stat"><span class="n">$40M+</span><span class="l">Client Revenue Generated</span></div>
           <div class="lp-stat"><span class="n">$107K</span><span class="l">Oct 2025 Campaign Revenue</span></div>
           <div class="lp-stat"><span class="n">$30K</span><span class="l">Brittany · 12 Weeks</span></div>
         </div>
+
+        <!-- VSL SECTION -->
         <div class="lp-section alt">
           <div class="lp-wrap-inner">
-            <h2 class="lp-h2">This Isn't A <span>Discount.</span><br>This Is A <span>Declaration.</span></h2>
-            <p class="lp-body-text">We didn't build IFCA to sell it. We built it so coaches like you could win. <strong>The IFCA Impact Fund is our final act before handing the keys to Taeler</strong> — and it's the most direct thing we can do to show what this business has always stood for.</p>
-            <ul class="lp-check-list">
-              <li>Award: $2,500–$3,000 from the fund · you invest $9,500 · we cover the rest</li>
-              <li>Program: IFCA 6-Month Accelerator — the full system, not a shortcut</li>
-              <li>Selection: Merit-based. Not everyone qualifies. That's the entire point.</li>
-              <li>Deadline: Applications close June 26. Extension possible to June 29.</li>
-              <li>New era: Jordan, Erin, and Taeler personally reviewing every application</li>
-            </ul>
-            <div class="center"><a href="#" class="lp-cta">SUBMIT YOUR APPLICATION</a></div>
+            <h2 class="lp-h2">Watch Before <span>You Apply</span></h2>
+            <p class="lp-body-text">Jordan and Erin want to explain this fund in their own words before you fill out the application. Hit play.</p>
+            <div class="lp-vsl-placeholder">
+              <div class="lp-vsl-icon">▶</div>
+              <div class="lp-vsl-label">VIDEO PLACEHOLDER</div>
+              <div class="lp-vsl-hint">Jordan + Erin · 2–3 min · Film before campaign launch</div>
+            </div>
+            <div style="text-align:center;margin-top:4px">
+              <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.2);text-transform:uppercase">Enable sound · Unmute · Fullscreen</div>
+            </div>
+            <div style="text-align:center;margin-top:20px"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
           </div>
         </div>
+
+        <!-- PROBLEM / MISSION SECTION -->
         <div class="lp-section">
           <div class="lp-wrap-inner">
-            <h2 class="lp-h2">Past Impact Fund <span>Winners</span></h2>
-            <div class="lp-win-card" style="background:rgba(232,119,34,.06);border-color:var(--orange)">
-              <div class="lp-win-name orange">🏆 Brittany — Full Ride Winner</div>
-              <div class="lp-win-q">"Scholarship or not, this is the path I'm on." Joined IFCA with 1 client. Generated over $30,000 in revenue in 12 weeks — 6× her 6-month goal.</div>
-            </div>
-            <div class="lp-win-card" style="background:rgba(99,179,237,.05);border-color:var(--blue)">
-              <div class="lp-win-name blue">🏆 Nadi — Full Ride Winner</div>
-              <div class="lp-win-q">Unanimous team selection. From rock bottom to contracting over $11,000 in just 7.5 weeks. The determination was unmistakable from day one.</div>
-            </div>
-            <div class="center mt16"><a href="#" class="lp-cta">APPLY FOR YOUR SCHOLARSHIP</a></div>
+            <h2 class="lp-h2">4,000+ Coaches Later — <span>We've Seen Every Reason A Great Coach Stays Broke.</span></h2>
+            <p class="lp-body-text">It's not a talent problem. It's never been a passion problem. The coaches we've seen struggle the most are often the best ones — they just never had the right system behind them. That's why the Impact Fund exists. <strong>We're selecting coaches we genuinely believe in and backing them with everything they need to build a real business.</strong></p>
+            <ul class="lp-check-list">
+              <li>How to generate 200–500 qualified leads per month without cold DMing or posting every day</li>
+              <li>Why your current offer isn't converting — and exactly how to fix it</li>
+              <li>The client acquisition system our 4,000+ coaches have used to hit $5K–$30K months consistently</li>
+            </ul>
+            <p class="lp-body-text" style="text-align:center"><strong>This isn't a discount. It's a bet we're making on you.</strong></p>
+            <div style="text-align:center"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
           </div>
         </div>
+
+        <!-- BENEFITS SECTION -->
+        <div class="lp-section alt">
+          <div class="lp-wrap-inner">
+            <h2 class="lp-h2">Everything That Changes When You Have <span>The Right System</span></h2>
+            <div class="lp-benefit-grid">
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">Predictable $5K–$30K/Month Income</div>
+                <div class="lp-benefit-body">The same result 4,000+ coaches have built using this system.</div>
+              </div>
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">200–500 Qualified Leads Per Month</div>
+                <div class="lp-benefit-body">Generated without cold DMing or posting every single day.</div>
+              </div>
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">Charge $2,000–$3,000 Per Client</div>
+                <div class="lp-benefit-body">A proven offer architecture that gets your pricing where it belongs.</div>
+              </div>
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">A Sales Process That Feels Natural</div>
+                <div class="lp-benefit-body">Close clients without feeling pushy — our frameworks make it conversational.</div>
+              </div>
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">Automated Lead Capture &amp; Follow-Up</div>
+                <div class="lp-benefit-body">Your pipeline does the work for you while you sleep.</div>
+              </div>
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">Done-With-You Implementation</div>
+                <div class="lp-benefit-body">Your 1-on-1 success coach builds it out alongside you — not for you to figure out alone.</div>
+              </div>
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">Content That Converts, Not Just Grows</div>
+                <div class="lp-benefit-body">A positioning strategy that turns your social presence into actual clients.</div>
+              </div>
+              <div class="lp-benefit-card">
+                <div class="lp-benefit-title">The Full IFCA Accelerator — Funded</div>
+                <div class="lp-benefit-body">590+ coaches quit their jobs. 650+ hit $10K/month. 170+ hit $40K/month. This is the program.</div>
+              </div>
+            </div>
+            <div style="text-align:center;margin-top:28px"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
+          </div>
+        </div>
+
+        <!-- WINNERS SECTION -->
+        <div class="lp-section">
+          <div class="lp-wrap-inner">
+            <h2 class="lp-h2">Meet Our <span>Partial Award Winners</span></h2>
+            <p class="lp-body-text" style="text-align:center">Partial award recipients receive significant funding and access to the full IFCA Accelerator at a reduced investment — negotiated directly with our team.</p>
+            <div class="lp-win-card" style="background:rgba(232,119,34,.06);border-color:var(--orange)">
+              <div class="lp-win-name orange">🏆 MADDIE — Partial Award Winner</div>
+              <div class="lp-win-q">"From $4K/month to $50K/month — at 23 years old." Started as a young coach who many would have counted out. Built a team of 6 coaches while still in her early 20s. Used IFCA systems to scale what felt impossible. Result: $50,000/month with a team and real freedom — at 23.</div>
+            </div>
+            <div class="lp-win-card" style="background:rgba(99,179,237,.05);border-color:var(--blue)">
+              <div class="lp-win-name blue">🏆 ZARA — Partial Award Winner</div>
+              <div class="lp-win-q">"$5K/month to $170K in a single year." Had the passion and the clients — but not the systems to scale without burning out. Used the IFCA infrastructure to automate and grow without sacrificing her quality of life.</div>
+            </div>
+            <div class="lp-win-card" style="background:rgba(34,197,94,.05);border-color:var(--green)">
+              <div class="lp-win-name green">🏆 KACEY — Partial Award Winner</div>
+              <div class="lp-win-q">"From in-person trainer making $2K/month to $25K/month online." Was trading time for money in-person, with no way to scale beyond her available hours. Made the leap online with IFCA's systems and support.</div>
+            </div>
+            <div class="lp-win-card" style="background:rgba(196,163,90,.05);border-color:var(--gold)">
+              <div class="lp-win-name gold">🏆 JEFF — Partial Award Winner</div>
+              <div class="lp-win-q">"From full-time teacher at $4K/month to $20K/month as an online coach." Was a teacher who coached on the side — full-time passion, part-time income. Used IFCA to build the business that finally let him go all-in.</div>
+            </div>
+            <div class="lp-win-card" style="background:rgba(139,92,246,.05);border-color:#a78bfa">
+              <div class="lp-win-name" style="color:#a78bfa">🏆 LAURA, DPT — Partial Award Winner</div>
+              <div class="lp-win-q">"From less than $1K/month online to consistent $10K+ months as a women's health specialist." Full-time DPT and Women's Health Clinical Specialist — the credentials, but not the business. Used IFCA to package her expertise into a scalable online coaching offer.</div>
+            </div>
+            <div class="lp-win-card" style="background:rgba(232,119,34,.06);border-color:rgba(232,119,34,.6)">
+              <div class="lp-win-name orange">🏆 JACEY — Partial Award Winner</div>
+              <div class="lp-win-q">"From feeling stretched thin at $15–20K months to hitting multiple $30K months — with a team, systems, and freedom." Mom, wife, and postpartum health &amp; metabolism coach. Needed systems to protect her time and scale without burnout.</div>
+            </div>
+            <div style="text-align:center;margin-top:28px"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
+          </div>
+        </div>
+
+        <!-- STOP WAITING SECTION -->
+        <div class="lp-section alt" style="text-align:center">
+          <div class="lp-wrap-inner">
+            <h2 class="lp-h2">Stop <span>Waiting</span></h2>
+            <p class="lp-body-text">The coaches who helped 96 million Americans last year didn't wait until they felt ready. <strong>They applied. They showed up. They built.</strong></p>
+            <p class="lp-body-text">You have a calling. We have the system. The Impact Fund exists to remove the barrier between where you are right now and who you're meant to become. <strong>Applications close June 26 at midnight. There is no next time if you miss this window.</strong></p>
+            <p class="lp-body-text">Click the button below. Tell us your story. <strong>We're reading every single one.</strong></p>
+            <p class="lp-body-text" style="font-style:italic;color:rgba(232,236,244,.45)">— Erin &amp; Jordan</p>
+            <a href="#" class="lp-cta">Apply for the IFCA Impact Fund Now</a>
+          </div>
+        </div>
+
         <div class="lp-footer-bar">IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund June 2026 · DM "IMPACT FUND" to Apply</div>
       </div>
     </div>
-  </div><!-- /bi-1 -->
+  </div><!-- /lp-var-ifca -->
 
-  <!-- === BIG IDEA 2 === -->
-  <div id="bi-2" class="bi-panel">
-    <div class="card mb16" style="border-color:rgba(99,179,237,.3)">
+
+  <!-- ═══════════════════════════════════════
+       LP VARIANT 2: TAELER'S / FCA AUDIENCE
+  ═══════════════════════════════════════ -->
+  <div id="lp-var-taeler" class="lp-variant">
+
+    <div class="card mb16" style="border-color:rgba(196,163,90,.35)">
       <div class="flex mb8" style="gap:8px;flex-wrap:wrap">
-        <span class="badge" style="background:var(--blue-dim);color:var(--blue)">TRUST TRANSFER · NEW ERA</span>
-        <span class="badge" style="background:rgba(139,92,246,.15);color:#a78bfa">Industry Disruption · Category of One</span>
+        <span class="badge" style="background:var(--gold-dim);color:var(--gold)">TRUST TRANSFER · FCA AUDIENCE</span>
+        <span class="badge" style="background:rgba(139,92,246,.15);color:#a78bfa">New Era · Category of One · IFCA × FCA Merge</span>
       </div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.7">Taeler just stepped into the most valuable fitness education platform in the industry. Her first move? Not a rebrand. Not a pivot. A scholarship fund. The merger of IFCA and FCA is the biggest thing to happen in fitness coaching in years.
-      <span style="color:var(--text);margin-left:8px"><strong>Presenters:</strong> Taeler-led · Jordan supporting</span>
-      <span style="margin-left:16px"><strong>Emotional core:</strong> Novelty · Curiosity · FOMO</span></div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.7">
+        Taeler just stepped into the most valuable fitness education platform in the industry. Her first move? Not a rebrand. Not a pivot. A scholarship fund. This frame speaks to FCA's existing audience who know Taeler — and want to know what IFCA can do for them.
+        <span style="color:var(--text);margin-left:12px"><strong>Presenters:</strong> Taeler-led · Jordan + Erin supporting</span>
+        <span style="margin-left:16px"><strong>CTA keyword:</strong> IMPACT FUND</span>
+        <span style="margin-left:16px"><strong>Emotional core:</strong> Novelty · Curiosity · New Era FOMO</span>
+      </div>
     </div>
-    <div class="grid2 mb16">
-      <div><div class="tag">Active Headline</div><div id="hl-2-display" class="hl-display" style="background:var(--blue-dim);border:1px solid rgba(99,179,237,.2);color:var(--blue)">She Inherited IFCA.<br>Her First Decision Was<br>To Fund A Scholarship.<br>Here's Why.</div></div>
-      <div><div class="tag">Headline Variations</div><div id="hl-2-opts" class="hl-opts"></div></div>
+
+    <!-- Headline Picker -->
+    <div class="grid2 mb16" style="gap:16px;align-items:start">
+      <div>
+        <div class="tag">Active Headline — Updates LP Preview Below</div>
+        <div id="hl-display-taeler" class="hl-display" style="background:var(--gold-dim);border:1px solid rgba(196,163,90,.25);color:var(--gold);font-size:clamp(16px,2.2vw,24px)">She Just Took Over<br>The #1 Fitness Coaching<br>Program. Her First Act?<br>$250,000 In Scholarships.</div>
+        <div class="tag mt12" style="margin-top:14px">Active Subheadline</div>
+        <div id="hl-sub-display-taeler" style="font-size:11px;line-height:1.75;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:6px">Taeler De Haes just acquired IFCA. She didn't rebrand. She didn't pivot. Her first move was to fund the coaches who are serious about this industry.</div>
+      </div>
+      <div>
+        <div class="tag">5 Headline Variations — Click To Apply</div>
+        <div id="hl-opts-taeler" class="hl-opts" style="margin-top:6px"></div>
+      </div>
     </div>
-    <!-- LP Preview C (blue/dark) -->
-    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)">
-      <div class="lp-c-page">
+
+    <!-- LP2 Full Preview -->
+    <div class="tag">Live Landing Page Preview</div>
+    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-top:8px">
+      <div class="lp-b-page">
+
+        <!-- HERO -->
         <div class="lp-hero">
-          <div class="lp-eyebrow">IFCA × FCA · A New Era Begins</div>
-          <div class="lp-badge">🔑 The New Ownership's First Act · June 2026</div>
-          <h1 class="lp-h1">She Inherited IFCA.<br>Her First Move?<br>Fund A <span class="acc">$250,000</span><br>Scholarship.</h1>
-          <p class="lp-sub">Taeler De Haes just took ownership of Impact Fitness Coaching Academy. <strong>Her first decision was to commit $250,000 to coaches who are serious about their mission.</strong></p>
-          <div><a href="#" class="lp-cta">APPLY FOR THE IMPACT FUND</a></div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.22);text-transform:uppercase;margin-top:10px">DM "IMPACT FUND" on Instagram · Applications close June 26</div>
+          <div class="lp-eyebrow">IFCA × FCA · June 2026 · A New Era</div>
+          <div class="lp-badge">🔑 The New Ownership's First Act · Applications Now Open</div>
+          <h1 class="lp-h1" id="lph1-taeler">She Just Took Over<br>The #1 Fitness Coaching<br>Program. Her First Act?<br><span class="acc">$250,000</span> In Scholarships.</h1>
+          <p class="lp-sub" id="lpsub-taeler">Taeler De Haes just acquired IFCA. She didn't rebrand. She didn't pivot. <strong>Her first move was to fund the coaches who are serious about this industry.</strong></p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a href="#" class="lp-cta">APPLY FOR THE IMPACT FUND</a>
+          </div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,.2);text-transform:uppercase;margin-top:12px">DM "IMPACT FUND" on Instagram · Applications close June 26</div>
         </div>
+
+        <!-- PROOF BAR -->
         <div class="lp-proof-bar">
-          <div class="lp-stat"><span class="n" style="color:var(--blue)">4,000+</span><span class="l">Coaches Trained</span></div>
-          <div class="lp-stat"><span class="n" style="color:var(--blue)">$40M+</span><span class="l">Client Revenue Generated</span></div>
-          <div class="lp-stat"><span class="n" style="color:var(--blue)">2</span><span class="l">Top Programs · One Mission</span></div>
-          <div class="lp-stat"><span class="n" style="color:var(--blue)">June 2026</span><span class="l">A New Chapter</span></div>
+          <div class="lp-stat"><span class="n">4,000+</span><span class="l">Coaches Trained</span></div>
+          <div class="lp-stat"><span class="n">$40M+</span><span class="l">Client Revenue Generated</span></div>
+          <div class="lp-stat"><span class="n">2</span><span class="l">Top Programs · One Mission</span></div>
+          <div class="lp-stat"><span class="n">June 2026</span><span class="l">A New Chapter</span></div>
         </div>
+
+        <!-- VSL SECTION -->
         <div class="lp-section alt">
+          <div class="lp-wrap-inner">
+            <h2 class="lp-h2">Watch Before <span>You Apply</span></h2>
+            <p class="lp-body-text">Taeler, Jordan, and Erin want to tell you about this fund in their own words before you apply. Hit play.</p>
+            <div class="lp-vsl-placeholder lp-vsl-b">
+              <div class="lp-vsl-icon" style="color:var(--gold)">▶</div>
+              <div class="lp-vsl-label" style="color:var(--gold)">VIDEO PLACEHOLDER</div>
+              <div class="lp-vsl-hint" style="color:rgba(245,240,230,.4)">Taeler + Jordan + Erin · 2–3 min · Film before campaign launch</div>
+            </div>
+            <div style="text-align:center;margin-top:20px"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
+          </div>
+        </div>
+
+        <!-- TWO BRANDS SECTION -->
+        <div class="lp-section">
           <div class="lp-wrap-inner">
             <h2 class="lp-h2">Two Brands. <span>One Fund.</span><br>One Application.</h2>
             <p class="lp-body-text">IFCA and FCA just combined to create the most complete fitness coaching education platform in the industry. <strong>And the first thing the new ownership did was fund $250,000 in scholarships</strong> — because that's what this business has always been about.</p>
             <ul class="lp-check-list">
               <li>Award: $2,500–$3,000 from the fund · you invest $9,500 · we cover the rest</li>
               <li>Program: IFCA 6-Month Accelerator — same proven system, new era of leadership</li>
-              <li>Selection: Merit-based. Not everyone qualifies. Applications reviewed personally.</li>
-              <li>New era: Taeler + Jordan + Erin reviewing applications together · historic first campaign</li>
+              <li>Selection: Merit-based. Not everyone qualifies. Applications reviewed personally by Taeler, Jordan, and Erin.</li>
+              <li>New era: Taeler + Jordan + Erin reviewing applications together — a historic first campaign</li>
+              <li>Deadline: Applications close June 26. Extension possible to June 29.</li>
             </ul>
-            <div class="center"><a href="#" class="lp-cta">SUBMIT YOUR APPLICATION</a></div>
+            <p class="lp-body-text"><strong>This isn't a discount. It's a declaration about what this industry deserves.</strong></p>
+            <div style="text-align:center"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
           </div>
         </div>
-        <div class="lp-footer-bar">IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund June 2026</div>
-      </div>
-    </div>
-  </div><!-- /bi-2 -->
 
-  <!-- === BIG IDEA 3 === -->
-  <div id="bi-3" class="bi-panel">
-    <div class="card mb16" style="border-color:rgba(34,197,94,.3)">
-      <div class="flex mb8" style="gap:8px;flex-wrap:wrap">
-        <span class="badge" style="background:var(--green-dim);color:var(--green)">MISSION-FIRST · PROVEN FRAME</span>
-        <span class="badge" style="background:var(--green-dim);color:var(--green)">✅ MAHA Jan 2025 + Oct 2025 — Both Used This · Consistent ~19% Close Rate</span>
-      </div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.7">This isn't for coaches who got into fitness because it sounded cool. It's for coaches who see it as a calling. 74% of Americans are overweight. You decided to do something about it. This fund is built to honor that decision.
-      <span style="color:var(--text);margin-left:8px"><strong>Proven CPL:</strong> $26.24–$28.69 across both mission-frame campaigns</span>
-      <span style="margin-left:16px"><strong>Emotional core:</strong> Duty · Purpose · Validation</span></div>
-    </div>
-    <div class="grid2 mb16">
-      <div><div class="tag">Active Headline</div><div id="hl-3-display" class="hl-display" style="background:var(--green-dim);border:1px solid rgba(34,197,94,.2);color:var(--green)">$250,000 For Coaches<br>Who Treat Helping People<br>Get Healthy As A Calling,<br>Not A Career</div></div>
-      <div><div class="tag">Headline Variations</div><div id="hl-3-opts" class="hl-opts"></div></div>
-    </div>
-    <!-- LP Preview A with green accent -->
-    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)">
-      <div class="lp-a-page">
-        <div class="lp-hero" style="background:linear-gradient(160deg,#080d10 0%,#0a1a14 50%,#060d0a 100%)">
-          <div class="lp-eyebrow" style="color:var(--green)">IFCA Impact Fund · June 2026</div>
-          <div class="lp-badge" style="background:rgba(34,197,94,.1);border-color:rgba(34,197,94,.3);color:var(--green)">🎯 For Coaches Who Take This Seriously</div>
-          <h1 class="lp-h1">$250,000 For <span style="color:var(--green)">Coaches</span><br>Who See This<br>As A <span style="color:var(--green)">Calling,</span><br>Not A Career</h1>
-          <p class="lp-sub">74% of Americans are overweight. You decided to do something about it. <strong>We built this fund to honor that decision — and to put serious resources behind coaches who refuse to quit.</strong></p>
-          <div><a href="#" class="lp-cta" style="background:var(--green)">APPLY FOR THE IMPACT FUND</a></div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.22);text-transform:uppercase;margin-top:10px">DM "IMPACT FUND" on Instagram · Applications close June 26</div>
-        </div>
-        <div class="lp-proof-bar">
-          <div class="lp-stat"><span class="n" style="color:var(--green)">4,000+</span><span class="l">Coaches Trained</span></div>
-          <div class="lp-stat"><span class="n" style="color:var(--green)">74%</span><span class="l">Americans Overweight</span></div>
-          <div class="lp-stat"><span class="n" style="color:var(--green)">$107K</span><span class="l">Oct 2025 Campaign Revenue</span></div>
-          <div class="lp-stat"><span class="n" style="color:var(--green)">~20%</span><span class="l">Consistent Close Rate</span></div>
-        </div>
+        <!-- BENEFITS SECTION -->
         <div class="lp-section alt">
           <div class="lp-wrap-inner">
-            <h2 class="lp-h2">You Got Into <span style="color:var(--green)">Coaching</span><br>For A Reason.</h2>
-            <p class="lp-body-text">You didn't get into this industry because it was easy. You got into it because someone needed help and you showed up. <strong>The IFCA Impact Fund was built for coaches who haven't forgotten that.</strong></p>
-            <ul class="lp-check-list">
-              <li>Award: $2,500–$3,000 from the fund · you invest $9,500 · we cover the rest</li>
-              <li>Program: IFCA 6-Month Accelerator — proven systems for serious coaches</li>
-              <li>Selection: Merit-based. The application tells us everything. Not everyone qualifies.</li>
-              <li>Winner announced: June 26 · Optional extension to June 29</li>
-            </ul>
-            <div class="center"><a href="#" class="lp-cta" style="background:var(--green)">APPLY FOR YOUR SCHOLARSHIP</a></div>
+            <h2 class="lp-h2">Everything That Changes When You Have <span>The Right System</span></h2>
+            <div class="lp-benefit-grid lp-benefit-grid-b">
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">Predictable $5K–$30K/Month Income</div>
+                <div class="lp-benefit-body-b">The same result 4,000+ coaches have built using this system.</div>
+              </div>
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">200–500 Qualified Leads Per Month</div>
+                <div class="lp-benefit-body-b">Generated without cold DMing or posting every single day.</div>
+              </div>
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">Charge $2,000–$3,000 Per Client</div>
+                <div class="lp-benefit-body-b">A proven offer architecture that gets your pricing where it belongs.</div>
+              </div>
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">A Sales Process That Feels Natural</div>
+                <div class="lp-benefit-body-b">Close clients without feeling pushy — frameworks that make it conversational.</div>
+              </div>
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">Automated Lead Capture &amp; Follow-Up</div>
+                <div class="lp-benefit-body-b">Your pipeline does the work for you while you sleep.</div>
+              </div>
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">Done-With-You Implementation</div>
+                <div class="lp-benefit-body-b">Your 1-on-1 success coach builds it out alongside you.</div>
+              </div>
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">Content That Converts, Not Just Grows</div>
+                <div class="lp-benefit-body-b">A positioning strategy that turns your social presence into actual clients.</div>
+              </div>
+              <div class="lp-benefit-card-b">
+                <div class="lp-benefit-title-b">The Full IFCA Accelerator — Funded</div>
+                <div class="lp-benefit-body-b">590+ coaches quit their jobs. 650+ hit $10K/month. 170+ hit $40K/month.</div>
+              </div>
+            </div>
+            <div style="text-align:center;margin-top:28px"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
           </div>
         </div>
-        <div class="lp-footer-bar">IFCA Impact Fund · Impact Fitness Coaching Academy · June 2026</div>
-      </div>
-    </div>
-  </div><!-- /bi-3 -->
 
-  <!-- === BIG IDEA 4 === -->
-  <div id="bi-4" class="bi-panel">
-    <div class="card mb16" style="border-color:rgba(232,119,34,.3)">
-      <div class="flex mb8" style="gap:8px;flex-wrap:wrap">
-        <span class="badge" style="background:var(--orange-dim);color:var(--orange)">HONOR · PROFESSIONALISM · ELITE IDENTITY</span>
-        <span class="badge" style="background:var(--orange-dim);color:var(--orange)">Best for retargeting + setter scripts · Highest intent filter</span>
-      </div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.7">600,000+ fitness coaches on Instagram. The gap between exceptional and average is widening every year. This fund is for the coaches who refuse to be average. Not every coach deserves this. That's the point.
-      <span style="color:var(--text);margin-left:8px"><strong>Emotional core:</strong> Pride · Exclusivity · Identity elevation</span>
-      <span style="margin-left:16px"><strong>Best paired with:</strong> Big Ideas #1 or #3 as primary messaging</span></div>
-    </div>
-    <div class="grid2 mb16">
-      <div><div class="tag">Active Headline</div><div id="hl-4-display" class="hl-display" style="background:var(--orange-dim);border:1px solid rgba(232,119,34,.25);color:var(--orange)">600,000 Fitness Coaches Online.<br>We're Funding The 20<br>Who Want To Do It Right.</div></div>
-      <div><div class="tag">Headline Variations</div><div id="hl-4-opts" class="hl-opts"></div></div>
-    </div>
-    <!-- LP Preview B (cream/gold) -->
-    <div style="border-radius:12px;overflow:hidden;border:1px solid var(--border)">
-      <div class="lp-b-page">
-        <div class="lp-hero">
-          <div class="lp-eyebrow">IFCA Impact Fund · June 2026</div>
-          <div class="lp-badge">⚔️ For Coaches Who Take This Seriously</div>
-          <h1 class="lp-h1" style="color:var(--cream)">600,000 Coaches.<br>We're Funding<br>The <span class="acc">20</span> Who<br>Do It Right.</h1>
-          <p class="lp-sub">The fitness coaching industry has a standards problem. This fund is our investment in the coaches who want to raise theirs. <strong>Not every coach qualifies. That's exactly the point.</strong></p>
-          <div><a href="#" class="lp-cta">APPLY FOR THE IMPACT FUND</a></div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,.22);text-transform:uppercase;margin-top:10px">DM "IMPACT FUND" · Applications close June 26</div>
-        </div>
-        <div class="lp-proof-bar">
-          <div class="lp-stat"><span class="n">4,000+</span><span class="l">Coaches Trained</span></div>
-          <div class="lp-stat"><span class="n">$40M+</span><span class="l">Client Revenue</span></div>
-          <div class="lp-stat"><span class="n">600K+</span><span class="l">Coaches Online</span></div>
-          <div class="lp-stat"><span class="n">20</span><span class="l">Scholarship Spots</span></div>
-        </div>
+        <!-- WINNERS SECTION -->
         <div class="lp-section">
           <div class="lp-wrap-inner">
-            <h2 class="lp-h2" style="color:var(--ink)">There Are Two Types Of Coaches<br>In This Industry. This Is For <span>One Of Them.</span></h2>
-            <p class="lp-body-text">We've trained over 4,000 coaches. The ones who made it had one thing in common: they never treated this as a hobby. They showed up like professionals. <strong>The Impact Fund is our investment in coaches who operate at that level.</strong></p>
-            <ul class="lp-check-list">
-              <li style="color:rgba(26,18,8,.72)">Award: $2,500–$3,000 from the fund · you invest $9,500 · we cover the rest</li>
-              <li style="color:rgba(26,18,8,.72)">Program: IFCA 6-Month Accelerator — for coaches who are ready to operate at the top</li>
-              <li style="color:rgba(26,18,8,.72)">Selection: We read every application. Most won't qualify. We're looking for the 20 who will.</li>
-            </ul>
-            <div class="center"><a href="#" class="lp-cta">APPLY — IF YOU QUALIFY</a></div>
+            <h2 class="lp-h2">Meet Our <span>Partial Award Winners</span></h2>
+            <p class="lp-body-text" style="text-align:center">Partial award recipients receive significant funding and access to the full IFCA Accelerator at a reduced investment — negotiated directly with our team.</p>
+            <div class="lp-win-card lp-win-card-b" style="border-color:#8a6a20">
+              <div class="lp-win-name-b">🏆 MADDIE — Partial Award Winner</div>
+              <div class="lp-win-q-b">"From $4K/month to $50K/month — at 23 years old." Built a team of 6 coaches while still in her early 20s. Used IFCA systems to scale what felt impossible. Result: $50,000/month with a team and real freedom.</div>
+            </div>
+            <div class="lp-win-card lp-win-card-b" style="border-color:#8a6a20">
+              <div class="lp-win-name-b">🏆 ZARA — Partial Award Winner</div>
+              <div class="lp-win-q-b">"$5K/month to $170K in a single year." Had the passion and the clients — but not the systems to scale without burning out. Used the IFCA infrastructure to automate and grow without sacrificing quality of life.</div>
+            </div>
+            <div class="lp-win-card lp-win-card-b" style="border-color:#8a6a20">
+              <div class="lp-win-name-b">🏆 KACEY — Partial Award Winner</div>
+              <div class="lp-win-q-b">"From in-person trainer making $2K/month to $25K/month online." Was trading time for money in-person, with no way to scale. Made the leap online with IFCA's systems and support.</div>
+            </div>
+            <div class="lp-win-card lp-win-card-b" style="border-color:#8a6a20">
+              <div class="lp-win-name-b">🏆 JEFF — Partial Award Winner</div>
+              <div class="lp-win-q-b">"From full-time teacher at $4K/month to $20K/month as an online coach." Was a teacher who coached on the side — full-time passion, part-time income. IFCA let him go all-in.</div>
+            </div>
+            <div class="lp-win-card lp-win-card-b" style="border-color:#8a6a20">
+              <div class="lp-win-name-b">🏆 LAURA, DPT — Partial Award Winner</div>
+              <div class="lp-win-q-b">"From less than $1K/month online to consistent $10K+ months as a women's health specialist." Full-time DPT with the credentials, but not the business. IFCA turned expertise into a scalable offer.</div>
+            </div>
+            <div class="lp-win-card lp-win-card-b" style="border-color:#8a6a20">
+              <div class="lp-win-name-b">🏆 JACEY — Partial Award Winner</div>
+              <div class="lp-win-q-b">"From $15–20K months stretched thin to multiple $30K months — with a team, systems, and freedom." Postpartum health coach who needed systems to protect her time and scale without burnout.</div>
+            </div>
+            <div style="text-align:center;margin-top:28px"><a href="#" class="lp-cta">Apply for your Impact Fund Award</a></div>
           </div>
         </div>
-        <div class="lp-footer-bar" style="background:var(--ink)">IFCA Impact Fund · June 2026 · Honor The Calling · Raise The Standard</div>
-      </div>
-    </div>
-  </div><!-- /bi-4 -->
 
-  <!-- Combination strategy note -->
-  <div class="card mt16">
-    <div class="tag">Recommended June 2026 Combination Strategy</div>
-    <div class="grid2 mt8">
-      <div style="font-size:11px;line-height:1.8;color:var(--muted)">
-        <strong style="color:var(--text)">Lead paid ads with Big Idea #1 or #2</strong> (Trust Transfer) — completely unoccupied territory. No competitor is running a "founder exit → scholarship" narrative. This is 100% white space.
-        <br><br><strong style="color:var(--text)">Layer Big Idea #3</strong> (Calling/Mission) as organic content for warm audiences. This has proven CPL track record across two campaigns.
-      </div>
-      <div style="font-size:11px;line-height:1.8;color:var(--muted)">
-        <strong style="color:var(--text)">Use Big Idea #4</strong> (The Standard) exclusively in retargeting and setter outreach scripts to re-qualify fence-sitters and non-winner pipeline.
-        <br><br><strong style="color:var(--text)">Presenter breakdown:</strong> Jordan + Erin for #1/#3, Taeler leads #2, all three for #4. Each presenter should appear in at least one ad entity for the trust transfer transition.
+        <!-- STOP WAITING SECTION -->
+        <div class="lp-section alt" style="text-align:center">
+          <div class="lp-wrap-inner">
+            <h2 class="lp-h2">Stop <span>Waiting</span></h2>
+            <p class="lp-body-text">The coaches who helped 96 million Americans last year didn't wait until they felt ready. <strong>They applied. They showed up. They built.</strong></p>
+            <p class="lp-body-text">You've followed the work Taeler's been doing. Now the door to IFCA is open — and the new owner is making it as easy as possible to walk through it. <strong>Applications close June 26 at midnight.</strong></p>
+            <p class="lp-body-text" style="font-style:italic;color:rgba(26,18,8,.45)">— Taeler, Jordan &amp; Erin</p>
+            <a href="#" class="lp-cta">Apply for the IFCA Impact Fund Now</a>
+          </div>
+        </div>
+
+        <div class="lp-footer-bar" style="background:var(--ink)">IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund June 2026 · DM "IMPACT FUND" to Apply</div>
       </div>
     </div>
-  </div>
+  </div><!-- /lp-var-taeler -->
 
 </div>
 </div><!-- /panel-landing -->
+
 
 <!-- ══════════════════════════════════════════════════════════
   PANEL 5: CAMPAIGN SCHEDULE
@@ -1566,10 +1734,150 @@ function showBI(n, btn) {
   btn.classList.add(classes[n]);
 }
 
+// ── LANDING PAGE AUDIENCE TOGGLE ─────────────────────────────
+function switchAudience(which, btn) {
+  document.querySelectorAll('.lp-variant').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.lp-snav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lp-var-' + which).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ── LP HEADLINE DATA ──────────────────────────────────────────
+const LP_HL = {
+  ifca: [
+    {
+      lbl: '1 · Legacy Declaration',
+      hint: 'Lead with founder exit emotion — highest resonance for IFCA warm audience',
+      h1: 'Before We Hand<br>Over The Keys,<br>We\'re Giving Away <span class="acc">$250,000</span><br>To Coaches Who<br>Believe This Is A Calling',
+      sub: 'Jordan &amp; Erin built IFCA for coaches who refuse to quit. <strong>Before handing the keys to Taeler, they\'re making one final investment — in coaches who deserve it most.</strong>',
+      disp: 'Before We Hand Over The Keys,\nWe\'re Giving Away $250,000\nTo Coaches Who Believe This Is A Calling',
+      subdisplay: 'Jordan & Erin built IFCA for coaches who refuse to quit. Before handing the keys to Taeler, they\'re making one final investment — in coaches who deserve it most.'
+    },
+    {
+      lbl: '2 · Last Act',
+      hint: 'Scarcity through timeline — most emotionally direct, strong for cold traffic',
+      h1: 'We Just Sold IFCA.<br>Before We Leave,<br>We\'re Writing <span class="acc">$250,000</span><br>In Scholarship Checks.',
+      sub: '10 years. 4,000 coaches. $40M in client revenue. <strong>This is how Jordan &amp; Erin are saying goodbye — and how you could be part of what comes next.</strong>',
+      disp: 'We Just Sold IFCA.\nBefore We Leave,\nWe\'re Writing $250,000 In Scholarship Checks.',
+      subdisplay: '10 years. 4,000 coaches. $40M in client revenue. This is how Jordan & Erin are saying goodbye — and how you could be part of what comes next.'
+    },
+    {
+      lbl: '3 · Final + First',
+      hint: 'History frame — creates status for applicants, uniquely ties Jordan/Erin/Taeler together',
+      h1: 'The Final Impact Fund<br>From Jordan + Erin.<br>The First From <span class="acc">Taeler.</span><br>One Mission.',
+      sub: 'Before the handover is complete, all three founders are giving away $250,000 to coaches who prove they\'re serious. <strong>This campaign only happens once.</strong>',
+      disp: 'The Final Impact Fund From Jordan + Erin.\nThe First From Taeler.\nOne Mission.',
+      subdisplay: 'Before the handover is complete, all three founders are giving away $250,000 to coaches who prove they\'re serious. This campaign only happens once.'
+    },
+    {
+      lbl: '4 · Passing The Torch',
+      hint: 'Generous positioning — honor, not charity. Great paired with organic content',
+      h1: 'We\'re Writing <span class="acc">$250,000</span><br>Worth Of Scholarship<br>Checks Before We<br>Pass The Torch.',
+      sub: 'This isn\'t a discount. It\'s a bet. <strong>Jordan and Erin are backing the coaches who\'ve been waiting for the right moment — and this is it.</strong>',
+      disp: 'We\'re Writing $250,000 Worth Of Scholarship Checks Before We Pass The Torch.',
+      subdisplay: 'This isn\'t a discount. It\'s a bet. Jordan and Erin are backing the coaches who\'ve been waiting for the right moment — and this is it.'
+    },
+    {
+      lbl: '5 · Why We Built This',
+      hint: 'Most vulnerable — highest trust with warm audience, best for retargeting + email',
+      h1: 'We Didn\'t Build IFCA<br>To Sell It.<br>We Built It So <span class="acc">Coaches<br>Like You</span> Could Win.',
+      sub: 'This is our last act before handing over the keys to Taeler. The Impact Fund is live. 20 coaches will be selected. <strong>Applications close June 26.</strong>',
+      disp: 'We Didn\'t Build IFCA To Sell It.\nWe Built It So Coaches Like You Could Win.',
+      subdisplay: 'This is our last act before handing over the keys to Taeler. The Impact Fund is live. 20 coaches will be selected. Applications close June 26.'
+    }
+  ],
+  taeler: [
+    {
+      lbl: '1 · New Owner\'s First Act',
+      hint: 'Taeler-led. Disruption energy. Maximum novelty — ideal for FCA cold/warm traffic',
+      h1: 'She Just Took Over<br>The #1 Fitness Coaching<br>Program. Her First Act?<br><span class="acc">$250,000</span> In Scholarships.',
+      sub: 'Taeler De Haes just acquired IFCA. She didn\'t rebrand. She didn\'t pivot. <strong>Her first move was to fund the coaches who are serious about this industry.</strong>',
+      disp: 'She Just Took Over The #1 Fitness Coaching Program.\nHer First Act? $250,000 In Scholarships.',
+      subdisplay: 'Taeler De Haes just acquired IFCA. She didn\'t rebrand. She didn\'t pivot. Her first move was to fund the coaches who are serious about this industry.'
+    },
+    {
+      lbl: '2 · Two Programs, One Fund',
+      hint: 'Merger announcement angle. Double credibility. Best for ads introducing FCA audience to IFCA',
+      h1: 'Two Of The Top<br>Fitness Coaching Programs<br>Just Merged — And The<br>First Thing We Did Was <span class="acc">This.</span>',
+      sub: 'FCA and IFCA are one. The mission doubled. <strong>And the first scholarship fund of the new era is open now. 20 coaches will be selected.</strong>',
+      disp: 'Two Of The Top Fitness Coaching Programs Just Merged.\nAnd The First Thing We Did Was This.',
+      subdisplay: 'FCA and IFCA are one. The mission doubled. And the first scholarship fund of the new era is open now. 20 coaches will be selected.'
+    },
+    {
+      lbl: '3 · FCA Door Now Open',
+      hint: 'Speaks directly to FCA audience\'s existing relationship with Taeler — most personal',
+      h1: 'You\'ve Followed FCA.<br>Now The Doors To IFCA<br>Just Opened — And<br><span class="acc">The New Owner Is Paying For It.</span>',
+      sub: 'Taeler brought two top programs together. If you\'ve been following her work and wondering what IFCA could do for you — <strong>this is your answer.</strong>',
+      disp: 'You\'ve Followed FCA. Now The Doors To IFCA Just Opened.\nAnd The New Owner Is Paying For It.',
+      subdisplay: 'Taeler brought two top programs together. If you\'ve been following her work and wondering what IFCA could do for you — this is your answer.'
+    },
+    {
+      lbl: '4 · Taeler\'s First Decision',
+      hint: 'Positions Taeler as mission-aligned from day one. Strong for direct-response ads',
+      h1: 'Taeler\'s First Decision<br>As IFCA\'s New Owner:<br>Invest <span class="acc">$250,000</span><br>In Coaches Who Are Serious.',
+      sub: 'She didn\'t wait 90 days to make her first move. <strong>Applications are open now. 20 coaches will be selected. Deadline is June 26.</strong>',
+      disp: 'Taeler\'s First Decision As IFCA\'s New Owner:\nInvest $250,000 In Coaches Who Are Serious.',
+      subdisplay: 'She didn\'t wait 90 days to make her first move. Applications are open now. 20 coaches will be selected. Deadline is June 26.'
+    },
+    {
+      lbl: '5 · Coach Who Built FCA',
+      hint: 'Boldest identity statement — best for cold FCA audience who know Taeler\'s coaching background',
+      h1: 'The Coach Who Built FCA<br>Just Took Over IFCA.<br>And The First Thing<br>She Did Was <span class="acc">This.</span>',
+      sub: 'Taeler De Haes merged two of the most respected programs in fitness coaching. Her first campaign: fund the coaches ready to go all in. <strong>Apply before June 26.</strong>',
+      disp: 'The Coach Who Built FCA Just Took Over IFCA.\nAnd The First Thing She Did Was This.',
+      subdisplay: 'Taeler De Haes merged two of the most respected programs in fitness coaching. Her first campaign: fund the coaches ready to go all in. Apply before June 26.'
+    }
+  ]
+};
+
+function buildLPHeadlines(which) {
+  const data = LP_HL[which];
+  const opts = document.getElementById('hl-opts-' + which);
+  if (!opts) return;
+  opts.innerHTML = data.map((d, i) => `
+    <div class="hl-opt${i === 0 ? ' sel' : ''}" onclick="selectLPHL('${which}',${i},this)">
+      <span class="hl-num">${i + 1}</span>
+      <div>
+        <div class="hl-main">${d.lbl}</div>
+        <div class="hl-hint">${d.hint}</div>
+      </div>
+    </div>`).join('');
+  applyLPHL(which, 0);
+}
+
+function selectLPHL(which, i, el) {
+  const opts = document.getElementById('hl-opts-' + which);
+  opts.querySelectorAll('.hl-opt').forEach(o => o.classList.remove('sel'));
+  el.classList.add('sel');
+  applyLPHL(which, i);
+}
+
+function applyLPHL(which, i) {
+  const d = LP_HL[which][i];
+
+  // Update display box (plain text)
+  const disp = document.getElementById('hl-display-' + which);
+  if (disp) disp.innerHTML = d.disp.replace(/\n/g, '<br>');
+
+  // Update sub display box
+  const subdisp = document.getElementById('hl-sub-display-' + which);
+  if (subdisp) subdisp.innerHTML = d.subdisplay;
+
+  // ★ Update the actual LP preview headline
+  const h1El = document.getElementById('lph1-' + which);
+  if (h1El) h1El.innerHTML = d.h1;
+
+  // ★ Update the actual LP preview subheadline
+  const subEl = document.getElementById('lpsub-' + which);
+  if (subEl) subEl.innerHTML = d.sub;
+}
+
+
 // ── INIT ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function () {
   calc();
   [1, 2, 3, 4].forEach(n => buildHL(n));
+  ['ifca', 'taeler'].forEach(w => buildLPHeadlines(w));
 });
 </script>
 </body>
