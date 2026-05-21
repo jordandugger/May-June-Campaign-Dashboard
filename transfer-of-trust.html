@@ -227,6 +227,7 @@
 <div class="tab-nav">
   <button class="tab-btn active" onclick="showTab('schedule',this)">📅 Schedule</button>
   <button class="tab-btn" onclick="showTab('alumni',this)">🔄 Alumni Re-Engagement</button>
+  <button class="tab-btn" onclick="showTab('copy-kit',this)">📢 Announcement Copy</button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════ -->
@@ -506,7 +507,167 @@ No pressure. But the door is open, and it won't stay open at this rate.
   </div>
 </div>
 
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- TAB: ANNOUNCEMENT COPY KIT -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="panel-copy-kit" class="panel">
+  <div class="panel-title">IFCA 2.0 — Public Announcement Copy Kit</div>
+  <div class="panel-sub">For the May 24 public announcement. Covers headlines, the merger narrative, what students gain, and one-liners for organic content. No guarantee language — VSL language TBD separately.</div>
+
+  <div class="notice" style="background:#f5ecd4; border-left-color:#b8962e;">
+    <strong style="color:#b8962e;">Core Narrative (locked):</strong> External framing = upgrade, not a sale or departure. "We didn't just merge — we combined the two best programs in the space. Nobody can compete now." Jordan owns all framing. Taeler's lens = "I wanted to beat them. Instead I bought them."
+  </div>
+
+  <!-- HEADLINE OPTIONS -->
+  <h2>Announcement Headlines</h2>
+  <p style="color:var(--muted); font-size:14px; margin-bottom:16px;">Pick one as the anchor for the May 24 post. All are approved for use across Jordan, Erin, and Taeler's channels.</p>
+  <div class="variants-grid">
+    <div class="variant-card selected" id="ck-h1">
+      <div class="variant-check"></div>
+      <div class="v-label">Recommended — Vision Statement</div>
+      <div class="v-headline">We didn't just merge. We combined the two best programs in the space.</div>
+      <div class="v-sub">Nobody can compete now.</div>
+    </div>
+    <div class="variant-card" id="ck-h2">
+      <div class="variant-check"></div>
+      <div class="v-label">Jordan / Erin POV</div>
+      <div class="v-headline">We're not stepping back. We're leveling up.</div>
+      <div class="v-sub">IFCA just gained a partner, a powerhouse, and a new level of resources — none of which existed here before.</div>
+    </div>
+    <div class="variant-card" id="ck-h3">
+      <div class="variant-check"></div>
+      <div class="v-label">Taeler POV</div>
+      <div class="v-headline">I wanted to beat them. Instead I bought them.</div>
+      <div class="v-sub">I've been building alongside IFCA for five years. Today I'm officially taking the helm — and everything I built comes with me.</div>
+    </div>
+    <div class="variant-card" id="ck-h4">
+      <div class="variant-check"></div>
+      <div class="v-label">Outcome-First</div>
+      <div class="v-headline">Eight years of IFCA. Five years of FCA. One program. Your ceiling just got higher.</div>
+      <div class="v-sub">4,600+ coaches. $330M+ in combined student revenue. The best organic DM system in the space plus the most battle-tested paid traffic funnel in fitness coaching.</div>
+    </div>
+  </div>
+
+  <!-- ONE PARAGRAPH ANNOUNCEMENT -->
+  <h2>The One-Paragraph Announcement</h2>
+  <p style="color:var(--muted); font-size:14px; margin-bottom:12px;">Use as caption body, email opening, or press-release style description. Copy and edit as needed.</p>
+  <div class="edit-block">
+    <div class="edit-label">Body Copy <span class="edit-badge">Editable</span></div>
+    <div contenteditable="true" id="ck-body">After 8 years building IFCA into one of the most respected coaching education programs in the industry, we've made the most important decision in our company's history — and it's not a step back. Taeler De Haes, founder of Fitness Coach Academy and one of the most proven coaches in this space, has acquired IFCA and is stepping in as CEO. Two programs. Combined. IFCA 2.0.</div>
+    <button class="copy-btn" onclick="copyField('ck-body', this)">Copy</button>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- WHAT EACH SIDE BROUGHT -->
+  <h2>What Each Program Brought — The Combined Value</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
+
+    <div class="card" style="border-top:3px solid var(--accent);">
+      <div class="card-title"><span class="tag orange">IFCA</span> 8 Years. The Foundation.</div>
+      <ul style="padding-left:18px; line-height:2.1; font-size:14px; color:var(--ink);">
+        <li>4,600+ coaches enrolled</li>
+        <li>$330M+ in combined student revenue</li>
+        <li>Battle-tested Client Engine curriculum</li>
+        <li>$100K/month Meta ad infrastructure</li>
+        <li>Full success coach team + operations</li>
+        <li>The most comprehensive offer-building framework in fitness coaching</li>
+      </ul>
+    </div>
+
+    <div class="card" style="border-top:3px solid var(--gold);">
+      <div class="card-title"><span class="tag gold">FCA + TAELER</span> Fresh Fuel. New Weapons.</div>
+      <ul style="padding-left:18px; line-height:2.1; font-size:14px; color:var(--ink);">
+        <li>$825 in her bank account → $250K year one, zero ads</li>
+        <li>650+ FCA coaches, $30M+ in client revenue</li>
+        <li>The best organic DM system in the industry</li>
+        <li>Re-Spark follow-up strategy — cold leads → closed clients</li>
+        <li>22-month avg client retention (industry avg: 3–6 months)</li>
+        <li>A CEO who is all-the-way-in with energy we no longer had</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- WHAT STUDENTS GET NOW -->
+  <h2>What Students Get Now — IFCA 2.0 Upgrades</h2>
+  <p style="color:var(--muted); font-size:14px; margin-bottom:16px;">Use these in announcement posts, email bodies, and organic content. Frame as upgrades, not changes.</p>
+
+  <div class="card">
+    <div class="card-title">🚀 Organic mastery + paid traffic at scale</div>
+    <p style="font-size:14px; margin:0;">You can grow from zero with no ad budget using Taeler's DM and organic playbook — or pour fuel on the fire with IFCA's paid traffic engine. Most programs only teach one. IFCA 2.0 teaches both.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🎯 The best sales conversion system + 8 years of curriculum</div>
+    <p style="font-size:14px; margin:0;">Taeler built FCA on the strongest DM-to-booked-call system in the space. That's now inside IFCA alongside the frameworks that produced $330M in student results.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">⚡ Fresh leadership with the full infrastructure behind it</div>
+    <p style="font-size:14px; margin:0;">Jordan and Erin built the machine. Taeler has the fuel to run it at a level we couldn't sustain. You don't lose anything. You gain a CEO who's all-in.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🤝 The largest results-proven community in fitness coaching</div>
+    <p style="font-size:14px; margin:0;">4,600+ IFCA coaches + 650+ FCA coaches — under one roof. Nobody in this space has a combined track record close to this.</p>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- WHAT'S NOT CHANGING -->
+  <h2>What's Not Changing</h2>
+  <div class="card" style="border-left:3px solid var(--success);">
+    <ul style="padding-left:18px; line-height:2.2; font-size:14px; color:var(--ink);">
+      <li><strong>Your success coach.</strong> Same person.</li>
+      <li><strong>The curriculum and frameworks that got you results.</strong> Staying.</li>
+      <li><strong>The mission</strong> — help coaches build real, sustainable businesses. Non-negotiable.</li>
+      <li><strong>Quality standards.</strong> Taeler's words: "Your results matter more than anything."</li>
+    </ul>
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- ONE-LINERS -->
+  <h2>One-Liners for Content + Captions</h2>
+  <p style="color:var(--muted); font-size:14px; margin-bottom:16px;">Hooks, caption closers, Story text overlays, comment replies. All approved for Jordan, Erin, and Taeler's channels.</p>
+
+  <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:8px;">
+    <div class="card" style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div id="ol1" style="font-size:14px; font-weight:500;">"We didn't sell IFCA. We handed it to the one person who could take it further than we ever could."</div>
+      <button class="copy-btn" onclick="copyField('ol1',this)" style="flex-shrink:0;">Copy</button>
+    </div>
+    <div class="card" style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div id="ol2" style="font-size:14px; font-weight:500;">"I wanted to beat them. Instead I bought them." — Taeler</div>
+      <button class="copy-btn" onclick="copyField('ol2',this)" style="flex-shrink:0;">Copy</button>
+    </div>
+    <div class="card" style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div id="ol3" style="font-size:14px; font-weight:500;">"You're getting more, not less."</div>
+      <button class="copy-btn" onclick="copyField('ol3',this)" style="flex-shrink:0;">Copy</button>
+    </div>
+    <div class="card" style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div id="ol4" style="font-size:14px; font-weight:500;">"The two best programs in this space just became one."</div>
+      <button class="copy-btn" onclick="copyField('ol4',this)" style="flex-shrink:0;">Copy</button>
+    </div>
+    <div class="card" style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div id="ol5" style="font-size:14px; font-weight:500;">"IFCA didn't get smaller. It got upgraded."</div>
+      <button class="copy-btn" onclick="copyField('ol5',this)" style="flex-shrink:0;">Copy</button>
+    </div>
+    <div class="card" style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div id="ol6" style="font-size:14px; font-weight:500;">"Eight years of systems. Five years of organic mastery. One program. Nobody can compete with what this is now."</div>
+      <button class="copy-btn" onclick="copyField('ol6',this)" style="flex-shrink:0;">Copy</button>
+    </div>
+    <div class="card" style="padding:14px 18px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
+      <div id="ol7" style="font-size:14px; font-weight:500;">"We're not stepping back. We're leveling up."</div>
+      <button class="copy-btn" onclick="copyField('ol7',this)" style="flex-shrink:0;">Copy</button>
+    </div>
+  </div>
+
+</div>
+
 <div class="toast" id="toast">Copied to clipboard</div>
+
 
 <script>
 function showTab(id, btn) {
