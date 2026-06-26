@@ -676,11 +676,11 @@ textarea.attr-input{min-height:64px;resize:vertical;}
         </tr>
         <tr style="background:rgba(99,179,237,.04);border-top:2px solid rgba(99,179,237,.2)">
           <td>
-            <div class="bold" style="color:var(--blue)">IFCA × FCA Impact Fund — June 2026</div>
+            <div class="bold" style="color:var(--blue)">IFCA × FCA Impact Fund — July 2026</div>
             <span class="badge" style="background:rgba(99,179,237,.12);color:var(--blue)">UPCOMING</span>
             <span class="badge" style="background:rgba(196,163,90,.12);color:var(--gold);margin-left:4px">Trust Transfer</span>
           </td>
-          <td class="num blue">Jun 2026</td>
+          <td class="num blue">Jul 2026</td>
           <td style="font-size:10px;color:var(--muted)">Transfer of Trust + Duty/Honor + IFCA×FCA launch event</td>
           <td class="num muted">TBD</td>
           <td class="num blue">Target: 800+<br><span style="font-size:9px">150–200+ apps</span></td>
@@ -905,7 +905,7 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 <div class="wrap">
 
   <div class="sec-title">Landing Page Variations</div>
-  <div class="sec-sub">LP1 = IFCA Audience (Pass The Torch) · LP2 = Taeler's Audience (FCA Trust Transfer) · Click any headline to update the live LP preview below</div>
+  <div class="sec-sub">Two split-test variations locked for launch · Both use blue/orange theme · Click headline to update live LP preview · DM keyword: IMPACT FUND</div>
 
   <!-- Copy Kit Status + Language Rule Banner -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
@@ -930,8 +930,8 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 
   <!-- Audience Toggle -->
   <div class="lp-sub-nav mb20">
-    <button class="lp-snav-btn active" id="snav-ifca" onclick="switchAudience('ifca',this)">🔁 LP1 — IFCA Audience · Pass The Torch</button>
-    <button class="lp-snav-btn" id="snav-taeler" onclick="switchAudience('taeler',this)">🔑 LP2 — Taeler's Audience · FCA Trust Transfer</button>
+    <button class="lp-snav-btn active" id="snav-ifca" onclick="switchAudience('ifca',this)">🔀 VARIATION 1 — "We Didn't Just Merge" (The Merger Lead)</button>
+    <button class="lp-snav-btn" id="snav-taeler" onclick="switchAudience('taeler',this)">🔀 VARIATION 2 — "Two Best Programs Just Merged" (Punchy Version)</button>
   </div>
 
   <!-- ═══════════════════════════════════════
@@ -941,14 +941,15 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 
     <div class="card mb16" style="border-color:rgba(232,119,34,.35)">
       <div class="flex mb8" style="gap:8px;flex-wrap:wrap">
-        <span class="badge" style="background:var(--orange-dim);color:var(--orange)">TRUST TRANSFER · IFCA WARM AUDIENCE</span>
-        <span class="badge" style="background:rgba(196,163,90,.12);color:var(--gold)">100% White Space — No Competitor Has This Frame</span>
+        <span class="badge" style="background:var(--orange-dim);color:var(--orange)">SPLIT TEST VARIATION 1 — THE MERGER LEAD</span>
+        <span class="badge" style="background:rgba(196,163,90,.12);color:var(--gold)">✅ LOCKED FOR LAUNCH</span>
       </div>
       <div style="font-size:11px;color:var(--muted);line-height:1.7">
-        Before Jordan and Erin hand over the keys to Taeler, they're running the biggest Impact Fund in IFCA history. The sale becomes the gift. The acquisition hype becomes the urgency. Zero competitors are running a "founder exit → scholarship" narrative.
-        <span style="color:var(--text);margin-left:12px"><strong>Presenters:</strong> Jordan + Erin (primary) + Taeler (supporting)</span>
+        <strong style="color:var(--text)">H1:</strong> We Didn't Just Merge. We Combined the Two Best Programs in the Health and Fitness Coaching Space.<br>
+        <strong style="color:var(--text)">Sub:</strong> Taeler De Haes acquired IFCA — and her first act as the new owner is giving away $250,000 in Impact Grants to the coaches who treat this like a calling, not a side hustle.<br>
+        <span style="margin-top:6px;display:inline-block"><strong>Presenters:</strong> Jordan + Taeler co-presenting</span>
         <span style="margin-left:16px"><strong>CTA keyword:</strong> IMPACT FUND</span>
-        <span style="margin-left:16px"><strong>Emotional core:</strong> Legacy · Honor · Gratitude</span>
+        <span style="margin-left:16px"><strong>Emotional core:</strong> Merger authority · New era · Calling</span>
       </div>
     </div>
 
@@ -956,9 +957,9 @@ textarea.attr-input{min-height:64px;resize:vertical;}
     <div class="grid2 mb16" style="gap:16px;align-items:start">
       <div>
         <div class="tag">Active Headline — Updates LP Preview Below</div>
-        <div id="hl-display-ifca" class="hl-display" style="background:var(--orange-dim);border:1px solid rgba(232,119,34,.25);color:var(--orange);font-size:clamp(16px,2.2vw,24px)">Before We Hand Over The Keys,<br>We're Giving Away $250,000<br>To Fitness Coaches Who Still Believe<br>This Is A Calling</div>
+        <div id="hl-display-ifca" class="hl-display" style="background:var(--orange-dim);border:1px solid rgba(232,119,34,.25);color:var(--orange);font-size:clamp(16px,2.2vw,24px)">We Didn't Just Merge.<br>We Combined the Two Best Programs<br>in the Health and Fitness Coaching Space.</div>
         <div class="tag mt12" style="margin-top:14px">Active Subheadline</div>
-        <div id="hl-sub-display-ifca" style="font-size:11px;line-height:1.75;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:6px">Jordan &amp; Erin built IFCA for coaches who refuse to quit. Before handing the keys to Taeler, they're making one final investment — in coaches who deserve it most.</div>
+        <div id="hl-sub-display-ifca" style="font-size:11px;line-height:1.75;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:6px">Taeler De Haes acquired IFCA — and her first act as the new owner is giving away $250,000 in Impact Grants to the coaches who treat this like a calling, not a side hustle.</div>
       </div>
       <div>
         <div class="tag">5 Headline Variations — Click To Apply</div>
@@ -973,14 +974,14 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 
         <!-- HERO -->
         <div class="lp-hero">
-          <div class="lp-eyebrow">IFCA × FCA · June 2026 Impact Fund</div>
-          <div class="lp-badge">🎓 Applications Now Open · Limited Selection</div>
-          <h1 class="lp-h1" id="lph1-ifca">Before We Hand<br>Over The Keys,<br>We're Giving Away <span class="acc">$250,000</span><br>To Coaches Who<br>Believe This Is A Calling</h1>
-          <p class="lp-sub" id="lpsub-ifca">Jordan &amp; Erin built IFCA for coaches who refuse to quit. <strong>Before handing the keys to Taeler, they're making one final investment — in coaches who deserve it most.</strong></p>
+          <div class="lp-eyebrow">IFCA × FCA · July 2026 Impact Fund</div>
+          <div class="lp-badge">🎓 Applications Open July 13 · Limited Selection</div>
+          <h1 class="lp-h1" id="lph1-ifca">We Didn't Just Merge.<br>We Combined the Two<br>Best Programs in the<br>Health and Fitness<br>Coaching Space.</h1>
+          <p class="lp-sub" id="lpsub-ifca">Taeler De Haes acquired IFCA — and her first act as the new owner is giving away $250,000 in Impact Grants to the coaches who treat this like a calling, not a side hustle. <strong>Applications close July 17 at midnight.</strong></p>
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
             <a href="#" class="lp-cta">APPLY FOR THE IMPACT FUND</a>
           </div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.22);text-transform:uppercase;margin-top:12px">DM "IMPACT FUND" on Instagram · Applications close June 26</div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.22);text-transform:uppercase;margin-top:12px">DM "IMPACT FUND" on Instagram · Applications close July 17</div>
         </div>
 
         <!-- PROOF BAR -->
@@ -1114,7 +1115,7 @@ textarea.attr-input{min-height:64px;resize:vertical;}
           </div>
         </div>
 
-        <div class="lp-footer-bar">IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund June 2026 · DM "IMPACT FUND" to Apply</div>
+        <div class="lp-footer-bar">IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund July 2026 · DM "IMPACT FUND" to Apply</div>
       </div>
     </div>
   </div><!-- /lp-var-ifca -->
@@ -1125,16 +1126,17 @@ textarea.attr-input{min-height:64px;resize:vertical;}
   ═══════════════════════════════════════ -->
   <div id="lp-var-taeler" class="lp-variant">
 
-    <div class="card mb16" style="border-color:rgba(196,163,90,.35)">
+    <div class="card mb16" style="border-color:rgba(99,179,237,.35)">
       <div class="flex mb8" style="gap:8px;flex-wrap:wrap">
-        <span class="badge" style="background:var(--gold-dim);color:var(--gold)">TRUST TRANSFER · FCA AUDIENCE</span>
-        <span class="badge" style="background:rgba(139,92,246,.15);color:#a78bfa">New Era · Category of One · IFCA × FCA Merge</span>
+        <span class="badge" style="background:var(--blue-dim);color:var(--blue)">SPLIT TEST VARIATION 2 — PUNCHY MERGER VERSION</span>
+        <span class="badge" style="background:rgba(196,163,90,.12);color:var(--gold)">✅ LOCKED FOR LAUNCH</span>
       </div>
       <div style="font-size:11px;color:var(--muted);line-height:1.7">
-        Taeler just stepped into the most valuable fitness education platform in the industry. Her first move? Not a rebrand. Not a pivot. A scholarship fund. This frame speaks to FCA's existing audience who know Taeler — and want to know what IFCA can do for them.
-        <span style="color:var(--text);margin-left:12px"><strong>Presenters:</strong> Taeler-led · Jordan + Erin supporting</span>
+        <strong style="color:var(--text)">H1:</strong> The Two Best Programs in This Space Just Merged. And We're Giving Away $250,000 to Coaches Who Deserve It.<br>
+        <strong style="color:var(--text)">Sub:</strong> 4,600+ IFCA coaches plus 650+ FCA coaches under one roof. The new owner's first act is investing $250,000 in the coaches who see this as a profession, not a plan B.<br>
+        <span style="margin-top:6px;display:inline-block"><strong>Presenters:</strong> Jordan + Taeler co-presenting</span>
         <span style="margin-left:16px"><strong>CTA keyword:</strong> IMPACT FUND</span>
-        <span style="margin-left:16px"><strong>Emotional core:</strong> Novelty · Curiosity · New Era FOMO</span>
+        <span style="margin-left:16px"><strong>Emotional core:</strong> Double credibility · 5,250+ coaches · Profession not plan B</span>
       </div>
     </div>
 
@@ -1142,9 +1144,9 @@ textarea.attr-input{min-height:64px;resize:vertical;}
     <div class="grid2 mb16" style="gap:16px;align-items:start">
       <div>
         <div class="tag">Active Headline — Updates LP Preview Below</div>
-        <div id="hl-display-taeler" class="hl-display" style="background:var(--gold-dim);border:1px solid rgba(196,163,90,.25);color:var(--gold);font-size:clamp(16px,2.2vw,24px)">She Just Took Over<br>The #1 Fitness Coaching<br>Program. Her First Act?<br>$250,000 In Scholarships.</div>
+        <div id="hl-display-taeler" class="hl-display" style="background:var(--blue-dim);border:1px solid rgba(99,179,237,.25);color:var(--blue);font-size:clamp(16px,2.2vw,24px)">The Two Best Programs in This Space<br>Just Merged. And We're Giving Away<br>$250,000 to Coaches Who Deserve It.</div>
         <div class="tag mt12" style="margin-top:14px">Active Subheadline</div>
-        <div id="hl-sub-display-taeler" style="font-size:11px;line-height:1.75;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:6px">Taeler De Haes just acquired IFCA. She didn't rebrand. She didn't pivot. Her first move was to fund the coaches who are serious about this industry.</div>
+        <div id="hl-sub-display-taeler" style="font-size:11px;line-height:1.75;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin-top:6px">4,600+ IFCA coaches plus 650+ FCA coaches under one roof. The new owner's first act is investing $250,000 in the coaches who see this as a profession, not a plan B.</div>
       </div>
       <div>
         <div class="tag">5 Headline Variations — Click To Apply</div>
@@ -1159,14 +1161,14 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 
         <!-- HERO -->
         <div class="lp-hero">
-          <div class="lp-eyebrow">IFCA × FCA · June 2026 · A New Era</div>
-          <div class="lp-badge">🔑 The New Ownership's First Act · Applications Now Open</div>
-          <h1 class="lp-h1" id="lph1-taeler">She Just Took Over<br>The #1 Fitness Coaching<br>Program. Her First Act?<br><span class="acc">$250,000</span> In Scholarships.</h1>
-          <p class="lp-sub" id="lpsub-taeler">Taeler De Haes just acquired IFCA. She didn't rebrand. She didn't pivot. <strong>Her first move was to fund the coaches who are serious about this industry.</strong></p>
+          <div class="lp-eyebrow">IFCA × FCA · July 2026 · A New Era</div>
+          <div class="lp-badge">🔑 The New Ownership's First Act · Applications Open July 13</div>
+          <h1 class="lp-h1" id="lph1-taeler">The Two Best Programs<br>in This Space Just Merged.<br>And We're Giving Away<br><span class="acc">$250,000</span><br>to Coaches Who Deserve It.</h1>
+          <p class="lp-sub" id="lpsub-taeler">4,600+ IFCA coaches plus 650+ FCA coaches under one roof. <strong>The new owner's first act is investing $250,000 in the coaches who see this as a profession, not a plan B.</strong></p>
           <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
             <a href="#" class="lp-cta">APPLY FOR THE IMPACT FUND</a>
           </div>
-          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,.2);text-transform:uppercase;margin-top:12px">DM "IMPACT FUND" on Instagram · Applications close June 26</div>
+          <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(245,240,230,.2);text-transform:uppercase;margin-top:12px">DM "IMPACT FUND" on Instagram · Applications close July 17</div>
         </div>
 
         <!-- PROOF BAR -->
@@ -1298,7 +1300,7 @@ textarea.attr-input{min-height:64px;resize:vertical;}
           </div>
         </div>
 
-        <div class="lp-footer-bar" style="background:var(--ink)">IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund June 2026 · DM "IMPACT FUND" to Apply</div>
+        <div class="lp-footer-bar" style="background:var(--ink)">IFCA × FCA · Impact Fitness Coaching Academy · Impact Fund July 2026 · DM "IMPACT FUND" to Apply</div>
       </div>
     </div>
   </div><!-- /lp-var-taeler -->
@@ -1313,15 +1315,17 @@ textarea.attr-input{min-height:64px;resize:vertical;}
 <div id="panel-schedule" class="panel">
 <div class="wrap">
 
-  <div class="sec-title">June 2026 Campaign Schedule</div>
-  <div class="sec-sub">10-day campaign · Ads launch Jun 17–18 · Organic launch Jun 21 · Winner announcement Jun 26 · Optional extension to Jun 29</div>
+  <div class="sec-title">July 2026 Campaign Schedule — The Merger + New Owner's First Act</div>
+  <div class="sec-sub">Pre-launch Jun 29 → Ads test Jul 8 → Teaser Jul 12 (Sun) → Hard launch Jul 13 (Mon) → First winner + extension Jul 17 (Thu) → Final winner Jul 20 (Mon) → Public announcement Jul 24 (Fri)</div>
 
   <!-- Key dates -->
-  <div class="grid4 mb16">
-    <div class="kpi" style="border-color:rgba(232,119,34,.3)"><div class="kpi-label">Ads Launch</div><div class="kpi-val orange" style="font-size:18px">Jun 17–18</div><div class="kpi-sub">Begin paid push · test 3+ hook styles</div></div>
-    <div class="kpi" style="border-color:rgba(34,197,94,.3)"><div class="kpi-label">Organic Launch</div><div class="kpi-val green" style="font-size:18px">Jun 21</div><div class="kpi-sub">Official announcement · full channel blast</div></div>
-    <div class="kpi" style="border-color:rgba(196,163,90,.3)"><div class="kpi-label">First Winner</div><div class="kpi-val gold" style="font-size:18px">Jun 26</div><div class="kpi-sub">Winner + optional extension reveal · 3 PM</div></div>
-    <div class="kpi" style="border-color:rgba(99,179,237,.3)"><div class="kpi-label">Final Winner</div><div class="kpi-val blue" style="font-size:18px">Jun 29</div><div class="kpi-sub">FOMO close · 2nd winner (optional)</div></div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px">
+    <div class="kpi" style="border-color:rgba(232,119,34,.3)"><div class="kpi-label">Prep Week</div><div class="kpi-val orange" style="font-size:15px">Jun 29–Jul 3</div><div class="kpi-sub">Ads built · funnel tested · content prepped</div></div>
+    <div class="kpi" style="border-color:rgba(232,119,34,.3)"><div class="kpi-label">Ads Launch</div><div class="kpi-val orange" style="font-size:15px">Jul 8 (Tue)</div><div class="kpi-sub">$300/day testing · ~$3/day per ad</div></div>
+    <div class="kpi" style="border-color:rgba(99,179,237,.3)"><div class="kpi-label">Teaser Post</div><div class="kpi-val blue" style="font-size:15px">Jul 12 (Sun)</div><div class="kpi-sub">Email + SMS + organic · warm audience</div></div>
+    <div class="kpi" style="border-color:rgba(34,197,94,.3)"><div class="kpi-label">Hard Launch</div><div class="kpi-val green" style="font-size:15px">Jul 13 (Mon)</div><div class="kpi-sub">Apps open · all channels · ads scale</div></div>
+    <div class="kpi" style="border-color:rgba(196,163,90,.3)"><div class="kpi-label">First Winner + Ext</div><div class="kpi-val gold" style="font-size:15px">Jul 17 (Thu)</div><div class="kpi-sub">Extension reveal · new deadline Jul 20</div></div>
+    <div class="kpi" style="border-color:rgba(99,179,237,.3)"><div class="kpi-label">Live Announcement</div><div class="kpi-val blue" style="font-size:15px">Jul 24 (Fri)</div><div class="kpi-sub">Taeler goes live · winner revealed publicly</div></div>
   </div>
 
   <!-- Channel legend -->
@@ -1333,26 +1337,173 @@ textarea.attr-input{min-height:64px;resize:vertical;}
   </div>
 
   <div class="card mb16" style="overflow-x:auto">
-    <div class="tag">Day-by-Day Execution Calendar</div>
+    <div class="tag">Day-by-Day Execution Calendar — July 2026</div>
     <table class="sch-tbl">
-      <thead><tr><th>Day</th><th>Date</th><th>Phase</th><th style="color:var(--orange)">🟠 Ads</th><th style="color:var(--green)">🟢 Organic</th><th style="color:var(--blue)">🔵 Email</th><th style="color:var(--yellow)">🟡 SMS</th><th>Notes</th></tr></thead>
+      <thead><tr>
+        <th style="min-width:80px">Phase</th>
+        <th style="min-width:110px">Date + Day</th>
+        <th style="min-width:110px">Stage</th>
+        <th style="color:var(--orange);min-width:180px">🟠 Paid Ads</th>
+        <th style="color:var(--green);min-width:200px">🟢 Organic <span style="font-weight:400;opacity:.6">(2×/day from Jul 13)</span></th>
+        <th style="color:var(--blue);min-width:200px">🔵 Email <span style="font-weight:400;opacity:.6">(2×/day from Jul 13)</span></th>
+        <th style="color:var(--yellow);min-width:150px">🟡 SMS</th>
+        <th style="min-width:160px">⭐ Setter Action</th>
+      </tr></thead>
       <tbody>
-        <tr><td class="muted">–7</td><td class="bold">Jun 14</td><td><span class="phase-badge p-teaser">Pre-Teaser</span></td><td class="muted">—</td><td style="font-size:10px">Problem agitation reel. "The gap between average coaches and exceptional ones..."</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Seed belief · identity</td></tr>
-        <tr><td class="muted">–6</td><td class="bold">Jun 15</td><td><span class="phase-badge p-teaser">Pre-Teaser</span></td><td class="muted">—</td><td style="font-size:10px">Identity content. "Two types of coaches." Who this is for and not for.</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Filter audience</td></tr>
-        <tr><td class="muted">–5</td><td class="bold">Jun 16</td><td><span class="phase-badge p-teaser">Pre-Teaser</span></td><td class="muted">—</td><td style="font-size:10px">Soft hint: "Something big is coming for coaches who are serious." Story countdown.</td><td style="font-size:10px;color:var(--blue)">🔵 Teaser to warm list + hot prospects from Jan/Oct pipeline</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Warm the list first</td></tr>
-        <tr class="row-urgency"><td style="color:var(--orange);font-weight:700">–4</td><td class="bold" style="color:var(--orange)">Jun 17</td><td><span class="phase-badge p-ads">ADS LAUNCH</span></td><td style="font-size:10px;color:var(--orange)">🟠 Launch 3 hook styles: Mission · Proof · Identity. Broad targeting. $100–300/day test budget.</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Let creative breathe 24–48 hrs before scaling</td></tr>
-        <tr class="row-urgency"><td style="color:var(--orange);font-weight:700">–3</td><td class="bold" style="color:var(--orange)">Jun 18</td><td><span class="phase-badge p-ads">ADS SCALE</span></td><td style="font-size:10px;color:var(--orange)">🟠 Review Day 1 data. Scale winning hook 2–3×. Add urgency variation. Launch Trust Transfer creative.</td><td style="font-size:10px">Credibility reel. Jordan/Erin/Taeler intro or case study. DM keyword: IMPACT FUND.</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Joint creator content begins</td></tr>
-        <tr><td class="muted">–2</td><td class="bold">Jun 19</td><td><span class="phase-badge p-teaser">Build</span></td><td style="font-size:10px;color:var(--orange)">🟠 Scale top performer. Test Trust Transfer angle. Retargeting to 3-sec video viewers.</td><td style="font-size:10px">Social proof reel. Brittany or Nadi winner story. No hard CTA yet — build trust first.</td><td class="muted">—</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Build trust before urgency</td></tr>
-        <tr><td class="muted">–1</td><td class="bold">Jun 20</td><td><span class="phase-badge p-teaser">Pre-Launch</span></td><td style="font-size:10px;color:var(--orange)">🟠 Full budget. Add retargeting campaign. All hooks running.</td><td style="font-size:10px">"Tomorrow is the day." Story countdown. Anticipation + exclusivity language.</td><td style="font-size:10px;color:var(--blue)">🔵 "Tomorrow we announce something we've never done before." Subject A/B test.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Build tension · don't reveal yet</td></tr>
-        <tr class="row-launch" style="border-top:2px solid rgba(34,197,94,.3)"><td style="color:var(--green);font-weight:800">DAY 1</td><td class="bold" style="color:var(--green)">Jun 21 🚀</td><td><span class="phase-badge p-launch">LAUNCH DAY</span></td><td style="font-size:10px;color:var(--orange)">🟠 Launch all announcement creatives. Maximum volume. Monitor CPL hourly.</td><td style="font-size:10px;color:var(--green)">🟢 Official announcement post + reel. CTA: DM "IMPACT FUND". Story: applications open.</td><td style="font-size:10px;color:var(--blue)">🔵 LAUNCH EMAIL — full announcement. 3 subject variants. Full list + hot prospects.</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #1 — "The IFCA Impact Fund is open. Apply now → [link]"</td><td style="font-size:9px;color:var(--muted)">Full channel blast · all hands</td></tr>
-        <tr><td class="muted">+2</td><td class="bold">Jun 22</td><td><span class="phase-badge p-teaser">2nd Angle</span></td><td style="font-size:10px;color:var(--orange)">🟠 Rotate to second hook. Case study creative.</td><td style="font-size:10px">Second angle post. Mission or Trust Transfer. Story: "Applications already rolling in."</td><td style="font-size:10px;color:var(--blue)">🔵 Case study email. Brittany or Nadi story. Real numbers, real timeline.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Proof builds momentum</td></tr>
-        <tr><td class="muted">+3</td><td class="bold">Jun 23</td><td><span class="phase-badge p-teaser">Double Post</span></td><td style="font-size:10px;color:var(--orange)">🟠 Test new hook variation. Optimize DM reply capture.</td><td style="font-size:10px">2 posts. AM: Objection handling ("I can't afford it"). PM: "This is not for everyone."</td><td style="font-size:10px;color:var(--blue)">🔵 Objection breakdown email. Money, time, belief objections addressed.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Overcome hesitation</td></tr>
-        <tr><td class="muted">+4</td><td class="bold">Jun 24</td><td><span class="phase-badge p-teaser">Mission Day</span></td><td style="font-size:10px;color:var(--orange)">🟠 Push mission-angle creative hardest today.</td><td style="font-size:10px">Mission/calling/duty post. Jordan or Taeler on camera. Why this fund exists.</td><td style="font-size:10px;color:var(--blue)">🔵 Mission email. "Why we built this fund." Foundation story from Jordan/Erin.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Deepen identity alignment</td></tr>
-        <tr class="row-urgency" style="border-top:1px solid rgba(239,68,68,.2)"><td style="color:var(--red);font-weight:700">+5</td><td class="bold" style="color:var(--red)">Jun 25</td><td><span class="phase-badge p-urgency">URGENCY</span></td><td style="font-size:10px;color:var(--orange)">🟠 Switch to urgency creatives only. "24 hours remaining." Countdown overlay.</td><td style="font-size:10px">"Applications close tomorrow." Story countdown every 2 hours. Final call language.</td><td style="font-size:10px;color:var(--blue)">🔵 2× emails today. AM: "Applications close tomorrow." PM: "Last reminder."</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #2 — "24 hours left. This is your last chance → [link]"</td><td style="font-size:9px;color:var(--red)">2× email is mandatory today</td></tr>
-        <tr class="row-winner" style="border-top:2px solid rgba(196,163,90,.3)"><td style="color:var(--gold);font-weight:800">+6</td><td class="bold" style="color:var(--gold)">Jun 26 🏆</td><td><span class="phase-badge p-winner">WINNER DAY</span></td><td style="font-size:10px;color:var(--orange)">🟠 Switch to FOMO/extension creative. "We picked a winner — AND we extended."</td><td style="font-size:10px;color:var(--gold)">🏆 WINNER ANNOUNCEMENT POST. Full profile. Story series. Extension announcement if using.</td><td style="font-size:10px;color:var(--blue)">🔵 Winner email + extension reveal. Pre-written "I Messed Up" format. New deadline: Jun 29.</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #3 — "We picked a winner — and opened one more spot. Here's why → [link]"</td><td style="font-size:9px;color:var(--gold)">Extension is pre-engineered · not a backup</td></tr>
-        <tr><td style="color:var(--blue)">+7</td><td class="bold">Jun 27</td><td><span class="phase-badge p-extend">Extension</span></td><td style="font-size:10px;color:var(--orange)">🟠 Extension FOMO creative. "One more spot. One more coach."</td><td style="font-size:10px">Extension push reel. FOMO amplification. Reaction content from winner reveal.</td><td style="font-size:10px;color:var(--blue)">🔵 Extension re-engagement email. Target 183+ hot prospects from Jan/Oct specifically.</td><td class="muted">—</td><td style="font-size:9px;color:var(--muted)">Re-activate Jan 2025 + Oct 2025 hot prospect pools</td></tr>
-        <tr><td style="color:var(--blue)">+8</td><td class="bold">Jun 28</td><td><span class="phase-badge p-extend">Final Push</span></td><td style="font-size:10px;color:var(--orange)">🟠 Last day creatives. Countdown. Maximum urgency.</td><td style="font-size:10px">Last day content. "This is the last day." Stories every 2 hours.</td><td style="font-size:10px;color:var(--blue)">🔵 2× emails. "Last day." "Final hours." Direct and urgent.</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #4 — "Last day. Final application window closes tonight → [link]"</td><td style="font-size:9px;color:var(--muted)">2× email mandatory again</td></tr>
-        <tr class="row-winner" style="border-top:2px solid rgba(196,163,90,.2)"><td style="color:var(--gold);font-weight:800">+9</td><td class="bold" style="color:var(--gold)">Jun 29 🏆</td><td><span class="phase-badge p-winner">FINAL WINNER</span></td><td style="font-size:10px;color:var(--muted)">🔴 Turn off all ads.</td><td style="font-size:10px;color:var(--gold)">🏆 FINAL WINNER ANNOUNCEMENT. Celebration content. FOMO for non-applicants.</td><td style="font-size:10px;color:var(--blue)">🔵 Final winner email + "close stragglers" CTA. If serious, reply now.</td><td style="font-size:10px;color:var(--yellow)">🟡 SMS #5 — "We picked our final winner. Here's their story → [link]"</td><td style="font-size:9px;color:var(--muted)">Turn off ads · work the pipeline · triage path activates</td></tr>
+        <!-- PREP WEEK -->
+        <tr style="background:rgba(74,127,165,.05);border-top:2px solid rgba(74,127,165,.2)">
+          <td style="color:var(--blue);font-weight:700;white-space:nowrap;font-size:11px">PREP</td>
+          <td style="white-space:nowrap"><strong style="color:var(--blue)">Jun 29–Jul 3</strong><br><span style="font-size:9px;color:var(--muted)">Sun–Thu</span></td>
+          <td><span class="phase-badge p-teaser">Pre-Launch Prep</span></td>
+          <td style="font-size:10px">Finish all ad creative. Test funnel end-to-end. Confirm Hyros + GHL tracking. Stage Andromeda entity map. Have ads ready to deploy Jul 8.</td>
+          <td style="font-size:10px">All 10 campaign days of organic content written + prepped. Schedule ahead.</td>
+          <td style="font-size:10px;color:var(--blue)">All email sequences written + scheduled. <strong style="color:var(--orange)">Pre-write "I Messed Up" extension email NOW — before the campaign starts.</strong></td>
+          <td style="font-size:10px;color:var(--yellow)">All 5 SMS texts pre-written in Aloware. Do not wait until launch week.</td>
+          <td style="font-size:9px;color:var(--orange)"><strong>⭐ START NOW: Begin working warm lead list this week. This is your head start before applications open.</strong></td>
+        </tr>
+        <!-- ADS LAUNCH -->
+        <tr style="background:rgba(232,119,34,.03);border-top:2px solid rgba(232,119,34,.2)">
+          <td style="color:var(--orange);font-weight:700;white-space:nowrap;font-size:11px">ADS</td>
+          <td style="white-space:nowrap"><strong style="color:var(--orange)">Jul 8 (Tue)</strong><br><span style="font-size:9px;color:var(--muted)">Ads go live</span></td>
+          <td><span class="phase-badge p-ads">ADS LAUNCH</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Launch at $300/day testing budget · ~$3/day per ad to start. 3 hook styles: Merger · Mission · Identity. Let creative breathe 24–48 hrs before scaling.</td>
+          <td class="muted" style="font-size:10px">Pre-trust content: credibility reels, winner stories. No hard CTA yet.</td>
+          <td class="muted">—</td>
+          <td class="muted">—</td>
+          <td style="font-size:9px;color:var(--muted)">Setters: continue warm list outreach all week</td>
+        </tr>
+        <!-- AD TESTING WINDOW -->
+        <tr>
+          <td style="color:var(--orange);font-weight:700;white-space:nowrap;font-size:11px">ADS</td>
+          <td style="white-space:nowrap"><strong>Jul 8–12</strong><br><span style="font-size:9px;color:var(--muted)">Tue–Sat</span></td>
+          <td><span class="phase-badge p-ads">AD TESTING</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Optimize daily. Scale winning hook 2–3×. Test Trust Transfer + Merger angles. Add retargeting to 3-sec video viewers. Identify top 2 creative winners before hard launch.</td>
+          <td style="font-size:10px">Pre-trust content: Brittany/Nadi winner stories, Jordan/Taeler credibility content. Build belief before urgency.</td>
+          <td class="muted">—</td>
+          <td class="muted">—</td>
+          <td style="font-size:9px;color:var(--muted)">Setters: finish warm list · prep applicant confirmation scripts for Jul 13</td>
+        </tr>
+        <!-- TEASER -->
+        <tr style="background:rgba(99,179,237,.04);border-top:2px solid rgba(99,179,237,.2)">
+          <td style="color:var(--blue);font-weight:700;white-space:nowrap;font-size:11px">TEASER</td>
+          <td style="white-space:nowrap"><strong style="color:var(--blue)">Jul 12 (Sun)</strong><br><span style="font-size:9px;color:var(--muted)">Day before launch</span></td>
+          <td><span class="phase-badge p-teaser">TEASER DAY</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Full budget. Switch to announcement creatives. Scale top testing winner. All hooks running.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 "Tomorrow we announce something we've never done before in this space." Story countdown. Build tension — don't reveal yet.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 Teaser email to full list + hot prospects from Jan/Oct pipeline. Subject A/B test. "Something big tomorrow." Keep it short.</td>
+          <td style="font-size:10px;color:var(--yellow)">🟡 SMS Teaser — "Big announcement tomorrow. Stay close." Short. Curiosity only.</td>
+          <td style="font-size:9px;color:var(--muted)">Setters: be ready to confirm applicants starting Monday AM sharp</td>
+        </tr>
+        <!-- HARD LAUNCH -->
+        <tr class="row-launch" style="border-top:2px solid rgba(34,197,94,.3)">
+          <td style="color:var(--green);font-weight:800;white-space:nowrap;font-size:11px">LAUNCH 🚀</td>
+          <td style="white-space:nowrap"><strong style="color:var(--green)">Jul 13 (Mon)</strong><br><span style="font-size:9px;color:var(--muted)">Applications open</span></td>
+          <td><span class="phase-badge p-launch">HARD LAUNCH</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Launch all announcement creatives. Maximum volume. Scale to full spend. Monitor CPL hourly. Merger + New Owner angle front and center.</td>
+          <td style="font-size:10px;color:var(--green)">🟢 <strong>Post 1 (AM):</strong> Official launch post + reel. CTA: DM "IMPACT FUND". Story: apps are open.<br>🟢 <strong>Post 2 (PM):</strong> Second angle — Merger story, why Taeler's first act is this.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 <strong>Email #1 (AM):</strong> LAUNCH EMAIL — full announcement, 3 subject variants, full list + hot prospects.<br>🔵 <strong>Email #2 (PM):</strong> Case study email. Brittany or Nadi. Real numbers + timeline.</td>
+          <td style="font-size:10px;color:var(--yellow)">🟡 SMS #1 — "The IFCA Impact Fund is open. $250K in grants available. Apply now → [link]"</td>
+          <td style="font-size:9px;color:var(--orange)"><strong>⭐ SAME-DAY confirm with ALL new applicants. Do not wait 24hrs. Begin pitching partials by tomorrow.</strong></td>
+        </tr>
+        <!-- LAUNCH DAY 2 -->
+        <tr class="row-launch">
+          <td style="color:var(--green);font-weight:700;white-space:nowrap;font-size:11px">LAUNCH</td>
+          <td style="white-space:nowrap"><strong>Jul 14 (Tue)</strong><br><span style="font-size:9px;color:var(--muted)">Day 2</span></td>
+          <td><span class="phase-badge p-launch">2nd Angle</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Rotate to second hook. Test "Two programs merged" creative. Case study ad.</td>
+          <td style="font-size:10px;color:var(--green)">🟢 <strong>Post 1 (AM):</strong> Objection handling — "I can't afford it."<br>🟢 <strong>Post 2 (PM):</strong> "This is not for everyone." Identity/filter post.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 <strong>Email #1:</strong> Objection breakdown. Money, time, belief addressed.<br>🔵 <strong>Email #2:</strong> Mission email. "Why we built this fund." Jordan/Erin/Taeler story.</td>
+          <td class="muted">—</td>
+          <td style="font-size:9px;color:var(--orange)"><strong>⭐ Begin pitching partial awards. Start booking calls today.</strong></td>
+        </tr>
+        <!-- LAUNCH + URGENCY RAMP -->
+        <tr class="row-launch">
+          <td style="color:var(--green);font-weight:700;white-space:nowrap;font-size:11px">LAUNCH</td>
+          <td style="white-space:nowrap"><strong>Jul 15 (Wed)</strong><br><span style="font-size:9px;color:var(--muted)">Day 3 · urgency begins</span></td>
+          <td><span class="phase-badge p-urgency">URGENCY RAMP</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Begin rotating urgency creatives in. Countdown overlays. "Deadline Friday" language.</td>
+          <td style="font-size:10px;color:var(--green)">🟢 <strong>Post 1 (AM):</strong> Social proof — "Applications already rolling in."<br>🟢 <strong>Post 2 (PM):</strong> "3 days left." Urgency without desperation.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 <strong>Email #1:</strong> "Applications close Friday." Countdown begins.<br>🔵 <strong>Email #2:</strong> Winner story — what happens when someone gets selected.</td>
+          <td class="muted">—</td>
+          <td style="font-size:9px;color:var(--muted)">Setters: follow up on any partial leads who haven't booked yet</td>
+        </tr>
+        <!-- 24 HOURS LEFT -->
+        <tr class="row-urgency" style="border-top:1px solid rgba(239,68,68,.2)">
+          <td style="color:var(--red);font-weight:700;white-space:nowrap;font-size:11px">URGENCY</td>
+          <td style="white-space:nowrap"><strong style="color:var(--red)">Jul 16 (Thu)</strong><br><span style="font-size:9px;color:var(--muted)">"24 hours left"</span></td>
+          <td><span class="phase-badge p-urgency">LAST CALL</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Urgency-only creatives. "24 hours remaining." Countdown overlay. Maximum spend today.</td>
+          <td style="font-size:10px;color:var(--red)">🟢 <strong>Post 1 (AM):</strong> "24 hours left." Hard deadline language. Story countdown every 2 hrs.<br>🟢 <strong>Post 2 (PM):</strong> "Last reminder." Direct + urgent. Link in bio.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 <strong>Email #1 (AM):</strong> "Applications close tomorrow at midnight."<br>🔵 <strong>Email #2 (PM):</strong> "Final reminder — midnight tonight." Short and direct.</td>
+          <td style="font-size:10px;color:var(--yellow)">🟡 SMS #2 — "24 hours left. Midnight deadline. Apply now → [link]"</td>
+          <td style="font-size:9px;color:var(--red)"><strong>⭐ 2× email MANDATORY today. All hands on deck.</strong></td>
+        </tr>
+        <!-- WINNER DAY + EXTENSION -->
+        <tr class="row-winner" style="border-top:2px solid rgba(196,163,90,.3)">
+          <td style="color:var(--gold);font-weight:800;white-space:nowrap;font-size:11px">WINNER 🏆</td>
+          <td style="white-space:nowrap"><strong style="color:var(--gold)">Jul 17 (Thu)</strong><br><span style="font-size:9px;color:var(--muted)">Extension revealed</span></td>
+          <td><span class="phase-badge p-winner">WINNER + EXT.</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Switch to FOMO/extension creative. "We picked a winner — AND we extended for 600+ applicants."</td>
+          <td style="font-size:10px;color:var(--gold)">🏆 <strong>WINNER ANNOUNCEMENT</strong> — full profile reveal, story series. Then immediately: extension announcement. New deadline July 20 (Mon).</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 Pre-written <strong>"I Messed Up" extension email.</strong> Framing: "600+ applicants — we need more time to review them all." New deadline: Monday July 20.</td>
+          <td style="font-size:10px;color:var(--yellow)">🟡 SMS #3 — "We picked a winner — and we're extending. 600+ apps. New deadline: July 20. Details → [link]"</td>
+          <td style="font-size:9px;color:var(--gold)"><strong>⭐ Extension is PRE-ENGINEERED — not a backup. Setters: reactivate ALL partial leads immediately. This is your window.</strong></td>
+        </tr>
+        <!-- EXTENSION WINDOW -->
+        <tr style="background:rgba(99,179,237,.03)">
+          <td style="color:var(--blue);font-weight:700;white-space:nowrap;font-size:11px">EXTENSION</td>
+          <td style="white-space:nowrap"><strong style="color:var(--blue)">Jul 17–20</strong><br><span style="font-size:9px;color:var(--muted)">Thu–Sun</span></td>
+          <td><span class="phase-badge p-extend">EXT. WINDOW</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Extension FOMO creative. "One more spot. One more coach." Keep spend running through weekend.</td>
+          <td style="font-size:10px">Daily organic content. FOMO amplification. Reaction content from winner reveal. "The window is still open — barely."</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 Extension re-engagement email. Target all applicants + hot prospects from Jan 2025 + Oct 2025 pools specifically.</td>
+          <td class="muted">—</td>
+          <td style="font-size:9px;color:var(--orange)"><strong>⭐ Primary setter close window. Follow up on ALL partial leads. Book calls through the weekend.</strong></td>
+        </tr>
+        <!-- CAMPAIGN CLOSE -->
+        <tr class="row-winner" style="border-top:2px solid rgba(196,163,90,.2)">
+          <td style="color:var(--gold);font-weight:800;white-space:nowrap;font-size:11px">CLOSE 🏆</td>
+          <td style="white-space:nowrap"><strong style="color:var(--gold)">Jul 20 (Mon)</strong><br><span style="font-size:9px;color:var(--muted)">Final winner chosen</span></td>
+          <td><span class="phase-badge p-winner">CAMPAIGN CLOSE</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 Shift ads to partial funding countdown. LP switches to "Fund Remaining" page. Show decreasing amount.</td>
+          <td style="font-size:10px">Internal winner selected. <strong style="color:var(--gold)">PUBLIC ANNOUNCEMENT HELD until Friday July 24</strong> — Taeler's call to delay builds anticipation and keeps audience engaged all week.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 "Applications are now closed. Final winner being announced Friday." Bridge email to keep audience engaged through the week.</td>
+          <td style="font-size:10px;color:var(--yellow)">🟡 SMS #4 — "Applications closed. Final winner announcement Friday July 24. Stay tuned → [link]"</td>
+          <td style="font-size:9px;color:var(--muted)">Setters: continue working remaining applicants through close all week</td>
+        </tr>
+        <!-- PARTIAL FUNDING COUNTDOWN -->
+        <tr style="background:rgba(245,158,11,.03)">
+          <td style="color:var(--yellow);font-weight:700;white-space:nowrap;font-size:11px">PARTIAL</td>
+          <td style="white-space:nowrap"><strong>Jul 20–24</strong><br><span style="font-size:9px;color:var(--muted)">Mon–Fri</span></td>
+          <td><span class="phase-badge" style="background:rgba(245,158,11,.12);color:var(--yellow)">FUND COUNTDOWN</span></td>
+          <td style="font-size:10px;color:var(--orange)">🟠 LP shifts to "partial funding remaining" view. Show fund decreasing daily:<br><strong>$200K → $65K → $40K → $30K</strong><br>Ads continue depending on cost/ROI.</td>
+          <td style="font-size:10px">Daily content showing fund decreasing. "The $250K is going fast." Keep urgency alive around partial awards still available.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 Daily emails showing partial fund countdown. "X amount remains." Keep engagement high ahead of Friday announcement.</td>
+          <td class="muted">—</td>
+          <td style="font-size:9px;color:var(--orange)"><strong>⭐ Setters: pitch partial awards to all remaining warm leads. This is your primary close window.</strong></td>
+        </tr>
+        <!-- LIVE ANNOUNCEMENT -->
+        <tr class="row-winner" style="border-top:2px solid rgba(196,163,90,.3)">
+          <td style="color:var(--gold);font-weight:800;white-space:nowrap;font-size:11px">ANNOUNCE 🎉</td>
+          <td style="white-space:nowrap"><strong style="color:var(--gold)">Jul 24 (Fri)</strong><br><span style="font-size:9px;color:var(--muted)">Taeler goes live</span></td>
+          <td><span class="phase-badge p-winner">LIVE REVEAL</span></td>
+          <td style="font-size:10px;color:var(--muted)">🔴 Begin winding down ads. Reduce spend. Let remaining budget run through natural close.</td>
+          <td style="font-size:10px;color:var(--gold)">🏆 <strong>TAELER GOES LIVE on Instagram with the winner.</strong> Full celebration. Public winner announcement across all channels. Winner profile + transformation story.</td>
+          <td style="font-size:10px;color:var(--blue)">🔵 Winner announcement email blast to ALL applicants. Full story. Congratulations + what's next for non-winners (partial path).</td>
+          <td style="font-size:10px;color:var(--yellow)">🟡 SMS #5 — "We have a winner. Taeler just went live. Watch it here → [link]"</td>
+          <td style="font-size:9px;color:var(--muted)">Setters: non-winner pipeline is your best immediate revenue. Rich Ford: 2 days. Ocean Trail: 5 days. Don't abandon it.</td>
+        </tr>
+        <!-- WIND DOWN -->
+        <tr>
+          <td style="color:var(--muted);font-weight:700;white-space:nowrap;font-size:11px">WIND DOWN</td>
+          <td style="white-space:nowrap"><strong class="muted">Jul 24+</strong><br><span style="font-size:9px;color:var(--muted)">Ongoing</span></td>
+          <td><span class="phase-badge" style="background:rgba(74,127,165,.1);color:var(--muted)">POST-CAMPAIGN</span></td>
+          <td style="font-size:10px;color:var(--muted)">🔴 Ads wind down. Pull Hyros attribution (UTM: impact_fund). Document CPL, ROAS, close rate. Log in Performance tab.</td>
+          <td style="font-size:10px">Winner profile content production. Turn each winner into a social proof asset for the next campaign (earliest next run: late Sept 2026).</td>
+          <td class="muted">—</td>
+          <td class="muted">—</td>
+          <td style="font-size:9px;color:var(--orange)"><strong>⭐ Setters: continue partial award outreach until pipeline is fully exhausted. Every non-winner is a warm buyer.</strong></td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -1360,9 +1511,9 @@ textarea.attr-input{min-height:64px;resize:vertical;}
   <!-- Pre-launch checklist + post-campaign -->
   <div class="grid2">
     <div class="card">
-      <div class="tag">Pre-Launch Checklist — Must Be Done Before Jun 17</div>
+      <div class="tag">Pre-Launch Checklist — Must Be Done Before Jul 8 (Ad Launch)</div>
       <div class="checklist mt8">
-        <label class="cl-item crit"><input type="checkbox"><span><strong>⚠️ GHL: Create "scholarship_applicant" tag + automate on form submit</strong> — required before launch. Without this, paid conversion tracking is manual only.</span></label>
+        <label class="cl-item crit"><input type="checkbox"><span><strong>⚠️ GHL: Create "scholarship_applicant" tag + automate on form submit</strong> — Required before Jul 8 ad launch. Without this, paid conversion tracking is manual only.</span></label>
         <label class="cl-item"><input type="checkbox"><span>Big Idea locked — which angle (or combination) leads paid ads</span></label>
         <label class="cl-item"><input type="checkbox"><span>Landing page live and tested (GHL or HubSpot) · A/B headline test if time allows</span></label>
         <label class="cl-item"><input type="checkbox"><span>ManyChat DM keyword "IMPACT FUND" configured · test on all accounts</span></label>
@@ -1383,7 +1534,7 @@ textarea.attr-input{min-height:64px;resize:vertical;}
         <div><strong style="color:var(--text)">Week 1:</strong> Setter re-engagement on all hot prospects who didn't close. Partial award re-activation path. Same-day outreach on non-winners who engaged most.</div>
         <div><strong style="color:var(--text)">Week 2:</strong> Winner profile content production. Turn each winner into a social proof asset for future campaigns.</div>
         <div><strong style="color:var(--text)">30 days out:</strong> Pull Hyros revenue attribution (UTM filter: impact_fund). Document CPL, contact rate, close rate, ROAS. Add to Performance tab.</div>
-        <div><strong style="color:var(--text)">60-day rule:</strong> Minimum 60 days before next full-channel scholarship campaign. Earliest for next campaign: late August 2026.</div>
+        <div><strong style="color:var(--text)">60-day rule:</strong> Minimum 60 days before next full-channel scholarship campaign. Earliest for next campaign: late September 2026.</div>
         <div style="margin-top:8px;padding:10px;background:var(--orange-dim);border:1px solid rgba(232,119,34,.2);border-radius:6px;color:var(--orange)"><strong>Pricing reminder:</strong> Full: $12,500 · Award from fund: $2,500–$3,000 · Scholar pays: $9,500–$10,000 · Floor: $9,500 — never go below under any circumstances including triage calls.</div>
       </div>
     </div>
@@ -1817,86 +1968,86 @@ function switchAudience(which, btn) {
 const LP_HL = {
   ifca: [
     {
-      lbl: '1 · Legacy Declaration',
-      hint: 'Lead with founder exit emotion — highest resonance for IFCA warm audience',
-      h1: 'Before We Hand<br>Over The Keys,<br>We\'re Giving Away <span class="acc">$250,000</span><br>To Coaches Who<br>Believe This Is A Calling',
-      sub: 'Jordan &amp; Erin built IFCA for coaches who refuse to quit. <strong>Before handing the keys to Taeler, they\'re making one final investment — in coaches who deserve it most.</strong>',
-      disp: 'Before We Hand Over The Keys,\nWe\'re Giving Away $250,000\nTo Coaches Who Believe This Is A Calling',
-      subdisplay: 'Jordan & Erin built IFCA for coaches who refuse to quit. Before handing the keys to Taeler, they\'re making one final investment — in coaches who deserve it most.'
+      lbl: '1 · The Merger Lead ✅ LOCKED — SPLIT TEST A',
+      hint: 'Primary variation. Merger announcement angle. Lead with what happened, then the consequence ($250K fund).',
+      h1: 'We Didn\'t Just Merge.<br>We Combined the Two<br>Best Programs in the<br>Health and Fitness<br>Coaching Space.',
+      sub: 'Taeler De Haes acquired IFCA — and her first act as the new owner is giving away <strong>$250,000 in Impact Grants</strong> to the coaches who treat this like a calling, not a side hustle.',
+      disp: 'We Didn\'t Just Merge.\nWe Combined the Two Best Programs\nin the Health and Fitness Coaching Space.',
+      subdisplay: 'Taeler De Haes acquired IFCA — and her first act as the new owner is giving away $250,000 in Impact Grants to the coaches who treat this like a calling, not a side hustle.'
     },
     {
-      lbl: '2 · Last Act',
-      hint: 'Scarcity through timeline — most emotionally direct, strong for cold traffic',
-      h1: 'We Just Sold IFCA.<br>Before We Leave,<br>We\'re Writing <span class="acc">$250,000</span><br>In Scholarship Checks.',
-      sub: '10 years. 4,000 coaches. $40M in client revenue. <strong>This is how Jordan &amp; Erin are saying goodbye — and how you could be part of what comes next.</strong>',
-      disp: 'We Just Sold IFCA.\nBefore We Leave,\nWe\'re Writing $250,000 In Scholarship Checks.',
-      subdisplay: '10 years. 4,000 coaches. $40M in client revenue. This is how Jordan & Erin are saying goodbye — and how you could be part of what comes next.'
+      lbl: '2 · Two Best Programs ✅ LOCKED — SPLIT TEST B',
+      hint: 'Punchy version. Front-load the double credibility. Best for cold traffic who need the "why should I care" fast.',
+      h1: 'The Two Best Programs<br>in This Space Just Merged.<br>And We\'re Giving Away<br><span class=\"acc\">$250,000</span><br>to Coaches Who Deserve It.',
+      sub: '4,600+ IFCA coaches plus 650+ FCA coaches under one roof. <strong>The new owner\'s first act is investing $250,000 in the coaches who see this as a profession, not a plan B.</strong>',
+      disp: 'The Two Best Programs in This Space Just Merged.\nAnd We\'re Giving Away $250,000 to Coaches Who Deserve It.',
+      subdisplay: '4,600+ IFCA coaches plus 650+ FCA coaches under one roof. The new owner\'s first act is investing $250,000 in the coaches who see this as a profession, not a plan B.'
     },
     {
-      lbl: '3 · Final + First',
-      hint: 'History frame — creates status for applicants, uniquely ties Jordan/Erin/Taeler together',
-      h1: 'The Final Impact Fund<br>From Jordan + Erin.<br>The First From <span class="acc">Taeler.</span><br>One Mission.',
-      sub: 'Before the handover is complete, all three founders are giving away $250,000 to coaches who prove they\'re serious. <strong>This campaign only happens once.</strong>',
-      disp: 'The Final Impact Fund From Jordan + Erin.\nThe First From Taeler.\nOne Mission.',
-      subdisplay: 'Before the handover is complete, all three founders are giving away $250,000 to coaches who prove they\'re serious. This campaign only happens once.'
+      lbl: '3 · New Owner\'s First Act (Taeler-forward)',
+      hint: 'Positions Taeler as protagonist. Good for FCA crossover traffic or if Taeler is primary presenter.',
+      h1: 'Taeler De Haes Just<br>Acquired IFCA.<br>Her First Act?<br><span class=\"acc\">$250,000</span><br>In Impact Grants.',
+      sub: 'She didn\'t wait 90 days to make her first move. <strong>The new owner\'s first act is funding the coaches who treat this like a calling, not a side hustle.</strong>',
+      disp: 'Taeler De Haes Just Acquired IFCA.\nHer First Act? $250,000 In Impact Grants.',
+      subdisplay: 'She didn\'t wait 90 days to make her first move. The new owner\'s first act is funding the coaches who treat this like a calling, not a side hustle.'
     },
     {
-      lbl: '4 · Passing The Torch',
-      hint: 'Generous positioning — honor, not charity. Great paired with organic content',
-      h1: 'We\'re Writing <span class="acc">$250,000</span><br>Worth Of Scholarship<br>Checks Before We<br>Pass The Torch.',
-      sub: 'This isn\'t a discount. It\'s a bet. <strong>Jordan and Erin are backing the coaches who\'ve been waiting for the right moment — and this is it.</strong>',
-      disp: 'We\'re Writing $250,000 Worth Of Scholarship Checks Before We Pass The Torch.',
-      subdisplay: 'This isn\'t a discount. It\'s a bet. Jordan and Erin are backing the coaches who\'ve been waiting for the right moment — and this is it.'
+      lbl: '4 · Calling Frame (Mission-first)',
+      hint: 'Duty/honor/professionalism angle — historically the best-performing emotional core. Good for organic.',
+      h1: '4,600+ IFCA Coaches.<br>650+ FCA Coaches.<br>One Merged Program.<br>And <span class=\"acc\">$250,000</span><br>For Coaches Who Are Called.',
+      sub: 'The merger just made this the most complete fitness coaching platform in the industry. <strong>And the first thing we did was fund the coaches who see this as more than a job.</strong>',
+      disp: '4,600+ IFCA Coaches. 650+ FCA Coaches.\nOne Merged Program. And $250,000 For Coaches Who Are Called.',
+      subdisplay: 'The merger just made this the most complete fitness coaching platform in the industry. And the first thing we did was fund the coaches who see this as more than a job.'
     },
     {
-      lbl: '5 · Why We Built This',
-      hint: 'Most vulnerable — highest trust with warm audience, best for retargeting + email',
-      h1: 'We Didn\'t Build IFCA<br>To Sell It.<br>We Built It So <span class="acc">Coaches<br>Like You</span> Could Win.',
-      sub: 'This is our last act before handing over the keys to Taeler. The Impact Fund is live. 20 coaches will be selected. <strong>Applications close June 26.</strong>',
-      disp: 'We Didn\'t Build IFCA To Sell It.\nWe Built It So Coaches Like You Could Win.',
-      subdisplay: 'This is our last act before handing over the keys to Taeler. The Impact Fund is live. 20 coaches will be selected. Applications close June 26.'
+      lbl: '5 · We\'re Giving Away (Direct + Strong)',
+      hint: 'Best historical frame: "We\'re giving away" + duty/honor angle. Proven to outperform in headline tests.',
+      h1: 'We\'re Giving Away<br><span class=\"acc\">$250,000</span><br>To Fitness Coaches<br>Who See This As<br>A Profession.',
+      sub: 'IFCA and FCA just merged — 5,250+ coaches, one platform, one mission. <strong>The new owner\'s first act: invest $250,000 in coaches who are serious about building a real business.</strong>',
+      disp: 'We\'re Giving Away $250,000 To Fitness Coaches\nWho See This As A Profession.',
+      subdisplay: 'IFCA and FCA just merged — 5,250+ coaches, one platform, one mission. The new owner\'s first act: invest $250,000 in coaches who are serious about building a real business.'
     }
   ],
   taeler: [
     {
-      lbl: '1 · New Owner\'s First Act',
-      hint: 'Taeler-led. Disruption energy. Maximum novelty — ideal for FCA cold/warm traffic',
-      h1: 'She Just Took Over<br>The #1 Fitness Coaching<br>Program. Her First Act?<br><span class="acc">$250,000</span> In Scholarships.',
+      lbl: '1 · Two Best Programs ✅ LOCKED — SPLIT TEST B',
+      hint: 'Matches Split Test Variation B. Primary option for FCA audience.',
+      h1: 'The Two Best Programs<br>in This Space Just Merged.<br>And We\'re Giving Away<br><span class=\"acc\">$250,000</span><br>to Coaches Who Deserve It.',
+      sub: '4,600+ IFCA coaches plus 650+ FCA coaches under one roof. <strong>The new owner\'s first act is investing $250,000 in the coaches who see this as a profession, not a plan B.</strong>',
+      disp: 'The Two Best Programs in This Space Just Merged.\nAnd We\'re Giving Away $250,000 to Coaches Who Deserve It.',
+      subdisplay: '4,600+ IFCA coaches plus 650+ FCA coaches under one roof. The new owner\'s first act is investing $250,000 in the coaches who see this as a profession, not a plan B.'
+    },
+    {
+      lbl: '2 · The Merger Lead ✅ LOCKED — SPLIT TEST A',
+      hint: 'Matches Split Test Variation A. Try this if Variation B underperforms on FCA traffic.',
+      h1: 'We Didn\'t Just Merge.<br>We Combined the Two<br>Best Programs in the<br>Health and Fitness<br>Coaching Space.',
+      sub: 'Taeler De Haes acquired IFCA — and her first act as the new owner is giving away <strong>$250,000 in Impact Grants</strong> to the coaches who treat this like a calling, not a side hustle.',
+      disp: 'We Didn\'t Just Merge.\nWe Combined the Two Best Programs in the Health and Fitness Coaching Space.',
+      subdisplay: 'Taeler De Haes acquired IFCA — and her first act as the new owner is giving away $250,000 in Impact Grants to the coaches who treat this like a calling, not a side hustle.'
+    },
+    {
+      lbl: '3 · New Owner First Act (Taeler-forward)',
+      hint: 'Maximum novelty — ideal for FCA cold/warm traffic who know Taeler',
+      h1: 'She Just Took Over<br>The #1 Fitness Coaching<br>Program. Her First Act?<br><span class=\"acc\">$250,000</span> In Grants.',
       sub: 'Taeler De Haes just acquired IFCA. She didn\'t rebrand. She didn\'t pivot. <strong>Her first move was to fund the coaches who are serious about this industry.</strong>',
-      disp: 'She Just Took Over The #1 Fitness Coaching Program.\nHer First Act? $250,000 In Scholarships.',
+      disp: 'She Just Took Over The #1 Fitness Coaching Program.\nHer First Act? $250,000 In Grants.',
       subdisplay: 'Taeler De Haes just acquired IFCA. She didn\'t rebrand. She didn\'t pivot. Her first move was to fund the coaches who are serious about this industry.'
     },
     {
-      lbl: '2 · Two Programs, One Fund',
-      hint: 'Merger announcement angle. Double credibility. Best for ads introducing FCA audience to IFCA',
-      h1: 'Two Of The Top<br>Fitness Coaching Programs<br>Just Merged — And The<br>First Thing We Did Was <span class="acc">This.</span>',
-      sub: 'FCA and IFCA are one. The mission doubled. <strong>And the first scholarship fund of the new era is open now. 20 coaches will be selected.</strong>',
-      disp: 'Two Of The Top Fitness Coaching Programs Just Merged.\nAnd The First Thing We Did Was This.',
-      subdisplay: 'FCA and IFCA are one. The mission doubled. And the first scholarship fund of the new era is open now. 20 coaches will be selected.'
-    },
-    {
-      lbl: '3 · FCA Door Now Open',
-      hint: 'Speaks directly to FCA audience\'s existing relationship with Taeler — most personal',
-      h1: 'You\'ve Followed FCA.<br>Now The Doors To IFCA<br>Just Opened — And<br><span class="acc">The New Owner Is Paying For It.</span>',
+      lbl: '4 · FCA Door Now Open',
+      hint: 'Speaks directly to FCA audience\'s existing relationship with Taeler — most personal frame',
+      h1: 'You\'ve Followed FCA.<br>Now The Doors To IFCA<br>Just Opened — And<br><span class=\"acc\">The New Owner Is Paying For It.</span>',
       sub: 'Taeler brought two top programs together. If you\'ve been following her work and wondering what IFCA could do for you — <strong>this is your answer.</strong>',
       disp: 'You\'ve Followed FCA. Now The Doors To IFCA Just Opened.\nAnd The New Owner Is Paying For It.',
       subdisplay: 'Taeler brought two top programs together. If you\'ve been following her work and wondering what IFCA could do for you — this is your answer.'
     },
     {
-      lbl: '4 · Taeler\'s First Decision',
-      hint: 'Positions Taeler as mission-aligned from day one. Strong for direct-response ads',
-      h1: 'Taeler\'s First Decision<br>As IFCA\'s New Owner:<br>Invest <span class="acc">$250,000</span><br>In Coaches Who Are Serious.',
-      sub: 'She didn\'t wait 90 days to make her first move. <strong>Applications are open now. 20 coaches will be selected. Deadline is June 26.</strong>',
+      lbl: '5 · Taeler\'s First Decision',
+      hint: 'Positions Taeler as mission-aligned from day one. Strong for direct-response ads.',
+      h1: 'Taeler\'s First Decision<br>As IFCA\'s New Owner:<br>Invest <span class=\"acc\">$250,000</span><br>In Coaches Who Are Serious.',
+      sub: 'She didn\'t wait 90 days to make her first move. <strong>Applications are open July 13. 20 coaches will be selected. Deadline is July 17.</strong>',
       disp: 'Taeler\'s First Decision As IFCA\'s New Owner:\nInvest $250,000 In Coaches Who Are Serious.',
-      subdisplay: 'She didn\'t wait 90 days to make her first move. Applications are open now. 20 coaches will be selected. Deadline is June 26.'
-    },
-    {
-      lbl: '5 · Coach Who Built FCA',
-      hint: 'Boldest identity statement — best for cold FCA audience who know Taeler\'s coaching background',
-      h1: 'The Coach Who Built FCA<br>Just Took Over IFCA.<br>And The First Thing<br>She Did Was <span class="acc">This.</span>',
-      sub: 'Taeler De Haes merged two of the most respected programs in fitness coaching. Her first campaign: fund the coaches ready to go all in. <strong>Apply before June 26.</strong>',
-      disp: 'The Coach Who Built FCA Just Took Over IFCA.\nAnd The First Thing She Did Was This.',
-      subdisplay: 'Taeler De Haes merged two of the most respected programs in fitness coaching. Her first campaign: fund the coaches ready to go all in. Apply before June 26.'
+      subdisplay: 'She didn\'t wait 90 days to make her first move. Applications are open July 13. 20 coaches will be selected. Deadline is July 17.'
     }
   ]
 };
